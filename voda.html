@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JHRV5ETT2Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JHRV5ETT2Z');
+</script>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Čunovské jazerá a voda</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<style>
+.chcbox {
+ position: relative;  opacity:  1;  z-index: 10;
+}
+ /* rozbalovanie zaciatok*/
+input {
+  position: absolute;
+  opacity:  0;
+  z-index: -1;
+}
+
+.row {
+  display: -webkit-box;
+  display: flex;
+}
+.row .col {
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+.row .col:last-child {
+  margin-left: 1em;
+}
+
+.tabs {
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+.tab {
+  width: 100%;
+  color: cyan;
+  overflow: hidden;
+}
+.tab-label {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  padding: 0.2em;
+  background: #007575;/*#007575*/
+  font-size:12.0pt;
+  font-family:"Calibri",sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tab-label:hover {
+  background: #00aaaa;
+}
+.tab-label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+}
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  font-size:12.0pt;
+  font-family:"Calibri",sans-serif;
+  color: #cccccc;
+  background: #101010;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+  overflow: scroll;
+}
+.tab-close {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: #000000;
+  cursor: pointer;
+}
+.tab-close:hover {
+  background: #1a252f;
+}
+
+input:checked + .tab-label {
+  background: #1a252f;
+}
+input:checked + .tab-label::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}
+ /* rozbalovanie koniec*/
+
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+h3
+	{mso-style-link:"Nadpis 3 Char";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:13.5pt;
+	font-family:"Times New Roman",serif;}
+body    {background-color: black;  
+        color: white;}
+a 	{font-size: 14.0pt;}
+u	{  -webkit-text-decoration: underline wavy #22a4be;
+         text-decoration: underline wavy #22a4be;
+         text-decoration-thickness: 10%;}
+span.d2edcug0
+	{mso-style-name:d2edcug0;}
+span.tojvnm2t
+	{mso-style-name:tojvnm2t;}
+span.t5a262vz
+	{mso-style-name:t5a262vz;}
+span.nc684nl6
+	{mso-style-name:nc684nl6;}
+span.Nadpis3Char
+	{mso-style-name:"Nadpis 3 Char";
+	mso-style-link:"Nadpis 3";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+
+span.nature{color: #3EB489;}
+span.water{color:#8fdddf;}
+span.pozor{color:#ff8b00;}
+
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+
+ /* interaktivna mapa */
+
+.zel {  accent-color: #00aa00; padding: 0.1rem;}
+.cer {  accent-color: #aa0000; padding: 0.1rem;}
+.mod {  accent-color: #0000aa; padding: 0.1rem;}
+.zlt {  accent-color: #aaaa00; padding: 0.1rem;}
+.cya {  accent-color: #00aaaa; padding: 0.1rem;}
+.mag {  accent-color: #aa00aa; padding: 0.1rem;}
+
+
+.cervena{  color: #ffffff;background-color:#aa0000;border: 2px solid #ff0000;display: inline-block;}
+.modra{  color: #ffffff;background-color:#0000aa;border: 2px solid #0000ff;display: inline-block;}
+.zelena{  color: #ffffff;background-color:#00aa00;border: 2px solid #00ff00;display: inline-block;}
+.zlta{  color: #ffffff;background-color:#aaaa00;border: 2px solid #ffff00;display: inline-block;}
+.cyan{  color: #ffffff;background-color:#00aaaa;border: 2px solid #00ffff;display: inline-block;}
+.magenta{  color: #ffffff;background-color:#aa00aa;border: 2px solid #ff00ff;display: inline-block;}
+
+
+.cervenaH{  color: #ffffff;border: 2px solid #ff0000;display: inline-block;}
+.modraH{  color: #ffffff;border: 2px solid #0000ff;display: inline-block;}
+.zelenaH{  color: #ffffff;border: 2px solid #00ff00;display: inline-block;}
+.zltaH{  color: #ffffff;border: 2px solid #ffff00;display: inline-block;}
+.cyanH{  color: #ffffff;border: 2px solid #00ffff;display: inline-block;}
+.magentaH{  color: #ffffff;border: 2px solid #ff00ff;display: inline-block;}
+
+
+.float-left-child {
+  float: left;
+}
+.inline-flex-parent {
+  display: inline-flex;
+}
+.inline-block-child {
+  display: inline-block;
+}
+.ramik{
+  padding: 0rem;
+}
+.ramik-PHO2{
+  background: #2e1a2b;
+  padding: 0.2rem;
+  border: 0px solid orange;  
+  -webkit-border-radius:1px;
+  -moz-border-radius:1px;
+  border-radius:1px;
+}
+.ramik-PHO1{
+  background: #3d5c6b;
+  padding: 0.2rem;
+  border: 0px solid orange;  
+  -webkit-border-radius:1px;
+  -moz-border-radius:1px;
+  border-radius:1px;
+}
+.mys{
+  background: #1e2e35;
+  padding: 0.2rem;
+  border: 0px solid orange;  
+  -webkit-border-radius:1px;
+  -moz-border-radius:1px;
+  border-radius:1px;
+}
+
+.img-comp-container {
+  padding: 0rem;
+  resize: both;
+  margin:auto;
+  width:40%;
+  height:40%;
+  border: 2px solid cyan;  
+  position: absolute;
+  overflow: hidden;
+  cursor: zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  -webkit-border-radius:1px;
+  -moz-border-radius:1px;
+  border-radius:1px;
+
+}
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow:hidden;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+
+.img-comp-img img {
+  display:block;
+  vertical-align:middle;
+}
+
+.button {
+  background-color: black;
+  border: 2px solid orange;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color:orange;
+  height:20px;
+  width:20px;
+  font-size:15px;
+  font-weight: bold;
+}
+.pull {
+   border: 0px solid red;
+   position: absolute;
+   bottom:0;
+   right:0;
+   color:blue;
+   font-size: 28px;
+   font-weight: bold;
+   text-align: center;
+   text-decoration:none;
+   width:1.5rem;
+   height:1.5rem;
+   }
+ .dot{
+   position: absolute;
+   bottom:9px;
+   right:1px;
+   width:8px;
+   height:8px;
+   }
+
+#video_overlays {
+  position: absolute;
+  padding: 0px;
+  border: 1px solid blue;  
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  width:20px;
+  height:20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#video_box{position: relative;}
+
+</style>
+
+
+<SCRIPT>
+
+function testCheckboxZac(){
+  if (document.getElementById('checkPred1999H').checked){
+	document.getElementById("imgA1").src="PHO/do1999H.png";
+  } else if (!document.getElementById('checkPred1999H').checked){
+	document.getElementById("imgA1").src="";
+  }
+
+  if (document.getElementById('checkPred1999V').checked){
+ 	document.getElementById("imgA2").src="PHO/do1999V.png";
+  } else if (!document.getElementById('checkPred1999V').checked){
+   	document.getElementById("imgA2").src="";
+  }
+
+  if (document.getElementById('checkPo1999V').checked){
+ 	document.getElementById("imgA3").src="PHO/po1999H.png";
+  } else if (!document.getElementById('checkPo1999H').checked){
+ 	document.getElementById("imgA3").src="";
+  }
+
+  if (document.getElementById('checkPo1999V').checked){
+  	document.getElementById("imgA4").src="PHO/po1999V.png";
+   } else if (!document.getElementById('checkPo1999V').checked){
+  	document.getElementById("imgA4").src="";
+  }
+  if (document.getElementById('checkPo2007H').checked){
+ 	document.getElementById("imgA5").src="PHO/po2007H.png";
+  } else if (!document.getElementById('checkPo2007H').checked){
+ 	document.getElementById("imgA5").src="";
+  }
+  if (document.getElementById('checkPo2007V').checked){
+ 	document.getElementById("imgA6").src="PHO/po2007V.png";
+  } else if (!document.getElementById('checkPo2007V').checked){
+ 	document.getElementById("imgA6").src="";
+  }
+  if (document.getElementById('checkPHO1').checked){
+ 	document.getElementById("imgA7").src="PHO/PHO1.png";
+  } else if (!document.getElementById('checkPHO1').checked){
+ 	document.getElementById("imgA7").src="";
+  }
+}
+
+	function radioKlik(element){
+  if (element.id==="radio2004"){
+	document.getElementById("imgB").src="PHO/2004_03.jpeg";
+  } else if (element.id==="radio2021"){
+	document.getElementById("imgB").src="PHO/2021_06.jpeg";
+  }
+
+	}
+function testRadioZac(){
+  if (document.getElementById('radio2004').checked){
+	document.getElementById("imgB").src="PHO/2004_03.jpeg";
+  } else if (!document.getElementById('radio2021').checked){
+	document.getElementById("imgB").src="PHO/2021_06.jpeg";
+  }
+
+     }
+function checkboxKlik(element){
+  if ((element.id==="checkPred1999H")&&(element.checked == true)){
+	document.getElementById("imgA1").src="PHO/do1999H.png";
+  } else if ((element.id==="checkPred1999H")&&(element.checked == false)){
+	document.getElementById("imgA1").src="";
+  }
+  if ((element.id==="checkPred1999V")&&(element.checked == true)){
+ 	document.getElementById("imgA2").src="PHO/do1999V.png";
+  } else if ((element.id==="checkPred1999V")&&(element.checked == false)){
+   	document.getElementById("imgA2").src="";
+  }
+  if ((element.id==="checkPo1999H")&&(element.checked == true)){
+ 	document.getElementById("imgA3").src="PHO/po1999H.png";
+  } else if ((element.id==="checkPo1999H")&&(element.checked == false)){
+ 	document.getElementById("imgA3").src="";
+  }
+  if ((element.id==="checkPo1999V")&&(element.checked == true)){
+  	document.getElementById("imgA4").src="PHO/po1999V.png";
+   } else if ((element.id==="checkPo1999V")&&(element.checked == false)){
+  	document.getElementById("imgA4").src="";
+  }
+  if ((element.id==="checkPo2007H")&&(element.checked == true)){
+ 	document.getElementById("imgA5").src="PHO/po2007H.png";
+  } else if ((element.id==="checkPo2007H")&&(element.checked == false)){
+ 	document.getElementById("imgA5").src="";
+  }
+  if ((element.id==="checkPo2007V")&&(element.checked == true)){
+ 	document.getElementById("imgA6").src="PHO/po2007V.png";
+  } else if ((element.id==="checkPo2007V")&&(element.checked == false)){
+ 	document.getElementById("imgA6").src="";
+  }
+  if ((element.id==="checkPHO1")&&(element.checked == true)){
+ 	document.getElementById("imgA7").src="PHO/PHO1.png";
+  } else if ((element.id==="checkPHO1")&&(element.checked == false)){
+ 	document.getElementById("imgA7").src="";
+  }
+  if ((element.id==="checkPopis")&&(element.checked == true)){
+ 	document.getElementById("imgA8").src="PHO/popis.png";
+  } else if ((element.id==="checkPopis")&&(element.checked == false)){
+ 	document.getElementById("imgA8").src="";
+  }
+
+} 
+   function loadDocument() {
+	 testRadioZac();
+      testCheckboxZac();
+      document.getElementById("plusID").addEventListener("click",plus);
+      document.getElementById("minusID").addEventListener("click",minus);
+
+      document.getElementById("kont").addEventListener("mouseup",mouseDown); 
+      document.getElementById("kont").addEventListener("contextmenu",contextMenu); 
+      document.getElementById("kont").addEventListener("wheel",mouseWheel); 
+
+      var obr2 = document.getElementById("imgB");
+      document.getElementById("kont").style.width=obr2.width+'px';
+      document.getElementById("kont").style.height=obr2.height+'px';
+    }
+
+
+ function plus(){
+   var obr1 = document.getElementById("imgA1"); 
+   var obr2 = document.getElementById("imgB");
+   document.getElementById("kont").style.width=(obr2.width+20)+'px';
+   document.getElementById("kont").style.height=obr2.height+'px';
+   document.getElementById("kont").style.cursor="zoom-in";
+   document.getElementById("kont").style.cursor="cursor: -webkit-zoom-in";
+   document.getElementById("kont").style.cursor="cursor: -moz-zoom-in";
+
+
+ }
+ function minus(){
+   var obr1 = document.getElementById("imgA1"); 
+   var obr2 = document.getElementById("imgB");
+   document.getElementById("kont").style.width=(obr2.width-20)+'px';
+   document.getElementById("kont").style.height=obr2.height+'px';
+   document.getElementById("kont").style.cursor="zoom-out";
+   document.getElementById("kont").style.cursor="cursor: -webkit-zoom-out";
+   document.getElementById("kont").style.cursor="cursor: -moz-zoom-out";
+
+ }
+ function mouseDown(e){
+        e = e || window.event;
+        e.preventDefault();
+        if(e.which==1){plus(e);}//lava mys
+        else if(e.which==3){minus(e);}//prava mys
+
+   }
+
+  function contextMenu(e){
+        e = e || window.event;
+        e.preventDefault();
+
+  }
+  function noScroll() {
+       window.scrollTo(0, 0);
+  }
+  function mouseWheel(e){
+        window.addEventListener('scroll', noScroll);
+        e = e || window.event;
+        e.preventDefault();
+        if(e.deltaY <=0)plus(e);
+        else minus(e);
+        window.removeEventListener('scroll', noScroll);
+  }
+
+</SCRIPT>
+</head>
+
+<body onLoad="loadDocument()">
+<br>
+<h2><u>Voda v oblasti Čunovských jazier</u></h2>
+
+        <div id="video_box">
+<div id="video_overlays">
+   <a href="20_05_06_voda.mp4" target="blank" style="text-decoration: none;" >&#x26F6;</a>
+ </div>
+ 		<div>
+   <video width="400" controls>
+    <source src="20_05_06_voda.mp4" type="video/mp4">
+    váš prehliadač nepodporuje video 
+   </video> 
+</div>
+ </div>
+	<p>
+                Štrkopiesčité náplavy Dunaja v oblasti ostrovných lúčok vytvárajú rozsiahlu nádrž podzemných vôd a predstavujú významnú zásobáreň podzemnej vody.  
+	Táto voda je dynamická a predstavuje akési neviditeľné  prúdiace rieky v podzemí.  Pochádza v podstate z Dunaja ale je niekoľkokrát filtrovaná  v štrkopieskovom podloží . 
+	Je veľmi kvalitná a čistá.  A preto bol severne nad Čunovskými jazerami vybudovaný vodný zdroj pitnej vody Rusovce-Ostrovné lúčky-Mokraď (VZ ROL-M). 
+	</p><p>
+	Tento zdroj pitnej vody predtavuje najväčší vodárenský zdroj v  Bratislave  a zásobuje  Petržalku, Staré Mesto, Ružinov a Nové Mesto. 
+	Má zásobné kapacity pre celú Bratislavu a južnú časť Slovenska.
+                 Čerpaná podzemná voda obsahuje zvýšený obsah mangánu a  je málo okysličená, a preto sa pre potrebu obyvateľstva musí upravovať priamo v horninovom prostredí  dvanástich studní.  
+	</p><p>
+                    Aj samotné Čunovské jazerá vznikli vlastne zatopením bývalého štrkového bagroviska touto podzemnou vodou, ktorá sa v nich neustále obmieňa. 
+	   Pred vybudovaním priehrady Gabčíkovo na Dunaji r. 1992 , boli jazerá súčasťou vodárenského ochraného pásma PHO II.
+                   A samotná voda z jazier ovplyvňovala kvalitu vody vodného zdroja. 
+	</p><p>
+ 	  Avšak po napustení vodného diela sa tok prúdenia podzemných vôd z oblasti Čunovských jazier zmenil a prestal ovplyvňovať VZ. 
+	  Následne vodárenská spoločnosť  v tom čase Vodárne a Kanalizácie Bratislava (VaKBa) požiadala o prehodnotenie ochranného pásma krajský úrad v Bratislave. 
+                   Odbor životného prostredia vtedy (r.1999) vytýčil nové ochranné pásmo PHO II.. 	
+	</p><p>
+	   Dnes sú vody jazera vyňaté z ochranného pásma vodného zdroja. Ale to neznamená, že nie sú súčasťou ekosystému a podzemných vôd, a netreba ich chrániť. V prírode je všeto prepojené. 
+	   Ľudia, ktorí navštevujú tieto krásne jazerá, by sa mali správať  ohladuplne, neznečisťovať vodu a prírodu v okolí. 
+                </p>	
+<h3><u>Čunovské jazerá a pásma ochrany vodných zdrojov.</u></h3>
+<section>
+  <div class="rt-container">
+    <div class="col-rt-12">
+      <div class="Scriptcontent">
+        <div class="container">
+          <div class="tabs">
+
+
+           <div class="tab"><!--start-->
+        <input type="checkbox" id="chck3">
+        <label class="tab-label" for="chck3"><span style="color:cyan">+ Ochranné pásma a kúpanie sa na jazerách.<span></label>
+        <div class="tab-content">
+Čunovské jazerá patria do týchto pásiem <span class="nature">OCHRANY PRÍRODY:<br><br>
+Chránené vtáčie územie (CHVÚ) Dunajské luhy - NATURA2000 <BR>
+Chránenej krajinnej oblasti (CHKO) Dunajské Luhy <BR>
+Chránený areál (CHA) SKUEV0269 Ostrovné Lúčky zóna B - 4. stupeň ochrany - <b>Veľké Jazero</b>  <br>
+&nbsp;&nbsp;a<br>
+Chránený areál (CHA) SKUEV0269 Ostrovné Lúčky zóna D - 2. stupeň ochrany - <b>Malé jazero</b><br><br>
+</span> 
+<span class="pozor"> V súčasnosti (rok 2022) je kúpanie povolené len na malom jazere. Na veľkom jazere platí zákaz pohybu mimo turistických chodníkov a tie k jazeru nevedú!<br><br></span>
+V minulosti to však bolo trošku komplikovanejšie, pretože tu platili 2 druhy ochrany:<br>
+<span class="nature">OCHRANA PRÍRODY </span> a <span class="water">OCHRANA VODNÝCH ZDROJOV </span> <BR><BR>
+ <b>A tu sú niektoré dôležité udalostí na jazerách:</b> <br><BR>
+ <b>od 1960</b> - začiatok ťažby štrku na miestach s najsilnejšími vrstvami naplavených štrkopieskov, bágrovanie jám. <BR><BR>
+ <b>od 1970</b> - vznik jazier alebo postupné zaplavenie dvoch bágrovísk. Vzniká Veľké Čunovské a Malé Čunovské jazero. <br>70te a 80te roky sú spojené aj so začiatkami nudizmu a kúpania sa na jazerách  aj napriek zákazu.<BR><BR>
+<span class="water">
+ <b>rok 1981</b> - uvedený do prevádzky  podzemný zdroj pitnej vody <b>R</b>usovce - <b>O</b>strovné <b>l</b>účky - <b>M</b>okraď  bol vybudovaný postupne v priebehu rokov 1976 – 1990 . Názov dostal <b>VZ ROL</b> alebo <b>VZ ROL-M</b>. 
+ Čunovské jazerá boli súčasťou ochráného pásma  vodného zdroja tzv. pásme hygienickej ochrany (PHO) tohoto vodného zdroja.<BR><BR>
+</span>
+<span class="nature">
+ <b>01.09.1988 </b> - vyhlásená prírodná rezervácia Ostrovné lúčky so 4. stupňa ochrany - Veľké čunovské jazero bolo jej súčasťou. Výmera 54,93 ha.  
+	Vvyhlásená výnosom Ministerstva kultúry Slovenskej socialistickej republiky č. 1160/1988-32 zo 30.6.1988, s účinnosťou od 1.9.1988  <BR><BR>
+</span>
+<span class="water">
+ <b>25.02.1988</b> - Čunovské jazerá sú začlenené  do ochranného pásma hygienickej ochrany  PHO II. stupňa. Rozhodnutím odboru poľnohospodárstva, lesného a vodného hospodárstva 
+	Národného výboru hlavného mesta SR Bratislavy č. vod. 489/405-1988, určenie PHO I . a PHO II. stupňa pre vodný zdroj Rusovce-Ostrovné lúčky-Mokraď (VZ ROL-M). 
+	PHO I. bolo určené pre studňový rad a PHO II pre okolie ktoré vtedy zahŕňalo okrem Čunovských jazier aj Rusovské jazero a Veľký zemník.<br><br> 
+ </span>
+ <b>24.10.1992</b> - prehradenie starého koryta Dunaja- vodné dielo Gabčíkovo/zdrž Hrušov - <span class="water">
+  zmena prúdenia podzemných vôd v oblasti Čunovských jazier. Voda v jazerách postupne prestala ovplyvňovať kvalitu podzemnej vody.</span><BR><BR>
+<span class="nature">
+ <b>21.05.1998</b> - obe jazerá sa stávajú súčasťou Chránenej krajinnej oblasti (CHKO) Dunajské luhy.  Bola vyhlásená vyhláškou MzP SR č. 81/1998 Z. z. o Chránenej krajinnej oblasti Dunajské luhy z 3. marca 1998 <BR><BR>
+</span>
+<span class="water">
+ <b>30.08.1999</b> - zmena hraníc ochranného pásma vodárenského zdroja Rusovce - Ostrovné lúčky - Mokraď  - VZ ROL-M. Hranica vodárenského zdroja PHO II sa posunula bližšie k Čunovským jazerám,
+	 ale jazero bolo stále jeho súčasťou so zákazom kúpania. 
+	V zmysle vodoprávneho rozhodnutia Krajského úradu životného prostedia (KÚŽP) v Bratislave č. W/99/649/1999-GGL bol VZ zabezpečený pásmami hygienickej ochrany PHO 1. stupňa, PHO 2. stupňa – vnútorná časť, PHO 2. stupňa – vonkajšia časť .
+	Dôvod: zmena prúdenia podzemných vôd v oblasti (VD Gabčíkovo) a voda v jazere už neovplyvňuje podzemnú vodu. 
+	
+	Rusovské jazero a ďalšie územie bolo úplne vyňaté z ochranného pásma vodárenského zdroja. 
+ <BR><BR>
+
+ <b>24.07.2007</b> - Krajský úrad životného prostredia v Bratislave rozhodol o vyňatí Čunovských jazier  z ochranného pásma II. stupňa vodného zdroja.  
+	Rozhodnutie nadobudlo právoplatnosť koncom júla alebo začiatkom augusta 2007.</span>
+     	<span class="nature">Na veľkom jazere ale stále platil 4. stupeň ochrany pretože bolo súčasťou PR Ostrovné lúčky 
+	a </span><span class="pozor"> zákaz pohybu mimo vyhradeného územia - zákaz kúpania sa.</span> 
+	<span class="nature"> Na malom jazere platil 2. stupeň ochrany prírody </span><span class="pozor">  a bolo povolené kúpanie sa. <BR><BR>
+</span>
+<span class="nature">
+ <b>12.11.2008 </b> - Vyhláškou Ministerstva životného prostredia Slovenskej republiky - Vyhláška č. 440/2008 Z. z, sa vyhlasuje Chránené vtáčie územie Dunajské luhy,
+	 ako chráneného územia členskej krajiny Európskej únie s názvom NATURA 2000. Čunovské jazerá sú súčasťou tohoto územia.<BR><BR>
+</span>
+ <b>rok 2009</b> - Krajský úrad životného prostredia v Bratislave povolil vyhradenú časť  veľkého Čunovského jazera pre návštevníkov za účelom rekreácie a športu. <BR><BR>
+
+ <b>rok 2010</b> - Krajský úrad životného prostredia v Bratislave zrušil vyhradené miesto pre verejnosť za účelom rekreácie a športu 
+	na veľkom Čunovskom jazere. Na konci sezóny 2010 bola za prítomnosti príslušných orgánov vykonaná revízia a skonštatovala, 
+	že územie je návštevníkmi degradované. Na veľkom jazere sa tak dalo plávať iba v roku 2009 a 2010.  V tomto období mal na jazerách dokonca prevádzku aj bufet s názvom BUFET NA LÚČKACH. <BR><BR>
+<span class="nature">
+ <b>01.03.2021</b> - nariadením vlády SR sa vyhlasuje chránený areál (CHA) SKUEV0269 Ostrovné lúčky a zaniká prírodná rezervácia (PR)Ostrovné lúčky. 
+	 Veľké Čunovské jazero patrí do Zóny B stále so 4. stupňom ochrany a Malé Čunovské jazero patrí do Zóny D a má 2. stupeň ochrany podľa § 15 zákona o ochrane prírody a krajiny.
+	Iba na malom jazere je povolené kúpať sa.	Toto nariadenie vlády 34/2021 Z.z. zo dňa 27. januára 2021 nadobúda účinnosť 1. marca 2021. 
+</span>
+        </div>
+      </div><!--end-->
+
+           <div class="tab"><!--start-->
+        <input type="checkbox" id="chck2">
+        <label class="tab-label" for="chck2"><span style="color:cyan">+ Zmeny ochranného pásma na fotografiách.<span></label>
+        <div class="tab-content">
+<p>
+ Medzi Rusovcami a Čunovom vedie cesta 1. triedy s názvom Balkánska. 
+ Na túto cestu sa tesne za zastavnou časťou Rusoviec napája bezmenná vedľajšia asfaltová cesta, ktorá ide cez Čunovské jazerá a končí až pri bráne BVS. 
+ Na začiatku tejto cesty bola kedysi dávno vodárenskou spoločnosťou osadená ochranná brána, ktorá zabraňovala vstupu do vodárenského pásma. 
+ Táto brána bola neskôr presunutá, ale jej pozostatky sa tam dajú pozorovať ešte aj dnes.
+</p>
+ <a href="TABULKY/brana1.jpg" target="blank"><img src="TABULKYm/brana1.jpg" height="120px"></img></a>
+ <a href="TABULKY/brana2.jpg" target="blank"><img src="TABULKYm/brana2.jpg" height="120px"></img></a>
+ <a href="TABULKY/brana3.jpg" target="blank"><img src="TABULKYm/brana3.jpg" height="120px"></img></a>
+ <a href="TABULKY/zakaz.jpg" target="blank"><img src="TABULKYm/zakaz.jpg" height="120px"></img></a>
+<br>
+<p>Na tejto vedľajšej ceste zaparkujete iba s povoleniami od MiÚ Rusovce a Rybárskeho zväzu. 
+<br>Ak po tejto ceste pokračujete ďalej, dostanete sa až k rampe/závore(osadenej v roku 2008).
+Tu väčšinou parkujú autá s povolením. 
+</p>
+ <a href="TABULKY/rampa1.jpg" target="blank"><img src="TABULKYm/rampa1.jpg" height="120px"></img></a>
+ <a href="TABULKY/rampa2.jpg" target="blank"><img src="TABULKYm/rampa2.jpg" height="120px"></img></a>
+ <a href="TABULKY/rampa3.jpg" target="blank"><img src="TABULKYm/rampa3.jpg" height="120px"></img></a>
+ <a href="TABULKY/rampa4.jpg" target="blank"><img src="TABULKYm/rampa4.jpg" height="120px"></img></a>
+ <a href="TABULKY/rampa5.jpg" target="blank"><img src="TABULKYm/rampa5.jpg" height="120px"></img></a>
+ <br>
+<p>
+ Kúsok za touto rampou ešte pred rokom 1999 viedla hranica pásma hygienickej ochrany II. stupňa (PHO II). 
+ <br>Pásmo tadiaľto už nevedie, ale ostala tu ešte spomienka v podobe starej tabule so zničeným ťažko čitateľným nápisom:<br>
+ "<span style="color:blue">VODNÝ ZDROJ PHO II. STUPŇA - VNÚTORNÁ ČASŤ</span><span style="color:red"> NEPOVOLANÝM VSTUP ZAKÁZANÝ</span>"
+ </p>
+ <a href="TABULKY/rampa5pho.jpg" target="blank"><img src="TABULKYm/rampa5pho.jpg" height="120px"></img></a>
+ <a href="TABULKY/rampa5pho2.jpg" target="blank"><img src="TABULKYm/rampa5pho2.jpg" height="120px"></img></a>
+ <a href="TABULKY/rampa5pho3.jpg" target="blank"><img src="TABULKYm/rampa5pho3.jpg" height="120px"></img></a>
+ <a href="TABULKY/rampa5pho4.jpg" target="blank"><img src="TABULKYm/rampa5pho4.jpg" height="120px"></img></a>
+<p>
+ Hranica pásma bola v roku 1999 posunutá vyššie takmer až k Čunovským jazerám.<br>
+ Kúsok naľavo od prvej rampy je potom osadená ešte jedna. Tá zabraňuje príjazdu áut lesnou cestou.
+</p>
+  <a href="TABULKY/rampaX.jpg" target="blank"><img src="TABULKYm/rampaX.jpg" height="120px"></img></a>
+  <a href="TABULKY/ochranaP.jpg" target="blank"><img src="TABULKYm/ochranaP.jpg" height="120px"></img></a>
+ <p>
+ Od rampy pokračuje asfaltka ďalej cez Rusovský kanál k jazerám, už obklopená lesom. 
+ Nová osadená tabuľka nám dáva na známosť, že sa nachádzame v chránenom areáli - zóny B - so 4. stupňom ochrany. 
+ Je tu aj popiska aké činnosti sa tu nesmú vykonávať. Nachádzame sa v oblasti nazývanej Ostrovné lúčky.<br>
+
+ Ako sa blížme k Čunovským jazerám narazíme ešte na jednu pamiatku síce už zarastenú, ale predsa tam ešte je.
+ Po roku 1999 tadiaľto viedlo vtedy nové ochranné pásmo a neskôr pravdepodobne v r.2005 tu bola presunutá brána so zákazom vstupu.<br>
+ A takto vtedy vyzerala táto brána aj s nápisom:
+</p>
+ <a href="https://m.smedata.sk/api-media/media/image/sme/0/11/1176380/1176380_1200x.jpg" target="blank"><img src="https://m.smedata.sk/api-media/media/image/sme/0/11/1176380/1176380_1200x.jpg" height="120px"></img></a>
+ <a href="https://cdn.webnoviny.sk/sites/3/2015/07/cunovo_kupanie_sa_parkovanie_SITA-2-640x361.jpg" target="blank"><img src="https://cdn.webnoviny.sk/sites/3/2015/07/cunovo_kupanie_sa_parkovanie_SITA-2-640x361.jpg" height="120px"></img></a>
+ <a href="https://cdn.webnoviny.sk/sites/3/2016/07/cunovo_jazero_vstup_sita-640x361.jpg" target="blank"><img src="https://cdn.webnoviny.sk/sites/3/2016/07/cunovo_jazero_vstup_sita-640x361.jpg" height="120px"></img></a>
+ <a href="https://m.smedata.sk/api-media/media/image/sme/9/34/3441709/3441709_1000x.jpeg" target="blank"><img src="https://m.smedata.sk/api-media/media/image/sme/9/34/3441709/3441709_1000x.jpeg" height="120px"></img></a>
+ <a href="https://img.topky.sk/big/62063.jpg/cunovo.jpg" target="blank"><img src="https://img.topky.sk/big/62063.jpg/cunovo.jpg" height="120px"></img></a>
+<p> 
+ Vtedy tu boli osadené aj malé betónové ihlany a spolu z naválanou hlinou zabraňovali autám préjsť povedľa brány. 
+ Dnes to na tomto mieste už vyzerá úplne inak. Je to všetko zarastené vegetáciou. 
+ Z nápisov tu ostala len zošúchaná laminátová tabuľka, kedysi hlásajúca: "VSTUP LEN PRE ČLENOV RYBÁRSKEHO ZVÄZU". 
+</p>
+ <a href="TABULKY/Xbrana1.jpg" target="blank"><img src="TABULKYm/Xbrana1.jpg" height="120px"></img></a>
+ <a href="TABULKY/Xbrana2.jpg" target="blank"><img src="TABULKYm/Xbrana2.jpg" height="120px"></img></a>
+ <a href="TABULKY/Xbrana3.jpg" target="blank"><img src="TABULKYm/Xbrana3.jpg" height="120px"></img></a>
+ <a href="TABULKY/Xbrana4.jpg" target="blank"><img src="TABULKYm/Xbrana4.jpg" height="120px"></img></a>
+ <a href="TABULKY/XtabulkaRybar1.jpg" target="blank"><img src="TABULKYm/XtabulkaRybar1.jpg" height="120px"></img></a>
+ <a href="TABULKY/XtabulkaRybar2.jpg" target="blank"><img src="TABULKYm/XtabulkaRybar2.jpg" height="120px"></img></a>
+ <p>
+ Hneď kúsok odtiľto nájdeme ďalšie informačné tabule a potom už uvidíme samotné Čunovské jazerá.
+ </p>
+ <a href="TABULKY/ZZ0.jpg" target="blank"><img src="TABULKYm/ZZ0.jpg" height="120px"></img></a>
+ <a href="TABULKY/ZZ1.jpg" target="blank"><img src="TABULKYm/ZZ1.jpg" height="120px"></img></a>
+ <a href="TABULKY/ZZ2.jpg" target="blank"><img src="TABULKYm/ZZ2.jpg" height="120px"></img></a>
+ <a href="TABULKY/ZZ3.jpg" target="blank"><img src="TABULKYm/ZZ3.jpg" height="120px"></img></a>
+ <a href="TABULKY/19_04_27.jpg" target="blank"><img src="TABULKYm/19_04_27.jpg" height="120px"></img></a>
+ <p>
+ Ochranné pásmo vodného zdroja II. stupňa sa v roku 2007 posunulo ďalej za Čunovské jazerá a ostalo tak až do dnes (okt 2022). 
+ Ak pokračujeme po asfaltke ďalej za jazerá dostaneme sa na územie tohoto nového pásma. 
+ Nájdeme tu aj tabuľky upozorňujúce na ochranu PHO II. stupňa. 
+ Takéto tabuľky sú rozmiestnené po celom území ochranného pásma a len nedávno BVS vymenila alebo upravila niektoré staršie tabuľky.
+ </p>
+ <a href="TABULKY/zdroj1.jpg" target="blank"><img src="TABULKYm/zdroj1.jpg" height="120px"></img></a>
+ <a href="TABULKY/zdroj2.jpg" target="blank"><img src="TABULKYm/zdroj2.jpg" height="120px"></img></a>
+ <a href="TABULKY/zdroj3.jpg" target="blank"><img src="TABULKYm/zdroj3.jpg" height="120px"></img></a>
+ <a href="TABULKY/zdroj4.jpg" target="blank"><img src="TABULKYm/zdroj4.jpg" height="120px"></img></a>
+ <a href="TABULKY/zdroj5.jpg" target="blank"><img src="TABULKYm/zdroj5.jpg" height="120px"></img></a>
+ <a href="TABULKY/zdroj6.jpg" target="blank"><img src="TABULKYm/zdroj6.jpg" height="120px"></img></a>
+ <p>
+ Aj keď boli obe jazerá vyňaté z ochranného pásma vodného zdroja, 
+ kúpanie je povolené len na malom jazere kde platí 2. stupeň ochrany prírody. 
+ Na veľkom jazere platí 4. stupeň ochrany prírody so zákazom pohybu mimo vyznačených ciest a tie nevedú k jazeru.
+ </p>
+
+        </div>
+      </div><!--end-->
+
+           <div class="tab"><!--start-->
+        <input type="checkbox" id="chck1">
+        <label class="tab-label" for="chck1"><span style="color:cyan">+ Pásmo hygienickej ochrany PHO - vyhlášky<span></label>
+        <div class="tab-content">
+		    <b>Nariadenie ministra zdravotníctva č. 87 zo dňa 10.októbra 1953 o hygienickej a protiepidemickej ochrane vody uverejnené v Sbierke zákonov republiky Československej v čiastke 51. vydanej dňa 4. novembra 1953, s. 347-349 Ochrana vody a vodných zariadení</b>
+                                             <br>
+§ 5.<br>
+1. Okolo každého zariadenia, ktoré má slúžiť na hromadné zásobovanie pitnou vodou, musia byť vymedzené a vodoprávnym konaním zabezpečené pásma hygienickej ochrany (PHO).<br>
+2. Územie obklopujúce toto zariadenie bezprostredne je PHO1. stupňa. V tomto pásme musia sa urobiť prísne opatrenia, aby voda nebola znečisťovaná a infikovaná; najmä treba z neho
+odstrániť všetky zdroje znečistenia, treba ho dôkladne asanovať a oplotiť alebo inak zabezpečiť, aby prístup nepovolaných ľudí a prístup zvierat bol zamedzený.<br>
+3. Ak je nebezpečenstvo, že by voda mohla byť znečisťovaná alebo výdatnosť zdroja ohrožovaná zo vzdialenejších miest, musí sa vymedziť a vodoprávne zabezpečiť okolo pásma 1. stupňa ešte PHO 2. stupňa. V tomto
+pásme sa podľa povahy územia urobia všetky opatrenia, aby sa zabránilo znečisťovaniu a infikovaniu vody. <br>
+<br><br>
+<b>Vyhláška Ministerstva zdravotníctva č. 45 z 13. júna 1966 o vytváraní a ochrane zdravých životných podmienok uverejnená v Zbierke zákonov Československej socialistickej republiky v čiastke 17, vydanej 29. júna 1966, s. 189 - 198</b><br>
+§ 12<br>
+1. Okolo zdrojov, ktoré majú slúžiť na hromadné zásobovanie pitnou a úžitkovou vodou, musia byť zriadené pásma hygienickej ochrany (PHO).<br>
+2. PHO 1. stupňa je priestor okolo zdroja vody, ktorého veľkosť a tvar sa určí podľa členenia územia v okolí zdroja, podľa smeru prúdu vody a zloženia pôdy; prihliada sa aj na povahu a spôsob
+zastavania a využitia pozemkov okolo zdroja. V PHO 1. stupňa musia sa urobiť prísne hygienické opatrenia, aby voda nemohla byť znečisťovaná. Územie v tomto pásme musí byť zbavené
+všetkých zdrojov znečistenia, dôkladne asanované a oplotené alebo inak zabezpečené, aby sa zamedzilo prístupu nepovolaných ľudí a zvierat; musí sa zabezpečiť aj pred znečistením zrážkovými prívalmi.<br>
+3. Ak je nebezpečenstvo, že by voda mohla byť znečisťovaná alebo výdatnosť zdroja ohrozovaná zo vzdialenejších miest, musí sa zriadiť okolo PHO 1. stupňa ešte PHO 2. stupňa; toto pásmo sa určí vždy pri odbere vody z vodného toku alebo
+nádrže. V PHO 2. stupňa určia sa podľa povahy územia opatrenia potrebné na to, aby sa zabránilo znečisťovaniu a infikovaniu vody.<br>
+5. Veľkosť a tvar PHO určia sa vodohospodárskym konaním; týmto konaním sa tiež určia spôsob a podmienky využitia pásiem 1. a 2. stupňa.<br>
+<br><br>
+<b>Záväzné opatrenia 17. Úprava o základných hygienických zásadách pre zriaďovanie, vymedzenie a využívanie ochranných pásiem vodných zdrojov určených na hromadné zásobovanie pitnou a úžitkovou vodou a pre zriaďovanie
+vodárenských nádrží, uverejnená vo vestníku Ministerstva zdravotníctva Slovenskej socialistickej republiky, ročník XXVII, čiastka 10-11, dňa 20. júla 1979, s. 73-81</b><br>
+§ 3<br>
+Pásmo hygienickej ochrany 1. stupňa 1. PHO 1. stupňa sa zriaďuje na zabezpečenie ochrany miesta vodného zdroja v priestore odberu, prípadne záchytného zariadenia, pred možnosťou bezprostredného negatívneho
+ovplyvnenia alebo ohrozenia vodného zdroja, ďalej na ochranu pred negatívnymi zásahmi do najbližšieho okolia záchytného zariadenia a na jeho ochranu pred poškodením, ako aj na ochranu vody v záchytnom zariadení pred znečistením. Pri
+vodných nádržiach zabezpečuje PHO 1. stupňa vytvorenie podmienok pre dobrý vývoj akosti vody. PHO 1. stupňa zahrňuje obvykle miesto bezprostredne priľahlé k miestu odberu, prípadne k miestu záchytného zariadenia.<br>
+§ 4<br>
+Pásmo hygienickej ochrany 2. stupňa<br>
+(1) PHO 2. stupňa sa zriaďuje na ochranu výdatnosti, akosti alebo zdravotnej nezávadnosti vodného zdroja pred ohrozením zo vzdialenejších miest. Je určené predovšetkým na ochranu pred mikrobiálnym znečistením, znečistením toxickými
+látkami, látkami ovplyvňujúcimi senzorické vlastnosti vody a látkami inak škodlivými; pri nádržiach aj na ochranu pred priamym znečistením z prítokov.<br>
+(2) V rozhodnutí o zriadení PHO 2. stupňa môže vodohospodársky orgán rozdeliť toto pásmo podľa hydrogeologických pomerov, vzdialenosti k rozvodnici 
+a konfigurácii terénu na vnútornú a vonkajšiu časť a určiť odlišné podmienky na ich užívanie.<br>
+(3) Ak sú preto predpoklady, možno zásady zmierniť, prípadneveľkosť pásma primerane zmenšiť.<br>
+<br>
+(zdroj:Peter Némethy ,05.12.2013,Problémy ochrany podzemných vôd, https://www.vuvh.sk/download/dok/POV/1.pdf)
+        </div>
+      </div><!--end-->
+
+    </div>
+   </div> <!--container-->
+  </div>
+ </div>
+</div>
+</section>
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<h3><u>Interaktívna mapa - zmeny pásiem ochrany vodných zdrojov.</u></h3>
+<span class="cyan">Na interaktivnej mape sú zobrazené zmeny hraníc pásma hygienickej ochrany II. stupňa (<b>PHO 2</b>) vodného zdroja Rusovce-Ostrovné lúčky-Mokraď (VZ ROL-M).</span>
+<p> 
+<span class="zelena" style="margin:0 0 5px 0;">Pred rokom 1999 sa Čunovské jazerá nachádzali v rozsiahlom pásme ochrany vodného zdroja.
+Toto PHO 2 pásmo vtedy zahŕňalo dokonca aj Rusovské jazero a Veľký Zemník.</span><br>
+<span class="cervena" style="margin:0 0 5px 0;">V roku 1999 bolo PHO 2 pásmo značne oklieštené ale Čunovské jazerá v ňom stále ešte ostali.</span>  
+<span class="modra" style="margin:0 0 5px 0;">Nakoniec boli vyňaté z pásma ochrany vodného zdroja až v roku 2007.</span><br>
+<span class="zlta">Pásmo ochrany PHO1 zahŕňa priamo územie zdroja podzemnej vody - studne.</span>
+</p>
+
+  <div class="ramik inline-flex-parent">
+  <div class="ramik-PHO2 inline-block-child">
+<span style="color:pink;font-size: 10px;text-align:left;text-decoration:none;">PHO2:</span>
+<span class="zelenaH zel"> 
+	<input id="checkPred1999H" type="checkbox" onclick="checkboxKlik(this)" class="chcbox">
+	<label>pred 1999</label>
+</span>
+<span class="zelena zel"> 
+	<input id="checkPred1999V" type="checkbox" onclick="checkboxKlik(this)" class="chcbox">
+	<label>pred 1999</label>
+</span>
+&nbsp;
+<span class="cervenaH cer"> 
+	<input id="checkPo1999H" type="checkbox" onclick="checkboxKlik(this)" class="chcbox">
+	<label>po 1999</label>
+</span>
+<span class="cervena cer"> 
+	<input id="checkPo1999V" type="checkbox" onclick="checkboxKlik(this)" class="chcbox">
+	<label>po 1999</label>
+</span>
+&nbsp;
+<span class="modraH mod"> 
+	<input id="checkPo2007H" type="checkbox" checked="checked" onclick="checkboxKlik(this)" class="chcbox">
+	<label>po 2007</label>
+</span>
+<span class="modra mod"> 
+	<input id="checkPo2007V" type="checkbox" checked="checked" onclick="checkboxKlik(this)" class="chcbox">
+	<label>po 2007</label>
+</span>
+  </div>
+&nbsp;&nbsp;
+<div class="ramik-PHO1 inline-block-child">
+<span class="zltaH zlt"> 
+<input id="checkPHO1" type="checkbox" checked="checked" onclick="checkboxKlik(this)" class="chcbox">
+<label>PHO1</label>
+</span>
+</div>
+&nbsp;&nbsp;
+  <div class="ramik-PHO1 inline-block-child">
+<span class="cyanH cya"> 
+<input id="checkPopis" type="checkbox" checked="checked" onclick="checkboxKlik(this)" class="chcbox">
+<label>popis</label>
+</span>
+  </div>
+&nbsp;
+<fieldset class="ramik-PHO2 inline-block-child"> 
+<span class="magentaH mag"> 
+     podklad:<input id="radio2004" type="radio" name="satelit" checked="checked" onclick="radioKlik(this)" class="chcbox">
+<label>2004</label>
+<input id="radio2021" type="radio" name="satelit" onclick="radioKlik(this)" class="chcbox">
+<label>2021</label>
+</span>
+</fieldset>
+
+&nbsp;&nbsp;
+  <div class="ramik-PHO1 inline-block-child">
+    <button type="button" id="plusID"  class="button">+</button> 
+    <button type="button" id="minusID" class="button">-</button> 
+</div>
+<div class="mys inline-block-child">
+<img src="PHO/CB.gif" height="20px">
+<img src="PHO/zoom.gif" height="20px">&nbsp;
+<img src="PHO/LB.gif" height="20px">
+<img src="PHO/zoomIn.gif" height="20px">&nbsp;
+<img src="PHO/RB.gif" height="20px">
+<img src="PHO/zoomOut.gif" height="20px">
+</div>
+
+</div>
+
+<div class="img-comp-container" id="kont">
+    <div class="img-comp-img" id="kontB">
+      <img src="PHO/2004_03.jpeg" id="imgB" width="100%" onload="loadedMap()">
+    </div>
+    <div class="img-comp-img" id="kontA8">
+      <img src="PHO/popis.png" id="imgA8" width="100%" onload="loadedMap()">
+    </div>
+    <div class="img-comp-img" id="kontA1">
+      <img src="PHO/do1999V.png" id="imgA1" width="100%" onload="loadedMap()">
+    </div>
+    <div class="img-comp-img" id="kontA2">
+      <img src="PHO/do1999H.png" id="imgA2" width="100%" onload="loadedMap()">
+    </div>
+    <div class="img-comp-img" id="kontA3">
+      <img src="PHO/po1999V.png" id="imgA3" width="100%" onload="loadedMap()">
+    </div>
+    <div class="img-comp-img" id="kontA4">
+      <img src="PHO/po1999H.png" id="imgA4" width="100%" onload="loadedMap()">
+    </div>
+    <div class="img-comp-img" id="kontA5">
+      <img src="PHO/po2007V.png" id="imgA5" width="100%" onload="loadedMap()">
+    </div>
+    <div class="img-comp-img" id="kontA6">
+      <img src="PHO/po2007H.png" id="imgA6" width="100%" onload="loadedMap()">
+    </div>
+    <div class="img-comp-img" id="kontA7">
+      <img src="PHO/PHO1.png" id="imgA7" width="100%" onload="loadedMap()">
+    </div>
+    <span id="pull" class="pull">&#9698;</span>
+    <span id="dot" class="dot"><img src="PHO/dot.gif" id="dot2" width="8px" height="8px"></span>
+
+</div>
+</body>
+</html>

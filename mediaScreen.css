@@ -27,7 +27,7 @@
 }
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
   body {
- 	font-size: 20.0pt;
+ 	font-size: 30.0pt;
      margin: 0px;
      padding: 0px;
      background-color:red;

@@ -10,7 +10,7 @@
   <Placemark>
 	<Style><LineStyle><color>00ff00ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#zonaB">
-		<SimpleData name="stroke">#cddc39</SimpleData>
+		<SimpleData name="stroke">#00ff00</SimpleData>
 		<SimpleData name="stroke-opacity">1</SimpleData>
 		<SimpleData name="stroke-width">3</SimpleData>
 	</SchemaData></ExtendedData>

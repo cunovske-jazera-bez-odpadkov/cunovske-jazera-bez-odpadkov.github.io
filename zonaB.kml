@@ -8,7 +8,7 @@
 </Schema>
 <Folder><name>skuev0269_zona_B_cely</name>
   <Placemark>
-	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>1</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#skuev0269_zona_B_cely">
 		<SimpleData name="stroke">#cddc39</SimpleData>
 		<SimpleData name="stroke-opacity">1</SimpleData>

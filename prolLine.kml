@@ -10,7 +10,7 @@
   <Placemark>
     <Style id="s1">
       <LineStyle>
-        <color>ff0000ff</color>
+        <color>5014F0AA</color>
         <width>3</width>
       </LineStyle>
     </Style>
@@ -23,11 +23,11 @@
   <Placemark>
     <Style id="s2">
       <LineStyle>
-        <color>ff0000ff</color>
+        <color>5014F0AA</color>
         <width>3</width>
       </LineStyle>
       <PolyStyle>
-        <color>7f7f00ff</color>
+        <color>5014F0AA</color>
         <colorMode>normal</colorMode>
         <fill>1</fill>
         <outline>1</outline>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document id="root_doc">
-<Folder><name>zonaB</name>
+<Folder><name>prol</name>
   <Placemark>
-	<Style id="s3">
+	<Style id="s1">
       <LineStyle>
         <color>7f7f00ff</color>
         <width>4</width>
@@ -16,7 +16,7 @@
 				</LineString>
   </Placemark>
   <Placemark>
-	      <Style id="s4">
+	      <Style id="s2">
       <LineStyle>
         <color>7f7f00ff</color>
         <width>4</width>

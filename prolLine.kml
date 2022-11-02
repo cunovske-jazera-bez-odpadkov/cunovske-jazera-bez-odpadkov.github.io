@@ -26,13 +26,7 @@
         <color>5014F0AA</color>
         <width>3</width>
       </LineStyle>
-      <PolyStyle>
-        <color>5014F0AA</color>
-        <colorMode>normal</colorMode>
-        <fill>1</fill>
-        <outline>1</outline>
-      </PolyStyle>
-    </Style>
+     </Style>
 
 				<LineString>
 					<coordinates>

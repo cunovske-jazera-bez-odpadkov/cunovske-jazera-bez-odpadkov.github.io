@@ -5,7 +5,7 @@
   <Placemark>
     <Style id="s1">
       <LineStyle>
-        <color>5014F0AA</color>
+        <color>6414F0AA</color>
         <width>3</width>
       </LineStyle>
     </Style>
@@ -18,7 +18,7 @@
   <Placemark>
     <Style id="s2">
       <LineStyle>
-        <color>5014F0AA</color>
+        <color>6414F0AA</color>
         <width>3</width>
       </LineStyle>
      </Style>

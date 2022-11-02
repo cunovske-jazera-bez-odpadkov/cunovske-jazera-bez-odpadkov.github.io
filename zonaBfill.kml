@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document id="root_doc">
-<Schema name="zonaB" id="zonaB">
-	<SimpleField name="stroke" type="string"></SimpleField>
-	<SimpleField name="stroke-opacity" type="int"></SimpleField>
-	<SimpleField name="stroke-width" type="int"></SimpleField>
-</Schema>
 <Folder><name>zonaB</name>
   <Placemark>
-	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>1</fill></PolyStyle></Style>
-	<ExtendedData><SchemaData schemaUrl="#zonaB">
-		<SimpleData name="stroke">#cddc39</SimpleData>
-		<SimpleData name="stroke-opacity">1</SimpleData>
-		<SimpleData name="stroke-width">3</SimpleData>
-	</SchemaData></ExtendedData>
+    <Style id="s1">
+      <LineStyle>
+        <color>7f0000ff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7f0000ff</color>
+        <colorMode>normal</colorMode>
+        <fill>1</fill>
+        <outline>1</outline>
+      </PolyStyle>
+    </Style>
       <Polygon><outerBoundaryIs><LinearRing><coordinates>
 17.1784986965083,48.0440446054332 17.17849837411743,48.04404381832948 17.17849837411743,48.04404381832948 17.178488986385883,48.04396805492446 17.17840717901095,48.04378335313873 17.17839913238391,48.043768559035 17.178299220098136,48.04359147776673 17.178230153216028,48.04346819298001 17.17817650903575,48.04337359972541 17.178033681405626,48.04310999296164 17.177811058057458,48.04269844092975 17.177772166026752,48.04260877774148 17.177664877666185,48.042363996442894 17.177646102203084,48.04230571500991 17.177544178260543,48.042007133711195 
 17.177415432227868,48.04163592211572 17.17735374142054,48.0414359688676 17.17736178804758,48.04130416069667 17.17749321628927,48.041135589211095 17.177368493570118,48.04117324884614 17.177282662881666,48.041285330930435 17.17727461625462,48.04143865882676 

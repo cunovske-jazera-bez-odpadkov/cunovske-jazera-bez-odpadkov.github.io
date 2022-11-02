@@ -5,11 +5,11 @@
   <Placemark>
     <Style id="s1">
       <LineStyle>
-        <color>7f0000ff</color>
+        <color>7f7f00ff</color>
         <width>4</width>
       </LineStyle>
       <PolyStyle>
-        <color>7f0000ff</color>
+        <color>7f7f00ff</color>
         <colorMode>normal</colorMode>
         <fill>1</fill>
         <outline>1</outline>

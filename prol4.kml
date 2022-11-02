@@ -12,7 +12,7 @@
 	<ExtendedData><SchemaData schemaUrl="#zonaB">
 		<SimpleData name="stroke">#00ff00</SimpleData>
 		<SimpleData name="stroke-opacity">1</SimpleData>
-		<SimpleData name="stroke-width">3</SimpleData>
+		<SimpleData name="stroke-width">10</SimpleData>
 	</SchemaData></ExtendedData>
 		<Polygon>
 			<outerBoundaryIs>

@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document id="root_doc">
-<Schema name="zonaB" id="zonaB">
-	<SimpleField name="stroke" type="string"></SimpleField>
-	<SimpleField name="stroke-opacity" type="int"></SimpleField>
-	<SimpleField name="stroke-width" type="int"></SimpleField>
-</Schema>
 <Folder><name>zonaB</name>
   <Placemark>
     <Style id="s1">
@@ -20,11 +15,6 @@
         <outline>1</outline>
       </PolyStyle>
     </Style>
-	<ExtendedData><SchemaData schemaUrl="#zonaB">
-		<SimpleData name="stroke">#ff0000</SimpleData>
-		<SimpleData name="stroke-opacity">1</SimpleData>
-		<SimpleData name="stroke-width">3</SimpleData>
-	</SchemaData></ExtendedData>
 		<Polygon>
 			<outerBoundaryIs>
 				<LinearRing>

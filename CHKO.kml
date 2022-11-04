@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
-	<name>CHKO Dunajske luhy.kml</name>
+	<name>xxxx</name>
 	<Schema name="cdda_v15" id="S_cdda_v15_ISSSDISSSSS">
 		<SimpleField type="int" name="SITE_CODE"><displayName>&lt;b&gt;SITE_CODE&lt;/b&gt;</displayName>
 </SimpleField>
@@ -52,11 +52,11 @@
 		<styleUrl>#falseColor</styleUrl>
 		    <Style id="s1">
 		      <LineStyle>
-			<color>500000FF</color>
+			<color>50FF00FF</color>
 			<width>1</width>
 		      </LineStyle>
 		      <PolyStyle>
-			<color>500000FF</color>
+			<color>50FF00FF</color>
 			<colorMode>normal</colorMode>
 			<fill>1</fill>
 			<outline>1</outline>

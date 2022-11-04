@@ -1,21 +1,58 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<kml xmlns="http://www.opengis.net/kml/2.2">
-<Document id="root_doc">
-<Folder><name>chko dunajske luhy</name>
-  <Placemark>
-    <Style id="s1">
-      <LineStyle>
-        <color>50FFFF00</color>
-        <width>1</width>
-      </LineStyle>
-      <PolyStyle>
-        <color>50FFFF00</color>
-        <colorMode>normal</colorMode>
-        <fill>1</fill>
-        <outline>1</outline>
-      </PolyStyle>
-    </Style>
-      <MultiGeometry>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<Document>
+	<name>CHKO DUNAJSKÉ LUHY</name>
+	<Schema name="cdda_v15" id="S_cdda_v15_ISSSDISSSSS">
+		<SimpleField type="string" name="NAZOV"><displayName>&lt;b&gt;NAZOV&lt;/b&gt;</displayName></SimpleField>	
+		<SimpleField type="string" name="TYP"><displayName>&lt;b&gt;TYP&lt;/b&gt;</displayName></SimpleField>	
+		<SimpleField type="string" name="VELKOST"><displayName>&lt;b&gt;VELKOST&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="VZNIK"><displayName>&lt;b&gt;VZNIK&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="KOD"><displayName>&lt;b&gt;KOD&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="POPIS"><displayName>&lt;b&gt;POPIS&lt;/b&gt;</displayName></SimpleField>
+	</Schema>
+	<Style id="falseColor">
+		<BalloonStyle>
+			<text><![CDATA[<table border="0">
+  <tr><td><b>NÁZOV:</b></td><td>$[cdda_v15/NAZOV]</td></tr>
+  <tr><td><b>TYP:</b></td><td>$[cdda_v15/TYP]</td></tr>
+  <tr><td><b>VEĽKOSŤ: </b></td><td>$[cdda_v15/VELKOST]</td></tr>
+  <tr><td><b>VZNIK: </b></td><td>$[cdda_v15/VZNIK]</td></tr>
+  <tr><td><b>KÓD: </b></td><td>$[cdda_v15/KOD]</td></tr>
+  <tr><td><b>POPIS: </b></td><td>$[cdda_v15/POPIS]</td></tr>
+  </table>
+]]></text>
+		</BalloonStyle>
+		<PolyStyle>
+			<colorMode>random</colorMode>
+		</PolyStyle>
+	</Style>
+	<Placemark>
+		<name>INFO O OBLASTI:</name>
+		<styleUrl>#falseColor</styleUrl>
+		    <Style id="s1">
+		      <LineStyle>
+			<color>50FFFF00</color>
+			<width>1</width>
+		      </LineStyle>
+		      <PolyStyle>
+			<color>50FFFF00</color>
+			<colorMode>normal</colorMode>
+			<fill>1</fill>
+			<outline>1</outline>
+		      </PolyStyle>
+		    </Style>
+		<ExtendedData>
+			<SchemaData schemaUrl="#S_cdda_v15_ISSSDISSSSS">
+				<SimpleData name="NAZOV">CHKO DUNAJSKÉ LUHY</SimpleData>
+				<SimpleData name="TYP">chránená krajinná oblasť</SimpleData>
+				<SimpleData name="VELKOST">12 284 ha</SimpleData>
+				<SimpleData name="VZNIK">21.5.1998</SimpleData>
+				<SimpleData name="KOD">172823</SimpleData>
+				<SimpleData name="POPIS">2. stupeň ochrany</SimpleData>
+			</SchemaData>
+		</ExtendedData>
+		<MultiGeometry>
 			<Polygon>
 				<outerBoundaryIs>
 					<LinearRing>
@@ -61,8 +98,8 @@
 					</LinearRing>
 				</outerBoundaryIs>
 			</Polygon>
-      </MultiGeometry>
-  </Placemark>
-</Folder>
-</Document></kml>
 
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>

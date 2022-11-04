@@ -13,10 +13,10 @@
 	<Style id="falseColor">
 		<BalloonStyle>
 			<text><![CDATA[<table border="0">
-  <tr><td><b>NAZOV</b></td><td>$[cdda_v15/NAZOV]</td></tr>
-  <tr><td><b>VELKOST</b></td><td>$[cdda_v15/VELKOST]</td></tr>
+  <tr><td><b>NÁZOV</b></td><td>$[cdda_v15/NAZOV]</td></tr>
+  <tr><td><b>VEĽKOSŤ</b></td><td>$[cdda_v15/VELKOST]</td></tr>
   <tr><td><b>VZNIK</b></td><td>$[cdda_v15/VZNIK]</td></tr>
-  <tr><td><b>KOD</b></td><td>$[cdda_v15/KOD]</td></tr>
+  <tr><td><b>KÓD</b></td><td>$[cdda_v15/KOD]</td></tr>
   <tr><td><b>POPIS</b></td><td>$[cdda_v15/POPIS]</td></tr>
   </table>
 ]]></text>
@@ -42,10 +42,10 @@
 		    </Style>
 		<ExtendedData>
 			<SchemaData schemaUrl="#S_cdda_v15_ISSSDISSSSS">
-				<SimpleData name="NAZOV">CHA OSTROVNĚ LÚČKY - ZÓNA B</SimpleData>
-				<SimpleData name="VELKOST">67,524 ha</SimpleData>
+				<SimpleData name="NAZOV">CHA OSTROVNÉ LÚČKY - ZÓNA B</SimpleData>
+				<SimpleData name="VELKOST">68,67 ha</SimpleData>
 				<SimpleData name="VZNIK">15.8.2021</SimpleData>
-				<SimpleData name="KOD">SKUEV0261 B</SimpleData>
+				<SimpleData name="KOD">SKUEV0269 B</SimpleData>
 				<SimpleData name="POPIS">4. stupeň ochrany</SimpleData>
 			</SchemaData>
 		</ExtendedData>

@@ -2,46 +2,23 @@
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
 
 <Document>
-	<name>xxxx</name>
+	<name>CHA OSTROVNÉ LÚČKY - ZÓNA B</name>
 	<Schema name="cdda_v15" id="S_cdda_v15_ISSSDISSSSS">
-		<SimpleField type="int" name="SITE_CODE"><displayName>&lt;b&gt;SITE_CODE&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="string" name="PARENT_ISO"><displayName>&lt;b&gt;PARENT_ISO&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="string" name="ISO3"><displayName>&lt;b&gt;ISO3&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="string" name="SITE_NAME"><displayName>&lt;b&gt;SITE_NAME&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="double" name="SITE_AREA"><displayName>&lt;b&gt;SITE_AREA&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="int" name="YEAR"><displayName>&lt;b&gt;YEAR&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="string" name="DESIG_ABBR"><displayName>&lt;b&gt;DESIG_ABBR&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="string" name="DESIGNATE"><displayName>&lt;b&gt;DESIGNATE&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="string" name="ODESIGNATE"><displayName>&lt;b&gt;ODESIGNATE&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="string" name="IUCNCAT"><displayName>&lt;b&gt;IUCNCAT&lt;/b&gt;</displayName>
-</SimpleField>
-		<SimpleField type="string" name="CDDA_disse"><displayName>&lt;b&gt;CDDA_disse&lt;/b&gt;</displayName>
-</SimpleField>
+		<SimpleField type="string" name="NAZOV"><displayName>&lt;b&gt;NAZOV&lt;/b&gt;</displayName></SimpleField>		
+		<SimpleField type="string" name="VELKOST"><displayName>&lt;b&gt;VELKOST&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="VZNIK"><displayName>&lt;b&gt;VZNIK&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="KOD"><displayName>&lt;b&gt;KOD&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="POPIS"><displayName>&lt;b&gt;POPIS&lt;/b&gt;</displayName></SimpleField>
 	</Schema>
 	<Style id="falseColor">
 		<BalloonStyle>
 			<text><![CDATA[<table border="0">
-  <tr><td><b>SITE_CODE</b></td><td>$[cdda_v15/SITE_CODE]</td></tr>
-  <tr><td><b>PARENT_ISO</b></td><td>$[cdda_v15/PARENT_ISO]</td></tr>
-  <tr><td><b>ISO3</b></td><td>$[cdda_v15/ISO3]</td></tr>
-  <tr><td><b>SITE_NAME</b></td><td>$[cdda_v15/SITE_NAME]</td></tr>
-  <tr><td><b>SITE_AREA</b></td><td>$[cdda_v15/SITE_AREA]</td></tr>
-  <tr><td><b>YEAR</b></td><td>$[cdda_v15/YEAR]</td></tr>
-  <tr><td><b>DESIG_ABBR</b></td><td>$[cdda_v15/DESIG_ABBR]</td></tr>
-  <tr><td><b>DESIGNATE</b></td><td>$[cdda_v15/DESIGNATE]</td></tr>
-  <tr><td><b>ODESIGNATE</b></td><td>$[cdda_v15/ODESIGNATE]</td></tr>
-  <tr><td><b>IUCNCAT</b></td><td>$[cdda_v15/IUCNCAT]</td></tr>
-  <tr><td><b>CDDA_disse</b></td><td>$[cdda_v15/CDDA_disse]</td></tr>
-</table>
+  <tr><td><b>NAZOV</b></td><td>$[cdda_v15/NAZOV]</td></tr>
+  <tr><td><b>VELKOST</b></td><td>$[cdda_v15/VELKOST]</td></tr>
+  <tr><td><b>VZNIK</b></td><td>$[cdda_v15/VZNIK]</td></tr>
+  <tr><td><b>KOD</b></td><td>$[cdda_v15/KOD]</td></tr>
+  <tr><td><b>POPIS</b></td><td>$[cdda_v15/POPIS]</td></tr>
+  </table>
 ]]></text>
 		</BalloonStyle>
 		<PolyStyle>
@@ -65,17 +42,11 @@
 		    </Style>
 		<ExtendedData>
 			<SchemaData schemaUrl="#S_cdda_v15_ISSSDISSSSS">
-				<SimpleData name="SITE_CODE">172823</SimpleData>
-				<SimpleData name="PARENT_ISO">SVK</SimpleData>
-				<SimpleData name="ISO3">SVK</SimpleData>
-				<SimpleData name="SITE_NAME">XXXXXX</SimpleData>
-				<SimpleData name="SITE_AREA">12284</SimpleData>
-				<SimpleData name="YEAR">1998</SimpleData>
-				<SimpleData name="DESIG_ABBR">SK10</SimpleData>
-				<SimpleData name="DESIGNATE">Protected Landscape Area; second level of protection</SimpleData>
-				<SimpleData name="ODESIGNATE">Chránená krajinná oblasť; druhý stupeň ochrany</SimpleData>
-				<SimpleData name="IUCNCAT">V</SimpleData>
-				<SimpleData name="CDDA_disse">01</SimpleData>
+				<SimpleData name="NAZOV">CHA OSTROVNĚ LÚČKY - ZÓNA B</SimpleData>
+				<SimpleData name="VELKOST">67,524 ha</SimpleData>
+				<SimpleData name="VZNIK">15.8.2021</SimpleData>
+				<SimpleData name="KOD">SKUEV0261 B</SimpleData>
+				<SimpleData name="POPIS">4. stupeň ochrany</SimpleData>
 			</SchemaData>
 		</ExtendedData>
 		<gx:balloonVisibility>1</gx:balloonVisibility>

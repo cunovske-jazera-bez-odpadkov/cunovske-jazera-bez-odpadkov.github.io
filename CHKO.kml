@@ -48,19 +48,20 @@
 		</PolyStyle>
 	</Style>
 	<Placemark>
-		<name>Dunajske luhy</name>
+		<name>XXXXX</name>
 		<styleUrl>#falseColor</styleUrl>
-		<Style id="inline">
-			<IconStyle>
-				<colorMode>random</colorMode>
-			</IconStyle>
-			<LineStyle>
-				<colorMode>random</colorMode>
-			</LineStyle>
-			<PolyStyle>
-				<colorMode>random</colorMode>
-			</PolyStyle>
-		</Style>
+		    <Style id="s1">
+		      <LineStyle>
+			<color>500000FF</color>
+			<width>1</width>
+		      </LineStyle>
+		      <PolyStyle>
+			<color>500000FF</color>
+			<colorMode>normal</colorMode>
+			<fill>1</fill>
+			<outline>1</outline>
+		      </PolyStyle>
+		    </Style>
 		<ExtendedData>
 			<SchemaData schemaUrl="#S_cdda_v15_ISSSDISSSSS">
 				<SimpleData name="SITE_CODE">172823</SimpleData>

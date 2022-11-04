@@ -1,15 +1,56 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<kml xmlns="http://www.opengis.net/kml/2.2">
-<Document id="root_doc">
-<Folder><name>zonaB</name>
-  <Placemark>
-    <Style id="s1">
-      <LineStyle>
-        <color>640000FF</color>
-        <width>3</width>
-      </LineStyle>
-  </Style>
-	  <LineString><coordinates>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<Document>
+	<name>CHA OSTROVN… L⁄»KY - Z”NA B</name>
+	<Schema name="cdda_v15" id="S_cdda_v15_ISSSDISSSSS">
+		<SimpleField type="string" name="NAZOV"><displayName>&lt;b&gt;NAZOV&lt;/b&gt;</displayName></SimpleField>		
+		<SimpleField type="string" name="VELKOST"><displayName>&lt;b&gt;VELKOST&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="VZNIK"><displayName>&lt;b&gt;VZNIK&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="KOD"><displayName>&lt;b&gt;KOD&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="POPIS"><displayName>&lt;b&gt;POPIS&lt;/b&gt;</displayName></SimpleField>
+	</Schema>
+	<Style id="falseColor">
+		<BalloonStyle>
+			<text><![CDATA[<table border="0">
+  <tr><td><b>N¡ZOV:</b></td><td>$[cdda_v15/NAZOV]</td></tr>
+  <tr><td><b>VEºKOSç: </b></td><td>$[cdda_v15/VELKOST]</td></tr>
+  <tr><td><b>VZNIK: </b></td><td>$[cdda_v15/VZNIK]</td></tr>
+  <tr><td><b>K”D: </b></td><td>$[cdda_v15/KOD]</td></tr>
+  <tr><td><b>POPIS: </b></td><td>$[cdda_v15/POPIS]</td></tr>
+  </table>
+]]></text>
+		</BalloonStyle>
+		<PolyStyle>
+			<colorMode>random</colorMode>
+		</PolyStyle>
+	</Style>
+	<Placemark>
+		<name>INFO O OBLASTI:</name>
+		<styleUrl>#falseColor</styleUrl>
+		    <Style id="s1">
+		      <LineStyle>
+			<color>640000FF</color>
+			<width>3</width>
+		      </LineStyle>
+		      <PolyStyle>
+			<color>640000FF</color>
+			<colorMode>normal</colorMode>
+			<fill>0</fill>
+			<outline>1</outline>
+		      </PolyStyle>
+		    </Style>
+		<ExtendedData>
+			<SchemaData schemaUrl="#S_cdda_v15_ISSSDISSSSS">
+				<SimpleData name="NAZOV">CHA OSTROVN… L⁄»KY - Z”NA B</SimpleData>
+				<SimpleData name="VELKOST">68,67 ha</SimpleData>
+				<SimpleData name="VZNIK">1.3.2021</SimpleData>
+				<SimpleData name="KOD">SKUEV0269 B</SimpleData>
+				<SimpleData name="POPIS">4. stupeÚ ochrany</SimpleData>
+			</SchemaData>
+		</ExtendedData>
+		<MultiGeometry>
+			      <Polygon><outerBoundaryIs><LinearRing><coordinates>
 17.1784986965083,48.0440446054332 17.17849837411743,48.04404381832948 17.17849837411743,48.04404381832948 17.178488986385883,48.04396805492446 17.17840717901095,48.04378335313873 17.17839913238391,48.043768559035 17.178299220098136,48.04359147776673 17.178230153216028,48.04346819298001 17.17817650903575,48.04337359972541 17.178033681405626,48.04310999296164 17.177811058057458,48.04269844092975 17.177772166026752,48.04260877774148 17.177664877666185,48.042363996442894 17.177646102203084,48.04230571500991 17.177544178260543,48.042007133711195 
 17.177415432227868,48.04163592211572 17.17735374142054,48.0414359688676 17.17736178804758,48.04130416069667 17.17749321628927,48.041135589211095 17.177368493570118,48.04117324884614 17.177282662881666,48.041285330930435 17.17727461625462,48.04143865882676 
 17.1772735975411,48.0414407909501 17.1772142732559,48.0412665083789 17.1767341578423,48.0413866601463 17.1762647712649,48.041503225026 17.1757269883576,48.0416368259868 17.1752106631223,48.041765495041 17.174852588219,48.0418556080199 17.1746178949302,48.0419147866069 17.1743624145216,48.0419788966661 17.1743020648188,48.041925994665 17.174188741488,48.0418363301322 17.1741029107995,48.0417677366592 
@@ -27,7 +68,9 @@
 17.1848981592882,48.0420007270094 17.1850376341569,48.0423172411031 17.1850832317101,48.0424230442475 17.185244164251,48.0426427195736 17.1854171667324,48.0428776366408 17.1855365250335,48.0430040610313 17.1858194980845,48.043301739931 17.1861628208383,48.0436370749443 17.1864216540082,48.0438890230768 17.1867488835079,48.0442082153826 17.1868937227947,48.0443507753521 17.18648468592,48.0444816791276 17.1863478932603,48.0442772539077 17.1861386809572,48.0439643382936 17.1860515091642,48.0438334332034  
 17.1860508386121,48.0438334332034 17.1860434625373,48.0438217772546  
 17.1800071511507,48.0437294261822 17.1794358406307,48.0438482272885 17.1790576491598,48.0439271290038 17.1784977380281,48.0440441364388 17.1784977380281,48.0440445847426 
-	</coordinates></LineString>
-  </Placemark>
-</Folder>
-</Document></kml>
+	</coordinates></LinearRing></outerBoundaryIs></Polygon>
+
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>

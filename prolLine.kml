@@ -33,7 +33,7 @@
 		    <Style id="s1">
 		      <LineStyle>
 			<color>6400FFFF</color>
-			<width>1</width>
+			<width>3</width>
 		      </LineStyle>
 		      <PolyStyle>
 			<color>6400FFFF</color>
@@ -48,7 +48,7 @@
 				<SimpleData name="TYP">prírodná rezervácia</SimpleData>
 				<SimpleData name="VELKOST">54,93 ha</SimpleData>
 				<SimpleData name="VZNIK">1.9.1988</SimpleData>
-				<SimpleData name="KOD">122</SimpleData>
+				<SimpleData name="KOD">148211</SimpleData>
 				<SimpleData name="POPIS">4. stupeň ochrany</SimpleData>
 			</SchemaData>
 		</ExtendedData>

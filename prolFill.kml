@@ -1,20 +1,58 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<kml xmlns="http://www.opengis.net/kml/2.2">
-<Document id="root_doc">
-<Folder><name>zonaB</name>
-  <Placemark>
-    <Style id="s1">
-      <LineStyle>
-        <color>5000FFFF</color>
-        <width>1</width>
-      </LineStyle>
-      <PolyStyle>
-        <color>5000FFFF</color>
-        <colorMode>normal</colorMode>
-        <fill>1</fill>
-        <outline>1</outline>
-      </PolyStyle>
-    </Style>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<Document>
+	<name>PR OSTROVNÉ LÚČKY</name>
+	<Schema name="cdda_v15" id="S_cdda_v15_ISSSDISSSSS">
+		<SimpleField type="string" name="NAZOV"><displayName>&lt;b&gt;NAZOV&lt;/b&gt;</displayName></SimpleField>	
+		<SimpleField type="string" name="TYP"><displayName>&lt;b&gt;TYP&lt;/b&gt;</displayName></SimpleField>	
+		<SimpleField type="string" name="VELKOST"><displayName>&lt;b&gt;VELKOST&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="VZNIK"><displayName>&lt;b&gt;VZNIK&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="KOD"><displayName>&lt;b&gt;KOD&lt;/b&gt;</displayName></SimpleField>
+		<SimpleField type="string" name="POPIS"><displayName>&lt;b&gt;POPIS&lt;/b&gt;</displayName></SimpleField>
+	</Schema>
+	<Style id="falseColor">
+		<BalloonStyle>
+			<text><![CDATA[<table border="0">
+  <tr><td><b>NÁZOV:</b></td><td>$[cdda_v15/NAZOV]</td></tr>
+  <tr><td><b>TYP:</b></td><td>$[cdda_v15/TYP]</td></tr>
+  <tr><td><b>VEĽKOSŤ: </b></td><td>$[cdda_v15/VELKOST]</td></tr>
+  <tr><td><b>VZNIK: </b></td><td>$[cdda_v15/VZNIK]</td></tr>
+  <tr><td><b>KÓD: </b></td><td>$[cdda_v15/KOD]</td></tr>
+  <tr><td><b>POPIS: </b></td><td>$[cdda_v15/POPIS]</td></tr>
+  </table>
+]]></text>
+		</BalloonStyle>
+		<PolyStyle>
+			<colorMode>random</colorMode>
+		</PolyStyle>
+	</Style>
+	<Placemark>
+		<name>INFO O OBLASTI:</name>
+		<styleUrl>#falseColor</styleUrl>
+		    <Style id="s1">
+		      <LineStyle>
+			<color>5000FFFF</color>
+			<width>1</width>
+		      </LineStyle>
+		      <PolyStyle>
+			<color>5000FFFF</color>
+			<colorMode>normal</colorMode>
+			<fill>1</fill>
+			<outline>1</outline>
+		      </PolyStyle>
+		    </Style>
+		<ExtendedData>
+			<SchemaData schemaUrl="#S_cdda_v15_ISSSDISSSSS">
+				<SimpleData name="NAZOV">PR OSTROVNÉ LÚČKY - zaniknutá</SimpleData>
+				<SimpleData name="TYP">prírodná rezervácia</SimpleData>
+				<SimpleData name="VELKOST">54,93 ha</SimpleData>
+				<SimpleData name="VZNIK">1.9.1988</SimpleData>
+				<SimpleData name="KOD">122</SimpleData>
+				<SimpleData name="POPIS">4. stupeň ochrany</SimpleData>
+			</SchemaData>
+		</ExtendedData>
+		<MultiGeometry>
 		<Polygon>
 			<outerBoundaryIs>
 				<LinearRing>
@@ -31,6 +69,7 @@
 				</LinearRing>
 			</innerBoundaryIs>
 		</Polygon>
-  </Placemark>
-</Folder>
-</Document></kml>
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>

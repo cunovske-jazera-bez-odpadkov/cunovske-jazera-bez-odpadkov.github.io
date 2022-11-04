@@ -4,7 +4,8 @@
 <Document>
 	<name>CHA OSTROVNÉ LÚČKY - ZÓNA B</name>
 	<Schema name="cdda_v15" id="S_cdda_v15_ISSSDISSSSS">
-		<SimpleField type="string" name="NAZOV"><displayName>&lt;b&gt;NAZOV&lt;/b&gt;</displayName></SimpleField>		
+		<SimpleField type="string" name="NAZOV"><displayName>&lt;b&gt;NAZOV&lt;/b&gt;</displayName></SimpleField>	
+		<SimpleField type="string" name="TYP"><displayName>&lt;b&gt;TYP&lt;/b&gt;</displayName></SimpleField>	
 		<SimpleField type="string" name="VELKOST"><displayName>&lt;b&gt;VELKOST&lt;/b&gt;</displayName></SimpleField>
 		<SimpleField type="string" name="VZNIK"><displayName>&lt;b&gt;VZNIK&lt;/b&gt;</displayName></SimpleField>
 		<SimpleField type="string" name="KOD"><displayName>&lt;b&gt;KOD&lt;/b&gt;</displayName></SimpleField>
@@ -14,6 +15,7 @@
 		<BalloonStyle>
 			<text><![CDATA[<table border="0">
   <tr><td><b>NÁZOV:</b></td><td>$[cdda_v15/NAZOV]</td></tr>
+  <tr><td><b>TYP:</b></td><td>$[cdda_v15/TYP]</td></tr>
   <tr><td><b>VEĽKOSŤ: </b></td><td>$[cdda_v15/VELKOST]</td></tr>
   <tr><td><b>VZNIK: </b></td><td>$[cdda_v15/VZNIK]</td></tr>
   <tr><td><b>KÓD: </b></td><td>$[cdda_v15/KOD]</td></tr>
@@ -43,9 +45,10 @@
 		<ExtendedData>
 			<SchemaData schemaUrl="#S_cdda_v15_ISSSDISSSSS">
 				<SimpleData name="NAZOV">CHA OSTROVNÉ LÚČKY - ZÓNA B</SimpleData>
+				<SimpleData name="TYP">chránený areál</SimpleData>
 				<SimpleData name="VELKOST">68,67 ha</SimpleData>
 				<SimpleData name="VZNIK">1.3.2021</SimpleData>
-				<SimpleData name="KOD">SKUEV0269 B</SimpleData>
+				<SimpleData name="KÓD">SKUEV0269 B</SimpleData>
 				<SimpleData name="POPIS">4. stupeň ochrany</SimpleData>
 			</SchemaData>
 		</ExtendedData>

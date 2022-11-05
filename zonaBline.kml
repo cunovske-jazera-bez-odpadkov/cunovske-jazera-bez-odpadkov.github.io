@@ -48,7 +48,7 @@
 				<SimpleData name="TYP">chránený areál</SimpleData>
 				<SimpleData name="VELKOST">68,67 ha</SimpleData>
 				<SimpleData name="VZNIK">1.3.2021</SimpleData>
-				<SimpleData name="KÓD">SKUEV0269 B</SimpleData>
+				<SimpleData name="KOD">SKUEV0269 B</SimpleData>
 				<SimpleData name="POPIS">4. stupeň ochrany</SimpleData>
 			</SchemaData>
 		</ExtendedData>

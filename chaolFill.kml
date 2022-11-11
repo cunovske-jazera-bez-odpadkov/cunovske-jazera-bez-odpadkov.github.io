@@ -32,11 +32,11 @@
 		<styleUrl>#falseColor</styleUrl>
 		    <Style id="s1">
 		      <LineStyle>
-			<color>500000FF</color>
+			<color>50BBFFAA</color>
 			<width>1</width>
 		      </LineStyle>
 		      <PolyStyle>
-			<color>500000FF</color>
+			<color>50BBFFAA</color>
 			<colorMode>normal</colorMode>
 			<fill>1</fill>
 			<outline>1</outline>

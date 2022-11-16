@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+   <html>
+    <head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>MAPA CHRÁNENÝCH ÚZEMÍ</title>
+	<style>
+      body {
+        background:#000000;
+	   color: white;
+      }
+
+      .viewDiv {
+        float: right;
+        padding: 0;
+        margin: 0;
+        width: 83%;
+        height: 98vh;
+	  border: 1px solid #aaaaaa;
+  		resize: vertical;
+
+
+      }
+	 .ovladanie {
+        float: left;
+        width: 16%;
+        height: 100%;
+        padding: 0em;
+        overflow: noscroll;
+        max-height: 100%;
+        background:#000000;
+	  border: 0px solid #aaaaaa;
+      }
+.zel {  accent-color: #00aa00; padding: 0.1rem;}
+.cer {  accent-color: #aa0000; padding: 0.1rem;}
+.mod {  accent-color: #0000aa; padding: 0.1rem;}
+.zlt {  accent-color: #aaaa00; padding: 0.1rem;}
+.cya {  accent-color: #00aaaa; padding: 0.1rem;}
+.mag {  accent-color: #aa00aa; padding: 0.1rem;}
+.ora {  accent-color: #ff7000; padding: 0.1rem;}
+.grn {  accent-color: #aaffbb; padding: 0.1rem;}
+
+
+.cervena{  color: #ffffff;background-color:#aa0000;border: 2px solid #ff0000;display: inline-block;}
+.modra{  color: #ffffff;background-color:#0000aa;border: 2px solid #0000ff;display: inline-block;}
+.zelena{  color: #ffffff;background-color:#00aa00;border: 2px solid #00ff00;display: inline-block;}
+.zlta{  color: #ffffff;background-color:#aaaa00;border: 2px solid #ffff00;display: inline-block;}
+.cyan{  color: #ffffff;background-color:#00aaaa;border: 2px solid #00ffff;display: inline-block;}
+.magenta{  color: #ffffff;background-color:#aa00aa;border: 2px solid #ff00ff;display: inline-block;}
+.oranzova{  color: #ffffff;background-color:#aa7000;border: 2px solid #ff7000;display: inline-block;}
+.green{  color: #ffffff;background-color:#70ff80;border: 2px solid #aaffbb;display: inline-block;}
+
+.cervenaH{  color: #ffffff;border: 2px solid #ff0000;display: inline-block;}
+.modraH{  color: #ffffff;border: 2px solid #0000ff;display: inline-block;}
+.zelenaH{  color: #ffffff;border: 2px solid #00ff00;display: inline-block;}
+.zltaH{  color: #ffffff;border: 2px solid #ffff00;display: inline-block;}
+.cyanH{  color: #ffffff;border: 2px solid #00ffff;display: inline-block;}
+.magentaH{  color: #ffffff;border: 2px solid #ff00ff;display: inline-block;}
+.oranzovaH{  color: #ffffff;border: 2px solid #ff7000;display: inline-block;}
+.greenH{  color: #ffffff;border: 2px solid #aaffbb;display: inline-block;}
+
+.chcbox {
+  width:2em;
+  height:2em;
+}
+
+	</style>
+
+        <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
+        <script type="text/javascript">Loader.lang = "sk";Loader.load();</script>
+<script> 
+
+
+
+
+function responseCHVU(xmlDoc){ 
+// hlavné s holes
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+}
+
+	var options = {
+    		color: window.farbaCHVU,
+    		opacity: window.priesvitnostFill,
+    		outlineColor: window.farbaCHVU,
+    		outlineOpacity: 0,
+    		outlineWidth: 0,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaCHVUfill.addGeometry(polygon);
+
+
+}
+
+
+function responseCHVU2(xmlDoc){ 
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+}
+
+//oramovanie celku a holes
+	var options = {
+    		color: window.farbaCHVU,
+    		opacity: 0,
+    		outlineColor: window.farbaCHVU,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: 1,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaCHVUfill.addGeometry(polygon);
+
+     //hranica
+	var options2 = {
+    		color: window.farbaCHVU,
+    		opacity: 0,
+    		outlineColor: window.farbaCHVU,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: window.hrubkaCiary,
+    		curvature: 0
+	};
+	var polygon2 = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options2);    
+     window.vrstvaCHVUline.addGeometry(polygon2); 
+
+}
+
+function responseCHVU3(xmlDoc){ 
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+	}
+//oramovanie dvoch regionov Pečňa
+	var options = {
+    		color: window.farbaCHVU,
+    		opacity: window.priesvitnostFill,
+    		outlineColor: window.farbaCHVU,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: 1,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaCHVUfill.addGeometry(polygon);
+
+     //hranica
+	var options2 = {
+    		color: window.farbaCHVU,
+    		opacity: 0,
+    		outlineColor: window.farbaCHVU,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: window.hrubkaCiary,
+    		curvature: 0
+	};
+	var polygon2 = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options2);    
+     window.vrstvaCHVUline.addGeometry(polygon2); 
+}
+function responseCHAOL(xmlDoc){
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+	}
+     //fill
+	var options = {
+    		color: window.farbaCHAOL,
+    		opacity: window.priesvitnostFill,
+    		outlineColor: window.farbaCHAOL,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: 1,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaCHAOLfill.addGeometry(polygon);
+
+     //hranica
+	var options2 = {
+    		color: window.farbaCHAOL,
+    		opacity: 0,
+    		outlineColor: window.farbaCHAOL,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: window.hrubkaCiary,
+    		curvature: 0
+	};
+	var polygon2 = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options2);    
+     window.vrstvaCHAOLline.addGeometry(polygon2); 
+
+}
+function responseSKUEV0269(xmlDoc){
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+	}
+     //fill
+	var options = {
+    		color: window.farbaSKUEV0269,
+    		opacity: window.priesvitnostFill,
+    		outlineColor: window.farbaSKUEV0269,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: 1,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaSKUEV0269fill.addGeometry(polygon);
+
+     //hranica
+	var options2 = {
+    		color: window.farbaSKUEV0269,
+    		opacity: 0,
+    		outlineColor: window.farbaSKUEV0269,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: window.hrubkaCiary,
+    		curvature: 0
+	};
+	var polygon2 = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options2);    
+     window.vrstvaSKUEV0269line.addGeometry(polygon2); 
+
+}
+function responseSKUEV1269(xmlDoc){
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+	}
+     //fill
+	var options = {
+    		color: window.farbaSKUEV1269,
+    		opacity: window.priesvitnostFill,
+    		outlineColor: window.farbaSKUEV1269,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: 1,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaSKUEV1269fill.addGeometry(polygon);
+
+     //hranica
+	var options2 = {
+    		color: window.farbaSKUEV1269,
+    		opacity: 0,
+    		outlineColor: window.farbaSKUEV1269,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: window.hrubkaCiary,
+    		curvature: 0
+	};
+	var polygon2 = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options2);    
+     window.vrstvaSKUEV1269line.addGeometry(polygon2); 
+
+}
+function responseSKUEV2269(xmlDoc){
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+	}
+     //fill
+	var options = {
+    		color: window.farbaSKUEV2269,
+    		opacity: window.priesvitnostFill,
+    		outlineColor: window.farbaSKUEV2269,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: 1,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaSKUEV2269fill.addGeometry(polygon);
+
+     //hranica
+	var options2 = {
+    		color: window.farbaSKUEV2269,
+    		opacity: 0,
+    		outlineColor: window.farbaSKUEV2269,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: window.hrubkaCiary,
+    		curvature: 0
+	};
+	var polygon2 = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options2);    
+     window.vrstvaSKUEV2269line.addGeometry(polygon2); 
+
+}
+function responseZONAB(xmlDoc){
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+	}
+     //fill
+	var options = {
+    		color: window.farbaZONAB,
+    		opacity: window.priesvitnostFill,
+    		outlineColor: window.farbaZONAB,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: 1,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaZONABfill.addGeometry(polygon);
+
+     //hranica
+	var options2 = {
+    		color: window.farbaZONAB,
+    		opacity: 0,
+    		outlineColor: window.farbaZONAB,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: window.hrubkaCiary,
+    		curvature: 0
+	};
+	var polygon2 = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options2);    
+     window.vrstvaZONABline.addGeometry(polygon2); 
+
+}
+function responseCHKO(xmlDoc){
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+	}
+     //fill
+	var options = {
+    		color: window.farbaCHKO,
+    		opacity: window.priesvitnostFill,
+    		outlineColor: window.farbaCHKO,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: 1,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaCHKOfill.addGeometry(polygon);
+
+     //hranica
+	var options2 = {
+    		color: window.farbaCHKO,
+    		opacity: 0,
+    		outlineColor: window.farbaCHKO,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: window.hrubkaCiary,
+    		curvature: 0
+	};
+	var polygon2 = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options2);    
+     window.vrstvaCHKOline.addGeometry(polygon2); 
+
+}
+
+function responsePROL(xmlDoc){
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+	}
+     //fill
+	var options = {
+    		color: window.farbaPROL,
+    		opacity: 0,
+    		outlineColor: window.farbaPROL,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: 1,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaPROLfill.addGeometry(polygon);
+
+     //hranica
+	var options2 = {
+    		color: window.farbaPROL,
+    		opacity: 0,
+    		outlineColor: window.farbaPROL,
+    		outlineOpacity: window.priesvitnostLine,
+    		outlineWidth: window.hrubkaCiary,
+    		curvature: 0
+	};
+	var polygon2 = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options2);    
+     window.vrstvaPROLline.addGeometry(polygon2); 
+
+}
+function responsePROLspolu(xmlDoc){
+	var souradnice = [];
+var coords = xmlDoc.getElementsByTagName("coord");
+var maxPoints = coords.length;
+for (var i=0;i<maxPoints;i++) {
+   var node = coords[i];
+    var lat = parseFloat(node.getAttribute("lat"));
+    var lon = parseFloat(node.getAttribute("lon"));
+    var c = SMap.Coords.fromWGS84(lat, lon);
+    souradnice.push(c);
+	}
+     //fill
+	var options = {
+    		color: window.farbaPROL,
+    		opacity: window.priesvitnostFill,
+    		outlineColor: window.farbaPROL,
+    		outlineOpacity: 0,
+    		outlineWidth: 0,
+    		curvature: 0
+	};
+	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
+	window.vrstvaPROLfill.addGeometry(polygon);
+}
+
+function load(){
+	window.farbaCHVU="#0000ff";
+	window.farbaCHAOL="#aaffbb";
+	window.farbaSKUEV0269="#ff00ff";
+	window.farbaSKUEV1269="#00ff00";
+	window.farbaSKUEV2269="#ff7000";
+	window.farbaZONAB="#ff0000";
+	window.farbaCHKO="#00ffff";
+	window.farbaPROL="#ffff00";
+
+	window.priesvitnostFill=0.4;
+	window.priesvitnostLine=0.6;
+	window.hrubkaCiary=4;
+
+
+window.m = new SMap(JAK.gel("m"));
+m.addControl(new SMap.Control.Sync()); 
+m.addDefaultControls();
+m.addDefaultLayer(SMap.DEF_BASE);
+m.addDefaultLayer(SMap.DEF_TURIST);
+m.addDefaultLayer(SMap.DEF_TURIST_WINTER);
+m.addDefaultLayer(SMap.DEF_OPHOTO).enable();
+m.addDefaultLayer(SMap.DEF_HYBRID).enable();
+
+var layerSwitch = new SMap.Control.Layer({
+  width: 65,
+  items: 4,
+  page: 4
+});
+layerSwitch.addDefaultLayer(SMap.DEF_BASE);
+layerSwitch.addDefaultLayer(SMap.DEF_OPHOTO);
+layerSwitch.addDefaultLayer(SMap.DEF_TURIST);
+layerSwitch.addDefaultLayer(SMap.DEF_TURIST_WINTER);
+m.addControl(layerSwitch, {left:"8px", top:"9px"});
+
+var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM); 
+m.addControl(mouse); 
+
+window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
+
+
+window.vrstvaCHVUfill = new SMap.Layer.Geometry();     
+window.vrstvaCHVUline = new SMap.Layer.Geometry();   
+  
+window.vrstvaCHAOLfill = new SMap.Layer.Geometry();     
+window.vrstvaCHAOLline = new SMap.Layer.Geometry();   
+
+window.vrstvaSKUEV0269fill = new SMap.Layer.Geometry();     
+window.vrstvaSKUEV0269line = new SMap.Layer.Geometry();   
+
+window.vrstvaSKUEV1269fill = new SMap.Layer.Geometry();     
+window.vrstvaSKUEV1269line = new SMap.Layer.Geometry();   
+
+window.vrstvaSKUEV2269fill = new SMap.Layer.Geometry();     
+window.vrstvaSKUEV2269line = new SMap.Layer.Geometry();   
+
+window.vrstvaZONABfill = new SMap.Layer.Geometry();     
+window.vrstvaZONABline = new SMap.Layer.Geometry();   
+
+window.vrstvaCHKOfill = new SMap.Layer.Geometry();     
+window.vrstvaCHKOline = new SMap.Layer.Geometry();   
+
+window.vrstvaPROLfill = new SMap.Layer.Geometry();     
+window.vrstvaPROLline = new SMap.Layer.Geometry();  
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////PROL
+var requestPROL1 = new JAK.Request(JAK.Request.XML);
+requestPROL1.setCallback(window, responsePROL);
+requestPROL1.send("https://cunovske-jazera-bez-odpadkov.github.io/prol1.xml");
+
+var requestPROL2 = new JAK.Request(JAK.Request.XML);
+requestPROL2.setCallback(window, responsePROL);
+requestPROL2.send("https://cunovske-jazera-bez-odpadkov.github.io/prol2.xml");
+
+var requestPROL1a = new JAK.Request(JAK.Request.XML);
+requestPROL1a.setCallback(window, responsePROLspolu);
+requestPROL1a.send("https://cunovske-jazera-bez-odpadkov.github.io/prolSpolu.xml");
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////CHKO
+var requestCHKO1 = new JAK.Request(JAK.Request.XML);
+requestCHKO1.setCallback(window, responseCHKO);
+requestCHKO1.send("https://cunovske-jazera-bez-odpadkov.github.io/chko1.xml");
+
+var requestCHKO2 = new JAK.Request(JAK.Request.XML);
+requestCHKO2.setCallback(window, responseCHKO);
+requestCHKO2.send("https://cunovske-jazera-bez-odpadkov.github.io/chko2.xml");
+
+var requestCHKO3 = new JAK.Request(JAK.Request.XML);
+requestCHKO3.setCallback(window, responseCHKO);
+requestCHKO3.send("https://cunovske-jazera-bez-odpadkov.github.io/chko3.xml");
+
+var requestCHKO4 = new JAK.Request(JAK.Request.XML);
+requestCHKO4.setCallback(window, responseCHKO);
+requestCHKO4.send("https://cunovske-jazera-bez-odpadkov.github.io/chko4.xml");
+
+var requestCHKO5 = new JAK.Request(JAK.Request.XML);
+requestCHKO5.setCallback(window, responseCHKO);
+requestCHKO5.send("https://cunovske-jazera-bez-odpadkov.github.io/chko5.xml");
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////SKUEV0269
+
+var requestSKUEV02691 = new JAK.Request(JAK.Request.XML);
+requestSKUEV02691.setCallback(window, responseSKUEV0269);
+requestSKUEV02691.send("https://cunovske-jazera-bez-odpadkov.github.io/SKUEV02691.xml");
+
+var requestSKUEV02692 = new JAK.Request(JAK.Request.XML);
+requestSKUEV02692.setCallback(window, responseSKUEV0269);
+requestSKUEV02692.send("https://cunovske-jazera-bez-odpadkov.github.io/SKUEV02692.xml");
+
+var requestSKUEV02693 = new JAK.Request(JAK.Request.XML);
+requestSKUEV02693.setCallback(window, responseSKUEV0269);
+requestSKUEV02693.send("https://cunovske-jazera-bez-odpadkov.github.io/SKUEV02693.xml");
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////SKUEV1269
+
+var requestSKUEV12691 = new JAK.Request(JAK.Request.XML);
+requestSKUEV12691.setCallback(window, responseSKUEV1269);
+requestSKUEV12691.send("https://cunovske-jazera-bez-odpadkov.github.io/SKUEV12691.xml");
+
+var requestSKUEV12692 = new JAK.Request(JAK.Request.XML);
+requestSKUEV12692.setCallback(window, responseSKUEV1269);
+requestSKUEV12692.send("https://cunovske-jazera-bez-odpadkov.github.io/SKUEV12692.xml");
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////SKUEV2269
+
+var requestSKUEV22691 = new JAK.Request(JAK.Request.XML);
+requestSKUEV22691.setCallback(window, responseSKUEV2269);
+requestSKUEV22691.send("https://cunovske-jazera-bez-odpadkov.github.io/SKUEV22691.xml");
+
+var requestSKUEV22692 = new JAK.Request(JAK.Request.XML);
+requestSKUEV22692.setCallback(window, responseSKUEV2269);
+requestSKUEV22692.send("https://cunovske-jazera-bez-odpadkov.github.io/SKUEV22692.xml");
+
+var requestSKUEV22693 = new JAK.Request(JAK.Request.XML);
+requestSKUEV22693.setCallback(window, responseSKUEV2269);
+requestSKUEV22693.send("https://cunovske-jazera-bez-odpadkov.github.io/SKUEV22693.xml");
+
+var requestSKUEV22694 = new JAK.Request(JAK.Request.XML);
+requestSKUEV22694.setCallback(window, responseSKUEV2269);
+requestSKUEV22694.send("https://cunovske-jazera-bez-odpadkov.github.io/SKUEV22694.xml");
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ZONAB
+var requestZONAB = new JAK.Request(JAK.Request.XML);
+requestZONAB.setCallback(window, responseZONAB);
+requestZONAB.send("https://cunovske-jazera-bez-odpadkov.github.io/zonaB.xml");
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////CHA OL
+var requestCHAOL1 = new JAK.Request(JAK.Request.XML);
+requestCHAOL1.setCallback(window, responseCHAOL);
+requestCHAOL1.send("https://cunovske-jazera-bez-odpadkov.github.io/chaol1.xml");
+
+var requestCHAOL2 = new JAK.Request(JAK.Request.XML);
+requestCHAOL2.setCallback(window, responseCHAOL);
+requestCHAOL2.send("https://cunovske-jazera-bez-odpadkov.github.io/chaol2.xml");
+
+var requestCHAOL3 = new JAK.Request(JAK.Request.XML);
+requestCHAOL3.setCallback(window, responseCHAOL);
+requestCHAOL3.send("https://cunovske-jazera-bez-odpadkov.github.io/chaol3.xml");
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////CHVU
+// dva regiony oramovanie aj vypln
+var request10 = new JAK.Request(JAK.Request.XML);
+request10.setCallback(window, responseCHVU3);
+request10.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu10.xml");
+
+var request11 = new JAK.Request(JAK.Request.XML);
+request11.setCallback(window, responseCHVU3);
+request11.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu11.xml");
+
+//iba ohranicenie
+var request1a = new JAK.Request(JAK.Request.XML);
+request1a.setCallback(window, responseCHVU2);
+request1a.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu1.xml");
+
+var request2 = new JAK.Request(JAK.Request.XML);
+request2.setCallback(window, responseCHVU2);
+request2.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu2.xml");
+
+var request3 = new JAK.Request(JAK.Request.XML);
+request3.setCallback(window, responseCHVU2);
+request3.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu3.xml");
+
+var request4 = new JAK.Request(JAK.Request.XML);
+request4.setCallback(window, responseCHVU2);
+request4.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu4.xml");
+
+var request5 = new JAK.Request(JAK.Request.XML);
+request5.setCallback(window, responseCHVU2);
+request5.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu5.xml");
+
+var request6 = new JAK.Request(JAK.Request.XML);
+request6.setCallback(window, responseCHVU2);
+request6.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu6.xml");
+
+var request7 = new JAK.Request(JAK.Request.XML);
+request7.setCallback(window, responseCHVU2);
+request7.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu7.xml");
+
+var request8 = new JAK.Request(JAK.Request.XML);
+request8.setCallback(window, responseCHVU2);
+request8.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu8.xml");
+
+var request9 = new JAK.Request(JAK.Request.XML);
+request9.setCallback(window, responseCHVU2);
+request9.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu9.xml");
+
+// spolu
+var request1 = new JAK.Request(JAK.Request.XML);
+request1.setCallback(window, responseCHVU);
+request1.send("https://cunovske-jazera-bez-odpadkov.github.io/chvuSpolu.xml");
+ukazStavCheckboxov();
+	}
+
+function checkboxKlik(element){
+  if ((element.id==="prolH")&&(element.checked == true)){
+	    window.m.addLayer(window.vrstvaPROLline); 
+     	     window.vrstvaPROLline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
+  } else if ((element.id==="prolH")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaPROLline); 
+		window.vrstvaPROLline.diable();
+
+  }
+  if ((element.id==="prolV")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaPROLfill); 
+          window.vrstvaPROLfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
+
+  } else if ((element.id==="prolV")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaPROLfill); 
+		window.vrstvaPROLfill.diable();
+  }
+  if ((element.id==="chabH")&&(element.checked == true)){
+	    window.m.addLayer(window.vrstvaZONABline); 
+     	     window.vrstvaZONABline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
+
+  } else if ((element.id==="chabH")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaZONABline); 
+		window.vrstvaZONABline.diable();
+  }
+  if ((element.id==="chabV")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaZONABfill); 
+          window.vrstvaZONABfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
+  } else if ((element.id==="chabV")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaZONABfill); 
+		window.vrstvaZONABfill.diable();
+  }
+
+  if ((element.id==="chvuH")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaCHVUline); 
+     		window.vrstvaCHVUline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.989726057218075,47.9328026019428), 9);
+  } else if ((element.id==="chvuH")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaCHVUline); 
+		window.vrstvaCHVUline.diable();
+  }
+  if ((element.id==="chvuV")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaCHVUfill); 
+          window.vrstvaCHVUfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.989726057218075,47.9328026019428), 9);
+  } else if ((element.id==="chvuV")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaCHVUfill); 
+		window.vrstvaCHVUfill.diable();
+  }
+
+  if ((element.id==="chkoH")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaCHKOline); 
+     		window.vrstvaCHKOline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.578215,47.910073), 10);
+  } else if ((element.id==="chkoH")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaCHKOline); 
+		window.vrstvaCHKOline.diable();
+  }
+  if ((element.id==="chkoV")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaCHKOfill); 
+          window.vrstvaCHKOfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.578215,47.910073), 10);
+  } else if ((element.id==="chkoV")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaCHKOfill); 
+		window.vrstvaCHKOfill.diable();
+  }
+
+  if ((element.id==="SKUEV0269H")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaSKUEV0269line); 
+          window.vrstvaSKUEV0269line.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+   } else if ((element.id==="SKUEV0269H")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaSKUEV0269line); 
+		window.vrstvaSKUEV0269line.diable();
+  }
+  if ((element.id==="SKUEV0269V")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaSKUEV0269fill); 
+          window.vrstvaSKUEV0269fill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+  } else if ((element.id==="SKUEV0269V")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaSKUEV0269fill); 
+		window.vrstvaSKUEV0269fill.diable();
+  }
+  if ((element.id==="SKUEV1269H")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaSKUEV1269line); 
+          window.vrstvaSKUEV1269line.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+   } else if ((element.id==="SKUEV1269H")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaSKUEV1269line); 
+		window.vrstvaSKUEV1269line.diable();
+  }
+  if ((element.id==="SKUEV1269V")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaSKUEV1269fill); 
+          window.vrstvaSKUEV1269fill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+  } else if ((element.id==="SKUEV1269V")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaSKUEV1269fill); 
+		window.vrstvaSKUEV1269fill.diable();
+  }
+
+  if ((element.id==="SKUEV2269H")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaSKUEV2269line); 
+          window.vrstvaSKUEV2269line.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+   } else if ((element.id==="SKUEV2269H")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaSKUEV2269line); 
+		window.vrstvaSKUEV2269line.diable();
+  }
+  if ((element.id==="SKUEV2269V")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaSKUEV2269fill); 
+          window.vrstvaSKUEV2269fill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+  } else if ((element.id==="SKUEV2269V")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaSKUEV2269fill); 
+		window.vrstvaSKUEV2269fill.diable();
+  }
+
+  if ((element.id==="ostrovneH")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaCHAOLline); 
+          window.vrstvaCHAOLline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+  } else if ((element.id==="ostrovneH")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaCHAOLline); 
+		window.vrstvaCHAOLline.diable();
+  }
+  if ((element.id==="ostrovneV")&&(element.checked == true)){
+		window.m.addLayer(window.vrstvaCHAOLfill); 
+          window.vrstvaCHAOLfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+  } else if ((element.id==="ostrovneV")&&(element.checked == false)){
+		window.m.removeLayer(window.vrstvaCHAOLfill); 
+		window.vrstvaCHAOLfill.diable();
+  }
+} 
+function ukazStavCheckboxov(){
+  if (document.getElementById("prolH").checked){
+	    window.m.addLayer(window.vrstvaPROLline); 
+     	     window.vrstvaPROLline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
+
+  } else if (!document.getElementById("prolH").checked){
+		//window.m.removeLayer(window.vrstvaPROLline); 
+		//window.vrstvaPROLline.diable();
+  }
+
+  if (document.getElementById("prolV").checked){
+		window.m.addLayer(window.vrstvaPROLfill); 
+          window.vrstvaPROLfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
+
+  } else if (!document.getElementById("prolV").checked){
+		//window.m.removeLayer(window.vrstvaPROLfill); 
+		//window.vrstvaPROLfill.diable();
+  }
+
+  if (document.getElementById("chabH").checked){
+	    window.m.addLayer(window.vrstvaZONABline); 
+     	     window.vrstvaZONABline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
+
+  } else if (!document.getElementById("chabH").checked){
+		//window.m.removeLayer(window.vrstvaZONABline); 
+		//window.vrstvaZONABline.diable();
+  }
+  if (document.getElementById("chabV").checked){
+		window.m.addLayer(window.vrstvaZONABfill); 
+          window.vrstvaZONABfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
+
+  } else if (!document.getElementById("chabV").checked){
+		//window.m.removeLayer(window.vrstvaZONABfill); 
+		//window.vrstvaZONABfill.diable();
+  }
+
+  if (document.getElementById("chvuH").checked){
+		window.m.addLayer(window.vrstvaCHVUline); 
+     		window.vrstvaCHVUline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.989726057218075,47.9328026019428), 9);
+
+  } else if (!document.getElementById("chvuH").checked){
+		//window.m.removeLayer(window.vrstvaCHVUline); 
+		//window.vrstvaCHVUline.diable();
+  }
+  if (document.getElementById("chvuV").checked){
+		window.m.addLayer(window.vrstvaCHVUfill); 
+          window.vrstvaCHVUfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.989726057218075,47.9328026019428), 9);
+
+  } else if (!document.getElementById("chvuV").checked){
+		//window.m.removeLayer(window.vrstvaCHVUfill); 
+		//window.vrstvaCHVUfill.diable();
+  }
+
+  if (document.getElementById("chkoH").checked){
+		window.m.addLayer(window.vrstvaCHKOline); 
+     		window.vrstvaCHKOline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.578215,47.910073), 10);
+
+  } else if (!document.getElementById("chkoH").checked){
+		//window.m.removeLayer(window.vrstvaCHKOline); 
+		//window.vrstvaCHKOline.diable();
+  }
+  if (document.getElementById("chkoV").checked){
+		window.m.addLayer(window.vrstvaCHKOfill); 
+          window.vrstvaCHKOfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.578215,47.910073), 10);
+
+  } else if (!document.getElementById("chkoV").checked){
+		//window.m.removeLayer(window.vrstvaCHKOfill); 
+		//window.vrstvaCHKOfill.diable();
+  }
+
+  if (document.getElementById("SKUEV0269H").checked){
+		window.m.addLayer(window.vrstvaSKUEV0269line); 
+          window.vrstvaSKUEV0269line.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+
+  } else if (!document.getElementById("SKUEV0269H").checked){
+		//window.m.removeLayer(window.vrstvaSKUEV0269line); 
+		//window.vrstvaSKUEV0269line.diable();
+  }
+  if (document.getElementById("SKUEV0269V").checked){
+		window.m.addLayer(window.vrstvaSKUEV0269fill); 
+          window.vrstvaSKUEV0269fill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+
+  } else if (!document.getElementById("SKUEV0269V").checked){
+		//window.m.removeLayer(window.vrstvaSKUEV0269fill); 
+		//window.vrstvaSKUEV0269fill.diable();
+  }
+
+  if (document.getElementById("SKUEV1269H").checked){
+		window.m.addLayer(window.vrstvaSKUEV1269line); 
+          window.vrstvaSKUEV1269line.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+
+  } else if (!document.getElementById("SKUEV1269H").checked){
+		//window.m.removeLayer(window.vrstvaSKUEV1269line); 
+		//window.vrstvaSKUEV1269line.diable();
+  }
+  if (document.getElementById("SKUEV1269V").checked){
+		window.m.addLayer(window.vrstvaSKUEV1269fill); 
+          window.vrstvaSKUEV1269fill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+
+  } else if (!document.getElementById("SKUEV1269V").checked){
+		//window.m.removeLayer(window.vrstvaSKUEV1269fill); 
+		//window.vrstvaSKUEV1269fill.diable();
+  }
+
+  if (document.getElementById("SKUEV2269H").checked){
+		window.m.addLayer(window.vrstvaSKUEV2269line); 
+          window.vrstvaSKUEV2269line.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+
+  } else if (!document.getElementById("SKUEV2269H").checked){
+		//window.m.removeLayer(window.vrstvaSKUEV2269line); 
+		//window.vrstvaSKUEV2269line.diable();
+  }
+  if (document.getElementById("SKUEV2269V").checked){
+		window.m.addLayer(window.vrstvaSKUEV2269fill); 
+          window.vrstvaSKUEV2269fill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+
+  } else if (!document.getElementById("SKUEV2269V").checked){
+		//window.m.removeLayer(window.vrstvaSKUEV2269fill); 
+		//window.vrstvaSKUEV2269fill.diable();
+  }
+
+  if (document.getElementById("ostrovneH").checked){
+		window.m.addLayer(window.vrstvaCHAOLline); 
+          window.vrstvaCHAOLline.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+
+  } else if (!document.getElementById("ostrovneH").checked){
+		//window.m.removeLayer(window.vrstvaCHAOLline); 
+		//window.vrstvaCHAOLline.diable();
+  }
+  if (document.getElementById("ostrovneV").checked){
+		window.m.addLayer(window.vrstvaCHAOLfill); 
+          window.vrstvaCHAOLfill.enable();
+          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+
+  } else if (!document.getElementById("ostrovneV").checked){
+		//window.m.removeLayer(window.vrstvaCHAOLfill); 
+		//window.vrstvaCHAOLfill.diable();
+  }
+
+}
+</script>
+
+    </head>
+    <body id="advanced-geometry" onLoad="load()">
+
+        <div id="m" class="viewDiv"></div>
+
+  <div class="ovladanie">
+	<span style="color:white; font-size:10pt;">
+      <span style="background-color:#111111; border: 1px solid #ffc0cb;padding: 0.3rem;margin: 0.3rem; display: inline-block;">
+<table>
+       <span class="grn">
+	  <label style="color:#ffc0cb;vertical-align: 50%;"><b>OSTROVNÉ LÚČKY:</b></label>
+  </span>
+<tr>
+<td>
+  <label style="color:#aaffbb;vertical-align: 50%;"> CHA <br>Ostrovné <br>lúčky</label>
+</td>
+<td> 
+  <span class="greenH grn">
+    <input id="ostrovneH" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox"> 
+  </span>&nbsp;&nbsp;
+  <span class="green grn">
+    <input id="ostrovneV" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox"> 
+  </span>
+</td>
+</tr>
+<tr>
+<td>
+<label style="color:#ff00ff;vertical-align: 50%;">SKUEV0269&nbsp;&nbsp;</label>
+</td>
+<td>
+<span class="magentaH mag"> 
+<input id="SKUEV0269H" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="magenta mag"> 
+<input id="SKUEV0269V" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</td>
+</tr>
+<tr>
+<td>
+	<label style="color:#00ff00;vertical-align: 50%;">SKUEV1269</label>
+</td>
+<td>
+<span class="zelenaH zel"> 
+<input id="SKUEV1269H" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="zelena zel"> 
+<input id="SKUEV1269V" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</td>
+
+</tr>
+<tr>
+<td>
+	<label style="color:#ff7000;vertical-align: 50%;">SKUEV2269</label>
+</td>
+<td>
+<span class="oranzovaH ora"> 
+<input id="SKUEV2269H" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="oranzova ora"> 
+<input id="SKUEV2269V" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</td>
+</tr>
+<tr>
+<td>
+	<label style="color:#ff0000;vertical-align: 50%;">Zóna B</label>
+</td>
+<td>
+<span class="cervenaH cer"> 
+<input id="chabH" type="checkbox"  checked="checked" onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="cervena cer"> 
+<input id="chabV" type="checkbox" checked="checked"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</td>
+</tr>
+</table>
+</span>
+
+<br>
+
+<span style="background-color:#001100; border: 1px solid #0000ff;padding: 0.3rem; margin: 0.3rem; display: inline-block;">
+<label style="color:#0000ff;vertical-align: 50%;">CHVÚ DUNAJSKĚ LUHY</label>
+<br>
+<span class="modraH mod"> 
+<input id="chvuH" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="modra mod"> 
+<input id="chvuV" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</span>
+
+
+<span style="background-color:#000011; border: 1px solid #00ffff;padding: 0.3rem;margin: 0.3rem; display: inline-block;">
+<label style="color:#00ffff;vertical-align: 50%;">CHKO DUNAJSKĚ LUHY</label>
+<br>
+<span class="cyanH cya"> 
+<input id="chkoH" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="cyan cya"> 
+<input id="chkoV" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</span>
+
+<span style="background-color:#000000; border: 1px solid #ffff00;padding: 0.3rem;margin: 0.3rem; display: inline-block;">
+<label style="color:#ffff00;vertical-align: 50%;">PR OSTROVNÉ LÚČKY &nbsp;&nbsp;&nbsp;</label>
+<br>
+<span class="zltaH zlt"> 
+<input id="prolH" type="checkbox" onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="zlta zlt"> 
+<input id="prolV" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+
+</span>
+<br>
+<label style="color:#ffff00;vertical-align: top;"> - zaniknutá</label>
+</span>
+</span>
+  </span>
+</div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

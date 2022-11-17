@@ -4,7 +4,7 @@
 <meta http-equiv=Content-Type content="text/html; charset=windows-1250">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <title>MAPA CHRÁNENÝCH ÚZEMÍ</title>
+        <title>MAPA CHRĂNENĂťCH ĂšZEMĂŤ</title>
 	<style>
       body {
         background:#000000;
@@ -75,7 +75,7 @@
 
 
 function responseCHVU(xmlDoc){ 
-// hlavné s holes
+// hlavnĂ© s holes
 	var souradnice = [];
 var coords = xmlDoc.getElementsByTagName("coord");
 var maxPoints = coords.length;
@@ -151,7 +151,7 @@ for (var i=0;i<maxPoints;i++) {
     var c = SMap.Coords.fromWGS84(lat, lon);
     souradnice.push(c);
 	}
-//oramovanie dvoch regionov Pečňa
+//oramovanie dvoch regionov PeÄŤĹa
 	var options = {
     		color: window.farbaCHVU,
     		opacity: window.priesvitnostFill,
@@ -973,11 +973,11 @@ function ukazStavCheckboxov(){
       <span style="background-color:#111111; border: 1px solid #ffc0cb;padding: 0.3rem;margin: 0.3rem; display: inline-block;">
 <table>
        <span class="grn">
-	  <label style="color:#ffc0cb;vertical-align: 50%;"><b>OSTROVNÉ LÚČKY:</b></label>
+	  <label style="color:#ffc0cb;vertical-align: 50%;"><b>OSTROVNĂ‰ LĂšÄŚKY:</b></label>
   </span>
 <tr>
 <td>
-  <label style="color:#aaffbb;vertical-align: 50%;"> CHA <br>Ostrovné <br>lúčky</label>
+  <label style="color:#aaffbb;vertical-align: 50%;"> CHA <br>OstrovnĂ© <br>lĂşÄŤky</label>
 </td>
 <td> 
   <span class="greenH grn">
@@ -1030,7 +1030,7 @@ function ukazStavCheckboxov(){
 </tr>
 <tr>
 <td>
-	<label style="color:#ff0000;vertical-align: 50%;">Zóna B</label>
+	<label style="color:#ff0000;vertical-align: 50%;">ZĂłna B</label>
 </td>
 <td>
 <span class="cervenaH cer"> 
@@ -1047,7 +1047,7 @@ function ukazStavCheckboxov(){
 <br>
 
 <span style="background-color:#001100; border: 1px solid #0000ff;padding: 0.3rem; margin: 0.3rem; display: inline-block;">
-<label style="color:#0000ff;vertical-align: 50%;">CHVÚ DUNAJSKĚ LUHY</label>
+<label style="color:#0000ff;vertical-align: 50%;">CHVĂš DUNAJSKÄš LUHY</label>
 <br>
 <span class="modraH mod"> 
 <input id="chvuH" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
@@ -1059,7 +1059,7 @@ function ukazStavCheckboxov(){
 
 
 <span style="background-color:#000011; border: 1px solid #00ffff;padding: 0.3rem;margin: 0.3rem; display: inline-block;">
-<label style="color:#00ffff;vertical-align: 50%;">CHKO DUNAJSKĚ LUHY</label>
+<label style="color:#00ffff;vertical-align: 50%;">CHKO DUNAJSKÄš LUHY</label>
 <br>
 <span class="cyanH cya"> 
 <input id="chkoH" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
@@ -1070,7 +1070,7 @@ function ukazStavCheckboxov(){
 </span>
 
 <span style="background-color:#000000; border: 1px solid #ffff00;padding: 0.3rem;margin: 0.3rem; display: inline-block;">
-<label style="color:#ffff00;vertical-align: 50%;">PR OSTROVNÉ LÚČKY &nbsp;&nbsp;&nbsp;</label>
+<label style="color:#ffff00;vertical-align: 50%;">PR OSTROVNĂ‰ LĂšÄŚKY &nbsp;&nbsp;&nbsp;</label>
 <br>
 <span class="zltaH zlt"> 
 <input id="prolH" type="checkbox" onclick="checkboxKlik(this)" class="chcbox">
@@ -1080,22 +1080,10 @@ function ukazStavCheckboxov(){
 
 </span>
 <br>
-<label style="color:#ffff00;vertical-align: top;"> - zaniknutá</label>
+<label style="color:#ffff00;vertical-align: top;"> - zaniknutĂˇ</label>
 </span>
 </span>
   </span>
 </div>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

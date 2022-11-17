@@ -19,8 +19,19 @@
 <link rel="stylesheet" href="mediaScreen.css">
 
 <style>
+input[type="radio"]:checked{
+    opacity:0.5;
+    accent-color:red;
+
+}
+input[type="radio"]{
+    opacity:0.5;
+  cursor: pointer;
+}
 .chcbox {
  position: relative;  opacity:  1;  z-index: 10;
+ width:10vw;
+ height:10vh;
 }
  /* rozbalovanie zaciatok*/
 input {
@@ -165,12 +176,12 @@ div.WordSection1
 
  /* interaktivna mapa */
 
-.zel {  accent-color: #00aa00; padding: 0.1rem;}
-.cer {  accent-color: #aa0000; padding: 0.1rem;}
-.mod {  accent-color: #0000aa; padding: 0.1rem;}
-.zlt {  accent-color: #aaaa00; padding: 0.1rem;}
-.cya {  accent-color: #00aaaa; padding: 0.1rem;}
-.mag {  accent-color: #aa00aa; padding: 0.1rem;}
+.zel {  accent-color: #00aa00;}
+.cer {  accent-color: #aa0000;}
+.mod {  accent-color: #0000aa;}
+.zlt {  accent-color: #aaaa00;}
+.cya {  accent-color: #00aaaa;}
+.mag {  accent-color: #aa00aa;}
 
 
 .cervena{  color: #ffffff;background-color:#aa0000;border: 2px solid #ff0000;display: inline-block;}
@@ -186,7 +197,7 @@ div.WordSection1
 .zelenaH{  color: #ffffff;border: 2px solid #00ff00;display: inline-block;}
 .zltaH{  color: #ffffff;border: 2px solid #ffff00;display: inline-block;}
 .cyanH{  color: #ffffff;border: 2px solid #00ffff;display: inline-block;}
-.magentaH{  color: #ffffff;border: 2px solid #ff00ff;display: inline-block;}
+.magentaH{  color: #ffffff;border: 2px solid #ff00ff;display:inline-block;}
 
 
 .float-left-child {
@@ -202,16 +213,18 @@ div.WordSection1
   padding: 0rem;
 }
 .ramik-PHO2{
+  display:flex;
   background: #2e1a2b;
-  padding: 0.2rem;
+  padding: 0.0rem;
   border: 0px solid orange;  
   -webkit-border-radius:1px;
   -moz-border-radius:1px;
   border-radius:1px;
 }
 .ramik-PHO1{
+  display:flex;
   background: #3d5c6b;
-  padding: 0.2rem;
+  padding: 0.0rem;
   border: 0px solid orange;  
   -webkit-border-radius:1px;
   -moz-border-radius:1px;
@@ -260,17 +273,16 @@ div.WordSection1
 }
 
 .button {
-  background-color: black;
+  background-color: transparent;
   border: 2px solid orange;
   padding: 0px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   cursor: pointer;
   color:orange;
-  height:20px;
-  width:20px;
-  font-size:15px;
+  height:10vw;
+  width:10vw;
+  font-size:8vh;
   font-weight: bold;
 }
 .pull {
@@ -436,7 +448,7 @@ function checkboxKlik(element){
  function plus(){
    var obr1 = document.getElementById("imgA1"); 
    var obr2 = document.getElementById("imgB");
-   document.getElementById("kont").style.width=(obr2.width+20)+'px';
+   document.getElementById("kont").style.width=(obr2.width+50)+'px';
    document.getElementById("kont").style.height=obr2.height+'px';
    document.getElementById("kont").style.cursor="zoom-in";
    document.getElementById("kont").style.cursor="cursor: -webkit-zoom-in";
@@ -447,7 +459,7 @@ function checkboxKlik(element){
  function minus(){
    var obr1 = document.getElementById("imgA1"); 
    var obr2 = document.getElementById("imgB");
-   document.getElementById("kont").style.width=(obr2.width-20)+'px';
+   document.getElementById("kont").style.width=(obr2.width-50)+'px';
    document.getElementById("kont").style.height=obr2.height+'px';
    document.getElementById("kont").style.cursor="zoom-out";
    document.getElementById("kont").style.cursor="cursor: -webkit-zoom-out";
@@ -457,7 +469,13 @@ function checkboxKlik(element){
  function mouseDown(e){
         e = e || window.event;
         e.preventDefault();
-        if(e.which==1){plus(e);}//lava mys
+        if(e.which==1){
+           if(e.target.id==="minusID"){minus(e);}
+           else{ 
+             if ((e.target.id==="radio2004")||(e.target.id==="radio2021")){}
+             else plus(e);
+		}
+        }//lava mys
         else if(e.which==3){minus(e);}//prava mys
 
    }
@@ -483,7 +501,6 @@ function checkboxKlik(element){
 </head>
 
 <body onLoad="loadDocument()">
-<br>
 <h2><u>Voda v oblasti Čunovských jazier</u></h2>
 
         <div id="video_box">
@@ -528,7 +545,7 @@ function checkboxKlik(element){
 
            <div class="tab"><!--start-->
         <input type="checkbox" id="chck3">
-        <label class="tab-label" for="chck3"><span style="color:cyan">+ Ochranné pásma a kúpanie sa na jazerách.<span></label>
+        <label class="tab-label" for="chck3"><span style="color:cyan">Ochranné pásma a kúpanie sa na jazerách.<span></label>
         <div class="tab-content">
 Čunovské jazerá patria do týchto pásiem <span class="nature">OCHRANY PRÍRODY:<br><br>
 Chránené vtáčie územie (CHVÚ) Dunajské luhy - NATURA2000 <BR>
@@ -571,7 +588,7 @@ V minulosti to však bolo trošku komplikovanejšie, pretože tu platili 2 druhy
 </span>
  <BR><BR>
 <span class="nature">
- <b>01.08.2004</b> - výnosom Ministerstva životného prostredia Slovenskej republiky č. 3/2004-5.1 zo 14. júla 2004,sa ustanovujú Ostrovné lúčky ako územie európskeho významu NATURA 2000 - kód SKUEV0269. Rozloha 613,56 ha (v roku 2011 aktualizovaná na 627,58 ha). 
+ <b>01.08.2004</b> - výnosom Ministerstva životného prostredia Slovenskej republiky č. 3/2004-5.1 zo 14. júla 2004,sa ustanovujú Ostrovné lúčky ako územie európskeho významu NATURA 2000 - kód SKUEV0269. Rozloha 613,56 ha (v roku 2011 aktualizovaná na 627,58 ha). . 
 </span>
  <BR><BR>
 <span class="water">	 
@@ -600,7 +617,7 @@ V minulosti to však bolo trošku komplikovanejšie, pretože tu platili 2 druhy
 
            <div class="tab"><!--start-->
         <input type="checkbox" id="chck2">
-        <label class="tab-label" for="chck2"><span style="color:cyan">+ Zmeny ochranného pásma na fotografiách.<span></label>
+        <label class="tab-label" for="chck2"><span style="color:cyan">Zmeny ochranného pásma na fotografiách.<span></label>
         <div class="tab-content">
 <p>
  Medzi Rusovcami a Čunovom vedie cesta 1. triedy s názvom Balkánska. 
@@ -718,7 +735,7 @@ Tu väčšinou parkujú autá s povolením.
 
            <div class="tab"><!--start-->
         <input type="checkbox" id="chck1">
-        <label class="tab-label" for="chck1"><span style="color:cyan">+ Pásmo hygienickej ochrany PHO - vyhlášky<span></label>
+        <label class="tab-label" for="chck1"><span style="color:cyan">Pásmo hygienickej ochrany PHO - vyhlášky<span></label>
         <div class="tab-content">
 		    <b>Nariadenie ministra zdravotníctva č. 87 zo dňa 10.októbra 1953 o hygienickej a protiepidemickej ochrane vody uverejnené v Sbierke zákonov republiky Československej v čiastke 51. vydanej dňa 4. novembra 1953, s. 347-349 Ochrana vody a vodných zariadení</b>
                                              <br>
@@ -764,7 +781,7 @@ a konfigurácii terénu na vnútornú a vonkajšiu časť a určiť odlišné po
 </div>
 </section>
 
-<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <h3><u>Interaktívna mapa - zmeny pásiem ochrany vodných zdrojov.</u></h3>
 <span class="cyan">Na interaktivnej mape sú zobrazené zmeny hraníc pásma hygienickej ochrany II. stupňa (<b>PHO 2</b>) vodného zdroja Rusovce-Ostrovné lúčky-Mokraď (VZ ROL-M).</span>
 <p> 
@@ -774,10 +791,17 @@ Toto PHO 2 pásmo vtedy zahŕňalo dokonca aj Rusovské jazero a Veľký Zemník
 <span class="modra" style="margin:0 0 5px 0;">Nakoniec boli vyňaté z pásma ochrany vodného zdroja až v roku 2007.</span><br>
 <span class="zlta">Pásmo ochrany PHO1 zahŕňa priamo územie zdroja podzemnej vody - studne.</span>
 </p>
+<div class="mys inline-block-child">
+<img src="PHO/CB.gif" height="40px">
+<img src="PHO/zoom.gif" height="40px">&nbsp;
+<img src="PHO/LB.gif" height="40px">
+<img src="PHO/zoomIn.gif" height="40px">&nbsp;
+<img src="PHO/RB.gif" height="40px">
+<img src="PHO/zoomOut.gif" height="40px">
+</div>
 
   <div class="ramik inline-flex-parent">
-  <div class="ramik-PHO2 inline-block-child">
-<span style="color:pink;font-size: 10px;text-align:left;text-decoration:none;">PHO2:</span>
+  <div class="ramik-PHO2">
 <span class="zelenaH zel"> 
 	<input id="checkPred1999H" type="checkbox" onclick="checkboxKlik(this)" class="chcbox">
 	<label>pred 1999</label>
@@ -806,42 +830,19 @@ Toto PHO 2 pásmo vtedy zahŕňalo dokonca aj Rusovské jazero a Veľký Zemník
 </span>
   </div>
 &nbsp;&nbsp;
-<div class="ramik-PHO1 inline-block-child">
+<div class="ramik-PHO1">
 <span class="zltaH zlt"> 
 <input id="checkPHO1" type="checkbox" checked="checked" onclick="checkboxKlik(this)" class="chcbox">
 <label>PHO1</label>
 </span>
 </div>
 &nbsp;&nbsp;
-  <div class="ramik-PHO1 inline-block-child">
+  <div class="ramik-PHO1">
 <span class="cyanH cya"> 
 <input id="checkPopis" type="checkbox" checked="checked" onclick="checkboxKlik(this)" class="chcbox">
 <label>popis</label>
 </span>
   </div>
-&nbsp;
-<fieldset class="ramik-PHO2 inline-block-child"> 
-<span class="magentaH mag"> 
-     podklad:<input id="radio2004" type="radio" name="satelit" checked="checked" onclick="radioKlik(this)" class="chcbox">
-<label>2004</label>
-<input id="radio2021" type="radio" name="satelit" onclick="radioKlik(this)" class="chcbox">
-<label>2021</label>
-</span>
-</fieldset>
-
-&nbsp;&nbsp;
-  <div class="ramik-PHO1 inline-block-child">
-    <button type="button" id="plusID"  class="button">+</button> 
-    <button type="button" id="minusID" class="button">-</button> 
-</div>
-<div class="mys inline-block-child">
-<img src="PHO/CB.gif" height="20px">
-<img src="PHO/zoom.gif" height="20px">&nbsp;
-<img src="PHO/LB.gif" height="20px">
-<img src="PHO/zoomIn.gif" height="20px">&nbsp;
-<img src="PHO/RB.gif" height="20px">
-<img src="PHO/zoomOut.gif" height="20px">
-</div>
 
 </div>
 
@@ -873,6 +874,17 @@ Toto PHO 2 pásmo vtedy zahŕňalo dokonca aj Rusovské jazero a Veľký Zemník
     <div class="img-comp-img" id="kontA7">
       <img src="PHO/PHO1.png" id="imgA7" width="100%" onload="loadedMap()">
     </div>
+  <div class="img-comp-img" style="top:2px; right:2px;">
+    <button type="button" id="plusID"  class="button">+</button> 
+    <button type="button" id="minusID" class="button">-</button> 
+  </div>
+<div class="img-comp-img" style="color:pink;font-size: 20px;text-align:right;border: 1px solid pink;top:2px; left:2px;"> 
+  <label for="radio2004" style="text-align:right;display:flex;">2004</label>
+  <input id="radio2004" type="radio" name="satelit" checked="checked" onclick="radioKlik(this)" class="chcbox" style="background: transparent">
+  <label for="radio2021" style="text-align:right;display:flex;">2021</label>
+  <input id="radio2021" type="radio" name="satelit" onclick="radioKlik(this)" class="chcbox">
+</div>
+
     <span id="pull" class="pull">&#9698;</span>
     <span id="dot" class="dot"><img src="PHO/dot.gif" id="dot2" width="8px" height="8px"></span>
 

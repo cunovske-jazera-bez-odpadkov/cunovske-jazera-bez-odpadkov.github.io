@@ -10,7 +10,7 @@
         background:#000000;
 	   color: white;
       }
-      .smap zoom {top: 100px;}
+      .viewDiv .zoom {color:blue;}
       .viewDiv {
         float: right;
         padding: 0;
@@ -469,11 +469,14 @@ function load(){
 var center = SMap.Coords.fromWGS84(17.177370,48.039381);
 window.m = new SMap(JAK.gel("m"),center,15);
 m.addControl(new SMap.Control.Sync()); 
-m.addDefaultControls();
+//m.addDefaultControls();
+m.addControl(new SMap.Control.Scale(), {bottom:"21px",left:"6px"});
+m.addControl(new SMap.Control.Zoom({}, { step:"10", titles: ["priblížiť", "oddialiť"], sliderHeight:"250", showZoomMenu: true }), {left: "320px", top: "30px"});
+m.addControl(new SMap.Control.Zoom({}, { step:"10", titles: ["priblížiť", "oddialiť"],showZoomMenu: false }), {right: "320px", top: "30px"});
 
-var o = {title:"ZOOM"};
-var c = new SMap.Control.Zoom(o);
-m.addControl(c, {left:"180px", top:"9px"});
+var o2 = {title:"posun mapy"};
+var c2 = new SMap.Control.Compass(o2);
+m.addControl(c2, {right:"30px", top:"30px"});
 
 m.addDefaultLayer(SMap.DEF_BASE);
 m.addDefaultLayer(SMap.DEF_TURIST);
@@ -490,7 +493,7 @@ layerSwitch.addDefaultLayer(SMap.DEF_BASE);
 layerSwitch.addDefaultLayer(SMap.DEF_OPHOTO);
 layerSwitch.addDefaultLayer(SMap.DEF_TURIST);
 layerSwitch.addDefaultLayer(SMap.DEF_TURIST_WINTER);
-m.addControl(layerSwitch, {left:"8px", top:"9px"});
+m.addControl(layerSwitch, {left:"10px", top:"30px"});
 
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM); 
 m.addControl(mouse); 

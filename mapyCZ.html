@@ -10,7 +10,7 @@
         background:#000000;
 	   color: white;
       }
-
+      .smap zoom {top: 100px;}
       .viewDiv {
         float: right;
         padding: 0;
@@ -466,10 +466,15 @@ function load(){
 	window.priesvitnostLine=0.6;
 	window.hrubkaCiary=4;
 
-
-window.m = new SMap(JAK.gel("m"));
+var center = SMap.Coords.fromWGS84(17.177370,48.039381);
+window.m = new SMap(JAK.gel("m"),center,15);
 m.addControl(new SMap.Control.Sync()); 
 m.addDefaultControls();
+
+var o = {title:"ZOOM"};
+var c = new SMap.Control.Zoom(o);
+m.addControl(c, {left:"180px", top:"9px"});
+
 m.addDefaultLayer(SMap.DEF_BASE);
 m.addDefaultLayer(SMap.DEF_TURIST);
 m.addDefaultLayer(SMap.DEF_TURIST_WINTER);
@@ -489,8 +494,6 @@ m.addControl(layerSwitch, {left:"8px", top:"9px"});
 
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM); 
 m.addControl(mouse); 
-
-window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
 
 
 window.vrstvaCHVUfill = new SMap.Layer.Geometry();     

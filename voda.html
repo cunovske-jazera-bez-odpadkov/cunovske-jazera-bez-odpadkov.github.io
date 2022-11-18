@@ -469,15 +469,19 @@ function checkboxKlik(element){
  function mouseDown(e){
         e = e || window.event;
         e.preventDefault();
+  if (event.detail === 1) {
         if(e.which==1){
            if(e.target.id==="minusID"){minus(e);}
+           else{
+             if(e.target.id==="plusID"){}
            else{ 
              if ((e.target.id==="radio2004")||(e.target.id==="radio2021")){}
              else plus(e);
 		}
-        }//lava mys
-        else if(e.which==3){minus(e);}//prava mys
-
+       }
+          }
+    }//lava mys
+    else if(e.which==3){minus(e);}//prava mys
    }
 
   function contextMenu(e){
@@ -874,7 +878,7 @@ Toto PHO 2 pásmo vtedy zahŕňalo dokonca aj Rusovské jazero a Veľký Zemník
     <div class="img-comp-img" id="kontA7">
       <img src="PHO/PHO1.png" id="imgA7" width="100%" onload="loadedMap()">
     </div>
-  <div class="img-comp-img" style="top:2px; right:2px;">
+  <div class="img-comp-img" style="top:2px; right:50%;">
     <button type="button" id="plusID"  class="button">+</button> 
     <button type="button" id="minusID" class="button">-</button> 
   </div>

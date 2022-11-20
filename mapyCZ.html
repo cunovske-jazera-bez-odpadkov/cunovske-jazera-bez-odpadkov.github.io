@@ -473,12 +473,15 @@ m.addControl(new SMap.Control.Sync({bottomSpace:10}));
 //m.addDefaultControls();
 m.addDefaultContextMenu();
 
-m.addControl(new SMap.Control.Scale(), {bottom:"21px",left:"6px"});
-m.addControl(new SMap.Control.Zoom({}, { step:"10", titles: ["priblížiť", "oddialiť"], sliderHeight:"20", showZoomMenu: true }), {left: "320px", top: "30px"});
+m.addControl(new SMap.Control.Scale(), {bottom:"21px",left:"5%"});
+m.addControl(new SMap.Control.Zoom({}, { step:"10", titles: ["priblížiť", "oddialiť"], sliderHeight:"20", showZoomMenu: true }), {left: "30%", top: "30px"});
 
 var o2 = {title:"posun mapy"};
 var c2 = new SMap.Control.Compass(o2);
-m.addControl(c2, {right:"30px", top:"30px"});
+
+
+
+m.addControl(c2, {left:"90%", top:"30px"});
 
 
 var fulScLayer = new SMap.Layer.HUD(10);
@@ -486,7 +489,9 @@ m.addLayer(fulScLayer);
 fulScLayer.enable();
 
 var fulscreen = JAK.mel("div");
-var img = JAK.mel("img", {}, {left:"0px", top:"0px", position:"absolute"});
+fulscreen.setAttribute("title","CELÁ OBRAZOVKA");
+fulscreen.setAttribute("style","width:39px;height:39px;background-color:#eeeeee;border-radius: 3px; border: 0px solid #aaaaaa;");
+var img = JAK.mel("img", {}, {left:"7px", top:"7px", position:"absolute"});
 img.src = "resize.gif";
 fulscreen.appendChild(img);
 fulscreen.addEventListener('mouseup',function(event){
@@ -498,7 +503,7 @@ fulscreen.addEventListener('mouseup',function(event){
      img.src = "resize.gif";
    }
 });
-fulScLayer.addItem(fulscreen, {left:"50%", top:"30px"});
+fulScLayer.addItem(fulscreen, {left:"75%", top:"30px"});
 
 
 m.addDefaultLayer(SMap.DEF_BASE);
@@ -516,7 +521,7 @@ layerSwitch.addDefaultLayer(SMap.DEF_BASE);
 layerSwitch.addDefaultLayer(SMap.DEF_OPHOTO);
 layerSwitch.addDefaultLayer(SMap.DEF_TURIST);
 layerSwitch.addDefaultLayer(SMap.DEF_TURIST_WINTER);
-m.addControl(layerSwitch, {left:"10px", top:"30px"});
+m.addControl(layerSwitch, {left:"1%", top:"30px"});
 
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM); 
 m.addControl(mouse); 

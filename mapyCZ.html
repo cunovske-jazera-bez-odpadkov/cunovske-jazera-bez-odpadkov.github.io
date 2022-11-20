@@ -451,7 +451,9 @@ for (var i=0;i<maxPoints;i++) {
 	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
 	window.vrstvaPROLfill.addGeometry(polygon);
 }
+
 function load(){
+
 	window.farbaCHVU="#0000ff";
 	window.farbaCHAOL="#aaffbb";
 	window.farbaSKUEV0269="#ff00ff";
@@ -466,7 +468,10 @@ function load(){
 	window.hrubkaCiary=4;
 
 var center = SMap.Coords.fromWGS84(17.177370,48.039381);
-window.m = new SMap(JAK.gel("m"),center,15);
+var oknomapa = JAK.gel("m");
+window.m = new SMap(oknomapa ,center,15);
+
+
 m.addControl(new SMap.Control.Sync({bottomSpace:10})); 
  //m.addControl(new SMap.Control.Orientation({ mode: "ccw" }), { left: "200px", top: "30px" });
  //m.addControl(new SMap.Control.Orientation({ mode: "cw" }), { left: "235px", top: "30px" });
@@ -482,9 +487,80 @@ var c2 = new SMap.Control.Compass(o2);
 
 
 m.addControl(c2, {left:"90%", top:"30px"});
+////////////////////////////////////////////////////////////////////////////////////////////
 
+var menuLayer = new SMap.Layer.HUD();
+m.addLayer(menuLayer);
+menuLayer.enable();
 
-var fulScLayer = new SMap.Layer.HUD(10);
+var menuDIV = JAK.mel("div");
+menuDIV.setAttribute("title","ÚZEMIA OCHRANY");
+//menuDIV.setAttribute("style","width:39px;height:39px;background-color:#eeeeee;border-radius: 3px; border: 5px solid #aaaaaa;");
+var dropdown = JAK.mel("select");
+var optogroup = JAK.mel("optgroup");
+    var option1 = JAK.mel("option");
+    var option2 = JAK.mel("option");
+    var option3 = JAK.mel("option");
+    var option4 = JAK.mel("option");
+    var option5 = JAK.mel("option");
+
+  optogroup.appendChild(option1); 
+  optogroup.appendChild(option2); 
+  optogroup.appendChild(option3); 
+  optogroup.appendChild(option4); 
+  optogroup.appendChild(option5); 
+  var option6 = JAK.mel("option");
+  var option7 = JAK.mel("option");
+  var option8 = JAK.mel("option");
+
+dropdown.appendChild(optogroup );
+dropdown.appendChild(option6);
+dropdown.appendChild(option7);
+dropdown.appendChild(option8);
+
+menuDIV.appendChild(dropdown);
+menuLayer.addItem(menuDIV, {left:"1%", top:"25%"});
+    dropdown.setAttribute("style","color:#ff0000;background-color:#111111;border-radius: 4px; font-weight: bold;");
+ 
+    optogroup.setAttribute("label","OSTROVNÉ LÚČKY");
+    optogroup.setAttribute("style","color:pink;background-color:#111111;font-weight: bold;");
+
+    option1.value = "chaol";
+    option1.innerHTML = "CHA Ostrovné lúčky";
+    option1.setAttribute("style","color:#70ff80;background-color:#111111;font-weight: bold;");
+
+    option2.value = "SKUEV0269";
+    option2.innerHTML = "SKUEV0269";
+    option2.setAttribute("style","color:#ff00ff;background-color:#111111;font-weight: bold;");
+
+    option3.value = "SKUEV1269";
+    option3.innerHTML = "SKUEV1269";
+    option3.setAttribute("style","color:#00ff00;background-color:#111111;font-weight: bold;");
+
+    option4.value = "SKUEV2269";
+    option4.innerHTML = "SKUEV2269";
+    option4.setAttribute("style","color:#ff7000;background-color:#111111;font-weight: bold;");
+
+    option5.value = "zonab";
+    option5.innerHTML = "CHA Zóna B";
+    option5.setAttribute("style","color:#ff0000;background-color:#111111;font-weight: bold;");
+
+    option6.value = "chvu";
+    option6.innerHTML = "CHVÚ DUNAJSKÉ LUHY";
+    option6.setAttribute("style","color:#0000ff;background-color:#111111;font-weight: bold;");
+
+    option7.value = "chko";
+    option7.innerHTML = "CHKO DUNAJSKÉ LUHY";
+    option7.setAttribute("style","color:#00ffff;background-color:#111111;font-weight: bold;");
+
+    option8.value = "prol";
+    option8.innerHTML = "PR OSTROVNÉ LÚČKY X";
+    option8.setAttribute("style","color:#ffff00;background-color:#111111;font-weight: bold;");
+
+dropdown.value="zonab"; 
+
+////////////////////////////////////////////////////////////////////////////////////////////
+var fulScLayer = new SMap.Layer.HUD();
 m.addLayer(fulScLayer);
 fulScLayer.enable();
 
@@ -494,16 +570,28 @@ fulscreen.setAttribute("style","width:39px;height:39px;background-color:#eeeeee;
 var img = JAK.mel("img", {}, {left:"7px", top:"7px", position:"absolute"});
 img.src = "resize.gif";
 fulscreen.appendChild(img);
+
 fulscreen.addEventListener('mouseup',function(event){
    if (!document.isFullScreen && !document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
      JAK.gel("m").requestFullscreen();
-     img.src = "resize2.gif";
+     //img.src = "resize2.gif";
    }else{
       document.exitFullscreen()
-     img.src = "resize.gif";
+     //img.src = "resize.gif";
    }
 });
 fulScLayer.addItem(fulscreen, {left:"75%", top:"30px"});
+
+
+document.addEventListener("fullscreenchange", function() {
+   if (!document.isFullScreen && !document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
+     img.src = "resize.gif";
+   }else{
+     img.src = "resize2.gif";
+   }
+});
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 m.addDefaultLayer(SMap.DEF_BASE);

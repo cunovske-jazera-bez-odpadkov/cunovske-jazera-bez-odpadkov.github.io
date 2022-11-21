@@ -528,12 +528,12 @@ m.addControl(new SMap.Control.Sync({bottomSpace:10}));
 m.addDefaultContextMenu();
 
 m.addControl(new SMap.Control.Scale(), {bottom:"21px",left:"5%"});
-m.addControl(new SMap.Control.Zoom({}, { step:"10", titles: ["priblížiť", "oddialiť"], sliderHeight:"20", showZoomMenu: true }), {left: "30%", top: "30px"});
+m.addControl(new SMap.Control.Zoom({}, { step:"10", titles: ["priblížiť", "oddialiť"], sliderHeight:"20", showZoomMenu: true }), {right: "1%", top: "20%"});
 
 var o2 = {title:"posun mapy"};
 var c2 = new SMap.Control.Compass(o2);
 
-m.addControl(c2, {left:"90%", top:"30px"});
+m.addControl(c2, {right:"1%", bottom:"5%"});
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 var menuLayer = new SMap.Layer.HUD();
@@ -817,12 +817,13 @@ fulscreen.addEventListener('mouseup',function(event){
      //img.src = "resize.gif";
    }
 });
-fulScLayer.addItem(fulscreen, {left:"75%", top:"30px"});
+fulScLayer.addItem(fulscreen, {right:"2%", top:"30px"});
 
 
 document.addEventListener("fullscreenchange", function() {
    if (!document.isFullScreen && !document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
      img.src = "resize.gif";
+	window.scrollTo(0,0);
    }else{
      img.src = "resize2.gif";
    }
@@ -851,7 +852,7 @@ layerSwitch.addDefaultLayer(SMap.DEF_BASE);
 layerSwitch.addDefaultLayer(SMap.DEF_OPHOTO);
 layerSwitch.addDefaultLayer(SMap.DEF_TURIST);
 layerSwitch.addDefaultLayer(SMap.DEF_TURIST_WINTER);
-m.addControl(layerSwitch, {left:"45%", top:"30px"});
+m.addControl(layerSwitch, {left:"50%", top:"30px"});
 
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM); 
 m.addControl(mouse); 

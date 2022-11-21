@@ -10,6 +10,10 @@
         background:#000000;
 	   color: white;
       }
+	input{
+        width: 38px;
+        height: 38px;
+     }
       .viewDiv .zoom {color:blue;}
       .viewDiv {
         float: right;
@@ -451,9 +455,54 @@ for (var i=0;i<maxPoints;i++) {
 	var polygon = new SMap.Geometry(SMap.GEOMETRY_POLYGON, null, souradnice, options);    
 	window.vrstvaPROLfill.addGeometry(polygon);
 }
+const checkH_id = ["ostrovneH2","SKUEV0269H2","SKUEV1269H2","SKUEV2269H2","chabH2","chvuH2","chkoH2","prolH2"];
+const checkV_id = ["ostrovneV2","SKUEV0269V2","SKUEV1269V2","SKUEV2269V2","chabV2","chvuV2","chkoV2","prolV2"];
+
+
+const checkHx_id = ["ostrovneH","SKUEV0269H","SKUEV1269H","SKUEV2269H","chabH","chvuH","chkoH","prolH"];
+const checkVx_id = ["ostrovneV","SKUEV0269V","SKUEV1269V","SKUEV2269V","chabV","chvuV","chkoV","prolV"];
+
+const vrstvaLineStrArr = ["vrstvaCHAOLline","vrstvaSKUEV0269line","vrstvaSKUEV1269line","vrstvaSKUEV2269line","vrstvaZONABline","vrstvaCHVUline","vrstvaCHKOline","vrstvaPROLline"];
+const vrstvaFillStrArr = ["vrstvaCHAOLfill","vrstvaSKUEV0269fill","vrstvaSKUEV1269fill","vrstvaSKUEV2269fill","vrstvaZONABfill","vrstvaCHVUfill","vrstvaCHKOfill","vrstvaPROLfill"];
+
+const checkArr_id = ["ostrovneH2","ostrovneV2","SKUEV0269H2","SKUEV0269V2","SKUEV1269H2","SKUEV1269V2","SKUEV2269H2","SKUEV2269V2","chabH2","chabV2","chvuH2","chvuV2","chkoH2","chkoV2","prolH2","prolV2"];
+const vrstvaStrArr = ["vrstvaCHAOLline","vrstvaCHAOLfill","vrstvaSKUEV0269line","vrstvaSKUEV0269fill","vrstvaSKUEV1269line","vrstvaSKUEV1269fill","vrstvaSKUEV2269line","vrstvaSKUEV2269fill","vrstvaZONABline","vrstvaZONABfill","vrstvaCHVUline","vrstvaCHVUfill","vrstvaCHKOline","vrstvaCHKOfill","vrstvaPROLline","vrstvaPROLfill",];
+
+function vratIndex(retazec){
+  var index=-1;
+	for(i=0;i<checkArr_id.length;i++){
+       if(checkArr_id[i]===retazec)return i;
+     }
+   return index;
+}
+
+function checkboxChanged(e){
+   var index=vratIndex(e.target.id);
+  if(document.getElementById(e.target.id).checked){
+     window.m.addLayer(window[vrstvaStrArr[index]]); 
+     window[vrstvaStrArr[index]].enable();
+     window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
+
+  }else{
+	window.m.removeLayer(window[vrstvaStrArr[index]]); 
+  }
+  vyrovnaj_checkboxi_opacne();
+}
+
+function vyrovnaj_checkboxi(){
+	for(i=0;i<checkH_id.length;i++){
+		document.getElementById(checkH_id[i]).checked=document.getElementById(checkHx_id[i]).checked;
+		document.getElementById(checkV_id[i]).checked=document.getElementById(checkVx_id[i]).checked;
+	}
+}
+function vyrovnaj_checkboxi_opacne(){
+	for(i=0;i<checkH_id.length;i++){
+		document.getElementById(checkHx_id[i]).checked=document.getElementById(checkH_id[i]).checked;
+		document.getElementById(checkVx_id[i]).checked=document.getElementById(checkV_id[i]).checked;
+	}
+}
 
 function load(){
-
 	window.farbaCHVU="#0000ff";
 	window.farbaCHAOL="#aaffbb";
 	window.farbaSKUEV0269="#ff00ff";
@@ -484,8 +533,6 @@ m.addControl(new SMap.Control.Zoom({}, { step:"10", titles: ["priblížiť", "od
 var o2 = {title:"posun mapy"};
 var c2 = new SMap.Control.Compass(o2);
 
-
-
 m.addControl(c2, {left:"90%", top:"30px"});
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -494,72 +541,262 @@ m.addLayer(menuLayer);
 menuLayer.enable();
 
 var menuDIV = JAK.mel("div");
-menuDIV.setAttribute("title","ÚZEMIA OCHRANY");
-//menuDIV.setAttribute("style","width:39px;height:39px;background-color:#eeeeee;border-radius: 3px; border: 5px solid #aaaaaa;");
-var dropdown = JAK.mel("select");
-var optogroup = JAK.mel("optgroup");
-    var option1 = JAK.mel("option");
-    var option2 = JAK.mel("option");
-    var option3 = JAK.mel("option");
-    var option4 = JAK.mel("option");
-    var option5 = JAK.mel("option");
+menuDIV.setAttribute("title","ZVOĽ ÚZEMIA OCHRANY");
 
-  optogroup.appendChild(option1); 
-  optogroup.appendChild(option2); 
-  optogroup.appendChild(option3); 
-  optogroup.appendChild(option4); 
-  optogroup.appendChild(option5); 
-  var option6 = JAK.mel("option");
-  var option7 = JAK.mel("option");
-  var option8 = JAK.mel("option");
+var dropdownDIV= JAK.mel("div");
 
-dropdown.appendChild(optogroup );
-dropdown.appendChild(option6);
-dropdown.appendChild(option7);
-dropdown.appendChild(option8);
+var rozklikDIV= JAK.mel("div");
+rozklikDIV.innerHTML = "Územia ochrany &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+rozklikDIV.style.display="inline-block"
+rozklikDIV.setAttribute("style","border: 0px solid #ff00ff;border-radius: 4px;display:inline-block");
 
-menuDIV.appendChild(dropdown);
-menuLayer.addItem(menuDIV, {left:"1%", top:"25%"});
-    dropdown.setAttribute("style","color:#ff0000;background-color:#111111;border-radius: 4px; font-weight: bold;");
- 
-    optogroup.setAttribute("label","OSTROVNÉ LÚČKY");
-    optogroup.setAttribute("style","color:pink;background-color:#111111;font-weight: bold;");
+dropdownDIV.appendChild(rozklikDIV);
 
-    option1.value = "chaol";
-    option1.innerHTML = "CHA Ostrovné lúčky";
-    option1.setAttribute("style","color:#70ff80;background-color:#111111;font-weight: bold;");
+var rozklikLabel= JAK.mel("label");
+rozklikLabel.innerHTML=" \u276F"
+rozklikLabel.setAttribute("style","display:inline-block; border: 0px solid #ff00ff;-webkit-transform: rotate(90deg);transform: rotate(90deg);");
+dropdownDIV.appendChild(rozklikLabel);
 
-    option2.value = "SKUEV0269";
-    option2.innerHTML = "SKUEV0269";
-    option2.setAttribute("style","color:#ff00ff;background-color:#111111;font-weight: bold;");
+dropdownDIV.setAttribute("style","  cursor: pointer;padding:5px 15px 5px 15px;background:#fefefe;color:#000000;border: 0px solid #ff00ff;border-radius: 2px; font-size:12pt;");
 
-    option3.value = "SKUEV1269";
-    option3.innerHTML = "SKUEV1269";
-    option3.setAttribute("style","color:#00ff00;background-color:#111111;font-weight: bold;");
+menuDIV.appendChild(dropdownDIV);
 
-    option4.value = "SKUEV2269";
-    option4.innerHTML = "SKUEV2269";
-    option4.setAttribute("style","color:#ff7000;background-color:#111111;font-weight: bold;");
+const color =   ["aaffbb","ff00ff","00ff00","ff7000","ff0000","0000ff","00ffff","ffff00"];
 
-    option5.value = "zonab";
-    option5.innerHTML = "CHA Zóna B";
-    option5.setAttribute("style","color:#ff0000;background-color:#111111;font-weight: bold;");
+var rozklVnutroDIV=JAK.mel("div"); //display:none; 
+	rozklVnutroDIV.setAttribute("style","display:none;");
 
-    option6.value = "chvu";
-    option6.innerHTML = "CHVÚ DUNAJSKÉ LUHY";
-    option6.setAttribute("style","color:#0000ff;background-color:#111111;font-weight: bold;");
+var divriadok= JAK.mel("div");
+         divriadok.setAttribute("style","display:table-row;border-radius: 4px; border: 2px solid #aaaaaa");
 
-    option7.value = "chko";
-    option7.innerHTML = "CHKO DUNAJSKÉ LUHY";
-    option7.setAttribute("style","color:#00ffff;background-color:#111111;font-weight: bold;");
+var divcheck= JAK.mel("div");
+var checkb=JAK.mel("input");
+checkb.type="checkbox";
+divcheck.appendChild(checkb);
 
-    option8.value = "prol";
-    option8.innerHTML = "PR OSTROVNÉ LÚČKY X";
-    option8.setAttribute("style","color:#ffff00;background-color:#111111;font-weight: bold;");
+divriadok.appendChild(divcheck);
 
-dropdown.value="zonab"; 
+var divlabel= JAK.mel("div");
+divlabel.innerHTML="&nbsp;CHA OSTROVNÉ LÚČKY&nbsp;";
 
-////////////////////////////////////////////////////////////////////////////////////////////
+
+divriadok.appendChild(divlabel);
+
+var divcheckB= JAK.mel("div");
+var checkbB=JAK.mel("input");
+checkbB.type="checkbox";
+divcheckB.appendChild(checkbB);
+divriadok.appendChild(divcheckB);
+rozklVnutroDIV.appendChild(divriadok);
+
+/////////////////////////////////////////////////////////////////////////
+var divriadok2= JAK.mel("div");
+         divriadok2.setAttribute("style","display:table-row;border-radius: 4px; border: 2px solid #aaaaaa");
+
+var divcheck2= JAK.mel("div");
+var checkb2=JAK.mel("input");
+checkb2.type="checkbox";
+divcheck2.appendChild(checkb2);
+
+divriadok2.appendChild(divcheck2);
+
+var divlabel2= JAK.mel("div");
+divlabel2.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SKUEV0269&nbsp;";
+
+
+divriadok2.appendChild(divlabel2);
+
+var divcheckB2= JAK.mel("div");
+var checkbB2=JAK.mel("input");
+checkbB2.type="checkbox";
+divcheckB2.appendChild(checkbB2);
+divriadok2.appendChild(divcheckB2);
+rozklVnutroDIV.appendChild(divriadok2);
+////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////
+var divriadok3= JAK.mel("div");
+         divriadok3.setAttribute("style","display:table-row;border-radius: 4px; border: 2px solid #aaaaaa");
+
+var divcheck3= JAK.mel("div");
+var checkb3=JAK.mel("input");
+checkb3.type="checkbox";
+divcheck3.appendChild(checkb3);
+
+divriadok3.appendChild(divcheck3);
+
+var divlabel3= JAK.mel("div");
+divlabel3.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SKUEV1269&nbsp;";
+
+
+divriadok3.appendChild(divlabel3);
+
+var divcheckB3= JAK.mel("div");
+var checkbB3=JAK.mel("input");
+checkbB3.type="checkbox";
+divcheckB3.appendChild(checkbB3);
+divriadok3.appendChild(divcheckB3);
+rozklVnutroDIV.appendChild(divriadok3);
+////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////
+var divriadok4= JAK.mel("div");
+         divriadok4.setAttribute("style","display:table-row;border-radius: 4px; border: 2px solid #aaaaaa");
+
+var divcheck4= JAK.mel("div");
+var checkb4=JAK.mel("input");
+checkb4.type="checkbox";
+divcheck4.appendChild(checkb4);
+
+divriadok4.appendChild(divcheck4);
+
+var divlabel4= JAK.mel("div");
+divlabel4.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SKUEV2269&nbsp;";
+
+
+divriadok4.appendChild(divlabel4);
+
+var divcheckB4= JAK.mel("div");
+var checkbB4=JAK.mel("input");
+checkbB4.type="checkbox";
+divcheckB4.appendChild(checkbB4);
+divriadok4.appendChild(divcheckB4);
+rozklVnutroDIV.appendChild(divriadok4);
+////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////
+var divriadok5= JAK.mel("div");
+         divriadok5.setAttribute("style","display:table-row;border-radius: 4px; border: 2px solid #aaaaaa");
+
+var divcheck5= JAK.mel("div");
+var checkb5=JAK.mel("input");
+checkb5.type="checkbox";
+checkb5.checked=true;
+divcheck5.appendChild(checkb5);
+
+divriadok5.appendChild(divcheck5);
+
+var divlabel5= JAK.mel("div");
+divlabel5.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ZÓNA B&nbsp;";
+
+
+divriadok5.appendChild(divlabel5);
+
+var divcheckB5= JAK.mel("div");
+var checkbB5=JAK.mel("input");
+checkbB5.type="checkbox";
+checkbB5.checked=true;
+divcheckB5.appendChild(checkbB5);
+divriadok5.appendChild(divcheckB5);
+rozklVnutroDIV.appendChild(divriadok5);
+////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////
+var divriadok6= JAK.mel("div");
+         divriadok6.setAttribute("style","display:table-row;border-radius: 4px; border: 2px solid #aaaaaa");
+
+var divcheck6= JAK.mel("div");
+var checkb6=JAK.mel("input");
+checkb6.type="checkbox";
+divcheck6.appendChild(checkb6);
+
+divriadok6.appendChild(divcheck6);
+
+var divlabel6= JAK.mel("div");
+divlabel6.innerHTML="&nbsp;CHVÚ DUNAJSKÉ LUHY&nbsp;";
+
+
+divriadok6.appendChild(divlabel6);
+
+var divcheckB6= JAK.mel("div");
+var checkbB6=JAK.mel("input");
+checkbB6.type="checkbox";
+divcheckB6.appendChild(checkbB6);
+divriadok6.appendChild(divcheckB6);
+rozklVnutroDIV.appendChild(divriadok6);
+////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////
+var divriadok7= JAK.mel("div");
+         divriadok7.setAttribute("style","display:table-row;border-radius: 4px; border: 2px solid #aaaaaa");
+
+var divcheck7= JAK.mel("div");
+var checkb7=JAK.mel("input");
+checkb7.type="checkbox";
+divcheck7.appendChild(checkb7);
+
+divriadok7.appendChild(divcheck7);
+
+var divlabel7= JAK.mel("div");
+divlabel7.innerHTML="&nbsp;CHKO DUNAJSKÉ LUHY&nbsp;";
+
+
+divriadok7.appendChild(divlabel7);
+
+var divcheckB7= JAK.mel("div");
+var checkbB7=JAK.mel("input");
+checkbB7.type="checkbox";
+divcheckB7.appendChild(checkbB7);
+divriadok7.appendChild(divcheckB7);
+rozklVnutroDIV.appendChild(divriadok7);
+////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////
+var divriadok8= JAK.mel("div");
+         divriadok8.setAttribute("style","display:table-row;border-radius: 4px; border: 2px solid #aaaaaa");
+
+var divcheck8= JAK.mel("div");
+var checkb8=JAK.mel("input");
+checkb8.type="checkbox";
+divcheck8.appendChild(checkb8);
+
+divriadok8.appendChild(divcheck8);
+
+var divlabel8= JAK.mel("div");
+divlabel8.innerHTML="&nbsp;PR OSTROVNÉ LÚČKY&nbsp;";
+
+
+divriadok8.appendChild(divlabel8);
+
+var divcheckB8= JAK.mel("div");
+var checkbB8=JAK.mel("input");
+checkbB8.type="checkbox";
+divcheckB8.appendChild(checkbB8);
+divriadok8.appendChild(divcheckB8);
+rozklVnutroDIV.appendChild(divriadok8);
+////////////////////////////////////////////////////////////
+
+menuDIV.appendChild(rozklVnutroDIV);
+
+const checkHdivArr=[divcheck,divcheck2,divcheck3,divcheck4,divcheck5,divcheck6,divcheck7,divcheck8];
+const checkVdivArr=[divcheckB,divcheckB2,divcheckB3,divcheckB4,divcheckB5,divcheckB6,divcheckB7,divcheckB8];
+const labelarr=[divlabel,divlabel2,divlabel3,divlabel4,divlabel5,divlabel6,divlabel7,divlabel8];
+const checkH=[checkb,checkb2,checkb3,checkb4,checkb5,checkb6,checkb7,checkb8];
+const checkV=[checkbB,checkbB2,checkbB3,checkbB4,checkbB5,checkbB6,checkbB7,checkbB8];
+
+menuDIV.setAttribute("style","border: 0px solid #0000ff;border-radius: 4px;");
+
+
+for(i=0;i<checkHdivArr.length;i++){
+checkHdivArr[i].setAttribute("style","display:table-cell;border-radius: 4px; border: 2px solid #"+color[i]);
+checkVdivArr[i].setAttribute("style","display:table-cell;background:#"+color[i]+";border-radius: 4px; border: 1px solid #"+color[i]);
+labelarr[i].setAttribute("style","display:table-cell; border: 0px solid #ff00ff;font-size:10pt;color:#000000;background:#"+color[i]);
+
+checkH[i].setAttribute("style","accent-color:#"+color[i]);
+checkV[i].setAttribute("style","accent-color:#"+color[i]);
+checkH[i].id=checkH_id[i]; 
+checkV[i].id=checkV_id[i]; 
+checkH[i].addEventListener('change',checkboxChanged);
+checkV[i].addEventListener('change',checkboxChanged);
+
+}
+
+menuLayer.addItem(menuDIV, {left:"1%", top:"30px"});
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var fulScLayer = new SMap.Layer.HUD();
 m.addLayer(fulScLayer);
 fulScLayer.enable();
@@ -590,10 +827,15 @@ document.addEventListener("fullscreenchange", function() {
      img.src = "resize2.gif";
    }
 });
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+dropdownDIV.addEventListener('mouseup',function(event){
+   if(rozklVnutroDIV.style.display==="none"){
+     rozklVnutroDIV.style.display="table";
+   }else{
+     rozklVnutroDIV.style.display="none";
+   }
+});
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 m.addDefaultLayer(SMap.DEF_BASE);
 m.addDefaultLayer(SMap.DEF_TURIST);
 m.addDefaultLayer(SMap.DEF_TURIST_WINTER);
@@ -609,7 +851,7 @@ layerSwitch.addDefaultLayer(SMap.DEF_BASE);
 layerSwitch.addDefaultLayer(SMap.DEF_OPHOTO);
 layerSwitch.addDefaultLayer(SMap.DEF_TURIST);
 layerSwitch.addDefaultLayer(SMap.DEF_TURIST_WINTER);
-m.addControl(layerSwitch, {left:"1%", top:"30px"});
+m.addControl(layerSwitch, {left:"45%", top:"30px"});
 
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM); 
 m.addControl(mouse); 
@@ -786,8 +1028,12 @@ request9.send("https://cunovske-jazera-bez-odpadkov.github.io/chvu9.xml");
 var request1 = new JAK.Request(JAK.Request.XML);
 request1.setCallback(window, responseCHVU);
 request1.send("https://cunovske-jazera-bez-odpadkov.github.io/chvuSpolu.xml");
-ukazStavCheckboxov();
-	}
+
+vyrovnaj_checkboxi()
+nakresliStavCheckboxov();
+	
+}
+
 
 function checkboxKlik(element){
   if ((element.id==="prolH")&&(element.checked == true)){
@@ -796,7 +1042,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
   } else if ((element.id==="prolH")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaPROLline); 
-		window.vrstvaPROLline.diable();
 
   }
   if ((element.id==="prolV")&&(element.checked == true)){
@@ -806,7 +1051,6 @@ function checkboxKlik(element){
 
   } else if ((element.id==="prolV")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaPROLfill); 
-		window.vrstvaPROLfill.diable();
   }
   if ((element.id==="chabH")&&(element.checked == true)){
 	    window.m.addLayer(window.vrstvaZONABline); 
@@ -815,7 +1059,6 @@ function checkboxKlik(element){
 
   } else if ((element.id==="chabH")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaZONABline); 
-		window.vrstvaZONABline.diable();
   }
   if ((element.id==="chabV")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaZONABfill); 
@@ -823,7 +1066,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
   } else if ((element.id==="chabV")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaZONABfill); 
-		window.vrstvaZONABfill.diable();
   }
 
   if ((element.id==="chvuH")&&(element.checked == true)){
@@ -832,7 +1074,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.989726057218075,47.9328026019428), 9);
   } else if ((element.id==="chvuH")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaCHVUline); 
-		window.vrstvaCHVUline.diable();
   }
   if ((element.id==="chvuV")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaCHVUfill); 
@@ -840,7 +1081,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.989726057218075,47.9328026019428), 9);
   } else if ((element.id==="chvuV")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaCHVUfill); 
-		window.vrstvaCHVUfill.diable();
   }
 
   if ((element.id==="chkoH")&&(element.checked == true)){
@@ -849,7 +1089,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.578215,47.910073), 10);
   } else if ((element.id==="chkoH")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaCHKOline); 
-		window.vrstvaCHKOline.diable();
   }
   if ((element.id==="chkoV")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaCHKOfill); 
@@ -857,16 +1096,13 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.578215,47.910073), 10);
   } else if ((element.id==="chkoV")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaCHKOfill); 
-		window.vrstvaCHKOfill.diable();
   }
-
   if ((element.id==="SKUEV0269H")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaSKUEV0269line); 
           window.vrstvaSKUEV0269line.enable();
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
    } else if ((element.id==="SKUEV0269H")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaSKUEV0269line); 
-		window.vrstvaSKUEV0269line.diable();
   }
   if ((element.id==="SKUEV0269V")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaSKUEV0269fill); 
@@ -874,7 +1110,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
   } else if ((element.id==="SKUEV0269V")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaSKUEV0269fill); 
-		window.vrstvaSKUEV0269fill.diable();
   }
   if ((element.id==="SKUEV1269H")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaSKUEV1269line); 
@@ -882,7 +1117,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
    } else if ((element.id==="SKUEV1269H")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaSKUEV1269line); 
-		window.vrstvaSKUEV1269line.diable();
   }
   if ((element.id==="SKUEV1269V")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaSKUEV1269fill); 
@@ -890,7 +1124,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
   } else if ((element.id==="SKUEV1269V")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaSKUEV1269fill); 
-		window.vrstvaSKUEV1269fill.diable();
   }
 
   if ((element.id==="SKUEV2269H")&&(element.checked == true)){
@@ -899,7 +1132,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
    } else if ((element.id==="SKUEV2269H")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaSKUEV2269line); 
-		window.vrstvaSKUEV2269line.diable();
   }
   if ((element.id==="SKUEV2269V")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaSKUEV2269fill); 
@@ -907,8 +1139,8 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
   } else if ((element.id==="SKUEV2269V")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaSKUEV2269fill); 
-		window.vrstvaSKUEV2269fill.diable();
   }
+
 
   if ((element.id==="ostrovneH")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaCHAOLline); 
@@ -916,7 +1148,6 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
   } else if ((element.id==="ostrovneH")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaCHAOLline); 
-		window.vrstvaCHAOLline.diable();
   }
   if ((element.id==="ostrovneV")&&(element.checked == true)){
 		window.m.addLayer(window.vrstvaCHAOLfill); 
@@ -924,17 +1155,18 @@ function checkboxKlik(element){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
   } else if ((element.id==="ostrovneV")&&(element.checked == false)){
 		window.m.removeLayer(window.vrstvaCHAOLfill); 
-		window.vrstvaCHAOLfill.diable();
   }
+  vyrovnaj_checkboxi();
 } 
-function ukazStavCheckboxov(){
+
+function nakresliStavCheckboxov(){
   if (document.getElementById("prolH").checked){
 	    window.m.addLayer(window.vrstvaPROLline); 
      	     window.vrstvaPROLline.enable();
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
 
   } else if (!document.getElementById("prolH").checked){
-		//window.m.removeLayer(window.vrstvaPROLline); 
+		if(window.vrstvaPROLline.isActive())window.m.removeLayer(window.vrstvaPROLline); 
 		//window.vrstvaPROLline.diable();
   }
 
@@ -942,9 +1174,8 @@ function ukazStavCheckboxov(){
 		window.m.addLayer(window.vrstvaPROLfill); 
           window.vrstvaPROLfill.enable();
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
-
   } else if (!document.getElementById("prolV").checked){
-		//window.m.removeLayer(window.vrstvaPROLfill); 
+		if(window.vrstvaPROLfill.isActive())window.m.removeLayer(window.vrstvaPROLfill); 
 		//window.vrstvaPROLfill.diable();
   }
 
@@ -954,7 +1185,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
 
   } else if (!document.getElementById("chabH").checked){
-		//window.m.removeLayer(window.vrstvaZONABline); 
+		if(window.vrstvaZONABline.isActive())window.m.removeLayer(window.vrstvaZONABline); 
 		//window.vrstvaZONABline.diable();
   }
   if (document.getElementById("chabV").checked){
@@ -963,7 +1194,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.177370,48.039381), 15);
 
   } else if (!document.getElementById("chabV").checked){
-		//window.m.removeLayer(window.vrstvaZONABfill); 
+		if(window.vrstvaZONABfill.isActive())window.m.removeLayer(window.vrstvaZONABfill); 
 		//window.vrstvaZONABfill.diable();
   }
 
@@ -973,7 +1204,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.989726057218075,47.9328026019428), 9);
 
   } else if (!document.getElementById("chvuH").checked){
-		//window.m.removeLayer(window.vrstvaCHVUline); 
+		if(window.vrstvaCHVUline.isActive())window.m.removeLayer(window.vrstvaCHVUline); 
 		//window.vrstvaCHVUline.diable();
   }
   if (document.getElementById("chvuV").checked){
@@ -982,7 +1213,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.989726057218075,47.9328026019428), 9);
 
   } else if (!document.getElementById("chvuV").checked){
-		//window.m.removeLayer(window.vrstvaCHVUfill); 
+		if(window.vrstvaCHVUfill.isActive())window.m.removeLayer(window.vrstvaCHVUfill); 
 		//window.vrstvaCHVUfill.diable();
   }
 
@@ -992,7 +1223,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.578215,47.910073), 10);
 
   } else if (!document.getElementById("chkoH").checked){
-		//window.m.removeLayer(window.vrstvaCHKOline); 
+		if(window.vrstvaCHKOline.isActive())window.m.removeLayer(window.vrstvaCHKOline); 
 		//window.vrstvaCHKOline.diable();
   }
   if (document.getElementById("chkoV").checked){
@@ -1001,7 +1232,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.578215,47.910073), 10);
 
   } else if (!document.getElementById("chkoV").checked){
-		//window.m.removeLayer(window.vrstvaCHKOfill); 
+		if(window.vrstvaCHKOfill.isActive())window.m.removeLayer(window.vrstvaCHKOfill); 
 		//window.vrstvaCHKOfill.diable();
   }
 
@@ -1011,7 +1242,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
 
   } else if (!document.getElementById("SKUEV0269H").checked){
-		//window.m.removeLayer(window.vrstvaSKUEV0269line); 
+		if(window.vrstvaSKUEV0269line.isActive())window.m.removeLayer(window.vrstvaSKUEV0269line); 
 		//window.vrstvaSKUEV0269line.diable();
   }
   if (document.getElementById("SKUEV0269V").checked){
@@ -1020,7 +1251,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
 
   } else if (!document.getElementById("SKUEV0269V").checked){
-		//window.m.removeLayer(window.vrstvaSKUEV0269fill); 
+		if(window.vrstvaSKUEV0269fill.isActive())window.m.removeLayer(window.vrstvaSKUEV0269fill); 
 		//window.vrstvaSKUEV0269fill.diable();
   }
 
@@ -1030,7 +1261,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
 
   } else if (!document.getElementById("SKUEV1269H").checked){
-		//window.m.removeLayer(window.vrstvaSKUEV1269line); 
+		if(window.vrstvaSKUEV1269line.isActive())window.m.removeLayer(window.vrstvaSKUEV1269line); 
 		//window.vrstvaSKUEV1269line.diable();
   }
   if (document.getElementById("SKUEV1269V").checked){
@@ -1039,7 +1270,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
 
   } else if (!document.getElementById("SKUEV1269V").checked){
-		//window.m.removeLayer(window.vrstvaSKUEV1269fill); 
+		if(window.vrstvaSKUEV1269fill.isActive())window.m.removeLayer(window.vrstvaSKUEV1269fill); 
 		//window.vrstvaSKUEV1269fill.diable();
   }
 
@@ -1049,7 +1280,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
 
   } else if (!document.getElementById("SKUEV2269H").checked){
-		//window.m.removeLayer(window.vrstvaSKUEV2269line); 
+		if(window.vrstvaSKUEV2269line.isActive())window.m.removeLayer(window.vrstvaSKUEV2269line); 
 		//window.vrstvaSKUEV2269line.diable();
   }
   if (document.getElementById("SKUEV2269V").checked){
@@ -1058,7 +1289,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
 
   } else if (!document.getElementById("SKUEV2269V").checked){
-		//window.m.removeLayer(window.vrstvaSKUEV2269fill); 
+		if(window.vrstvaSKUEV2269fill.isActive())window.m.removeLayer(window.vrstvaSKUEV2269fill); 
 		//window.vrstvaSKUEV2269fill.diable();
   }
 
@@ -1066,10 +1297,9 @@ function ukazStavCheckboxov(){
 		window.m.addLayer(window.vrstvaCHAOLline); 
           window.vrstvaCHAOLline.enable();
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
-          window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
 
   } else if (!document.getElementById("ostrovneH").checked){
-		//window.m.removeLayer(window.vrstvaCHAOLline); 
+		if(window.vrstvaCHAOLline.isActive())window.m.removeLayer(window.vrstvaCHAOLline); 
 		//window.vrstvaCHAOLline.diable();
   }
   if (document.getElementById("ostrovneV").checked){
@@ -1078,7 +1308,7 @@ function ukazStavCheckboxov(){
           window.m.setCenterZoom(SMap.Coords.fromWGS84(17.173853,48.046230), 13);
 
   } else if (!document.getElementById("ostrovneV").checked){
-		//window.m.removeLayer(window.vrstvaCHAOLfill); 
+		if(window.vrstvaCHAOLfill.isActive())window.m.removeLayer(window.vrstvaCHAOLfill); 
 		//window.vrstvaCHAOLfill.diable();
   }
 

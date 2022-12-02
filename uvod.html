@@ -17,6 +17,8 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="mediaScreen.css">
 
+<script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
+        <script type="text/javascript">Loader.load(null, {api:"simple"});</script>
 <style>
 <!--
 
@@ -159,10 +161,16 @@ div.WordSection1
 	{page:WordSection1;}
 -->
 </style>
+<script>
+   function load(){
+	var center = SMap.Coords.fromWGS84(17.1753886 ,48.0387189); 
+var m = new SMap(JAK.gel("m"), center, 17, SMap.DEF_OPHOTO);
 
+}    
+</script>      
 </head>
 
-<body lang=SK link=blue vlink="#954F72" style='word-wrap:break-word'>
+<body onload="load();" lang=SK link=blue vlink="#954F72" style='word-wrap:break-word'>
 <br>
 <br>
 <center><h2 style="color:Tomato;">Vítajte na stránkach o Čunovských jazerách</h2>
@@ -196,13 +204,80 @@ Sú tu aj moje príspevky z facebookovej stránky: <br><br> <a href="https://www
           <div class="col-rt-12">
               <div class="Scriptcontent">
                   <div class="container">
-                  
+        
+
           
                 <div class="tabs">
 
       <div class="tab">
+        <input type="checkbox" id="chck1">
+        <label class="tab-label" for="chck1">AKO A KEDY VZNIKLI JAZERÁ&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <div class="tab-content">
+        <p>
+        Ťažiť štrk v oblasti dnešných jazier sa začal v šesdesiatych rokoch 20-teho storočia na miestach s kde štrkopiesky dosahovali najhrubšiu vrstvu.
+	   Čiernobiela letecká snímka z decembra roku 1961 zachytáva tento začiatok.<br>
+        Farebne vyznačené sú <span style="color:#ff6600"> miesta kde sa začala ťažba </span> a <span style="color:#01e3ff"> obrys Čunovských jazier dnes</span>
+        </p>
+
+        <a href="OBR/1961.jpg" target="blank"><img src="OBR/1961.jpg" style="height:200"></img></a>
+        <a href="OBR/1961strk.jpg" target="blank"><img src="OBR/1961strk.jpg" style="height:200"></img></a>
+        <a href="OBR/1961obrys.jpg" target="blank"><img src="OBR/1961obrys.jpg" style="height:200"></img></a>
+		<br>
+	   <p>V 60-tych rokoch ťažba štrku pokračovala ale jazerá tu ešte stále nevznikli. V rokoch 1967 a 1969 územie vyzeralo takto:<br>
+		Farebne sú vyznačené <span style="color:#01e3ff"> priesaky podzemnej vody</span> 
+		</p>
+        <table>
+		<tr>
+        		<td><a href="OBR/1967.jpg" target="blank"><img src="OBR/1967.jpg" style="width:250"></img></a></td>
+		<tr>
+		</tr>
+
+        		<td><a href="OBR/1969.jpg" target="blank"><img src="OBR/1969.jpg" style="width:250"></img></a></td>
+        		<td><a href="OBR/1969voda.jpg" target="blank"><img src="OBR/1969voda.jpg" style="width:250"></img></a></td>
+		</tr>
+	  </table>
+<span style="font-size: 8pt;"> zdroj:©Historická ortofotomapa © GEODIS SLOVAKIA, s.r.o. a Historické LMS © Topografický ústav Banská Bystrica</span>
+        
+<p>
+Až v 70-tých rokoch tu postupne začali vznikať vodné plochy. 
+V októbri 1972 a v auguste 1973 sa už začali črtať jazerá:
+</p>
+        		<img src="OBR/1972_10_15.jpg" style="height:200"></img>
+        		<img src="OBR/1972_10_15voda.jpg" style="height:200"></img>
+               &nbsp;
+        		<img src="OBR/1973.jpg" style="height:200"></img>
+        		<img src="OBR/1973voda.jpg" style="height:200"></img>
+<p>
+Malé jazero, južná a severná časť veľkého jazera boli postupne vybágrovné a zaplavené. Iba sted jazera tam kde je dnes ostrov nebol ešte zaplavený a zo
+začiatku jazera tu <span style="color:#a44200">viedol poloostrov, ktorý sa postupne zmenšoval</span> (na snímke z decembra 1973). </p>
+
+        		<img src="OBR/1973_12_03.jpg" style="height:200"></img>
+        		<img src="OBR/1973_12_03poloostrov.jpg" style="height:200"></img>
+<p>
+Jazero sa ďalej bágrovalo a v marci 1978 už bol tento poloostrov takmer odstránený, črtal sa už aj vzniknutý ostrov. 
+</p>
+        		<a href="OBR/1978.jpg" target="blank"><img src="OBR/1978.jpg" style="height:200"></img></a>
+<p>
+A v auguste 1980 má jazero vpodstate už dnešný tvar. Polostrov úplne zanikol a je vidno iba ostrov v strede veľkého jazera. Východná časť jazera ostala stále rozbágrovaná.
+</p>
+
+        		<a href="OBR/1980.jpg" target="blank"><img src="OBR/1980.jpg" style="height:200"></img></a>
+<p>
+V nasledujúcich rokoch sa jazero ďalej upravovalo a neskôr po ukončení ťažby štrku, sa na jeho brehy vracia aj príroda.<br> 
+Postupným bágrovaním jazier vznikli na jazere rôzne plytčiny a priehlbiny, ktoré pri pohľade z výšky vytvárajú nádherné rebrovanie jazier.
+Je to vidno hlavne na veľkom jazere. Na satelitnej snímke z roku 2014 sa to dá pekne pozorovať. Všimnite si aj pozostatok polostrova o ktorom
+som písal vyššie.
+</p>
+<div id="m" style="width: 100%;height: 780px;"></div>
+<br><br>
+Porovnanie snímkov a staršej mapy si môžete vyskúšať <a href="https://premeny.github.io/cunovskejazera/" target="_blank">v interaktívnom prehliadači.</a>
+
+	</div>
+      </div>
+
+      <div class="tab">
         <input type="checkbox" id="chck2">
-        <label class="tab-label" for="chck2">ÚVODNÉ INFORMÁCIE O ČUNOVSKÝCH JAZERÁCH.&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label class="tab-label" for="chck2">ÚVODNÉ INFORMÁCIE O ČUNOVSKÝCH JAZERÁCH&nbsp;&nbsp;&nbsp;&nbsp;</label>
         <div class="tab-content">
 <center><u>publikované na facebooku 31.1.2018</u> a postupne upravované:</center><br><br>
 Čunovské jazerá sú jazerá s nádhernou prírodnou scenériou a čistou vodou, považované za najkrajšie v Bratislave. 

@@ -25,6 +25,10 @@ input {
 }
 summary::marker {
   color: #e162bf;
+  list-style-type: '+ ';
+}
+details[open] > summary {
+  list-style-type: '- ';
 }
 
 .row {

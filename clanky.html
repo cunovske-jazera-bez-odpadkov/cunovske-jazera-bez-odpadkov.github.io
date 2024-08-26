@@ -17,7 +17,8 @@
 
 <style>
 <!--
-  
+  :root {  --prirodna: #b9cb99;}
+
 span.nature{color: #3EB489;}
 span.water{color:#8fdddf;}
 span.pozor{color:#ff8b00;}
@@ -45,7 +46,13 @@ span.pozor{color:#ff8b00;}
   bottom: 0;
 }
 #video_box{position: relative;}
-
+table {
+  border:1px solid white;
+}
+td, th {
+  border: 1px solid var(--prirodna);
+}
+	
 summary::marker {
   color: #7bb3b5;  
 }
@@ -84,7 +91,7 @@ details[open] > summary {
   <details> 
 	<summary style='color: #00aaff; cursor:default; font-size:1vw'> &nbsp;01.07.1975 - BRATISLAVSKÝ LESNÝ PARK A JEHO GENERÁLNY PROJEKT VÝSTAVBY S PERSPEKTÍVOU DO ROKU 2000
  	</summary>
-	<div class="details-container" style="border: 2px solid black; padding-left: 2vw; font-size:1vw; color:#b9cb99;">
+	<div class="details-container" style="border: 2px solid black; padding-left: 2vw; font-size:1vw; color:var(--prirodna);">
 	<p>
 	<font color="#00ffaa">autor článku: Eugen Riedl &nbsp;&nbsp; zdroj: Pamiatky a príroda č.4(periodikum) </font>
 	<BR><BR>

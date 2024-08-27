@@ -18,10 +18,12 @@
 <style>
 <!--
   :root {  --prirodnaC: #b9cb99;}
+  :root {  --slabsiC: #788463;}
   :root {  --autorC: #00ffaa;}
   :root {  --rozbalC: #00aaff;}
   :root {  --markerC: #7bb3b5;}
-	
+  :root {  --cjC: #91cbb8;}
+  :root {  --cunovskeC: #ce8e6b;}
 #video_overlays {
   position: absolute;
   padding: 0px;
@@ -40,25 +42,28 @@
 }
 #video_box{position: relative;}
 table {
-  border:1px solid var(--prirodnaC);
-  color:var(--prirodna);
+  border:1px solid var(--slabsiC);
+  color:var(--slabsiC);
 }
 td, th {
-  border: 1px solid var(--prirodnaC);
+  border: 1px solid var(--slabsiC);
   padding: 0.2em;
 }
 	
-summary::marker {
-  color: var(--markerC);  
-}
 summary{
-list-style-type: "\229E";
+     /*list-style: none;*/
+	list-style-type: "....";/*list-style-type: "\229E";*/
 }
+summary::marker {
+  	color: var(--markerC);  
+}
+
 details{
-  background-color: #111111;
+  	background-color: #111111;
 }
 details[open] > summary {
-  list-style-type: "\229F";
+  list-style-type: "..";
+  /*list-style-type: "\229F";*/
 }
 .details-container {
   height: 90vh;
@@ -81,8 +86,13 @@ details[open] > summary {
  color:var(--prirodnaC);
 }
 .cj{
-  color:var(--autorC);
-  font-weight: bold;
+  color:var(--cjC);
+}
+.cunovske{
+  color:var(--cunovskeC);
+}
+.slabsi{
+  color:var(--slabsiC);
 }
 -->
 </style>
@@ -97,10 +107,12 @@ details[open] > summary {
 	<span style='font-size:1.2vw; color:var(--autorC)'>  o Čunovských jazerách, Ostrovných lúčkach a okolí... 	</font>
 	<BR><BR><BR>
 	
-     <details> 
+
+
+     <details class="clanok"> 
 	<summary> 
 		<span class="rozbal">
-		  &nbsp;01.07.1975 - BRATISLAVSKÝ LESNÝ PARK A JEHO GENERÁLNY PROJEKT VÝSTAVBY S PERSPEKTÍVOU DO ROKU 2000
+		  01.07.1975 - BRATISLAVSKÝ LESNÝ PARK A JEHO GENERÁLNY PROJEKT VÝSTAVBY S PERSPEKTÍVOU DO ROKU 2000
 		</span>
  	</summary>
 	<div class="details-container">
@@ -112,9 +124,8 @@ details[open] > summary {
 	<span class="clanok">
 		<BR><BR>
 		Na základe Smerného územného plánu rozvoja Bratislavy s koncepciou rozvoja do roku 2000 predložil ÚHA mesta Bratislavy návrh na rozšírenie územia prímestských lesov Bratislavského lesného parku.
-		<BR><BR>
-	    <details> 
-	      <summary>...</summary>
+		<BR>
+	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
 		Poradný zbor BLP po zvážení návrh prijal a predostrel túto požiadavku prostredníctvom NV hlavného mesta Bratislavy Ministerstvu lesného a vodného hospodárstva.
 		<BR><BR>
 		Toto ministerstvo po zistení skutkového stavu požiadavku NV hlavného mesta Bratislavy akceptovalo a svojím rozhodnutím v spise č. 188-22/73-130 zo dňa 1. II. 1973 vyhlásilo s platnosťou od 1. I. 1973 všetky lesy Lesného závodu Bratislava za účelové lesy II podľa písmena ..g" platnej vy- hlášky teda za lesy rekreačné.
@@ -262,7 +273,7 @@ details[open] > summary {
 		3. Rusovce ide prakticky o rozšírenie a nadväznosť na Rusovský park so zriadením športovo-rekreačnej vybavenosti.
 		<BR>
 		<span class="cj">
-			4. Čunovské jazerá - využiť ako veľké rekreačné stredisko s vybavenosťou pre uspokojenie potrieb cestovného ruchu a pod. 
+			4. <span class="cunovske">Čunovské jazerá</span> - využiť ako veľké rekreačné stredisko s vybavenosťou pre uspokojenie potrieb cestovného ruchu a pod. 
 				Toto stredisko by zachytávalo tranzit rekreantov a turistov na trase sever -juh a opačne.
 			<BR>
 			Pretože pri riešení tejto problematiky sa vyskytlo veľa nejasností, zvolal ÚHA hlavného mesta Bratislavy na 23. 5. 1975 pracovnú poradu zo zástupcov Hydroconsultu, Urbionu, Stavoprojektu, Výskumného ústavu pre cestovný ruch, NVB odboru poľnohospodárstva, lesného a vodného hospodárstva, zástupcov vodného hospodárstva a zástupcov OHOL, ako aj GPBLP. Uzáver uvedeného rokovania bol jednoznačný. Každá organizácia pracovala samostatne, riešila. iba vlastný problém, nebrala do úvahy. komplexné riešenie danej oblasti.
@@ -275,7 +286,7 @@ details[open] > summary {
 			<BR><BR>
 			Je však ešte čas prehodnotiť projekt Hydroconsultu v tejto oblasti a vykonať jeho úpravy. Navrhovanou úpravou u samotného vodného diela investičné náklady sa nezväčšujú, ale berie sa do úvahy, že v Petržalke má žiť 150 tisíc ľudí, ktorí potrebujú príjemné prírodné prostredie.
 			<BR><BR>
-			Ďalší problém, ktorý prakticky úplne vylučuje rekreačné využitie oblasti Čunovských jazier, je stanovenie ..ochranného pásma vodných zdrojov" v tejto oblasti.
+			Ďalší problém, ktorý prakticky úplne vylučuje rekreačné využitie oblasti <span class="cunovske">Čunovských jazier</span>, je stanovenie "ochranného pásma vodných zdrojov" v tejto oblasti.
 			<BR><BR>
 			Niet pochýb, že voda ako základný predpoklad života vôbec má čím ďalej tým väčší význam a tým dôležitejšia je i jej ochrana. Ukázalo sa, že medzi projektom vodného diela. (hlavne čo do situovania hrádzi) a zdrojmi čerpania vody sú nezrovnalostí. Dajú sa riešiť technickou cestou.
 			<BR><BR>
@@ -296,78 +307,131 @@ details[open] > summary {
   </details>
 		
    
-  <details> 
-	<summary style=''> 
+
+
+
+
+
+     <details class="clanok"> 
+	<summary> 
 		<span class="rozbal">
-		  &nbsp;11.06.1971 - Pribudnú do rodiny
+		  11.06.1971 - Pribudnú do rodiny
 		</span>
  	</summary>
 	<div class="details-container">
 	<p>
 	<span class="autor">
-		autor: -pv-jt-jz <BR>
-		zdroj:  Večerník č.137
+		autor: -pv-jt-jz <BR> 
+		zdroj: Večerník č.137
 	</span>
 	<span class="clanok">
-	<BR><BR>
-        
-		<p>
-			
-		Mestu sa bude na väčšej ploche voľnejšie dýchať. 
-		Ďalších sedem prímestských obcí pričlenia k Bratislave. 
-		Vyriešia sa staré problémy, ale vzniknú nové. 
+		<BR><BR>
+		Mestu sa bude na väčšej ploche voľnejšie dýchať. <BR>
+		Ďalších sedem prímestských obcí pričlenia k Bratislave. <BR>
+		Vyriešia sa staré problémy, ale vzniknú nové. <BR>
 		Noví Bratislavčania priložia ruky k dielu.
-		</p>
-		<p>Keď poslanci Národného výboru hlavného mesta Slovenska na svojom tridsiatomsiedmom plenárnom zasadaní v máji t. r. rozhodovali o obciach, ktoré by bolo vhodné pripojiť k mestu, viseli vo vzduchu mnohé otázky, obavy a problémy, ktoré v týchto súvislostiach sú už dnes zapísané v kronike minulosti. Ktoré obce to budú? Ako sa postaví k tomu okres, čo na to funkcionári a obyvatelia vybraných dedín a s akými predstavami a zámermi ideme do nového rozširovania územia hlavného mesta? Rokovanie sa skončilo v súlade so záujmom Bratislavy, funkcionári obcí pochopili potrebu začlenenia ich územia do katastru hlavného mesta. Od 4. mája t. r. sú schválené na pripojenie k mestu obce doteraz patriace okresu Bratislava-vidiek. Sú to Podunajské Biskupice, Rusovce, Jarovce, Čunovo, Vrakuňa, Záhorská Bystrica a Devínska Nová Ves. </p>
-		<p>Iste nám nie je neznáma poloha spomínaných obcí, mnohí nimi prechádzajú, prípadne trávia v nich príjemný víkend. Keďže nás zaujíma, čo mesto dostane a čo bude musieť občanom dať, aby tieto zatiaľ menej exponované časti Bratislavy neboli z titulu svojej okrajovosti zanedbávané najmä v oblasti služieb, dopravy a ďalšieho vybavenia, zašli sme si do niektorých z nich, aby sme sa na tvári miesta mohli s tamojšími funkcionármi porozprávať a rozobrať, otázky, ktoré nie sú také jednoduché, ako to na prvý pohľad vyzerá. Pozrime sa preto trochu i do minulosti, obcí. Vzhľadom k svojej blízkosti k Bratislave majú tiež bohatú históriu, dajme preto slovo tým, ktorí si viac sľubujú od budúcnosti.</p>
-		
-		<details> 
-		<summary><br>RUSOVCE</summary> 
+		<BR><BR>
+		Keď poslanci Národného výboru hlavného mesta Slovenska na svojom tridsiatomsiedmom plenárnom zasadaní v máji t. r. rozhodovali o obciach, ktoré by bolo vhodné pripojiť k mestu, viseli vo vzduchu mnohé otázky, obavy a problémy, ktoré v týchto súvislostiach sú už dnes zapísané v kronike minulosti. Ktoré obce to budú? Ako sa postaví k tomu okres, čo na to funkcionári a obyvatelia vybraných dedín a s akými predstavami a zámermi ideme do nového rozširovania územia hlavného mesta? Rokovanie sa skončilo v súlade so záujmom Bratislavy, funkcionári obcí pochopili potrebu začlenenia ich územia do katastru hlavného mesta. Od 4. mája t. r. sú schválené na pripojenie k mestu obce doteraz patriace okresu Bratislava-vidiek. Sú to Podunajské Biskupice, Rusovce, Jarovce, Čunovo, Vrakuňa, Záhorská Bystrica a Devínska Nová Ves. 
+		<BR><BR>
+		Iste nám nie je neznáma poloha spomínaných obcí, mnohí nimi prechádzajú, prípadne trávia v nich príjemný víkend. Keďže nás zaujíma, čo mesto dostane a čo bude musieť občanom dať, aby tieto zatiaľ menej exponované časti Bratislavy neboli z titulu svojej okrajovosti zanedbávané najmä v oblasti služieb, dopravy a ďalšieho vybavenia, zašli sme si do niektorých z nich, aby sme sa na tvári miesta mohli s tamojšími funkcionármi porozprávať a rozobrať, otázky, ktoré nie sú také jednoduché, ako to na prvý pohľad vyzerá. Pozrime sa preto trochu i do minulosti, obcí. Vzhľadom k svojej blízkosti k Bratislave majú tiež bohatú históriu, dajme preto slovo tým, ktorí si viac sľubujú od budúcnosti.
+		<BR>
+	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+ 		RUSOVCE <BR><BR>
 		Hoci máme na zreteli bezprostrednú budúcnosť tejto prímestskej obce, nemožno na jej pôde nehovoriť o minulosti. 
+		<BR><BR>
 		Tu stála predsa pred dávnymi stáročiami rímska Gerulata. Naši archeológovia vykopávajú z tmy zabudnutia jej bývalú nádheru, objavujú budovy, chrámy, cintoríny. Po dokončení archeologických vykopávok bude možné zriadiť na území
+		<BR><BR>
 		Bratislavy jedinečné múzeum rímskych pamiatok a vzdať tak hold mysliteľom, štátnikom a vojvodcom, ktorí dokázali pred dvoma tisícročiami obdivuhodne pružne spravovať obrovské územie. A pravdaže, hold tým mnohým bezmenným tvorcom, ktorí postavili budovy a chrámy, vykresali kamenné sarkofágy a zanechali nám jedinečné svedectvo vysokej výtvarnej kultúry. Tu pri Rusov- ciach bol predsa Limes Romanus, hraničný obranný val tiahnuci sa pozdĺž Dunaja. Tu bola veľká križovatka dejín, na ktorej sa stretali vojská, ale aj veľké myšlienky a prúdy.
+		<BR><BR>
 		V Rusovciach sídli Slovenský ľudový umelecký kolektív. Stretáme sa s ním skôr na koncertných pódiách alebo na televíznej obrazovke a do Rusoviec chodia za súborom nanajvýš zahraniční hostia alebo zainteresovaní odborníci. Sú- bor, rozvíjajúci nepreberné bohatstvo piesní, tancov a hudby nášho ľudu, vtlačil v predošlých dvoch desaťročiach výraznú pečať životu tejto obce. Pričlenením k Bratislave stanú sa nielen Rusovce súčasťou nášho mesta, ale aj SĽUK bratislavským súborom.
+	    	<BR><BR>
+		PODUNAJSKÉ BISKUPICE
+		<BR><BR>
+		sú pravdepodobne jednou z najstarších obcí na Slovensku. Už oddávna sú v čulom styku s Bratislavou. Myšlienka pripojiť Biskupice k mestu preto ani nie je nová. Podľa slov predsedu tamojšieho MSNV Imricha Mádliho o pričlenení obce k mestu sa uvažovalo už v roku 1950. Je samozrejmé, že vtedajší Okresný národný výbor nemal záujem vkladať investície do dediny, ktorá sa onedlho od- člení z okresu. Na vec sa medzičasom akosi zabudlo, Podunajské Biskupice po stránke investičnej už mali byť od okresu odlúčené a mesto pre nich ešte prostriedky nemalo. A tak sa stalo, že neďaleko Bratislavy existovala jedna z najzaostalejších dedín na Slovensku. Od roku 1984 sa ich obraz začal meniť. Postavilo sa 135 štátnych bytov, 48 družstevných. Od roku 1945 vyrástlo v obci vyše 1000 rodinných domov. Biskupice donedávna bez asfaltových ciest majú už dnes vy- asfaltovaných 70 percent všetkých komunikácií. Zriadili tri reštaurácie, obchodné stredisko, občania už nemusia pre základné potraviny chodiť do mesta. Mestská doprava umožňuje cestovať skoro 4700 pracujúcim do Bratislavy, ostatok pracuje v poľnohospodárstve.
+		<BR><BR>
+		Skutočnosť, že budeme pričlenení k mestu, sme v Biskupiclach uvítali, vraví predseda MSNV. Mestu s sme však adresovali niektoré požiadavky, ktoré považujeme za nevyhnutné u nás realizovať, ak máme uspokojiť občanov. Potrebovali by sme nové zdravotné stredisko, lekárov, budovu pre ZDS, telocvičňu. V Biskupiciach nemá kde cvičiť 1600 žiakov. Slovnaft nie je ďaleko a viac k tomu hádam netreba hovoriť. Prísľuby z Národného výboru hlavného mesta Bratislavy Biskupičania majú. Chceli by mať však aj istoty, ktoré by onedlho prejavili v živote obce v pozitívnom zmysle. A tomu sa netreba čudovať, veď funkcionárov si obyvatelia volia sami a tí sú povinní tlmočiť a presadzovať ich požiadavky. Biskupičanov čaká ešte veľa práce, treba len podporu a pomôcť im v ich sympatickom úsilí.
 		</details>
-				
-		<p>Príslušníci Verejnej bezpečnosti zastavujú naše auto niekoľko sto metrov pred hraničným prechodom v Rusovciach. Nie my do štatistiky vycestovaných k susedom zatiaľ neprispejeme, odbočujeme doľava a kochajúc sa na obrovskej zelenej ploche (vyše 160 ha) ovocných sadov končiacich až kdesi na obzore) vchádzame
-		<br><br>DO ČUNOVA.<br>
+		<BR><BR>
+ 		Príslušníci Verejnej bezpečnosti zastavujú naše auto niekoľko sto metrov pred hraničným prechodom v Rusovciach. Nie my do štatistiky vycestovaných k susedom zatiaľ neprispejeme, odbočujeme doľava a kochajúc sa na obrovskej zelenej ploche (vyše 160 ha) ovocných sadov končiacich až kdesi na obzore) vchádzame
+		<BR><BR>
+           DO ČUNOVA.
+           <BR><BR>
 		Družstvo je jedným z najväčších zásobovateľov našich obchodov broskyňami, marhuľami a jablkami. Tento rok zrejme veľa nenagazduje. Jarné mrazy prišli práve v najnevhodnejší čas. Pomrzlo asi 90 percent všetkej budúcej úrody. Na národnom výbore nás očakáva predsedníčka Mária Maurovichová. Nie je v tejto funkcii dlho, avšak žije roky v Čunove, dokonale pozná problematiku svojich ľudí a dediny. Opatrne sondujeme, ako to vyzerá u nich v dedine, či sa k nim okres nezachoval podobne macošsky ako k Podunajským Biskupiciam. Odvtedy sa veľa zmenilo vraví predsedníčka. Môžem zodpovedne povedať, že okres Bratislava vidiek nám pokiaľ mohol pomáhal. Vieme, že v okrese sú možnosti z hľadiska investícií a podobne ohraničené a čo mohli, to pomohli. 
-		I keď máme problémov dosť, myslíme si, že po pričlenení k mestu, ktoré bude mat iste väčšie 
-		možnosti ako okres sa bude dať dačo zlepšiť. Mám na mysli najmä dodávateľsko-odberateľské 
-		vzťahy medzi JRD a obchodnými zložkami. Veď ovocie tak prepotrebné na našom stole dostanú 
-		obyvatelia čerstvé až na stôl. 
-		<font color="#9900FF" size="+1">
-		Z hľadiska rekreačného sa pre budúcnosť skýtajú v Čunove pre Bratislavčanov veľké možnosti pri Dunaji a <b>veľkom štrkovisku</b>, 
+		<BR><BR>
+		I keď máme problémov dosť, myslíme si, že po pričlenení k mestu, ktoré bude mat iste väčšie možnosti ako okres sa bude dať dačo zlepšiť. Mám na mysli najmä dodávateľsko-odberateľské vzťahy medzi JRD a obchodnými zložkami. Veď ovocie tak prepotrebné na našom stole dostanú obyvatelia čerstvé až na stôl. 
+		<BR><BR>
+           <span class="cj">
+		Z hľadiska rekreačného sa pre budúcnosť skýtajú v Čunove pre Bratislavčanov veľké možnosti pri Dunaji a <span class="cunovske">veľkom štrkovisku</span>, 
 		kde je kúpanie nemenej príjemné ako napríklad v Senci.
-		</font>
+		</span>
+		<BR><BR>
+		Vidno, že v Čuňove nie sú neskromní. Mali sme skôr dojem, že po pričlenení k mestu chcú viac dávať ako brať, preto ani ich požiadavky na Národný výbor hlavného mesta SSR Bratislavy neboli veľké. Chceli by však vybojovať aspoň základné potreby, ktoré sú pre život a spokojnosť občanov neodmysliteľné. Je priam zarážajúce, že niekoľko kilometrov od Bratislavy neexistuje v dedine žiadna kultúrna miestnosť. Kedysi mali v staršej budove kultúrny dom, bolo však treba niekde umiestniť materskú školu a od- vtedy už dlhé roky premietanie filmu v dedine nepoznajú, divadelné predstavenie ani netreba spomínať, jednoducho niet tam nič. Vedia, že v tejto päťročnici sa prostriedky investujú do výroby Hádam im však mesto pomôže zatiaľ aspoň minimálnym vybavením, ktoré by im umožnilo premietať v dedine film. A ešte niečo páli mladých v Čuňove. Ako všade inde aj tam sa ženia, vydávajú a zakladajú si rodiny. Potrebujú si, samozrejme, postaviť aj nové byty. A pre niekoľko záujemcov je iba jedno stavebné povolenie, ktoré okres mohol dať, navyše chodia žiadosti o prideľovanie pozemkov od občanov Bratislavy.
+		<BR><BR>
+		Dedinka, ktorú najstaršie listiny spomínajú už v 12. storočí, ostáva za nami. Do oblasti obsadenej pod nátlakom Turkov v 16. storočí chorvátskym obyvateľstvom patria aj 
+		<BR><BR>
+	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+JAROVCE.
+<BR><BR>
+Obec leží dva kilometre od hlavnej cesty vedúcej z Bratislavy do Rusoviec. Na MSNV skoro nikoho niet, iba tajomníčka Alžbeta Karchesová nás ubezpečuje, že predseda bude o chvíľu tu. Vraj je na brigáde aj s poslancami, pracujú na úprave neďalekej škôlky. Anton Jaborek prichádza v montérkach so Štefanom Vareničom, podpredsedom tunajšieho MsNV. Nič sa nedá robiť, vravia, ak chceme, aby pracovali ostatní, musíme ísť príkladom.
+<BR><BR>
+Súdruh predseda, ako ste uvítali skutočnosť, že budete patriť k hlavnému mostu Slovenska?<BR>
+Sme všetci za to, aby sme patrili k Bratislave. Sľubujeme si od toho, že po tejto úprave Ľahšie budeme prekonávať ťažkosti, ktoré máme.
+<BR><BR>
+Chcete tým povedať, že vás okres zanedbával? <BR>
+-Nie naopak -S okresom Bratislava-vidiek sme nemali žiadne ťažkosti, vieme, že tam nám vychádzali pokiaľ mohli v ústrety. Myslím tým však to, že niektoré problémy nám nemohol vyriešiť ani okres, ktorý je do značnej miery obmedzený v investíciách, preto dúfame, že mesto bude na tom lepšie, čo pre nás znamená prínos.
+<BR><BR>
+Čo vás konkrétne najviac v obci páli?<BR>
+Veľmi radi by sme mali vodovod, školu, doriešená otázku služieb, dopravy a obchodu. Tiež benzínové čerpadlo by malo v Rusovciach byt, aby sme nemuseli po benzín chodiť až do Petržalky. (To by malo byť samozrejmé už aj z hľadiska cestovného ruchu pozn. red.)
+<BR><BR>
+Ako je to u vás so záujmom o stavebné povolania?<BR>
+-To je otázka, ktorá mesto bude môcť vyriešiť, lebo záujem je veľký aj zo strany Bratislavčanov mnohí by si radi postavili domček mimo exponované- ho územia v meste.
+Ďalšou z pričlenených obcí je
+<BR><BR>
+VRAKUŇA.
+<BR><BR>
+Jej história je pomerne bohatá. Z písomných pamiatok vieme, že už oddávna inklinovala k Bratislave. V stredoveku patrila ako poddanská obec Bratislavské- mu hradu a mala dunajský prístav, ktorý v XIV. storočí používalo aj mesto Bratislava. Verekňa ako sa vtedy Vrakuňa volala - prekonala veľké zmeny, vyrástli v nej nové domy. Už v tomto roku majú vo Vrakuni začať stavať sídliská tzv. Medzi Járky a Dolné hony. V prvom sídlisku nájde domov 1300 rodín. Aj vo Vrakuni sa postavili k rozhodnutiu pripojiť obec k mestu kladne.
+<BR><BR>
+Smer nášho putovania sa obrátil na západnú stranu, z roviny sa uberáme k modravým horám strácajúcim sa v. smogu mesta. Bolo to už dávno, keď dvorany mocného Devína sa ozývali ľudskou vravou, smiechom a neraz aj rinčaním zbraní jeho dobyvateľov. Povesti,
+historicky doložené správy prezrádzajú, že kedysi mocná Veľkomoravská ríša, ktorej vládol Svätopluk, vplývala aj na svoje okolie, jeho výrobu a život obyvateľstva.
+<BR><BR>
+DEVINSKA NOVÁ VES,
+<BR><BR>
+kde našli slovansko-avarské pohrebisko s veľkým sídliskom, nás oprávňujú domnievať sa, že Devínska Nová Ves bola už pred Svätoplukom oblasťou možno aj sídlom prvého slovanského štátu tzv. Samovej ríše. Prvý písomný doklad o obci je z roku 1435. Ako Čunovo, Jarovce a Rusovce, tak aj Devínsku Nová Ves osídlili v XVI. storočí Chorváti, utekajúci pred Turkami. Obec patrila v stredoveku devínskemu panstvu, svoje majetky tu však mali aj marietálski Paulíni a bratislavskí Jezuiti.
+<BR><BR>
+Ako vyzerá Devínska Nová Ves dnes? prezradil nám tajomník MSNV Tomáš Štepánek.
+<BR><BR>
+To viete, starosti a starosti. Aby som povedal pravdu, mali sme to u nás kedysi veľmi zlé. V päťdesiatych rokoch sa počítalo so zánikom obce, nik do nás nič neinvestoval a dnes vidíme, že náš dlhoročný boj o existenciu nebol zbytočný. K akcii pričlenenia našej obce do Bratislavy predchádzali mnohé rokovania s funkcionármi mesta i okresu, kde nás kompetentní činitelia oboznamovali so svojimi zámermi. Naše pripomienky k spomínanej akcii sme zaslali na Národný výbor hlavného mesta SSR Bratislavy, kde ich prerokovali na Rade NVB. V ďalšom nás oboznámili s pripravovanými akciami už konkrétnejšie. Boli už u nás zástupcovia Útvaru hlavného architekta, Komunálnych služieb a ďalšie faktory nám signalizujú, že pričlenenie k mestu znamená pre našu obec veľa pozitív.
+<BR><BR>
+Čo konkrétne myslíte?<BR>
+Myslím na zlepšenie situácie v obci z hľadiska služieb, občianskej vybavenosti, zavedenia kanalizácie, plynofikácie a pod. Myslím, že výstavba autostrády a automobilky v našej lokalite bude mať ďalší pozitívny prínos pre naše dobre prosperujúce Jednotné roľnícke družstvo a rozvej podnikov ako je Textilianka, Omnia, Technické sklo v Dúbravke, tiež tehelne, ktorá je jedna z najväčších v republike.
+<BR><BR>
+Súdruh tajomník, my sme vás vyrušili z rokovania k problematike vody, ktorá vás teraz páli.<BR>
+- Áno. Vodovod nám už toho času z kapacitných dôvodov nestačí, myslím si, že nedostatok vody spôsobili aj nedomyslené odvodňovacie zásahy, budovanie závlah a podobne. V budúcnosti sa budeme musieť aj s touto otázkou spoločne s mestom vážne zaoberať.
+<BR><BR>
+Našu cestu pretínajú násypy budúcej autostrády, celkom zreteľne už vidno rovnú čiaru, ktorá sa stráca v diaľke. Z betónu trčia železné tyče, budú držať oblúky, nadjazdy a súčasne reprezentoval cit a umenie našich architektov pri skĺbovaní stavieb s prírodou. Zo Stupavy do
+<BR><BR>
+ZAHORSKEJ BYSTRICE
+<BR><BR>
+je to len na skok. Na MSNV majú práve poradu. Voda zasa nechýba v prerokovávaných problémoch, za predsedom súdruhom Maškom chodia sa radiť a žiadať po- moc aj pracovníci na autostráde, slovom, o ruch a robotu nie je núdza. Prešli už časy, keď obyvateľstvo živiace sa poľnohospodárstvom chodievalo so svojimi výrobkami až do Viedne, ktorá bola po Bratislave najlepším odbytiskom zeleniny, najmä kapusty. Tou už sa Záhorská Bystrica preslávila. Dnes stavajú klimatizačný sklad o kapacite 92 vagónov, odkiaľ budú môcť vyexpedovávať pre mesto ovocie a zeleninu zachovalú a v požadovanom termíne. 
+<BR><BR>
+Obec je veľmi stará, v listinách ju spomínajú už v roku 1256 pod názvom Biztrich. V roku 1337, keď už bola farnosťou, ju kráľ Ľudovít daroval kláštoru Paulínov v Mariánke, ktorým patrila až do XIV. storočia. Aj túto obec osídlili Chorváti a v poddanstve pajštúnskeho hradu bola až do konca feudalizmu. Na našu otázku, či okres pripravil obec pre pričlenenie k hlavnému mestu, hovoril predseda MNV pozitívne. Do Bystrice im však prichádzajú nedobré správy o problémoch mestskej dopravy v Bratislave. Doteraz ako-tak to so spojmi ČSAD šlo až na ranné špičky, kedy sa cestovanie do zamestnania v Bratislave stáva pre mnohých utrpením. Je samozrejmé, že aj v Bystrici potrebujú kdečo vylepšiť a od mesta požadujú len investície, ktoré sú pre obec nevyhnutne potrebné. Žiadosti o pridelenie stavebných pozemkov majú od občanov Bratislavy viac ako dosť, avšak zatiaľ ich nemôžu nikomu udeliť.
+<BR><BR>
+Ako vidno, problémy s individuálnou bytovou výstavbou aj v Záhorskej Bystrici si bude mesto musieť doriešiť samo.
+<BR><BR>
+	   </details>
+
+		Pričlenením spomínaných obcí získa Bratislava vyše 20 tisíc nových obyvateľov, to znamená, že v tomto roku nás už bude v meste žiť 300 tisíc. Z 19 tisíc hektárov vzrastie jeho plocha na 30 tisíc. To je plocha, ktorá vzhľadom na plánované úlohy päťročnice by mala stačiť. Bratislava bude mať plochu, obce sa stanú súčasťou veľkomesta. Kto bude s tým ako spokojný, to ukáže budúcnosť. Je známe, že okres Bratislava-vi diek má určité prostriedky, ktoré musí spravodlivo a podľa naliehavostí rozdeliť. Napriek tomu sa nezachoval k týmto obciam macošsky, vidno, že funkcionári ONV sa v rámci svojich možností snažili čo najlepšie pripraviť spomínané obce pre pripojenie k hlavnému mestu. Úlohy tejto päťročnice sú obrovské, jedine spojením všetkých našich síl a umu ich môžeme realizovať. Bratislavu očakáva veľkolepý rozvoj. Obce, ktoré k nej pričlenia, pomôžu vyriešiť dôležitý životný problém budúceho veľkomesta. V porovnaní s ním sú malé problémy budúcich okrajových častí mesta skutočne malými problémami. Pre tamojších obyvateľov sú to však problémy nemalé, pretože priamo ovplyvňujú ich život. Ako sa ich však podarí riešiť, to nebude závisieť iba od radnice. Všetci musíme priložiť ruku k dielu, aby sme z Bratislavy vytvorili a vybudovali skutočne moderné socialistické veľkomesto, dôstojné hlavné mesto Slovenska.
+
+		</span>
 		</p>
-		<p>Vidno, že v Čuňove nie sú neskromní. Mali sme skôr dojem, že po pričlenení k mestu chcú viac dávať ako brať, preto ani ich požiadavky na Národný výbor hlavného mesta SSR Bratislavy neboli veľké. Chceli by však vybojovať aspoň základné potreby, ktoré sú pre život a spokojnosť občanov neodmysliteľné. Je priam zarážajúce, že niekoľko kilometrov od Bratislavy neexistuje v dedine žiadna kultúrna miestnosť. Kedysi mali v staršej budove kultúrny dom, bolo však treba niekde umiestniť materskú školu a od- vtedy už dlhé roky premietanie filmu v dedine nepoznajú, divadelné predstavenie ani netreba spomínať, jednoducho niet tam nič. Vedia, že v tejto päťročnici sa prostriedky investujú do výroby Hádam im však mesto pomôže zatiaľ aspoň minimálnym vybavením, ktoré by im umožnilo premietať v dedine film. A ešte niečo páli mladých v Čuňove. Ako všade inde aj tam sa ženia, vydávajú a zakladajú si rodiny. Potrebujú si, samozrejme, postaviť aj nové byty. A pre niekoľko záujemcov je iba jedno stavebné povolenie, ktoré okres mohol dať, navyše chodia žiadosti o prideľovanie pozemkov od občanov Bratislavy.
-		<br>
-			Dedinka, ktorú najstaršie listiny spomínajú už v 12. storočí, ostáva za nami. Do oblasti obsadenej pod nátlakom Turkov v 16. storočí chorvátskym obyvateľstvom patria aj Jarovce
-		<br>	
-		
-		</p>
-		<p>Pričlenením spomínaných obcí získa Bratislava vyše 20 tisíc nových obyvateľov, to znamená, že v tomto roku nás už bude v 
-			meste žiť 300 tisíc. Z 19 tisíc hektárov vzrastie jeho plocha na 30 tisíc. To je plocha, ktorá vzhľadom na plánované 
-			úlohy päťročnice by mala stačiť. Bratislava bude mať plochu, obce sa stanú súčasťou veľkomesta. Kto bude s tým ako spokojný, to ukáže budúcnosť. Je známe, že okres Bratislava-vi diek má určité prostriedky, ktoré musí spravodlivo a podľa naliehavostí rozdeliť. Napriek tomu sa nezachoval k týmto obciam macošsky, vidno, že funkcionári ONV sa v rámci svojich možností snažili čo najlepšie pripraviť spomínané obce pre pripojenie k hlavnému mestu. Úlohy tejto päťročnice sú obrovské, jedine spojením všetkých našich síl a umu ich môžeme realizovať. Bratislavu očakáva veľkolepý rozvoj. Obce, ktoré k nej pričlenia, pomôžu vyriešiť dôležitý životný problém budúceho veľkomesta. V porovnaní s ním sú malé problémy budúcich okrajových častí mesta skutočne malými problémami. Pre tamojších obyvateľov sú to však problémy nemalé, pretože priamo ovplyvňujú ich život. Ako sa ich však podarí riešiť, to nebude závisieť iba od radnice. Všetci musíme priložiť ruku k dielu, aby sme z Bratislavy vytvorili a vybudovali skutočne moderné socialistické veľkomesto, dôstojné hlavné mesto Slovenska.</p>
-	</span>
+    </span>
    </div>	
   </details>
 
-<!--<details> 
-	<summary style=''> 
-		<span class="rozbal">
-		  &nbsp;
-		</span>
- 	</summary>
-	<div class="details-container">
-	<p>
-	<span class="autor">
-		autor: 
-		zdroj:  
-	</span>
-	<BR><BR>
-   -->
+
+
+
+  
 <div class="tab">
         <input type="checkbox" id="chck02">
         <label class="tab-label" for="chck02">&#9679;&nbsp;22.06.1973 - ELDORÁDO bratislavské</label>
@@ -1541,9 +1605,6 @@ Vďaka našemu členovi Majo Faun Con za koordináciu celej akcie za naše Všes
 
 <!-- -->
     </div>
-
-
-
 
 
 </body>

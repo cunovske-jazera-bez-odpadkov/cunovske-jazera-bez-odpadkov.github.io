@@ -24,6 +24,103 @@
   :root {  --markerC: #7bb3b5;}
   :root {  --cjC: #91cbb8;}
   :root {  --cunovskeC: #ce8e6b;}
+
+
+/* rozbalovanie zaciatok*/
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.row {
+  display: -webkit-box;
+  display: flex;
+}
+.row .col {
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+.row .col:last-child {
+  margin-left: 1em;
+}
+.farba1{
+  color:tomato;
+}
+.farba2{
+  color:orange;
+}
+
+.tabs {
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+.tab {
+  width: 100%;
+  color: var(--rozbalC);
+  overflow: hidden;
+}
+.tab-label {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+  justify-content: left;
+  padding: 0.1em;
+  background: #101010;
+  /*font-family:"Calibri",sans-serif;
+  font-weight: bold;*/
+  cursor: default;
+}
+.tab-label:hover {
+  background: #12171c;
+}
+.tab-label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+}
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  font-family:"Calibri",sans-serif;
+  color: #cccccc;
+  background: #101010;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+  overflow: scroll;
+}
+.tab-close {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  padding: 1em;
+  background: #000000;
+  cursor: pointer;
+}
+.tab-close:hover {
+  background: #1a252f;
+}
+
+input:checked + .tab-label {
+  background: #1a252f;
+}
+input:checked + .tab-label::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}
+ /* rozbalovanie koniec*/
+
+
 #video_overlays {
   position: absolute;
   padding: 0px;
@@ -52,7 +149,7 @@ td, th {
 	
 summary{
      /*list-style: none;*/
-	list-style-type: "....";/*list-style-type: "\229E";*/
+	list-style-type: "\25cf";/*list-style-type: "\229E";*/
 }
 summary::marker {
   	color: var(--markerC);  
@@ -76,7 +173,7 @@ details[open] > summary {
 .rozbal{
   color: var(--rozbalC); 
   cursor:default; 
-  font-size:1vw
+  font-size:1.2vw
 }
 .autor{
   color:var(--autorC);
@@ -108,6 +205,182 @@ details[open] > summary {
 	<BR><BR><BR>
 	
 
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  11.06.1971 - Pribudnú do rodiny
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: -pv-jt-jz <BR> 
+		zdroj: Večerník č.137
+	</span>
+	<span class="clanok">
+		<BR><BR>
+		Mestu sa bude na väčšej ploche voľnejšie dýchať. <BR>
+		Ďalších sedem prímestských obcí pričlenia k Bratislave. <BR>
+		Vyriešia sa staré problémy, ale vzniknú nové. <BR>
+		Noví Bratislavčania priložia ruky k dielu.
+		<BR><BR>
+		Keď poslanci Národného výboru hlavného mesta Slovenska na svojom tridsiatomsiedmom plenárnom zasadaní v máji t. r. rozhodovali o obciach, ktoré by bolo vhodné pripojiť k mestu, viseli vo vzduchu mnohé otázky, obavy a problémy, ktoré v týchto súvislostiach sú už dnes zapísané v kronike minulosti. Ktoré obce to budú? Ako sa postaví k tomu okres, čo na to funkcionári a obyvatelia vybraných dedín a s akými predstavami a zámermi ideme do nového rozširovania územia hlavného mesta? Rokovanie sa skončilo v súlade so záujmom Bratislavy, funkcionári obcí pochopili potrebu začlenenia ich územia do katastru hlavného mesta. Od 4. mája t. r. sú schválené na pripojenie k mestu obce doteraz patriace okresu Bratislava-vidiek. Sú to Podunajské Biskupice, Rusovce, Jarovce, Čunovo, Vrakuňa, Záhorská Bystrica a Devínska Nová Ves. 
+		<BR><BR>
+		Iste nám nie je neznáma poloha spomínaných obcí, mnohí nimi prechádzajú, prípadne trávia v nich príjemný víkend. Keďže nás zaujíma, čo mesto dostane a čo bude musieť občanom dať, aby tieto zatiaľ menej exponované časti Bratislavy neboli z titulu svojej okrajovosti zanedbávané najmä v oblasti služieb, dopravy a ďalšieho vybavenia, zašli sme si do niektorých z nich, aby sme sa na tvári miesta mohli s tamojšími funkcionármi porozprávať a rozobrať, otázky, ktoré nie sú také jednoduché, ako to na prvý pohľad vyzerá. Pozrime sa preto trochu i do minulosti, obcí. Vzhľadom k svojej blízkosti k Bratislave majú tiež bohatú históriu, dajme preto slovo tým, ktorí si viac sľubujú od budúcnosti.
+		<BR>
+	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+ 		RUSOVCE <BR><BR>
+		Hoci máme na zreteli bezprostrednú budúcnosť tejto prímestskej obce, nemožno na jej pôde nehovoriť o minulosti. 
+		<BR><BR>
+		Tu stála predsa pred dávnymi stáročiami rímska Gerulata. Naši archeológovia vykopávajú z tmy zabudnutia jej bývalú nádheru, objavujú budovy, chrámy, cintoríny. Po dokončení archeologických vykopávok bude možné zriadiť na území
+		<BR><BR>
+		Bratislavy jedinečné múzeum rímskych pamiatok a vzdať tak hold mysliteľom, štátnikom a vojvodcom, ktorí dokázali pred dvoma tisícročiami obdivuhodne pružne spravovať obrovské územie. A pravdaže, hold tým mnohým bezmenným tvorcom, ktorí postavili budovy a chrámy, vykresali kamenné sarkofágy a zanechali nám jedinečné svedectvo vysokej výtvarnej kultúry. Tu pri Rusov- ciach bol predsa Limes Romanus, hraničný obranný val tiahnuci sa pozdĺž Dunaja. Tu bola veľká križovatka dejín, na ktorej sa stretali vojská, ale aj veľké myšlienky a prúdy.
+		<BR><BR>
+		V Rusovciach sídli Slovenský ľudový umelecký kolektív. Stretáme sa s ním skôr na koncertných pódiách alebo na televíznej obrazovke a do Rusoviec chodia za súborom nanajvýš zahraniční hostia alebo zainteresovaní odborníci. Sú- bor, rozvíjajúci nepreberné bohatstvo piesní, tancov a hudby nášho ľudu, vtlačil v predošlých dvoch desaťročiach výraznú pečať životu tejto obce. Pričlenením k Bratislave stanú sa nielen Rusovce súčasťou nášho mesta, ale aj SĽUK bratislavským súborom.
+	    	<BR><BR>
+		PODUNAJSKÉ BISKUPICE
+		<BR><BR>
+		sú pravdepodobne jednou z najstarších obcí na Slovensku. Už oddávna sú v čulom styku s Bratislavou. Myšlienka pripojiť Biskupice k mestu preto ani nie je nová. Podľa slov predsedu tamojšieho MSNV Imricha Mádliho o pričlenení obce k mestu sa uvažovalo už v roku 1950. Je samozrejmé, že vtedajší Okresný národný výbor nemal záujem vkladať investície do dediny, ktorá sa onedlho od- člení z okresu. Na vec sa medzičasom akosi zabudlo, Podunajské Biskupice po stránke investičnej už mali byť od okresu odlúčené a mesto pre nich ešte prostriedky nemalo. A tak sa stalo, že neďaleko Bratislavy existovala jedna z najzaostalejších dedín na Slovensku. Od roku 1984 sa ich obraz začal meniť. Postavilo sa 135 štátnych bytov, 48 družstevných. Od roku 1945 vyrástlo v obci vyše 1000 rodinných domov. Biskupice donedávna bez asfaltových ciest majú už dnes vy- asfaltovaných 70 percent všetkých komunikácií. Zriadili tri reštaurácie, obchodné stredisko, občania už nemusia pre základné potraviny chodiť do mesta. Mestská doprava umožňuje cestovať skoro 4700 pracujúcim do Bratislavy, ostatok pracuje v poľnohospodárstve.
+		<BR><BR>
+		Skutočnosť, že budeme pričlenení k mestu, sme v Biskupiclach uvítali, vraví predseda MSNV. Mestu s sme však adresovali niektoré požiadavky, ktoré považujeme za nevyhnutné u nás realizovať, ak máme uspokojiť občanov. Potrebovali by sme nové zdravotné stredisko, lekárov, budovu pre ZDS, telocvičňu. V Biskupiciach nemá kde cvičiť 1600 žiakov. Slovnaft nie je ďaleko a viac k tomu hádam netreba hovoriť. Prísľuby z Národného výboru hlavného mesta Bratislavy Biskupičania majú. Chceli by mať však aj istoty, ktoré by onedlho prejavili v živote obce v pozitívnom zmysle. A tomu sa netreba čudovať, veď funkcionárov si obyvatelia volia sami a tí sú povinní tlmočiť a presadzovať ich požiadavky. Biskupičanov čaká ešte veľa práce, treba len podporu a pomôcť im v ich sympatickom úsilí.
+		</details>
+		<BR><BR>
+ 		Príslušníci Verejnej bezpečnosti zastavujú naše auto niekoľko sto metrov pred hraničným prechodom v Rusovciach. Nie my do štatistiky vycestovaných k susedom zatiaľ neprispejeme, odbočujeme doľava a kochajúc sa na obrovskej zelenej ploche (vyše 160 ha) ovocných sadov končiacich až kdesi na obzore) vchádzame
+		<BR><BR>
+           DO ČUNOVA.
+           <BR><BR>
+		Družstvo je jedným z najväčších zásobovateľov našich obchodov broskyňami, marhuľami a jablkami. Tento rok zrejme veľa nenagazduje. Jarné mrazy prišli práve v najnevhodnejší čas. Pomrzlo asi 90 percent všetkej budúcej úrody. Na národnom výbore nás očakáva predsedníčka Mária Maurovichová. Nie je v tejto funkcii dlho, avšak žije roky v Čunove, dokonale pozná problematiku svojich ľudí a dediny. Opatrne sondujeme, ako to vyzerá u nich v dedine, či sa k nim okres nezachoval podobne macošsky ako k Podunajským Biskupiciam. Odvtedy sa veľa zmenilo vraví predsedníčka. Môžem zodpovedne povedať, že okres Bratislava vidiek nám pokiaľ mohol pomáhal. Vieme, že v okrese sú možnosti z hľadiska investícií a podobne ohraničené a čo mohli, to pomohli. 
+		<BR><BR>
+		I keď máme problémov dosť, myslíme si, že po pričlenení k mestu, ktoré bude mat iste väčšie možnosti ako okres sa bude dať dačo zlepšiť. Mám na mysli najmä dodávateľsko-odberateľské vzťahy medzi JRD a obchodnými zložkami. Veď ovocie tak prepotrebné na našom stole dostanú obyvatelia čerstvé až na stôl. 
+		<BR><BR>
+           <span class="cj">
+		Z hľadiska rekreačného sa pre budúcnosť skýtajú v Čunove pre Bratislavčanov veľké možnosti pri Dunaji a <span class="cunovske">veľkom štrkovisku</span>, 
+		kde je kúpanie nemenej príjemné ako napríklad v Senci.
+		</span>
+		<BR><BR>
+		Vidno, že v Čuňove nie sú neskromní. Mali sme skôr dojem, že po pričlenení k mestu chcú viac dávať ako brať, preto ani ich požiadavky na Národný výbor hlavného mesta SSR Bratislavy neboli veľké. Chceli by však vybojovať aspoň základné potreby, ktoré sú pre život a spokojnosť občanov neodmysliteľné. Je priam zarážajúce, že niekoľko kilometrov od Bratislavy neexistuje v dedine žiadna kultúrna miestnosť. Kedysi mali v staršej budove kultúrny dom, bolo však treba niekde umiestniť materskú školu a od- vtedy už dlhé roky premietanie filmu v dedine nepoznajú, divadelné predstavenie ani netreba spomínať, jednoducho niet tam nič. Vedia, že v tejto päťročnici sa prostriedky investujú do výroby Hádam im však mesto pomôže zatiaľ aspoň minimálnym vybavením, ktoré by im umožnilo premietať v dedine film. A ešte niečo páli mladých v Čuňove. Ako všade inde aj tam sa ženia, vydávajú a zakladajú si rodiny. Potrebujú si, samozrejme, postaviť aj nové byty. A pre niekoľko záujemcov je iba jedno stavebné povolenie, ktoré okres mohol dať, navyše chodia žiadosti o prideľovanie pozemkov od občanov Bratislavy.
+		<BR><BR>
+		Dedinka, ktorú najstaršie listiny spomínajú už v 12. storočí, ostáva za nami. Do oblasti obsadenej pod nátlakom Turkov v 16. storočí chorvátskym obyvateľstvom patria aj 
+		<BR><BR>
+	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+JAROVCE.
+<BR><BR>
+Obec leží dva kilometre od hlavnej cesty vedúcej z Bratislavy do Rusoviec. Na MSNV skoro nikoho niet, iba tajomníčka Alžbeta Karchesová nás ubezpečuje, že predseda bude o chvíľu tu. Vraj je na brigáde aj s poslancami, pracujú na úprave neďalekej škôlky. Anton Jaborek prichádza v montérkach so Štefanom Vareničom, podpredsedom tunajšieho MsNV. Nič sa nedá robiť, vravia, ak chceme, aby pracovali ostatní, musíme ísť príkladom.
+<BR><BR>
+Súdruh predseda, ako ste uvítali skutočnosť, že budete patriť k hlavnému mostu Slovenska?<BR>
+Sme všetci za to, aby sme patrili k Bratislave. Sľubujeme si od toho, že po tejto úprave Ľahšie budeme prekonávať ťažkosti, ktoré máme.
+<BR><BR>
+Chcete tým povedať, že vás okres zanedbával? <BR>
+-Nie naopak -S okresom Bratislava-vidiek sme nemali žiadne ťažkosti, vieme, že tam nám vychádzali pokiaľ mohli v ústrety. Myslím tým však to, že niektoré problémy nám nemohol vyriešiť ani okres, ktorý je do značnej miery obmedzený v investíciách, preto dúfame, že mesto bude na tom lepšie, čo pre nás znamená prínos.
+<BR><BR>
+Čo vás konkrétne najviac v obci páli?<BR>
+Veľmi radi by sme mali vodovod, školu, doriešená otázku služieb, dopravy a obchodu. Tiež benzínové čerpadlo by malo v Rusovciach byt, aby sme nemuseli po benzín chodiť až do Petržalky. (To by malo byť samozrejmé už aj z hľadiska cestovného ruchu pozn. red.)
+<BR><BR>
+Ako je to u vás so záujmom o stavebné povolania?<BR>
+-To je otázka, ktorá mesto bude môcť vyriešiť, lebo záujem je veľký aj zo strany Bratislavčanov mnohí by si radi postavili domček mimo exponované- ho územia v meste.
+Ďalšou z pričlenených obcí je
+<BR><BR>
+VRAKUŇA.
+<BR><BR>
+Jej história je pomerne bohatá. Z písomných pamiatok vieme, že už oddávna inklinovala k Bratislave. V stredoveku patrila ako poddanská obec Bratislavské- mu hradu a mala dunajský prístav, ktorý v XIV. storočí používalo aj mesto Bratislava. Verekňa ako sa vtedy Vrakuňa volala - prekonala veľké zmeny, vyrástli v nej nové domy. Už v tomto roku majú vo Vrakuni začať stavať sídliská tzv. Medzi Járky a Dolné hony. V prvom sídlisku nájde domov 1300 rodín. Aj vo Vrakuni sa postavili k rozhodnutiu pripojiť obec k mestu kladne.
+<BR><BR>
+Smer nášho putovania sa obrátil na západnú stranu, z roviny sa uberáme k modravým horám strácajúcim sa v. smogu mesta. Bolo to už dávno, keď dvorany mocného Devína sa ozývali ľudskou vravou, smiechom a neraz aj rinčaním zbraní jeho dobyvateľov. Povesti,
+historicky doložené správy prezrádzajú, že kedysi mocná Veľkomoravská ríša, ktorej vládol Svätopluk, vplývala aj na svoje okolie, jeho výrobu a život obyvateľstva.
+<BR><BR>
+DEVINSKA NOVÁ VES,
+<BR><BR>
+kde našli slovansko-avarské pohrebisko s veľkým sídliskom, nás oprávňujú domnievať sa, že Devínska Nová Ves bola už pred Svätoplukom oblasťou možno aj sídlom prvého slovanského štátu tzv. Samovej ríše. Prvý písomný doklad o obci je z roku 1435. Ako Čunovo, Jarovce a Rusovce, tak aj Devínsku Nová Ves osídlili v XVI. storočí Chorváti, utekajúci pred Turkami. Obec patrila v stredoveku devínskemu panstvu, svoje majetky tu však mali aj marietálski Paulíni a bratislavskí Jezuiti.
+<BR><BR>
+Ako vyzerá Devínska Nová Ves dnes? prezradil nám tajomník MSNV Tomáš Štepánek.
+<BR><BR>
+To viete, starosti a starosti. Aby som povedal pravdu, mali sme to u nás kedysi veľmi zlé. V päťdesiatych rokoch sa počítalo so zánikom obce, nik do nás nič neinvestoval a dnes vidíme, že náš dlhoročný boj o existenciu nebol zbytočný. K akcii pričlenenia našej obce do Bratislavy predchádzali mnohé rokovania s funkcionármi mesta i okresu, kde nás kompetentní činitelia oboznamovali so svojimi zámermi. Naše pripomienky k spomínanej akcii sme zaslali na Národný výbor hlavného mesta SSR Bratislavy, kde ich prerokovali na Rade NVB. V ďalšom nás oboznámili s pripravovanými akciami už konkrétnejšie. Boli už u nás zástupcovia Útvaru hlavného architekta, Komunálnych služieb a ďalšie faktory nám signalizujú, že pričlenenie k mestu znamená pre našu obec veľa pozitív.
+<BR><BR>
+Čo konkrétne myslíte?<BR>
+Myslím na zlepšenie situácie v obci z hľadiska služieb, občianskej vybavenosti, zavedenia kanalizácie, plynofikácie a pod. Myslím, že výstavba autostrády a automobilky v našej lokalite bude mať ďalší pozitívny prínos pre naše dobre prosperujúce Jednotné roľnícke družstvo a rozvej podnikov ako je Textilianka, Omnia, Technické sklo v Dúbravke, tiež tehelne, ktorá je jedna z najväčších v republike.
+<BR><BR>
+Súdruh tajomník, my sme vás vyrušili z rokovania k problematike vody, ktorá vás teraz páli.<BR>
+- Áno. Vodovod nám už toho času z kapacitných dôvodov nestačí, myslím si, že nedostatok vody spôsobili aj nedomyslené odvodňovacie zásahy, budovanie závlah a podobne. V budúcnosti sa budeme musieť aj s touto otázkou spoločne s mestom vážne zaoberať.
+<BR><BR>
+Našu cestu pretínajú násypy budúcej autostrády, celkom zreteľne už vidno rovnú čiaru, ktorá sa stráca v diaľke. Z betónu trčia železné tyče, budú držať oblúky, nadjazdy a súčasne reprezentoval cit a umenie našich architektov pri skĺbovaní stavieb s prírodou. Zo Stupavy do
+<BR><BR>
+ZAHORSKEJ BYSTRICE
+<BR><BR>
+je to len na skok. Na MSNV majú práve poradu. Voda zasa nechýba v prerokovávaných problémoch, za predsedom súdruhom Maškom chodia sa radiť a žiadať po- moc aj pracovníci na autostráde, slovom, o ruch a robotu nie je núdza. Prešli už časy, keď obyvateľstvo živiace sa poľnohospodárstvom chodievalo so svojimi výrobkami až do Viedne, ktorá bola po Bratislave najlepším odbytiskom zeleniny, najmä kapusty. Tou už sa Záhorská Bystrica preslávila. Dnes stavajú klimatizačný sklad o kapacite 92 vagónov, odkiaľ budú môcť vyexpedovávať pre mesto ovocie a zeleninu zachovalú a v požadovanom termíne. 
+<BR><BR>
+Obec je veľmi stará, v listinách ju spomínajú už v roku 1256 pod názvom Biztrich. V roku 1337, keď už bola farnosťou, ju kráľ Ľudovít daroval kláštoru Paulínov v Mariánke, ktorým patrila až do XIV. storočia. Aj túto obec osídlili Chorváti a v poddanstve pajštúnskeho hradu bola až do konca feudalizmu. Na našu otázku, či okres pripravil obec pre pričlenenie k hlavnému mestu, hovoril predseda MNV pozitívne. Do Bystrice im však prichádzajú nedobré správy o problémoch mestskej dopravy v Bratislave. Doteraz ako-tak to so spojmi ČSAD šlo až na ranné špičky, kedy sa cestovanie do zamestnania v Bratislave stáva pre mnohých utrpením. Je samozrejmé, že aj v Bystrici potrebujú kdečo vylepšiť a od mesta požadujú len investície, ktoré sú pre obec nevyhnutne potrebné. Žiadosti o pridelenie stavebných pozemkov majú od občanov Bratislavy viac ako dosť, avšak zatiaľ ich nemôžu nikomu udeliť.
+<BR><BR>
+Ako vidno, problémy s individuálnou bytovou výstavbou aj v Záhorskej Bystrici si bude mesto musieť doriešiť samo.
+	   </details>
+<BR><BR>
+		Pričlenením spomínaných obcí získa Bratislava vyše 20 tisíc nových obyvateľov, to znamená, že v tomto roku nás už bude v meste žiť 300 tisíc. Z 19 tisíc hektárov vzrastie jeho plocha na 30 tisíc. To je plocha, ktorá vzhľadom na plánované úlohy päťročnice by mala stačiť. Bratislava bude mať plochu, obce sa stanú súčasťou veľkomesta. Kto bude s tým ako spokojný, to ukáže budúcnosť. Je známe, že okres Bratislava-vi diek má určité prostriedky, ktoré musí spravodlivo a podľa naliehavostí rozdeliť. Napriek tomu sa nezachoval k týmto obciam macošsky, vidno, že funkcionári ONV sa v rámci svojich možností snažili čo najlepšie pripraviť spomínané obce pre pripojenie k hlavnému mestu. Úlohy tejto päťročnice sú obrovské, jedine spojením všetkých našich síl a umu ich môžeme realizovať. Bratislavu očakáva veľkolepý rozvoj. Obce, ktoré k nej pričlenia, pomôžu vyriešiť dôležitý životný problém budúceho veľkomesta. V porovnaní s ním sú malé problémy budúcich okrajových častí mesta skutočne malými problémami. Pre tamojších obyvateľov sú to však problémy nemalé, pretože priamo ovplyvňujú ich život. Ako sa ich však podarí riešiť, to nebude závisieť iba od radnice. Všetci musíme priložiť ruku k dielu, aby sme z Bratislavy vytvorili a vybudovali skutočne moderné socialistické veľkomesto, dôstojné hlavné mesto Slovenska.
+
+		</span>
+    </span>
+   </div>	
+  </details>
+
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  22.06.1973 - ELDORÁDO bratislavské
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: Vlado Klobušnický <BR> 
+		zdroj: Večerník č.122 
+	</span>
+	<span class="clanok">
+		<BR> <BR> 
+		Koniec týždňa je čas, ktorý by sme mali venovať odpočinku, a to, ako radia lekári, aktívnemu odpočinku. Nie každý má však možnosti športovať a nie každý má na to vekové alebo zdravotné predpoklady, a nie každý má nejakú tú záhradku, ktorú by mohol polievať alebo okopávať. Ale turistika je naozaj pre každého. Výhodná geografická poloha Bratislavy priam pobáda k výletom do bližšieho i vzdialenejšieho okolia.
+		<br>
+	  <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+Na prvom mieste by to mohol byť azda Devín a Devínska kobyla. O samotnom hrade toho veľa hovoriť netreba, veď jeho význam v našich najstarších národných dejinách spoznávajú už žiačikovia v ľudovej škole. Spomenieme toľko, že prvé písomné zmienky o ňom sú z roku 864, ale pôvod hradu je určite starší. Devínska kobyla má výšku 514 metrov nad morom a vidno na nej stopy neogénneho mora. Na južných svahoch rastie vzácna teplomilná kvetena, ktorej mnohé druhy sú chránené.
+<br><br>
+Dobre známym výletným miestom je aj Borinský hrad (Pajštún) nad obcou Borinka neďaleko Stupavy, ako i celé údolie Borinského potoka. Hrad stojí na 464 metrov vy- sokom vápencovom brale a prvý raz sa spomína v listine z roku 1237, teda nie je nijaký mladíček. Hrad je v ruinách od roku 1810, keď ho napoleonské vojská vyhodili do povetria. Z hradu je dobrý výhľad do Záhorskej nížiny i do údolia Borinky a dokonca, keď je dobré počasie, možno vidieť aj Alpy. Hoci je hrad v rozvalinách, v prípade nečakanej búrky sa možno pred dažďom ukryť v pivniciach, ktoré ako núdzový prístrešok dobre po- slúžia. Odtiaľto sa dá ísť na Košiarisko, Dračí hrádok (zrúcanina stredovekej strážnej veže) a na Medené Hámre.
+<br><br>
+Vráťme sa však trocha bližšie k mestu. Aj mladší obyvatelia Bratislavy, ako aj tí, ktorí sa prisťahovali do mesta len celkom nedávno, poznajú prechádzkovú alebo ak chcete výletnícku trasu od Červeného mosta na Železnú studienku a odtiaľ na Kamzík a na Kolibu k trolejbusu. Dnešný kovový most nad údolím Vydrice je tiež červený, ale toto miesto dostalo názov podľa klenutého mosta z červených tehál, ktorý vydržal od roku 1848 až do r. 1945, keď ho zničili ustupujúce fašistické vojská. Železná studienka dostala názov podľa liečivého železitého prameňa, ktorý býval pred budovou volakedajších kúpeľov. Na Kamzík, stredisko bratislavského lesoparku možno ísť pešo a pre tých pohodlnejších je k dispozícii sedačkový výťah.
+<br><br>
+Nemôžeme obísť Harmóniu a Zochovu chatu. Harmónia je dnes už husto zastavaná chatami, ale malebné údolie Kamenného potoka nestratilo nič na svojej kráse. Dostaneme sa ním k Zochovej chate, ktorá je jedným z najnavštevovanejších stredísk celej oblasti. Listnaté porasty okolitých lesov sú premiešané jedľou, takže to sú najnižšie miesta, kde sa tento strom u nás vyskytuje. Neďaleko chaty je priehrada s kúpaliskom, zaujímavé skalné útvary a miesta na táborenie. Odtiaľto vychádza niekoľko veľmi zaujímavých turistických trás. My sa vyberieme tou, ktorá vedie na hrad Červený kameň.
+<br><br>
+Je to štátny hrad a múzeum. Dala ho postaviť v rokoch 1220 až 1235 Konštancia, manželka kráľa Přemysla Otakara I. Neskôr bol majetkom grófa z Jura, potom Thurzovcov a Fuggerovcov. Ti dali starý hrad zboriť a blízka neho v tridsiatych rokoch šestnásteho storočia vybudovali dnešný renesančný hrad, ktorý neskôr prešiel do vlastníctva magnátskeho rodu Pálffyovcov. Im patril až do roku 1945. Pôvodný gotický hrad, nazvaný podľa červených kremencových skalísk, stál západne od neskorších hospodárskych budov. Dnešný renesančný zámok so štyrmi krídlami a nárožnými oválnymi baštami sa podobá na talianske kastellum. Dômyselné vetracie za- riadenie v delových baštách je robené podľa systému, ktorý vypracoval známy maliar a rytec Albrecht Dürer. Pálffyovci hrad niekoľkokrát prestavovali a dlho bol ich rezidenčným sídlom. Je jedným z mála podobných objektov, ktoré sa na Slovensku zachovali. Dnes je na hrade múzeum. Je tu cenné renesančné a barokové vnútorné zariadenie, keramika, umeleckoremeselné výrobky, zbrane, obrazy, lekáreň, salla terena. Zaujímavé sú pivnice a hradná studňa i mučiareň, nemý, ale o to výrečnejší svedok stredovekej justície. Prepychový a pohodlný kočiar ktorý používali páni grófi, pracovníci múzea ho nazývajú šesťstotrojkou. Na hrade sú dobré možnosti občerstvenia v Píle, dedine pod hradom, je kúpalisko i možnosti ubytovania.
+<br><br>
+No a keď sme sa už vybrali tým smerom, môžeme pokračovať o nejaké kilometre ďalej, na Jahodník. Je to rekreačné stredisko asi dva kilometre od Smoleníc a možno povedať, že leží uprostred jednej z najkrajších oblastí Malých Karpát. Neďaleko sú Záruby, Veterník, Čierna skala a jaskyňa Driny. Na Jahodníku (bývalý Škarbák) je kúpalisko a možnosti ubytovania v chatkách alebo i vo vlastných stanoch. Reštaurácia je zaujímavá tým, že voľakedy to boli stajne, kde gróf Pálffy choval osly. To však už bolo pred desaťročiami a dnes reštaurácia spĺňa i tie náročnejšie požiadavky.
+<br><br>
+Niekoľko minút cesty od Jahodníka je jaskyňa Driny. Patrí medzi najväčšie puklinové jaskyne. Jaskynné chodby v dĺžke 636 metrov majú bohatú kvapľovú výzdobu. Pre verejnosť je zatiaľ sprístupnených iba tristo metrov jaskynných chodieb.
+<br><br>
+Lesnou cestou sa dá prejsť na vrch Molpír, kde voľakedy bývala veľká predhistorická opevnená osada pri tzv. Českej ceste. Získané nálezy ju datujú do doby bronzovej. Neďaleký zámok, pôvodne strážny hrad, bol známy už v štrnástom storočí. V minulom storočí bol v ruinách. Začiatkom tohto storočia ho dal Pálffy prestavať na romantický zámok. Dnes je v ňom sídlo vedeckých pracovníkov SAV a verejnosti je neprístupný, ale aj pohľad zvonku stojí za to.
+<br><br>
+Cieľom diaľkových túr mnohých turistov je aj Pezinská Baba, sedlo na hlavnom hrebeni Malých Karpát vo výške 527 metrov nad morom. Baba má pekné a zaujímavá okolie. Je to Čmelek, Čertov kopec, Rybníček, Kamenná brána, Pernecké bane a Jastrabník. Na Babu sa možno dostať aj autobusom a odtiaľ podnikať kratšie či dlhšie túry.
+<br><br>
+V tejto oblasti je aj známe Slnečné údolie. Východiskovou stanicou k nemu môže byť Limbach. (Hlboké údolie sa v hornej časti pod Kolárskym vrchom rozširuje. Sú tu aj možnosti táborenia. Nezaškodí azda spomenúť aj známe limbašské víno, z ktorého si cestou domov možno kúpiť fľašku či dve.
+	   </details>
+          <br>
+
+		<span class="cj">
+			Keď však hovoríme o možnostiach krátkodobej rekreácie pre obyvateľov hlavného mesta Slovenska, nemôžeme, 
+	najmä teraz, keď máme, leto na krku, zabudnúť ani na možnosti kúpania a vodných športov. 
+	Pre tých, ktorí neobľubujú miesta, kde sa to ľuďmi často hmýri ako v mravenisku, 
+	možno odporúčať <span class="cunovske">nové štrkoviská</span> na pravom brehu Dunaja, za Starým Hájom alebo pri <span class="cunovske">Čunove</span>. 
+	
+		</span>
+
+	No a nemožno zabudnúť na samotný Dunaj. Lido a miesta poniže neho sú známe. 
+	Menej ľudí už vie, že k Dunaju sa dá pomerne ľahko dostať aj z Podunajských Biskupíc. 
+	Je tam menej ľudí a okrem toho pridunajské lužné lesy sú veľmi zaujímavé, najmä tým, že sú menej dotknuté 
+	ľudskou rukou ako lesy, povedzme v Karpatoch.
+	<br><br>
+	Rovnako možno odporúčať<br>
+	aj výletné stredisko Hrušovo. Najlepšie sa tam dá dostať loďou a možno povedať, že už samotná takáto cesta je veľmi príjemnou zmenou po rušnom pracovnom týždni. Povyše Hrušova je Čilistovské rameno, ktoré je menej navštevované, a odvážime sa tvrdiť, že neprávom. Komu sa nelení niekoľko minút ísť pešo, dostane sa do miest, aké ináč mohol vidieť len napríklad vo filme Čierny prápor alebo Zlozor. Teda kus romantiky, kus samoty, možnosť vykúpať sa i pomeditovať na brehu Dunaja alebo jeho ramena, na ostrove, uprostred húštiny pod starými stromami, na miestach, ktoré našincovi pripomenú prales.
+	<br><br>
+	O rekreačných možnostiach Bratislavy by sa dali napísať knihy. Skrátka, každý si tu príde na svoje.
+    </span>
+   </div>	
+  </details>
+
+
+
+
 
      <details class="clanok"> 
 	<summary> 
@@ -116,7 +389,6 @@ details[open] > summary {
 		</span>
  	</summary>
 	<div class="details-container">
-	<p>
 	<span class="autor">
 		autor: Eugen Riedl <BR> 
 		zdroj: Pamiatky a príroda č.4(periodikum) 
@@ -301,7 +573,6 @@ details[open] > summary {
 		Výstavba vodného diela na Dunaji poskytuje však oveľa širšie možnosti rekreácie, ktoré budú súčasťou „Bio-projektu" diela na Dunaji. Ku komplexnému riešeniu rekreačného vy- užitia tejto oblasti na takej úrovni ako v Karpatskej oblasti sa bude môcť pristúpiť až po vyjasnení principiálnych otázok.
 		<BR><BR>
 		Práca na Generálnom projekte BLP sa má v zásade dokončiť do konca roku 1975. Snahou všetkých pracovníkov pracujúcich na GP je, aby Bratislava dostala projekt, realizáciou ktorého sa budú ešte vo väčšom rozsahu a na širšej základni uskutočňovať zásady tvorby a ochrany životného prostredia tak, ako to stanovujú zásady rozvoja socialistickej spoločnosti, socialistického človeka, tak, ako to stanovujú zásady uplatňované v politike našej KSČ.
-		</p>
     </span>
    </div>	
   </details>
@@ -315,171 +586,17 @@ details[open] > summary {
      <details class="clanok"> 
 	<summary> 
 		<span class="rozbal">
-		  11.06.1971 - Pribudnú do rodiny
+			04.10.1977 - Retro noviny RTVS - Bager do šrotu&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i>video</i>
 		</span>
  	</summary>
 	<div class="details-container">
-	<p>
 	<span class="autor">
-		autor: -pv-jt-jz <BR> 
-		zdroj: Večerník č.137
+		Archívny fond STV - Retro noviny RTVS  8.10.2022 <BR>
+		zdroj:<a href="https://www.rtvs.sk/televizia/archiv/15135/359399" target="_blank" style="text-decoration: none">                                                                                                                                       
+		https://www.sme.sk/c/2085086/devastuje-sa-vodny-zdroj-a-priroda-v-okoli-sustavy-cunovskych-jazier.html</a>
 	</span>
 	<span class="clanok">
-		<BR><BR>
-		Mestu sa bude na väčšej ploche voľnejšie dýchať. <BR>
-		Ďalších sedem prímestských obcí pričlenia k Bratislave. <BR>
-		Vyriešia sa staré problémy, ale vzniknú nové. <BR>
-		Noví Bratislavčania priložia ruky k dielu.
-		<BR><BR>
-		Keď poslanci Národného výboru hlavného mesta Slovenska na svojom tridsiatomsiedmom plenárnom zasadaní v máji t. r. rozhodovali o obciach, ktoré by bolo vhodné pripojiť k mestu, viseli vo vzduchu mnohé otázky, obavy a problémy, ktoré v týchto súvislostiach sú už dnes zapísané v kronike minulosti. Ktoré obce to budú? Ako sa postaví k tomu okres, čo na to funkcionári a obyvatelia vybraných dedín a s akými predstavami a zámermi ideme do nového rozširovania územia hlavného mesta? Rokovanie sa skončilo v súlade so záujmom Bratislavy, funkcionári obcí pochopili potrebu začlenenia ich územia do katastru hlavného mesta. Od 4. mája t. r. sú schválené na pripojenie k mestu obce doteraz patriace okresu Bratislava-vidiek. Sú to Podunajské Biskupice, Rusovce, Jarovce, Čunovo, Vrakuňa, Záhorská Bystrica a Devínska Nová Ves. 
-		<BR><BR>
-		Iste nám nie je neznáma poloha spomínaných obcí, mnohí nimi prechádzajú, prípadne trávia v nich príjemný víkend. Keďže nás zaujíma, čo mesto dostane a čo bude musieť občanom dať, aby tieto zatiaľ menej exponované časti Bratislavy neboli z titulu svojej okrajovosti zanedbávané najmä v oblasti služieb, dopravy a ďalšieho vybavenia, zašli sme si do niektorých z nich, aby sme sa na tvári miesta mohli s tamojšími funkcionármi porozprávať a rozobrať, otázky, ktoré nie sú také jednoduché, ako to na prvý pohľad vyzerá. Pozrime sa preto trochu i do minulosti, obcí. Vzhľadom k svojej blízkosti k Bratislave majú tiež bohatú históriu, dajme preto slovo tým, ktorí si viac sľubujú od budúcnosti.
-		<BR>
-	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
- 		RUSOVCE <BR><BR>
-		Hoci máme na zreteli bezprostrednú budúcnosť tejto prímestskej obce, nemožno na jej pôde nehovoriť o minulosti. 
-		<BR><BR>
-		Tu stála predsa pred dávnymi stáročiami rímska Gerulata. Naši archeológovia vykopávajú z tmy zabudnutia jej bývalú nádheru, objavujú budovy, chrámy, cintoríny. Po dokončení archeologických vykopávok bude možné zriadiť na území
-		<BR><BR>
-		Bratislavy jedinečné múzeum rímskych pamiatok a vzdať tak hold mysliteľom, štátnikom a vojvodcom, ktorí dokázali pred dvoma tisícročiami obdivuhodne pružne spravovať obrovské územie. A pravdaže, hold tým mnohým bezmenným tvorcom, ktorí postavili budovy a chrámy, vykresali kamenné sarkofágy a zanechali nám jedinečné svedectvo vysokej výtvarnej kultúry. Tu pri Rusov- ciach bol predsa Limes Romanus, hraničný obranný val tiahnuci sa pozdĺž Dunaja. Tu bola veľká križovatka dejín, na ktorej sa stretali vojská, ale aj veľké myšlienky a prúdy.
-		<BR><BR>
-		V Rusovciach sídli Slovenský ľudový umelecký kolektív. Stretáme sa s ním skôr na koncertných pódiách alebo na televíznej obrazovke a do Rusoviec chodia za súborom nanajvýš zahraniční hostia alebo zainteresovaní odborníci. Sú- bor, rozvíjajúci nepreberné bohatstvo piesní, tancov a hudby nášho ľudu, vtlačil v predošlých dvoch desaťročiach výraznú pečať životu tejto obce. Pričlenením k Bratislave stanú sa nielen Rusovce súčasťou nášho mesta, ale aj SĽUK bratislavským súborom.
-	    	<BR><BR>
-		PODUNAJSKÉ BISKUPICE
-		<BR><BR>
-		sú pravdepodobne jednou z najstarších obcí na Slovensku. Už oddávna sú v čulom styku s Bratislavou. Myšlienka pripojiť Biskupice k mestu preto ani nie je nová. Podľa slov predsedu tamojšieho MSNV Imricha Mádliho o pričlenení obce k mestu sa uvažovalo už v roku 1950. Je samozrejmé, že vtedajší Okresný národný výbor nemal záujem vkladať investície do dediny, ktorá sa onedlho od- člení z okresu. Na vec sa medzičasom akosi zabudlo, Podunajské Biskupice po stránke investičnej už mali byť od okresu odlúčené a mesto pre nich ešte prostriedky nemalo. A tak sa stalo, že neďaleko Bratislavy existovala jedna z najzaostalejších dedín na Slovensku. Od roku 1984 sa ich obraz začal meniť. Postavilo sa 135 štátnych bytov, 48 družstevných. Od roku 1945 vyrástlo v obci vyše 1000 rodinných domov. Biskupice donedávna bez asfaltových ciest majú už dnes vy- asfaltovaných 70 percent všetkých komunikácií. Zriadili tri reštaurácie, obchodné stredisko, občania už nemusia pre základné potraviny chodiť do mesta. Mestská doprava umožňuje cestovať skoro 4700 pracujúcim do Bratislavy, ostatok pracuje v poľnohospodárstve.
-		<BR><BR>
-		Skutočnosť, že budeme pričlenení k mestu, sme v Biskupiclach uvítali, vraví predseda MSNV. Mestu s sme však adresovali niektoré požiadavky, ktoré považujeme za nevyhnutné u nás realizovať, ak máme uspokojiť občanov. Potrebovali by sme nové zdravotné stredisko, lekárov, budovu pre ZDS, telocvičňu. V Biskupiciach nemá kde cvičiť 1600 žiakov. Slovnaft nie je ďaleko a viac k tomu hádam netreba hovoriť. Prísľuby z Národného výboru hlavného mesta Bratislavy Biskupičania majú. Chceli by mať však aj istoty, ktoré by onedlho prejavili v živote obce v pozitívnom zmysle. A tomu sa netreba čudovať, veď funkcionárov si obyvatelia volia sami a tí sú povinní tlmočiť a presadzovať ich požiadavky. Biskupičanov čaká ešte veľa práce, treba len podporu a pomôcť im v ich sympatickom úsilí.
-		</details>
-		<BR><BR>
- 		Príslušníci Verejnej bezpečnosti zastavujú naše auto niekoľko sto metrov pred hraničným prechodom v Rusovciach. Nie my do štatistiky vycestovaných k susedom zatiaľ neprispejeme, odbočujeme doľava a kochajúc sa na obrovskej zelenej ploche (vyše 160 ha) ovocných sadov končiacich až kdesi na obzore) vchádzame
-		<BR><BR>
-           DO ČUNOVA.
-           <BR><BR>
-		Družstvo je jedným z najväčších zásobovateľov našich obchodov broskyňami, marhuľami a jablkami. Tento rok zrejme veľa nenagazduje. Jarné mrazy prišli práve v najnevhodnejší čas. Pomrzlo asi 90 percent všetkej budúcej úrody. Na národnom výbore nás očakáva predsedníčka Mária Maurovichová. Nie je v tejto funkcii dlho, avšak žije roky v Čunove, dokonale pozná problematiku svojich ľudí a dediny. Opatrne sondujeme, ako to vyzerá u nich v dedine, či sa k nim okres nezachoval podobne macošsky ako k Podunajským Biskupiciam. Odvtedy sa veľa zmenilo vraví predsedníčka. Môžem zodpovedne povedať, že okres Bratislava vidiek nám pokiaľ mohol pomáhal. Vieme, že v okrese sú možnosti z hľadiska investícií a podobne ohraničené a čo mohli, to pomohli. 
-		<BR><BR>
-		I keď máme problémov dosť, myslíme si, že po pričlenení k mestu, ktoré bude mat iste väčšie možnosti ako okres sa bude dať dačo zlepšiť. Mám na mysli najmä dodávateľsko-odberateľské vzťahy medzi JRD a obchodnými zložkami. Veď ovocie tak prepotrebné na našom stole dostanú obyvatelia čerstvé až na stôl. 
-		<BR><BR>
-           <span class="cj">
-		Z hľadiska rekreačného sa pre budúcnosť skýtajú v Čunove pre Bratislavčanov veľké možnosti pri Dunaji a <span class="cunovske">veľkom štrkovisku</span>, 
-		kde je kúpanie nemenej príjemné ako napríklad v Senci.
-		</span>
-		<BR><BR>
-		Vidno, že v Čuňove nie sú neskromní. Mali sme skôr dojem, že po pričlenení k mestu chcú viac dávať ako brať, preto ani ich požiadavky na Národný výbor hlavného mesta SSR Bratislavy neboli veľké. Chceli by však vybojovať aspoň základné potreby, ktoré sú pre život a spokojnosť občanov neodmysliteľné. Je priam zarážajúce, že niekoľko kilometrov od Bratislavy neexistuje v dedine žiadna kultúrna miestnosť. Kedysi mali v staršej budove kultúrny dom, bolo však treba niekde umiestniť materskú školu a od- vtedy už dlhé roky premietanie filmu v dedine nepoznajú, divadelné predstavenie ani netreba spomínať, jednoducho niet tam nič. Vedia, že v tejto päťročnici sa prostriedky investujú do výroby Hádam im však mesto pomôže zatiaľ aspoň minimálnym vybavením, ktoré by im umožnilo premietať v dedine film. A ešte niečo páli mladých v Čuňove. Ako všade inde aj tam sa ženia, vydávajú a zakladajú si rodiny. Potrebujú si, samozrejme, postaviť aj nové byty. A pre niekoľko záujemcov je iba jedno stavebné povolenie, ktoré okres mohol dať, navyše chodia žiadosti o prideľovanie pozemkov od občanov Bratislavy.
-		<BR><BR>
-		Dedinka, ktorú najstaršie listiny spomínajú už v 12. storočí, ostáva za nami. Do oblasti obsadenej pod nátlakom Turkov v 16. storočí chorvátskym obyvateľstvom patria aj 
-		<BR><BR>
-	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
-JAROVCE.
-<BR><BR>
-Obec leží dva kilometre od hlavnej cesty vedúcej z Bratislavy do Rusoviec. Na MSNV skoro nikoho niet, iba tajomníčka Alžbeta Karchesová nás ubezpečuje, že predseda bude o chvíľu tu. Vraj je na brigáde aj s poslancami, pracujú na úprave neďalekej škôlky. Anton Jaborek prichádza v montérkach so Štefanom Vareničom, podpredsedom tunajšieho MsNV. Nič sa nedá robiť, vravia, ak chceme, aby pracovali ostatní, musíme ísť príkladom.
-<BR><BR>
-Súdruh predseda, ako ste uvítali skutočnosť, že budete patriť k hlavnému mostu Slovenska?<BR>
-Sme všetci za to, aby sme patrili k Bratislave. Sľubujeme si od toho, že po tejto úprave Ľahšie budeme prekonávať ťažkosti, ktoré máme.
-<BR><BR>
-Chcete tým povedať, že vás okres zanedbával? <BR>
--Nie naopak -S okresom Bratislava-vidiek sme nemali žiadne ťažkosti, vieme, že tam nám vychádzali pokiaľ mohli v ústrety. Myslím tým však to, že niektoré problémy nám nemohol vyriešiť ani okres, ktorý je do značnej miery obmedzený v investíciách, preto dúfame, že mesto bude na tom lepšie, čo pre nás znamená prínos.
-<BR><BR>
-Čo vás konkrétne najviac v obci páli?<BR>
-Veľmi radi by sme mali vodovod, školu, doriešená otázku služieb, dopravy a obchodu. Tiež benzínové čerpadlo by malo v Rusovciach byt, aby sme nemuseli po benzín chodiť až do Petržalky. (To by malo byť samozrejmé už aj z hľadiska cestovného ruchu pozn. red.)
-<BR><BR>
-Ako je to u vás so záujmom o stavebné povolania?<BR>
--To je otázka, ktorá mesto bude môcť vyriešiť, lebo záujem je veľký aj zo strany Bratislavčanov mnohí by si radi postavili domček mimo exponované- ho územia v meste.
-Ďalšou z pričlenených obcí je
-<BR><BR>
-VRAKUŇA.
-<BR><BR>
-Jej história je pomerne bohatá. Z písomných pamiatok vieme, že už oddávna inklinovala k Bratislave. V stredoveku patrila ako poddanská obec Bratislavské- mu hradu a mala dunajský prístav, ktorý v XIV. storočí používalo aj mesto Bratislava. Verekňa ako sa vtedy Vrakuňa volala - prekonala veľké zmeny, vyrástli v nej nové domy. Už v tomto roku majú vo Vrakuni začať stavať sídliská tzv. Medzi Járky a Dolné hony. V prvom sídlisku nájde domov 1300 rodín. Aj vo Vrakuni sa postavili k rozhodnutiu pripojiť obec k mestu kladne.
-<BR><BR>
-Smer nášho putovania sa obrátil na západnú stranu, z roviny sa uberáme k modravým horám strácajúcim sa v. smogu mesta. Bolo to už dávno, keď dvorany mocného Devína sa ozývali ľudskou vravou, smiechom a neraz aj rinčaním zbraní jeho dobyvateľov. Povesti,
-historicky doložené správy prezrádzajú, že kedysi mocná Veľkomoravská ríša, ktorej vládol Svätopluk, vplývala aj na svoje okolie, jeho výrobu a život obyvateľstva.
-<BR><BR>
-DEVINSKA NOVÁ VES,
-<BR><BR>
-kde našli slovansko-avarské pohrebisko s veľkým sídliskom, nás oprávňujú domnievať sa, že Devínska Nová Ves bola už pred Svätoplukom oblasťou možno aj sídlom prvého slovanského štátu tzv. Samovej ríše. Prvý písomný doklad o obci je z roku 1435. Ako Čunovo, Jarovce a Rusovce, tak aj Devínsku Nová Ves osídlili v XVI. storočí Chorváti, utekajúci pred Turkami. Obec patrila v stredoveku devínskemu panstvu, svoje majetky tu však mali aj marietálski Paulíni a bratislavskí Jezuiti.
-<BR><BR>
-Ako vyzerá Devínska Nová Ves dnes? prezradil nám tajomník MSNV Tomáš Štepánek.
-<BR><BR>
-To viete, starosti a starosti. Aby som povedal pravdu, mali sme to u nás kedysi veľmi zlé. V päťdesiatych rokoch sa počítalo so zánikom obce, nik do nás nič neinvestoval a dnes vidíme, že náš dlhoročný boj o existenciu nebol zbytočný. K akcii pričlenenia našej obce do Bratislavy predchádzali mnohé rokovania s funkcionármi mesta i okresu, kde nás kompetentní činitelia oboznamovali so svojimi zámermi. Naše pripomienky k spomínanej akcii sme zaslali na Národný výbor hlavného mesta SSR Bratislavy, kde ich prerokovali na Rade NVB. V ďalšom nás oboznámili s pripravovanými akciami už konkrétnejšie. Boli už u nás zástupcovia Útvaru hlavného architekta, Komunálnych služieb a ďalšie faktory nám signalizujú, že pričlenenie k mestu znamená pre našu obec veľa pozitív.
-<BR><BR>
-Čo konkrétne myslíte?<BR>
-Myslím na zlepšenie situácie v obci z hľadiska služieb, občianskej vybavenosti, zavedenia kanalizácie, plynofikácie a pod. Myslím, že výstavba autostrády a automobilky v našej lokalite bude mať ďalší pozitívny prínos pre naše dobre prosperujúce Jednotné roľnícke družstvo a rozvej podnikov ako je Textilianka, Omnia, Technické sklo v Dúbravke, tiež tehelne, ktorá je jedna z najväčších v republike.
-<BR><BR>
-Súdruh tajomník, my sme vás vyrušili z rokovania k problematike vody, ktorá vás teraz páli.<BR>
-- Áno. Vodovod nám už toho času z kapacitných dôvodov nestačí, myslím si, že nedostatok vody spôsobili aj nedomyslené odvodňovacie zásahy, budovanie závlah a podobne. V budúcnosti sa budeme musieť aj s touto otázkou spoločne s mestom vážne zaoberať.
-<BR><BR>
-Našu cestu pretínajú násypy budúcej autostrády, celkom zreteľne už vidno rovnú čiaru, ktorá sa stráca v diaľke. Z betónu trčia železné tyče, budú držať oblúky, nadjazdy a súčasne reprezentoval cit a umenie našich architektov pri skĺbovaní stavieb s prírodou. Zo Stupavy do
-<BR><BR>
-ZAHORSKEJ BYSTRICE
-<BR><BR>
-je to len na skok. Na MSNV majú práve poradu. Voda zasa nechýba v prerokovávaných problémoch, za predsedom súdruhom Maškom chodia sa radiť a žiadať po- moc aj pracovníci na autostráde, slovom, o ruch a robotu nie je núdza. Prešli už časy, keď obyvateľstvo živiace sa poľnohospodárstvom chodievalo so svojimi výrobkami až do Viedne, ktorá bola po Bratislave najlepším odbytiskom zeleniny, najmä kapusty. Tou už sa Záhorská Bystrica preslávila. Dnes stavajú klimatizačný sklad o kapacite 92 vagónov, odkiaľ budú môcť vyexpedovávať pre mesto ovocie a zeleninu zachovalú a v požadovanom termíne. 
-<BR><BR>
-Obec je veľmi stará, v listinách ju spomínajú už v roku 1256 pod názvom Biztrich. V roku 1337, keď už bola farnosťou, ju kráľ Ľudovít daroval kláštoru Paulínov v Mariánke, ktorým patrila až do XIV. storočia. Aj túto obec osídlili Chorváti a v poddanstve pajštúnskeho hradu bola až do konca feudalizmu. Na našu otázku, či okres pripravil obec pre pričlenenie k hlavnému mestu, hovoril predseda MNV pozitívne. Do Bystrice im však prichádzajú nedobré správy o problémoch mestskej dopravy v Bratislave. Doteraz ako-tak to so spojmi ČSAD šlo až na ranné špičky, kedy sa cestovanie do zamestnania v Bratislave stáva pre mnohých utrpením. Je samozrejmé, že aj v Bystrici potrebujú kdečo vylepšiť a od mesta požadujú len investície, ktoré sú pre obec nevyhnutne potrebné. Žiadosti o pridelenie stavebných pozemkov majú od občanov Bratislavy viac ako dosť, avšak zatiaľ ich nemôžu nikomu udeliť.
-<BR><BR>
-Ako vidno, problémy s individuálnou bytovou výstavbou aj v Záhorskej Bystrici si bude mesto musieť doriešiť samo.
-	   </details>
-<BR><BR>
-		Pričlenením spomínaných obcí získa Bratislava vyše 20 tisíc nových obyvateľov, to znamená, že v tomto roku nás už bude v meste žiť 300 tisíc. Z 19 tisíc hektárov vzrastie jeho plocha na 30 tisíc. To je plocha, ktorá vzhľadom na plánované úlohy päťročnice by mala stačiť. Bratislava bude mať plochu, obce sa stanú súčasťou veľkomesta. Kto bude s tým ako spokojný, to ukáže budúcnosť. Je známe, že okres Bratislava-vi diek má určité prostriedky, ktoré musí spravodlivo a podľa naliehavostí rozdeliť. Napriek tomu sa nezachoval k týmto obciam macošsky, vidno, že funkcionári ONV sa v rámci svojich možností snažili čo najlepšie pripraviť spomínané obce pre pripojenie k hlavnému mestu. Úlohy tejto päťročnice sú obrovské, jedine spojením všetkých našich síl a umu ich môžeme realizovať. Bratislavu očakáva veľkolepý rozvoj. Obce, ktoré k nej pričlenia, pomôžu vyriešiť dôležitý životný problém budúceho veľkomesta. V porovnaní s ním sú malé problémy budúcich okrajových častí mesta skutočne malými problémami. Pre tamojších obyvateľov sú to však problémy nemalé, pretože priamo ovplyvňujú ich život. Ako sa ich však podarí riešiť, to nebude závisieť iba od radnice. Všetci musíme priložiť ruku k dielu, aby sme z Bratislavy vytvorili a vybudovali skutočne moderné socialistické veľkomesto, dôstojné hlavné mesto Slovenska.
-
-		</span>
-		</p>
-    </span>
-   </div>	
-  </details>
-
-
-
-
-  
-<div class="tab">
-        <input type="checkbox" id="chck02">
-        <label class="tab-label" for="chck02">&#9679;&nbsp;22.06.1973 - ELDORÁDO bratislavské</label>
-        <div class="tab-content">
-autor článku:Vlado Klobušnický &nbsp;&nbsp; zdroj:Večerník
-	
-<p>
-Koniec týždňa je čas, ktorý by sme mali venovať odpočinku, a to, ako radia lekári, aktívnemu odpočinku. Nie každý má však možnosti športovať a nie každý má na to vekové alebo zdravotné predpoklady, a nie každý má nejakú tú záhradku, ktorú by mohol polievať alebo okopávať. Ale turistika je naozaj pre každého. Výhodná geografická poloha Bratislavy priam pobáda k výletom do bližšieho i vzdialenejšieho okolia.
-<br>...</br>
-</p>
-<p>
-Keď však hovoríme o možnostiach krátkodobej rekreácie pre obyvateľov hlavného mesta Slovenska, nemôžeme, 
-	najmä teraz, keď máme, leto na krku, zabudnúť ani na možnosti kúpania a vodných športov. 
-	<font color="#9900FF" size="+1">Pre tých, ktorí neobľubujú miesta, kde sa to ľuďmi často hmýri ako v mravenisku, 
-	možno odporúčať <b>nové štrkoviská</b> па pravom brehu Dunaja, za Starým Hájom alebo pri <b>Čunove</b>. 
-	</font>
-	No a nemožno zabudnúť na samotný Dunaj. Lido a miesta poniže neho sú známe. 
-	Menej ľudí už vie, že k Dunaju sa dá pomerne ľahko dostať aj z Podunajských Biskupíc. 
-	Je tam menej ľudí a okrem toho pridunajské lužné lesy sú veľmi zaujímavé, najmä tým, že sú menej dotknuté 
-	ľudskou rukou ako lesy, povedzme v Karpatoch.
-</p>
-<p>
-Rovnako možno odporúčať<br>
-aj výletné stredisko Hrušovo. Najlepšie sa tam dá dostať loďou a možno povedať, že už samotná takáto cesta je veľmi príjemnou zmenou po rušnom pracovnom týždni. Povyše Hrušova je Čilistovské rameno, ktoré je menej navštevované, a odvážime sa tvrdiť, že neprávom. Komu sa nelení niekoľko minút ísť pešo, dostane sa do miest, aké ináč mohol vidieť len napríklad vo filme Čierny prápor alebo Zlozor. Teda kus romantiky, kus samoty, možnosť vykúpať sa i pomeditovať na brehu Dunaja alebo jeho ramena, na ostrove, uprostred húštiny pod starými stromami, na miestach, ktoré našincovi pripomenú prales.
-</p>
-<p>
-O rekreačných možnostiach Bratislavy by sa dali napísať knihy. Skrátka, každý si tu príde na svoje.
-</p>
-</div>
- </div>
-
-
-
-
-
-
-	
-	
-
-			
-			      <div class="tab">
-        <input type="checkbox" id="chck0">
-        <label class="tab-label" for="chck0">&#9679;&nbsp;04.10.1977 - Retro noviny RTVS - Bager do šrotu&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i>video</i></label>
-        <div class="tab-content">
- Archívny fond STV - Retro noviny RTVS  8.10.2022 &nbsp;&nbsp; zdroj:
-	<a href="https://www.rtvs.sk/televizia/archiv/15135/359399" target="_blank" style="text-decoration: none">
-                                                                                                                                                        https://www.sme.sk/c/2085086/devastuje-sa-vodny-zdroj-a-priroda-v-okoli-sustavy-cunovskych-jazier.html
-	</a>
-<p>Vzácna reportáž z čias kedy vnikli Čunovské jazerá. S najväčšou pravdepodobnosťou snímky zachytávajú tieto jazerá.<br>
+		<p>Vzácna reportáž z čias kedy vnikli Čunovské jazerá. S najväčšou pravdepodobnosťou snímky zachytávajú tieto jazerá.<br>
  Tomáš Pustai - filmový technik<br>
  Milan Antonič - emeritný archivár STV - RTVS<br>
  Martin Valkovič - skenerista<br><br>
@@ -495,8 +612,8 @@ O rekreačných možnostiach Bratislavy by sa dali napísať knihy. Skrátka, ka
     <source src="1977_10_04_retro_noviny.mp4" type="video/mp4">
     váš prehliadač nepodporuje video 
    </video> 
-</div>
- </div>
+		</div>
+ 		</div>
 
 <p>"Problém s likvidáciou odpadu sa týka nás všetkých a zahŕňa v sebe všetko od drobného odpadu až po 
 likvidáciu veľkých fabrík. Riešenie tohto problému bolo vždy náplňou života celej spoločnosti. A veru niekedy 
@@ -507,20 +624,27 @@ ako odstrániť zvyšky techniky použitej pri ťažbe štrku z jazera neďaleko
 obyvateľov Bratislavy. Veríme, že v krátkom čase problém vyriešia a nepoužiteľný bager na brehu i pontón a časť vodného bagra z vody 
 odvezú tam kam patria - do šrotu"</p>
 
-        </div>
-      </div>
+      </span>
+     </div>	
+    </details>
+			
+			
+		
+<details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+			13.07.1996 - Devastuje sa vodný zdroj a príroda v okolí sústavy Čunovských jazier  
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: Ing. STANISLAV ŠIŠULÁK<BR> 
+		zdroj: <a href="https://www.sme.sk/c/2085086/devastuje-sa-vodny-zdroj-a-priroda-v-okoli-sustavy-cunovskych-jazier.html" target="_blank" style="text-decoration: none">
+                    https://www.sme.sk/c/2085086/devastuje-sa-vodny-zdroj-a-priroda-v-okoli-sustavy-cunovskych-jazier.html
+			  </a>
 
-			
-			
-			
-      <div class="tab">
-        <input type="checkbox" id="chck1">
-        <label class="tab-label" for="chck1">&#9679;&nbsp;13.07.1996 - Devastuje sa vodný zdroj a príroda v okolí sústavy Čunovských jazier  </label>
-        <div class="tab-content">
-autor článku:  Ing. STANISLAV ŠIŠULÁK &nbsp;&nbsp; zdroj:
-	<a href="https://www.sme.sk/c/2085086/devastuje-sa-vodny-zdroj-a-priroda-v-okoli-sustavy-cunovskych-jazier.html" target="_blank" style="text-decoration: none">
-                                                                                                                                                        https://www.sme.sk/c/2085086/devastuje-sa-vodny-zdroj-a-priroda-v-okoli-sustavy-cunovskych-jazier.html
-	</a>
+	</span>
+	<span class="clanok">
 <p>Najkvalitnejším vodným zdrojom v Bratislave je sústava Čunovských jazier, nachádzajúca sa na odbočke zo štátnej cesty pred hraničným priechodom Bratislava-Rajka. 
 Okolie Čunovských jazier je štátnou prírodnou rezerváciou. Každý návštevník sa o tom môže presvedčiť hneď pri vstupe do tejto lokality, nakoľko na hlavnej prístupovej komunikácii sú umiestnené zákazové tabule, 
 upozorňujúce na hygienické pásmo I. stupňa (pokuta 5000 Sk). </p>
@@ -533,31 +657,53 @@ znemožnenia ich identifikácie. Zakladajú ohniská pri brehu jazier, lámu kon
 Paradoxom je obmedzovanie riadne platiacich členov SRZ na jednej strane a tolerovanie beztrestného poškodzovania vodného zdroja na strane druhej. 
 Niet rybára, ktorý by poškodzoval prírodu a znečisťoval vodu. V rokoch 1994-95 boli vykonávané pravidelné kontroly dodržiavania zákazov príslušníkmi PZ, obecnou políciou, rybárskou strážou SRZ. 
 Neexistovalo žiadne devastovanie vodného zdroja a prírody. V tomto roku si tu robí každý beztrestne, čo len chce.</p>
-        </div>
-      </div>
-      <div class="tab">
-        <input type="checkbox" id="chck2">
-        <label class="tab-label" for="chck2">&#9679;&nbsp;27.08.2004 - Ekologickí dobrovoľníci čistili okolie Čunoveckých jazier.</label>
-        <div class="tab-content">
-           zdroj:
-	<a href="https://bratislava.sme.sk/g/98264/bratislava-jazero-v-cunove?gref=sme_share&photo=p3441718" target="_blank" style="text-decoration: none">
-	https://bratislava.sme.sk/g/98264/bratislava-jazero-v-cunove?gref=sme_share&photo=p3441718
+</span>
+   </div>	
+  </details>
+
+
+
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  27.08.2004 - Ekologickí dobrovoľníci čistili okolie Čunoveckých jazier.
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		zdroj:TASR <a href="https://bratislava.sme.sk/g/98264/bratislava-jazero-v-cunove?gref=sme_share&photo=p3441718" target="_blank" style="text-decoration: none">
+			https://bratislava.sme.sk/g/98264/bratislava-jazero-v-cunove?gref=sme_share&photo=p3441718
            	</a>
+
+	</span>
+	<span class="clanok">
 	<p>Ekologickí dobrovoľníci 27. augusta 2004 čistili okolie Čunoveckých jazier, ktoré sú rezervoárom pitnej vody. Nazbierali vyše 70 vriec odpadu. </p>
 	<img width=1000 height=701 id="obr 1" src="https://m.smedata.sk/api-media/media/image/sme/8/34/3441718/3441718_1000x.jpeg?rev=2">
 
-        </div>
-      </div>
+</span>
+   </div>	
+  </details>
 
-      <div class="tab">
-        <input type="checkbox" id="chck3">
-        <label class="tab-label" for="chck3">&#9679;&nbsp;06.06.2005 - Pri čunovskom jazere sa teraz aj parkuje </label>
-        <div class="tab-content">
-		autor: JANA PARKROVÁ &nbsp;&nbsp; zdroj:
 
-	<a href="https://bratislava.sme.sk/c/2247280/pri-cunovskom-jazere-sa-teraz-aj-parkuje.html" target="_blank" style="text-decoration: none">
-	https://bratislava.sme.sk/c/2247280/pri-cunovskom-jazere-sa-teraz-aj-parkuje.html
+
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+			06.06.2005 - Pri čunovskom jazere sa teraz aj parkuje 		
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: JANA PARKROVÁ <BR> 
+		zdroj: 	<a href="https://bratislava.sme.sk/c/2247280/pri-cunovskom-jazere-sa-teraz-aj-parkuje.html" target="_blank" style="text-decoration: none">
+			https://bratislava.sme.sk/c/2247280/pri-cunovskom-jazere-sa-teraz-aj-parkuje.html
            	</a>
+
+	</span>
+	<span class="clanok">
+      
 	<p>
 Brána, ktorá zabraňovala autám dostať sa z hlavnej cesty do blízkosti čunovského jazera, je zlikvidovaná. Miesto nej pracovníci Bratislavskej vodárenskej spoločnosti osadili novú - tá je však tesne pri jazere,
  takže teraz môžu autá prísť takmer až k brehu. Z príjemnej cestičky v chránenom areáli sa tak stalo parkovisko.</p>
@@ -574,19 +720,26 @@ je už v kompetencii správcu komunikácie."
 	</p>
 	<img id="obr 1" src="https://m.smedata.sk/api-media/media/image/sme/9/47/4714979/4714979.jpeg?rev=2"><br>
 	FOTO SME - MIROSLAVA CIBULKOVÁ
-        </div>
-      </div>
+</span>
+   </div>	
+  </details>
 
 
-      <div class="tab">
-        <input type="checkbox" id="chck4">
-        <label class="tab-label" for="chck4">&#9679;&nbsp;24.06.2005 - O Rusovciach rozhodne územný plán </label>
-        <div class="tab-content">
-		autor: JANA PARKROVÁ &nbsp;&nbsp; zdroj:
 
-	<a href="https://bratislava.sme.sk/c/2271416/o-rusovciach-rozhodne-uzemny-plan.html" target="_blank" style=" text-decoration: none">
-	https://bratislava.sme.sk/c/2271416/o-rusovciach-rozhodne-uzemny-plan.html           	
-	</a>
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+			24.06.2005 - O Rusovciach rozhodne územný plán 
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: JANA PARKROVÁ <BR> 
+		zdroj:<a href="https://bratislava.sme.sk/c/2271416/o-rusovciach-rozhodne-uzemny-plan.html" target="_blank" style=" text-decoration: none">
+			https://bratislava.sme.sk/c/2271416/o-rusovciach-rozhodne-uzemny-plan.html           	
+			</a> 
+	</span>
+	<span class="clanok">
 	<p>
 
 K najobľúbenejším jazerám v Bratislave patria jazerá v Rusovciach a v Čunove. V minulosti bolo kúpanie na oboch zakázané. Napriek tomu patria už roky k najnavštevovanejším. Čunovské jazero je aj v súčasnosti v pásme hygienickej ochrany II. stupňa a kúpanie je tu zakázané, no ľudia to nerešpektujú.
@@ -611,16 +764,23 @@ Na Slovensku neexistuje žiadna oficiálna verejná či súkromná nudistická p
 </p><p>
 V Čunove je nudistov málo, prevládajú tínedžeri a rodiny s deťmi. 
 	</p>
-        </div>
-      </div>
-      <div class="tab">
-        <input type="checkbox" id="chck5">
-        <label class="tab-label" for="chck5">&#9679;&nbsp;26.06.2006 - Územný plán zmení okolie jazera v Rusovciach </label>
-        <div class="tab-content">
-		zdroj:
+        </span>
+   </div>	
+  </details>
 
-	<a href="https://bratislava.sme.sk/c/2779640/uzemny-plan-zmeni-okolie-jazera-v-rusovciach.html" target="_blank" style=" text-decoration: none">
-	https://bratislava.sme.sk/c/2779640/uzemny-plan-zmeni-okolie-jazera-v-rusovciach.html	</a>
+
+	<details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  26.06.2006 - Územný plán zmení okolie jazera v Rusovciach 
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		zdroj: <a href="https://bratislava.sme.sk/c/2779640/uzemny-plan-zmeni-okolie-jazera-v-rusovciach.html" target="_blank" style=" text-decoration: none">
+			https://bratislava.sme.sk/c/2779640/uzemny-plan-zmeni-okolie-jazera-v-rusovciach.html	</a>
+	</span>
+	<span class="clanok">
 	<p>
 
 K najobľúbenejším jazerám v Bratislave patria jazerá v Rusovciach a v Čunove. Čunovské jazero je v pásme hygienickej ochrany II. stupňa a kúpanie je tu zakázané. Ľudia to však nerešpektujú.
@@ -638,18 +798,27 @@ Podľa hovorkyne vodárenskej spoločnosti Jany Štulajterovej k znečisteniu po
 </p><p>
 Ako dodala, jedným z najväčších problémov jazera je fakt, že pri slnení sa kúpajúci natierajú olejmi a zanechávajú po sebe kubíky odpadu.
 </p>
-        </div>
-      </div>
+ </span>
+   </div>	
+  </details>
 
-      <div class="tab">
-        <input type="checkbox" id="chck6">
-        <label class="tab-label" for="chck6">&#9679;&nbsp;26.07.2006 - Na jazerách v Čunove zasahovala polícia </label>
-        <div class="tab-content">
-		ČTK zdroj:
 
-	<a href="https://spravy.pravda.sk/regiony/clanok/205677-na-jazerach-v-cunove-zasahovala-policia/" target="_blank" style=" text-decoration: none">
-	https://spravy.pravda.sk/regiony/clanok/205677-na-jazerach-v-cunove-zasahovala-policia/	</a>
-	<p>
+
+    <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  26.07.2006 - Na jazerách v Čunove zasahovala polícia 
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor:  <BR> 
+		zdroj: ČTK <a href="https://spravy.pravda.sk/regiony/clanok/205677-na-jazerach-v-cunove-zasahovala-policia/" target="_blank" style=" text-decoration: none">
+			https://spravy.pravda.sk/regiony/clanok/205677-na-jazerach-v-cunove-zasahovala-policia/	</a>
+	</span>
+	<span class="clanok">
+
+		<p>
 V posledných týždňoch totiž tento vodný raj uprostred lužných lesov neďaleko Bratislavy nelegálne navštevujú stovky ľudí. Umelé jazerá Veľké a Malé Čunovo sú pritom chráneným vodným zdrojom a nachádzajú sa v prírodnej rezervácii. Informovala o tom v stredu televízia TA3.
 </p><p>
 Policajti prišli ráno k jazerám a pred bránou zastavovali ľudí. Približne stovke ľudí údajne vstup úplne zakázali, neskôr však z miesta odišli. Viacerí kúpajúci sa údajne ani nevedeli, že na mieste zasahovala polícia.
@@ -668,18 +837,29 @@ Vodári sa podľa Pravdy pokúšajú upraviť súčasný stav tak, aby vyšli v 
 </p><p>
 Kúpanie v Čunove je bezpečné aj podľa lekárov. Údajne tam hrozia menšie riziká infekcie ako pri kúpaní v oficiálnych kúpaliskách.
 </p>
-		</div>
-      </div>
 
-      <div class="tab">
-        <input type="checkbox" id="chck7">
-        <label class="tab-label" for="chck7">&#9679;&nbsp;01.08.2006 - Z čunovských jazier miznú návštevníci i odpadky </label>
-        <div class="tab-content">
-		autor: RADOVAN KRČMÁRIK  &nbsp;&nbsp; zdroj:
+</span>
+   </div>	
+  </details>
 
-	<a href="https://spravy.pravda.sk/regiony/clanok/205691-z-cunovskych-jazier-miznu-navstevnici-i-odpadky/" target="_blank" style=" text-decoration: none">
-	https://spravy.pravda.sk/regiony/clanok/205691-z-cunovskych-jazier-miznu-navstevnici-i-odpadky/
-	</a>
+
+
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  01.08.2006 - Z čunovských jazier miznú návštevníci i odpadky 
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: RADOVAN KRČMÁRIK   <BR> 
+		zdroj: 	<a href="https://spravy.pravda.sk/regiony/clanok/205691-z-cunovskych-jazier-miznu-navstevnici-i-odpadky/" target="_blank" style=" text-decoration: none">
+			https://spravy.pravda.sk/regiony/clanok/205691-z-cunovskych-jazier-miznu-navstevnici-i-odpadky/
+			</a>
+	</span>
+	<span class="clanok">
+
 	<p>
 	Čunovské jazerá, ktoré sú chráneným vodným zdrojom, sa už vyľudňujú. Zmiešané hliadky krajskej a mestskej polície začali totiž dôraznejšie dbať na to, aby sa tu dodržiavali zákazy vstupu, vjazdu a kúpania.
 </p><p>
@@ -703,19 +883,27 @@ Bratislavskí vodári už naznačili, že majú v úmysle jazerá z ochranného 
 </p><p>
 Aj keby sa však jazerá z ochranného pásma vyňali a kúpanie sa povolilo, oblasť stále zostáva aj prírodnou rezerváciou, kde platí zákaz vjazdu, púšťania psov, zakladania ohňa či stanovania.
 </p>
-		</div>
-      </div>
 
-      <div class="tab">
-        <input type="checkbox" id="chck8">
-        <label class="tab-label" for="chck8">&#9679;&nbsp;01.08.2006 - Koniec kúpania v Čunove </label>
-        <div class="tab-content">
-		zdroj:
+</span>
+</div>	
+</details>
 
-	<a href="https://www.cas.sk/clanok/49319/koniec-kupania-v-cunove/" target="_blank" style=" text-decoration: none">
-	https://www.cas.sk/clanok/49319/koniec-kupania-v-cunove/
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  01.08.2006 - Koniec kúpania v Čunove 
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+			zdroj: <a href="https://www.cas.sk/clanok/49319/koniec-kupania-v-cunove/" target="_blank" style=" text-decoration: none">
+			https://www.cas.sk/clanok/49319/koniec-kupania-v-cunove/
 	</a>
-	<p>
+	</span>
+	<span class="clanok">
+	
+			<p>
 ČUNOVO - Za kúpanie v čunovských jazerách môžete zaplatiť od minulého víkendu až päťtisícovú pokutu! Jazerá sú totiž chráneným vodným zdrojom a nachádzajú sa v prírodnej rezervácii. Kúpanie v nich je zakázané.
 </p><p>
 V čistej vode obľúbeného Čunova sa dlhé roky kúpali najmä nudisti. Tabuľu pred bránou so zákazom vstupu si nikto nevšímal. Po výletníkoch zostávali v areáli zdroja pitnej vody igelitky plné odpadkov.
@@ -724,18 +912,25 @@ Starostka Čunova Alžbeta Broszová sa rozhodla rázne zakročiť. Areál jazie
 </p><p>
 Bratislavská vodárenská spoločnosť (BVS) uvažuje nad tým, že by sa čunovské jazerá vyňali z druhého stupňa hygienického pásma, a tak by sme sa tam opäť mohli legálne kúpať. „Všetky potrebné kroky sa budeme snažiť podniknúť čím skôr,“ povedala hovorkyňa BVS Jana Štulajterová.
 </p>
-		</div>
-      </div>
+   	</span>
+   </div>	
+  </details>
 
-      <div class="tab">
-        <input type="checkbox" id="chck9">
-        <label class="tab-label" for="chck9">&#9679;&nbsp;18.04.2007  - Čunovo sa môže dostať z ochrany </label>
-        <div class="tab-content">
-		autor: (japa)Externý prispievateľ &nbsp;&nbsp; zdroj:
-
-	<a href="https://bratislava.sme.sk/c/3251197/cunovo-sa-moze-dostat-z-ochrany.html" target="_blank" style=" text-decoration: none">
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  18.04.2007  - Čunovo sa môže dostať z ochrany 
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor:(japa)Externý prispievateľ   <BR> 
+		zdroj: 	<a href="https://bratislava.sme.sk/c/3251197/cunovo-sa-moze-dostat-z-ochrany.html" target="_blank" style=" text-decoration: none">
 			https://bratislava.sme.sk/c/3251197/cunovo-sa-moze-dostat-z-ochrany.html
-	</a>
+			</a>
+
+	</span>
+	<span class="clanok">
 	<p>
 	Minulú sezónu privolala vtedajšia starostka Čunova k jazeru políciu. Hoci tá tvrdila, že bude postihovať len vodičov áut vchádzajúcich k jazeru, vystríhala aj ľudí, ktorí sa sem prišli kúpať. Zákaz trvá, podľa vodárov naň nie je dôvod.
 	</p><p>
@@ -772,17 +967,27 @@ Na otázku, či by do problémov spojených s jazerom, kde sa chodia rekreovať 
 	(Zdroj: FOTO SME –MIROSLAVA CIBULKOVÁ)<br>
 		<img height=400px id="obr a" src="https://m.smedata.sk/api-media/media/image/sme/6/12/1202176/1202176_1200x.jpg?rev=1">
 
-		</div>
-      </div>
+   </span>
+   </div>	
+  </details>
 
-      <div class="tab">
-        <input type="checkbox" id="chck10">
-        <label class="tab-label" for="chck10">&#9679;&nbsp;21.04.2007 - Na Čunovských jazerách sa možno budeme čoskoro kúpaať </label>
-        <div class="tab-content">
-		autor: © Zoznam/ &nbsp;&nbsp; zdroj:
-	<a href="https://www.topky.sk/cl/10/154196/Na-Cunovskych-jazerach-sa-mozno-budeme-coskoro-kupaat" target="_blank" style=" text-decoration: none">
-	https://www.topky.sk/cl/10/154196/Na-Cunovskych-jazerach-sa-mozno-budeme-coskoro-kupaat
-	</a>
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  21.04.2007 - Na Čunovských jazerách sa možno budeme čoskoro kúpaať
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: © Zoznam <BR> 
+		zdroj: <a href="https://www.topky.sk/cl/10/154196/Na-Cunovskych-jazerach-sa-mozno-budeme-coskoro-kupaat" target="_blank" style=" text-decoration: none">
+			https://www.topky.sk/cl/10/154196/Na-Cunovskych-jazerach-sa-mozno-budeme-coskoro-kupaat
+			</a>
+
+	</span>
+	<span class="clanok">
+
 	<p>
 	BRATISLAVA - Kúpanie v Čunovských jazerách by mohli čoskoro povoliť, začiatkom mája chce Bratislavská vodárenská spoločnosť (BVS) podať na Krajský úrad žiadosť na určenie nových pásiem hygienickej ochrany.
 		</p><p>
@@ -800,17 +1005,25 @@ Na otázku, či by do problémov spojených s jazerom, kde sa chodia rekreovať 
 		</p><p>
 	Ako agentúru SITA informovala námestníčka riaditeľa Správy telovýchovných a rekreačných zariadení (STARZ) Bratislavy Zlatica Čemanová, zatiaľ nie je jasné, či bazény v ich správe otvoria v júni alebo pre teplé počasie už v máji, rozhodnúť by o tom malo vedenie organizácie v stredu. V týchto dňoch začali s údržbou bazénov na Tehelnom poli, v Rosničke, Delfíne, v Krasňanoch a v Rači. Novinkou v nadchádzajúcej sezóne majú byť turnikety pri vchodoch na kúpaliská Rosnička a Delfín.
 	</p>
-	   </div>
-      </div>
+   </span>
+   </div>	
+  </details>
 
-      <div class="tab">
-        <input type="checkbox" id="chck11">
-        <label class="tab-label" for="chck11">&#9679;&nbsp;17.05.2007 - Krajský úrad životného prostredia už rozhoduje o Čunove </label>
-        <div class="tab-content">
-		SITA &nbsp;&nbsp; zdroj:
-	<a href="https://domov.sme.sk/c/3301095/krajsky-urad-zivotneho-prostredia-uz-rozhoduje-o-cunove.html" target="_blank" style=" text-decoration: none">
+
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  17.05.2007 - Krajský úrad životného prostredia už rozhoduje o Čunove 
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		zdroj: SITA <a href="https://domov.sme.sk/c/3301095/krajsky-urad-zivotneho-prostredia-uz-rozhoduje-o-cunove.html" target="_blank" style=" text-decoration: none">
 	https://domov.sme.sk/c/3301095/krajsky-urad-zivotneho-prostredia-uz-rozhoduje-o-cunove.html
 	</a>
+	</span>
+	<span class="clanok">
 	<p>
 	BRATISLAVA 17. mája (SITA) - Krajský úrad životného prostredia už rozhoduje o budúcnosti Čunovských jazier. Ako dnes pre agentúru SITA potvrdila hovorkyňa Bratislavskej vodárenskej spoločnosti (BVS) Jana Štulajterová, spoločnosť už na základe vypracovanej revízie požiadala o potvrdenie rozsahu súčasného ochranného pásma I. stupňa a zároveň o určenie nového rozsahu ochranného pásma II. stupňa.
 	</p><p>
@@ -839,17 +1052,25 @@ Na otázku, či by do problémov spojených s jazerom, kde sa chodia rekreovať 
 	</p><p>
 	Začlenenie Čunovských jazier do pásma ochrany súviselo so spodnými prúdmi podzemných vôd, ktorých trasu a smer zmenila výstavba vodného diela Gabčíkovo. Pôvodné pásmo hygienickej ochrany bolo vytýčené pred vybudovaním vodného diela. Po jeho napustení sa zmenil tok prúdenia podzemnej vody v podloží, ohrozený tak bol podzemný zdroj Rusovce - Ostrovné lúčky - Mokraď, ktorý bol uvedený do prevádzky v roku 1982. V súčasnosti už nie sú ohrozené podzemné zdroje pitnej vody, ktorou BVS zásobuje časť Bratislavy.
 	</p>
-	   </div>
-      </div>
+   </span>
+   </div>	
+  </details>
 
-      <div class="tab">
-        <input type="checkbox" id="chck13">
-        <label class="tab-label" for="chck13">&#9679;&nbsp;24.07.2007 - Krajský úrad životného prostredia v Bratislave už rozhodol o budúcnosti Čunovských jazier.  </label>
-        <div class="tab-content">
-		SITA &nbsp;&nbsp; zdroj:
-	<a href="https://www.bratislavskenoviny.sk/zdravie-a-zivotny-styl/10511-cunovske-jazera-budu-vynate-z-ochranneho-pasma" target="_blank" style=" text-decoration: none">
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  24.07.2007 - Krajský úrad životného prostredia v Bratislave už rozhodol o budúcnosti Čunovských jazier
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor:  <BR> 
+		zdroj: SITA 	<a href="https://www.bratislavskenoviny.sk/zdravie-a-zivotny-styl/10511-cunovske-jazera-budu-vynate-z-ochranneho-pasma" target="_blank" style=" text-decoration: none">
 		https://www.bratislavskenoviny.sk/zdravie-a-zivotny-styl/10511-cunovske-jazera-budu-vynate-z-ochranneho-pasma
-	</a>
+		</a>
+	</span>
+	<span class="clanok">
 	<p>
 	Krajský úrad životného prostredia v Bratislave už rozhodol o budúcnosti Čunovských jazier a vyňal ich z ochranného pásma II. stupňa. Zmena ochranného pásma a vyňatie jazier neznamená, že kúpanie tu bude povolené.
 	</p><p>
@@ -861,17 +1082,24 @@ Na otázku, či by do problémov spojených s jazerom, kde sa chodia rekreovať 
 	</p><p>
 	Ochranné pásmo I. stupňa určené rozhodnutím vydaným Národným výborom hlavného mesta SSR Bratislavy, odborom poľnohospodárstva, lesného a vodného hospodárstva z 25. februára 1988 zostáva v platnosti.
 	</p>
-	   </div>
-      </div>
+    </span>
+   </div>	
+  </details>
 
-      <div class="tab">
-        <input type="checkbox" id="chck14">
-        <label class="tab-label" for="chck14">&#9679;&nbsp;05.06.2008 - S neporiadkom si chcú poradiť občania sami </label>
-        <div class="tab-content">
-		autor: Gustav Bartovic&nbsp;&nbsp; zdroj:
-	<a href="https://www.bratislavskenoviny.sk/zdravie-a-zivotny-styl/14994-s-neporiadkom-si-chcu-poradit-obcania-sami" target="_blank" style=" text-decoration: none">
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  05.06.2008 - S neporiadkom si chcú poradiť občania sami 
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor:Gustav Bartovič  <BR> 
+		zdroj: <a href="https://www.bratislavskenoviny.sk/zdravie-a-zivotny-styl/14994-s-neporiadkom-si-chcu-poradit-obcania-sami" target="_blank" style=" text-decoration: none">
 	https://www.bratislavskenoviny.sk/zdravie-a-zivotny-styl/14994-s-neporiadkom-si-chcu-poradit-obcania-sami
 	</a>
+	</span>
+	<span class="clanok">
 	<p>
 	Okolo lokality Ostrovné lúčky, známej skôr ako Čunovské jazerá, býva v sezóne vždy veľká diskusia, donedávna však chýbali akékoľvek činy - ak si odmyslíme demontáž závor.
 	</p><p>
@@ -885,8 +1113,12 @@ Na otázku, či by do problémov spojených s jazerom, kde sa chodia rekreovať 
 	</p><p>
 	„Chceli by sme, aby boli Rusovce, čisté, aby sa zachoval ich útulný vidiecky ráz a k tomu aj prispejeme,“ končí Peter Vojtko.
 	</p>
-	   </div>
-      </div>
+    </span>
+   </div>	
+  </details>
+
+
+    <div class="tabs">
 
       <div class="tab">
         <input type="checkbox" id="chck15">
@@ -1602,7 +1834,7 @@ Vďaka našemu členovi Majo Faun Con za koordináciu celej akcie za naše Všes
 	   </div>
       </div>
 
-<!-- -->
+    </div>
     </div>
 
 

@@ -18,12 +18,13 @@
 <style>
 <!--
   :root {  --prirodnaC: #b9cb99;}
-  :root {  --slabsiC: #788463;}
+  :root {  --slabsiC: #939d82;}
   :root {  --autorC: #00ffaa;}
   :root {  --rozbalC: #00aaff;}
   :root {  --markerC: #7bb3b5;}
   :root {  --cjC: #91cbb8;}
   :root {  --cunovskeC: #ce8e6b;}
+  :root {  --viac: 'viac';}
 
 
 /* rozbalovanie zaciatok*/
@@ -191,6 +192,48 @@ details[open] > summary {
 .slabsi{
   color:var(--slabsiC);
 }
+
+details.description{
+  color:var(--slabsiC);
+}
+details.description summary::after {
+  content: attr(data-open);
+  opacity: 0;
+}
+
+details.description[open] summary::after {
+  content: attr(data-open);
+  opacity: 1;
+}
+
+details.description summary::before {
+  content: attr(data-close);
+  opacity: 0;
+}
+
+details.description:not([open]) summary::before {
+  content: attr(data-close);
+  opacity: 1;
+}
+
+details.description summary::after,
+details.description summary::before {
+  display: inline-block;
+  transition: all .4s ease-in-out;
+  transform-origin: center bottom;
+}
+
+#cssTableCenter td 
+{
+    text-align: center; 
+    vertical-align: middle;
+}
+#cssTableRight td 
+{
+    text-align: right; 
+    vertical-align: middle;
+}
+
 -->
 </style>
 
@@ -202,8 +245,16 @@ details[open] > summary {
 	<span style='font-size:1.2vw; color:var(--rozbalC)'>  Články, recenzie, blogy, diskusie, sťažnosti, fotky, audio a video reportáže ...	</font>
 	<BR>
 	<span style='font-size:1.2vw; color:var(--autorC)'>  o Čunovských jazerách, Ostrovných lúčkach a okolí... 	</font>
+	<BR>
+	<span style='font-size:1.2vw; color:var(--rozbalC)'> v niektorých článkoch (hlavne starších)sú jazerá často iba spomenuté.</font>
+
 	<BR><BR><BR>
 	
+
+
+
+
+
 
      <details class="clanok"> 
 	<summary> 
@@ -227,7 +278,7 @@ details[open] > summary {
 		<BR><BR>
 		Iste nám nie je neznáma poloha spomínaných obcí, mnohí nimi prechádzajú, prípadne trávia v nich príjemný víkend. Keďže nás zaujíma, čo mesto dostane a čo bude musieť občanom dať, aby tieto zatiaľ menej exponované časti Bratislavy neboli z titulu svojej okrajovosti zanedbávané najmä v oblasti služieb, dopravy a ďalšieho vybavenia, zašli sme si do niektorých z nich, aby sme sa na tvári miesta mohli s tamojšími funkcionármi porozprávať a rozobrať, otázky, ktoré nie sú také jednoduché, ako to na prvý pohľad vyzerá. Pozrime sa preto trochu i do minulosti, obcí. Vzhľadom k svojej blízkosti k Bratislave majú tiež bohatú históriu, dajme preto slovo tým, ktorí si viac sľubujú od budúcnosti.
 		<BR>
-	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+		<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
  		RUSOVCE <BR><BR>
 		Hoci máme na zreteli bezprostrednú budúcnosť tejto prímestskej obce, nemožno na jej pôde nehovoriť o minulosti. 
 		<BR><BR>
@@ -261,7 +312,7 @@ details[open] > summary {
 		<BR><BR>
 		Dedinka, ktorú najstaršie listiny spomínajú už v 12. storočí, ostáva za nami. Do oblasti obsadenej pod nátlakom Turkov v 16. storočí chorvátskym obyvateľstvom patria aj 
 		<BR><BR>
-	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+	<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
 JAROVCE.
 <BR><BR>
 Obec leží dva kilometre od hlavnej cesty vedúcej z Bratislavy do Rusoviec. Na MSNV skoro nikoho niet, iba tajomníčka Alžbeta Karchesová nás ubezpečuje, že predseda bude o chvíľu tu. Vraj je na brigáde aj s poslancami, pracujú na úprave neďalekej škôlky. Anton Jaborek prichádza v montérkach so Štefanom Vareničom, podpredsedom tunajšieho MsNV. Nič sa nedá robiť, vravia, ak chceme, aby pracovali ostatní, musíme ísť príkladom.
@@ -320,7 +371,35 @@ Ako vidno, problémy s individuálnou bytovou výstavbou aj v Záhorskej Bystric
 
 
 
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  11.06.1972 - PREHĽAD ATOCAMPIGOV A MOTELOV
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: - <BR> 
+		zdroj: Technické noviny č.28
+	</span>
+	<span class="clanok">
 
+<BR><BR>Slovensko dostupné z mototuristických trás.
+<BR><BR>Začína sa hlavná turistická i mototuristická sezóna. Zasa raz prírodné krásy Slovenska zažívajú inváziu najmä motorizovaných turistov, najmä takých, ktorí v krátkom čase, na jednej trase, chcú načrieť do klenotnice atraktivít Slovenska. V letnom období vyhľadávané sú prírodné krásy, najmä tie na brehoch riek, potokov a jazier - prírodných i priehradných, ale aj zaujímavé kultúrno-umelecké a historické pamiatky, predovšetkým, keď sú v príťažlivom prírodnom prostredí. Pri takejto exkluzívnej mototuristickej činnosti je veľmi ťažké a nevýhodné plánovať fixné, terminované ubytovanie na trase. Vtedy totiž mototurista stráca to najcennejšie, čo mototurizmus dáva možnosť podľa vlastnej nálady a chuti postáť kdekoľvek a kedykoľvek, tam, kde sa mu páči a koľko sa mu žiada. Keď mu je horúco, môže sa ísť osviežiť k vode alebo aspoň ochladiť do lesa, a nemusí mať nad sebou Damoklov meč, že keď sa neprihlási, povedzme, do 14. a či 16. hodiny, stráca rezerváciu hotelovej izby. Takto popri vlastnej turistickej činnosti človek vychutnáva voľnosť, možnosť okamžitého rozhodovania sa na základe vskutku vlastného ja. Také niečo je len ťažko možné niekde inde alebo inokedy, v dnešnom súkromnom i verejnom živote, neraz až stoicky viazanom na čas, povinnosti a stereotyp.
+<BR><BR>Aby sme našim čitateľom takúto voľnú mototuristickú jazdu za krásami, zaujímavosťami a atraktivitami Slovenska uľahčili, uverejňujeme na tejto dvojstrane stručný itinerár Slovenska, pri ktorom východiskovými bázami sú jestvujúce autocampingy a motely. Ta možno autom prísť kedykoľvek bez ohlásenia, v každom čase, ale - pravdaže - s vlastným ,,lôžkom", či už v prívesnom vozidle, v aute, v stane, no v priaznivom prípade nájdeme voľné lôžko aj v autocampingu (v chatách, stanoch atd.)...
+<BR><BR>Putovanie Slovenskom začíname v Bratislave. Motel a autocamping ZLATÉ PIESKY je komunikačne vynikajúco situovaný, a to priamo pri najdôležitejšej výpadovej ceste z mesta, pri hlavnej hradskej E 16. Pri autocampingu je aj čerpacia stanica na pohonné látky s nepretržitou prevádzkou a moderná automatická umyváreň áut. Autocamping je veľmi dobre situovaný aj čo do prírodných daností. Rozkladá sa na brehu 10-hektárového kúpaliska Zlaté Piesky. V autocampingu Zlaté Piesky je k dispozícii návštevníkom 545 lôžok. Stravovať sa možno v reštaurácii motela, ktorý je v areáli autocampingu, a prípadne i v bufetoch a kioskoch rekreačného strediska Zlaté Piesky. Lôžka v moteli (cca 60) bývajú zväčša obsadené. V areáli rekreačného strediska sú možnosti pestovať rozličné športy a hry, kúpať sa a člnkovať. 
+<BR><BR>
+<span class="cj">
+Druhý autocamping v Bratislave otvára sa v PETRŽALKE na Rusovskej ceste pri hlavnej hradskej č. 15. V blízkosti sú veľmi pekné terény na kúpanie sa a rekreáciu pri Dunaji 
+a na <span class="cunovske">štrkoviskách</span> na obvode Bratislavy pri Rusovciach a <span class="cunovske">Čunove</span>. Kapacita je 60 lôžok, campingový bufet má 80 stoličiek. 
+Bratislavské autocampingy možno využiť nielen na ubytovanie pri precestovaní cez Bratislavu, ale aj na poznávaciu turistickú, ale aj čisto rekreačnú činnosť 
+(kúpať sa možno na kúpalisku Zlaté Piesky, na <span class="cunovske">štrkoviskách</span> i na dunajskom nábreží).
+</span>
+<BR><BR>...
+<BR><BR>
+    </span>
+   </div>	
+  </details>
 
 
 
@@ -338,7 +417,8 @@ Ako vidno, problémy s individuálnou bytovou výstavbou aj v Záhorskej Bystric
 	<span class="clanok">
 <BR> <BR>
 Tak by sme mohli nazvať jednu zo ta dunajských časti Bratislavy, Rusovce, odkiaľ, dá sa povedať, kameňom dohodíš do Maďarska. A hovorí sa, že prvý dojem sa nesmie podceňovať. Ročne k nám prichádzajú stovky a stovky, tisíce a tisíce turistov, ktorí sa uberajú práve cez rusovecký hraničný prechod. Preto z hľadiska reprezentácie by sa malo dbať, aby táto mestská štvrť vyzerala skutočne ako sa patri.
-<details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
 
 <BR> <BR>
 Občania si najviac tažkajú na obchodnú sieť. Pravda, v Rusovciach majú potraviny, mliekareň, zelovoc, obuv, domáce potreby textil, ale to sú všetko pomerne malé a nevyhovujúce obchodné strediská. Najhoršie, že prakticky každé jedno je v súkromnom dome, kde nie si poriadne vyriešené sklady, priestory nie sú na hygienickej úrovni. Ide o budovy staré, majú sto i viac rokov a sú z nepálených tehál, takže na Miestnom národnom výbore sa oprávnene strachujú, aby sa im neprihodilo niečo, ako sa stalo budove bývalého národného výboru Raz stavba povolila a dom sa sčasti prepadol. Ten problém však šťastlivo zažehnali, dnes na tom istom mieste stojí nový národný výbor, kde majú aj prekrásnu svadobnú sieň, na akú by bol pyšný i nadriadený Obvodný národný výbor Bratislava IV.
@@ -386,7 +466,10 @@ Také sú dnešné Rusovce, to sú ich zámery, plány, predsavzatia. Rusovce - 
 		<BR> <BR> 
 		Koniec týždňa je čas, ktorý by sme mali venovať odpočinku, a to, ako radia lekári, aktívnemu odpočinku. Nie každý má však možnosti športovať a nie každý má na to vekové alebo zdravotné predpoklady, a nie každý má nejakú tú záhradku, ktorú by mohol polievať alebo okopávať. Ale turistika je naozaj pre každého. Výhodná geografická poloha Bratislavy priam pobáda k výletom do bližšieho i vzdialenejšieho okolia.
 		<br>
-	  <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+
+
 Na prvom mieste by to mohol byť azda Devín a Devínska kobyla. O samotnom hrade toho veľa hovoriť netreba, veď jeho význam v našich najstarších národných dejinách spoznávajú už žiačikovia v ľudovej škole. Spomenieme toľko, že prvé písomné zmienky o ňom sú z roku 864, ale pôvod hradu je určite starší. Devínska kobyla má výšku 514 metrov nad morom a vidno na nej stopy neogénneho mora. Na južných svahoch rastie vzácna teplomilná kvetena, ktorej mnohé druhy sú chránené.
 <br><br>
 Dobre známym výletným miestom je aj Borinský hrad (Pajštún) nad obcou Borinka neďaleko Stupavy, ako i celé údolie Borinského potoka. Hrad stojí na 464 metrov vy- sokom vápencovom brale a prvý raz sa spomína v listine z roku 1237, teda nie je nijaký mladíček. Hrad je v ruinách od roku 1810, keď ho napoleonské vojská vyhodili do povetria. Z hradu je dobrý výhľad do Záhorskej nížiny i do údolia Borinky a dokonca, keď je dobré počasie, možno vidieť aj Alpy. Hoci je hrad v rozvalinách, v prípade nečakanej búrky sa možno pred dažďom ukryť v pivniciach, ktoré ako núdzový prístrešok dobre po- slúžia. Odtiaľto sa dá ísť na Košiarisko, Dračí hrádok (zrúcanina stredovekej strážnej veže) a na Medené Hámre.
@@ -449,7 +532,7 @@ V tejto oblasti je aj známe Slnečné údolie. Východiskovou stanicou k nemu m
 		<BR><BR>
 		Na základe Smerného územného plánu rozvoja Bratislavy s koncepciou rozvoja do roku 2000 predložil ÚHA mesta Bratislavy návrh na rozšírenie územia prímestských lesov Bratislavského lesného parku.
 		<BR>
-	    <details class="slabsi" style="cursor:default;" ><summary style="background-color: #111122;">..</summary>
+		<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
 		Poradný zbor BLP po zvážení návrh prijal a predostrel túto požiadavku prostredníctvom NV hlavného mesta Bratislavy Ministerstvu lesného a vodného hospodárstva.
 		<BR><BR>
 		Toto ministerstvo po zistení skutkového stavu požiadavku NV hlavného mesta Bratislavy akceptovalo a svojím rozhodnutím v spise č. 188-22/73-130 zo dňa 1. II. 1973 vyhlásilo s platnosťou od 1. I. 1973 všetky lesy Lesného závodu Bratislava za účelové lesy II podľa písmena ..g" platnej vy- hlášky teda za lesy rekreačné.
@@ -658,6 +741,57 @@ V tejto oblasti je aj známe Slnečné údolie. Východiskovou stanicou k nemu m
   </details>
 
 
+
+   <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  23.07.1976 - PROBLÉMY mokré až po uši
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: Anndrea Smolková <BR> 
+		zdroj: Večerník č.145
+	</span>
+	<span class="clanok">
+<BR><BR>
+Kde sa kúpať smieme a nemôžeme a kde sa smieme a nemôžeme
+<BR><BR>
+Stredobod našej pozornosti je v týchto týždňoch takpovediac mokrý - k vode smerujú myšlienky poľnohospodárov, vodohospodárov, otcov mesta, správcov mestskej zelene i záhradníkov, záhradkárov, obyvateľov horných poschodí a napokon ešte raz všetkých tých, ktorým je teplo, nesmierne teplo v letnej kanikule.,
+<BR><BR> Voda je skrátka neodolateľným magnetom, je zdrojom osvieženia, ale aj konfliktov a mrzutostí. Tak to už býva, keď sa za horúceho leta rozkrúti kolotoč: občan-doprava-kúpalisko, kúpalisko-občan-hygienik, občan-bagrovisko-hygienik-zákaz kúpania, občan-nedostatok kúpalísk-nerešpektovanie zákazu.
+<BR><BR>Prezreli sme si možnosti a nemožnosti kúpania sa pekne rad-radom, podobne ako na začiatku sezóny, tak aj teraz, keď vrcholí.
+<BR><BR>
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+<BR>
+TEHELNÉ POLE
+<BR><BR>nás privítalo špliechaním vody vo všetkých troch bazénoch, veselým jasotom detvákov okolo toboganu, tieňom líp, orechov, usychajúcimi trávnikmi, ktoré nemožno poliať pre nedostatok vody, a tečúcim hydrantom pred kúpaliskom. Vďaka tomu je aspoň v najbližšom kanáli vody dosť, lebo hydrant tečie už rok a urgencie záhradníkov zatiaľ nepriniesli nijaký výsledok, Vodárne a kanalizácie ešte nestihli obstarať nápravu. Nuž čo... čo je rok oproti večnosti?
+<BR><BR>Vráťme sa však do areálu! Práve sa robí projekt na jeho úpravu. Bude sa to diať po etapách, tak, aby nebolo treba prerušiť prevádzku v sezóne. Veď pri terajšom nedostatku kúpalísk v Bratislave je dobrý každý bazén a bazénik, čo môže ovlažiť teplom unavených obyvateľov mesta. A tí sa dožadujú kúpania, či je kúpalisko preplnené alebo nie. Vynára sa problém: od koho si dať vynadať - od občana či od hygienika? Odpoveď je jednoznačná. Občan nemôže správe kúpaliska uložiť pokutu, takže... Treba pochopiť, že dodržanie hygieny na kúpalisku je v záujme rekreantov samotných. Hoci voda sa chlóruje, predsa len pri veľkom dave jej čistota utrpí. A keď sme pri tom - práve počas našej návštevy sa ponáhľali záhradníci zháňať chlórové vápno až do Ústí nad Labem k výrobcovi, lebo jeho nedostatok hrozil narobiť im vážne problémy.
+<BR><BR>RUŽOVÁ DOLINA
+<BR><BR>tiež nemá núdzu o návštevníkov, lebo je priamo uprostred sídliska a radi sem chodia najmä mladí. Návštevnosť je tohto roku vyššia než vlani. Azda má na tom podiel aj lepšie počasie, azda aj niektoré zlepšenia, čo sa na kúpalisku pred touto sezónou urobili. Vlani v júni tu bolo 13 063, tohto roku za ten istý mesiac 21 377 návštevníkov. Bufet Reštaurácií II na terase, nápojový bufet a dva stánky zmrzliny patriace ZÁRES-u, sa starajú o občerstvenie mladších aj starších. Rady čakajúcich sme tu nevideli. Vodu v bazéne filtrujú nepretržite, niekoľkokrát za sezónu vypúšťajú.
+<BR><BR>ZLATÉ PIESKY
+<BR><BR>v tohtoročnej sezóne charakterizuje zákaz podávania alkoholických nápojov, nanajvýš dostanete pivo. Vzťahuje sa to na reštauráciu, samoobslužnú jedáleň, tri veľké a tri malé kiosky a na zrubový hotel, čiže na všetky zariadenia, ktoré obhospodarujú Záhradníctvo a rekreačné služby mesta Bratislavy. Zmyslom tohto opatrenia je znemožniť návštevníkom kúpanie sa v podnapitom a opitom stave, zabrániť nešťastiu. Veď tu, pri toľkej mase ľudí a pri toľkej ploche vody, po ktorej sa ľudia člnkujú, bicyklujú, cez ktorú plávajú z jednej strany na druhú, do ktorej skáču aj tam, kde nie je pláž, ťažko každého ustrážiť, je to vlastne celkom nemožné. Aký je však výsledok tohto dobre mysleného opatrenia? V. Moteli, ktorý patrí Interhotelom, sa dá piť, koľko hrdlo ráči, nocľažníci bývajúci v areáli si nosia fľaše so sebou, personál tie fľaše ráno nachádza v košoch i mimo nich. Nemožno na noc každého zamknúť v chatke a v stane, aby si nešiel hlavu rozpálenú alkoholom schladiť do jazera...
+<BR><BR>A voda je lákavá, burinu v nej zväčša zlikvidovali na to určené ryby, lavičky, čo do nej chuligáni pohádžu, personál vytiahne, smeti porozhadzované po celom okolí, pozbiera tiež každé ráno. Zdá sa teda, že návštevníci môžu byť celkom bez starostí; môžu šmariť hocičo, kam im napadne, veď je tu tristo ľudí vrátane brigádnikov, čo špinu odprace... veď je tu aj šestnásť plavčíkov strážiacich priestor ohraničený bójami. Môžeme teda rozhorúčení skákať do vody. Tohto roku sa zatiaľ predsa všetci vynorili okrem piatich...
+<BR><BR>LIDO
+<BR><BR>slúži Bratislavčanom tohto roku až od prvého júla, ako sme ešte v máji písali, boli problémy so starou studňou a stopami poslednej povodne. Iniciatívne tu pomohli zväzarmovci členovia potápačského klubu Octopus. Obetavo čistili studňu a zúčastnili sa na montáži nového potrubia, čo nebola práca ani ľahká ani bezpečná. Teraz opäť víta návštevníkov čistá voda bazénov, slúži 27 kabín a prezliekarne i 160 skriniek na odloženie vecí. Reštaurácia Veľké srdce tu má tri bufety, kto túži po pohybe na súši, môže si zahrať ping-pong alebo volejbal či nohejbal.
+<BR><BR>MATADORKA
+<BR><BR>si nielen zachováva pre túto sezónu svoju tradične veľmi dobrú úroveň, ale ešte ju aj zvyšuje, pomohli jej rozličné úpravy za pol milióna v akcii ,,Z". O tom, že sem návštevníci radi chodia, svedčí aj každodenný nával. Nechýba ani občerstvenie vrátane zmrzliny a dobre chladených nápojov, ktoré si rekreanti pochvaľujú. Hygienici sú zasa spokojní aj 8 kvalitou vody, ktorá, ako vravia, môže slúžiť za príklad.
+</details>
+<BR><BR>
+Nazreli sme teda do oficiálnych" bratislavských kúpalísk, lenže tie dovedna majú kapacitu 27 000 rekreantov. AJ ostatným Bratislavčanom je však v lete teplo. Svedectvom toho je nával nielen okolo ostatných vôd mesta, ale aj priamo v nich, bez ohľadu na to, že tu nie je kúpanie sa povolené.
+<BR><BR>Hygienik mesta Bratislavy MUDr. Lev Kokolevský o tom hovorí: ,,Prírodné kúpalisko, kde by nemalo hroziť priveľké znečistenie vody kúpajúcimi sa, má mat okolo 200 hektárov. Už niekoľko rokov sledujeme situáciu. Iné možnosti majú bazény, kde sa voda vymieňa a chlóru- je, iné povrchové vody, kde to robiť nemožno. Samočistiaci koeficient jazera Zlatých pieskov je dosť veľký, preto pri dodržaní stanovenej návštevnosti sa voda nadmerne neznečistí. Ostatné vodné plochy majú s postupom sezóny čoraz horšiu vodu. Týka sa to i jazera na Šmidkeho ulici, Zrkadlového hája, Vajnor ...“
+<span class="cj">
+<BR><BR>-- Aká je situácia na <span class="cunovske">čunovskom štrkovisku?</span> JRD Dunaj dostalo za úlohu obstarať tabule so zákazom kúpania a postarať sa o oplotenie areálu ostnatým drôtom.
+<BR><BR>,,Tu je iný problém, je pravdepodobné, že štrkovisko bude ležať v ochrannej zóne budúceho zdroja pitnej vody. Keď budú hotové hydrogeologické prieskumy, bude možné vyhlásiť ochranné pásma a ak toto štrkovisko bude mimo ochranného pásma, dalo by sa uvažovať o úpravách. Ak sa definitívne ukáže, že tento priestor bude do ochranného pásma patriť, treba sa celkom rozlúčiť s myšlienkou, že by tu mohlo vzniknúť čosi na spôsob Zlatých pieskov. 
+</span>
+Jediným východiskom pre Bratislavu by bolo urýchlene vybudovať ďalšie umelé kúpaliská, kde možno zabezpečiť zdravotne nezávadnú vodu a všetko ostatné, čo rekreant potrebuje."
+<BR><BR>
+
+    </span>
+   </div>	
+  </details>
+
+
+
     <details class="clanok"> 
 	<summary> 
 		<span class="rozbal">
@@ -784,6 +918,175 @@ odvezú tam kam patria - do šrotu"</p>
      </div>	
     </details>
 			
+
+
+
+    <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  12.10.1977 - rekreačné využitie lužných lesov v petržalke
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: Alexander Glaus <BR> 
+		zdroj: Projekt č.8 
+	</span>
+	<span class="clanok">
+
+<BR><BR>Mestský sektor Bratislava-Petržalka sa buduje v bezprostrednej blízkosti rozsiahlych lesov v zalesnenej oblasti Dunaja. Veľkou prednosťou tohto zámeru - vybudovať na pravom brehu Dunaja novú časť Bratislavy - je možnosť prebudovať lužné lesy na mestské parky. Zmena vodného režimu -  pokles hladiny spodných vôd - v dôsledku vodohospodárskych opatrení pred vysokými vodami Dunaja a bezprostredné susedstvo s novým, takmer 150-tisícovým mestským sektorom dostatočne naznačuje, že lužné lesy sa v ich súčasnej podobe nemôžu zachovať, ale že ich treba cieľavedome premeniť na mestské, prípadne na lesné parky. Biologická a ekologická premena, podmienená uvedenými faktormi, je podložená vedecky fundovanými materiálmi.
+<BR><BR>Areál mestského sektora Petržalka tvorí takmer polovicu pravobrežného územia Bratislavy. Lužné lesy pozdĺž Dunaja predstavujú celok, ktorý ako taký treba riešiť a hospodáriť s ním. Lužné lesy a vodné plochy na juh od vlastného, územia sektora sú pritom rekreačným zázemím Bratislavčanov, obzvlášť v jarnom období a budú najmä blízkym zázemím obyvateľov budúceho mestského sektora. Navyše ide aj o vzťahy ľavobrežnej časti mesta k novému sektoru a o celomestské rekreačné možnosti. Aj keď rekreačné priestory na pravom brehu Dunaja nie sú celkom doriešené so zreteľom na viacero rozporov, 
+ktoré sa prejavili v oblasti poľnohospodárstva, lesného a vodného hospodárstva, navrhuje sa v tejto oblasti 5 rekreačných priestorov: Starý Háj, Jarovecké rameno, oblasť Rusovce, <span class="cj">oblasť Čuňovo </span> a Na pieskoch (na ľavom brehu Dunaja).
+<BR><BR><b>Starý Háj </b> - lokalita sa akceptuje s funkciou mestského parku ako požadovaná zeleň medzi zeleňou sídliskovou a lesným parkom. Náplň a vybavenie mestského parku sa určí podľa charakteru územia a počtu návštevníkov.
+<BR><BR><b>Jarovecké rameno </b> - rozporná lokalita. Navrhuje sa tu rekreačno-športový areál pre vodné športy s lodenicami; rozporné je riešenie priehrady na Dunaji a kapacita výroby elektrickej energie.
+<BR><BR><b>Oblasť Rusoviec</b> je reálna s pripomienkou, že treba rešpektovať ochranné pásma vodných zdrojov pitnej vody. Park pri rusoveckom kaštieli treba prispôsobiť väčšej návštevnosti. 
+<BR><BR><span class="cj">
+		<b>Čuňovo </b> - rozporná lokalita, pretože treba striktne dodržiavať predpisy o ochrannom pásme „Vodných zdrojov", čo pravdepodobne znemožní využitie <span class="cunovske">čuňovského bagroviska </span>na kúpanie.
+	</span>
+<BR><BR><b>Na pieskoch </b> - navrhuje sa ako náhradná lokalita (pod Slovnaftom) za stratené rekreačné plochy pri Dunaji. Je však dosť nevýhodne položená oproti petržalským lokalitám. 
+<BR><BR><b>Aj medzihrádzový priestor </b> po pravobrežnej strane Dunaja je v rozpore s možnosťou budovať tu športovo-rekreačné zariadenia. Predpokladajú sa len voľné rekreačné lúky a chodníky.
+<BR><BR>V programe výstavby pre oblasť Bratislava I. a časť celomestského centra v Petržalke sa prízvukuje, že táto oblasť si pri riešení zelene vyžaduje osobitný prístup. So zreteľom na predpokladaný vzrast nárokov na zeleň a krátkodobú rekreáciu je v tejto časti územia potrebné: vytvoriť pešiu, prechádzkovú trasu pozdĺž Dunaja, ktorej súčasťou by bol aj Sad Janka Kráľa a plochy PKO. Podstatná časť uvažovanej trasy sa nachádza v inundačnom území Dunaja, a preto treba zeleň riešiť tak, aby nebola v rozpore s vodohospodárskymi predpismi a pritom vyhovovala danému účelu. Táto pešia trasa spojí mestské centrum s lužnými lesmi, respektíve s novými mestskými parkami a rekreačnou zeleňou na pravej strane Dunaja a bude veľkým prínosom pri vytváraní lepšieho životného prostredia. Potreba premeniť lužné lesy na mestské parky je v tomto prípade opodstatnená; nielen z hľadiska THÚ ako bezpodmienečná nevyhnutnosť nadokrskovej zelene, alebo z hľadiska zníženej hladiny spodných vôd, ale aj kvôli praktickým skúsenostiam devastovaním lesných porastov, ktoré nie sú pripravené na zvýšenú návštevnosť.
+<BR><BR>Návštevnosť lesa v okruhu 500 m od obytných domov dosiahla niekde aj 100 až 200 ľudí na 1 hektár, čím sa už bežný les môže bezprostredne ohroziť devastáciou. Odborníci z tohto dedukujú, že lesy v blízkosti sídiel musia mať parkovú úpravu a že sa v nich musia dodržiavať rovnaké predpisy, ako pri využívaní parkov. Rekreačný les sa musí sprístupniť sieťou spevnených cestičiek a chodníkov, musia v ňom byť ihriská a športové plochy, stánky na občerstvenie a patričné hygienické zariadenia. Trávniky a porasty musia byť v žiadúcom pomere, aby chránili pôdu. Podobné zásady sa budú aplikovať aj na lesy vrúbiace vodné plochy, jazerá a vodné toky do vzdialenosti 500 metrov od brehu.
+<BR><BR>Zachovať lužné lesy vo forme lesných parkov naráža na viaceré ťažkosti. Zníženie hladiny spodných vôd predpokladá zmenu spoločenstva lužných lesov na spoločenstvo lesostepné, čím dôjde pravdepodobne k ich postupnej premene. Mimoriadne zvýšená návštevnosť si vyžiada aj lepšiu vybavenosť z hľadiska športovania a celkového rekreačného pobytu návštevníkov.
+<BR><BR>Predpokladá sa, že návštevníkmi budú noví obyvatelia Petržalky a že ich športovo-rekreačná činnosť bude značne rozmanitá a bude si vyžadovať aj primerané zariadenia. Neslobodno zabúdať ani na niektoré negatívne javy, najmä na komáre, ktoré treba eliminovať. Čistota ovzdušia ani zďaleka nedosahuje najvyššiu normu prístupnosti (150 mg SO2/m3). Ovzdušie je navyše značne znečistené prachom, čo spôsobujú neupravené plochy, a plynnými exhalátmi, ktoré pochádzajú najmä z tepelných elektrární.
+<BR><BR>Nadbytok komárov sa bude riešiť samostatne, a to terénnymi úpravami i obmedzovaním biologickou cestou.
+<BR><BR>Urbanisticky doteraz doriešené zóny - Háje, Lúky, Dvory a rozpracované centrum, ktoré budú mať dovedna 143 693 obyvateľov, si vyžadujú okrem sídlištnej zelene i zeleň nadokrskovú (podľa THU je to 10,2 m2 na obyvateľa). Táto nadokrsková zeleň sa v tomto prípade získa zo súčasných lesných porastov na rozlohe 150,8 ha a ich premenou sa dosiahne 10,3 m2 nadokrskovej zelene na obyvateľa. Do uvedenej plochy nie je zarátaný Sad Janka Kráľa, ktorý sa pokladá za nadokrskovú zeleň starého mesta.
+<BR><BR>Podmienky vybudovať mestské parky a využívať ich na rekreačné účely sú na území mestského sektora Bratislava-Petržalka dané, je iba potrebné včas začať s realizáciou, aby nás po nasťahovaní prvých obyvateľov neprekvapili nežiadúce vplyvy na životné prostredie.
+		<BR><BR>
+    </span>
+   </div>	
+  </details>
+
+
+
+
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  20.05.1978 - Možnosti rekreácie pri vode v oblasti Bratislavy
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: Imrich Daubner, Božena Tržilová <BR> 
+		zdroj: Životné prostredie č.2
+	</span>
+	<span class="clanok">
+		<BR>
+<BR><BR>Pre dnešného človeka prakticky trvale vystaveného pôsobeniu civilizačných tlakov, pracujúceho a bývajúceho nezriedka v nepriaznivom prostredí, predstavuje rekreácia pri vode jeden z dôležitých faktorov odpočinku a regenerácie síl. Je dokázané, že tento typ aktívneho oddychu patrí k najúčinnejším prostriedkom upevňovania zdravia a všestranného rozvoja fyzickej zdatnosti človeka. Simultánny efekt vody, vzduchu a slnka pôsobí pozitívne na fyziologické funkcie a celkovú odolnosť organizmu. Kúpanie a vodné športy (plávanie, veslovanie, jachting) možno preto považovať za vhodný spôsob, ako eliminovať negatívne vplyvy znečisteného prostredia a jednostranného, často nezdravého spôsobu života. Prirodzene, že takúto ozdravujúcu funkciu môže plniť len čistá, hygienicky nezávadná voda a rekreačná oblasť lokalizovaná v nedegradovanom prírodnom prostredí. Pobyt pri vode má totiž poskytnúť nielen fyzické osvieženie, ale aj psychickú relaxáciu, vymaniť človeka z monotónnosti všedného dňa.
+<BR><BR>V súčasnosti rekreáciu pri vode vyhľadáva čoraz viac ľudí, pričom sa navštevujú aj také miesta, ktoré nie sú určené, resp. vhodné na kúpanie. Zapríčiňujú to jednak limitované možnosti pri narastajúcom počte obyvateľstva, jednak často to, že človek si neuvedomuje alebo nevie doceniť možné riziko. Názory samých odborníkov sa síce rozchádzajú, pokiaľ ide o možnosť priamej infekcie alebo ochorenia z vody. Ide najmä o počet mikrobálnych jednotiek, ktoré sa môžu dostať do organizmu pri jednorazovom kontakte s vodou (napr. pri kúpaní). 
+
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+ Existuje však veľa literárnych a iných údajov o ochoreniach aj epidemického charakteru, pri ktorých bola príčinou kontaminovaná voda (Seeliger, 1961; Knorr a spol., 1965, Kadlecová, 1976 a i.). Ako potvrdili výsledky viacerých autorov a naše vlastné experimentálne práce, patogénne zárodky môžu vo vode dlhší čas nielen prežívať, ale v určitých teplotných a trofických podmienkach sa aj rozmnožovať (Adámek a spol., 1977). Viaceré kmene mikroorganizmov, ktoré izoloval Karolček a spolupracovníci (1974) z vody Dunaja na čs. úseku, javili podobné toxikogénne a patogénne vlastnosti ako kmene z klinického materiálu.
+<BR><BR>Riziko infekcie je najvyššie pri povrchových vodách (jazerá, rieky, vodné nádrže), ktoré sú permanentne vystavené akémukoľvek znečisteniu. Ide predovšetkým o odpadové vody komunálne, ale aj o poľnohospodárske a priemyslové vody, najmä z potravinárskeho priemyslu s vysokým obsahom mikroorganizmov. Určitou príčinou znečistenia môžu byť aj divé (resp. domáce) zvieratá a vtáctvo. Podľa výsledkov, ktoré získal Thompson (1943) z výskumu jazier v Kanade, vtáky môžu vniesť 1 črevný mikroorganizmus na 1 ml vody denne. V prípade kúpalísk a umelých vodných plôch (bazénov), najmä tých, ktoré sú nedostatočne technicky a hygienicky zabezpečené, narastá nebezpečenstvo tým,že mnohí z kúpajúcich sa môžu byť chorí alebo bacilonosiči. Treba si uvedomiť, že jeden človek vnáša do vody značné počty zárodkov, zvyšky výlučkov, fekálne baktérie, vajíčka parazitov, spóry kožných plesní atd.
+<BR><BR>Pri styku s kontaminovanou vodou prichádzajú do úvahy viaceré črevné ochorenia (salmonelózy, dyzentéria, v niektorých krajinách cholera), zápaly očných spojoviek, slizníc a kože, vonkajších zvukovodov a iných orgánov, ako aj vírusové infekcie. Sú známe prípady hromadných konjunktivitíd mládeže v Prahe pri kúpaní v bazéne, ktorý nemal hygienicky zabezpečenú vodu. Spomenúť možno aj infekciu meningitídy z vody krytého bazénu v Ústí nad Labem, pri ktorej viaceré prípady skončili smrtou (Daubner, 1975).
+<BR><BR>Paleta mikroorganizmov, ktoré môže prenášať voda ako infekčné agens, je pomerne rozsiahla. Z praktického hľadiska stoja na poprednom mieste enterálne baktérie z rodu Salmonella a Shigella. Z humánne medicínskeho a veterinárskeho hľadiska prichádzajú do úvahy aj pôvodcovia antraxu, brucelózy, tularémie, leptospiróz i tuberkulózy. Kontaminácia vody napr. leptospírami sa deje močom hlodavcov, ktoré si vytvárajú skrýše na brehoch, ako aj močom infikovaných domácich zvierat. Leptospíry sa dostávajú do organizmu cez nosnú a očnú sliznicu a cez nepatrné poškodenie kože. Takto u nás ochorelo r. 1970 na tzv. poľnú horúčku, zapríčinenú druhom Lept. grippotyphosa, 32 detí, ktoré sa kúpali v rybníku a v potoku (Mucha, 1974). Známe sú aj prípady, keď kúpajúci sa v krytých bazénoch ochoreli na žltačku vyvolanú leptospírami (L. icterohaemorrhagiae).
+<BR><BR>Okrem uvedených organizmov prichádzajú do úvahy aj kvasinky z rodu Candida, ako aj pôvodcovia niektorých mykotických a parazitárnych ochorení. Z infekcií vírusovej etiológie ide predovšetkým o infekčnú hepatitídu, ďalej o poliomyelitídu (najmä v minulosti pred zavedením povinného očkovania) a iné ochorenia črevného traktu, dýchacích ciest atď.
+<BR><BR>Zaujímavé je aj zistenie, že niektoré druhy fytoplanktonu (rody Anabaena, Aphanizomenon, Microcystis a i.) nielen negatívne ovplyvňujú kvalitu vody a prispievajú k eutrofizačným javom (tvorba tzv. vodného kvetu), ale produkujú toxické látky, ktoré sú nebezpečné aj pre človeka. Po kúpaní vo vodách, v ktorých sa masívne pomnožili uvedené riasy, pozorovalo sa tvorenie pľuzgierov na koži, silné erytémy, dermatitídy, zápaly očných spojiviek a i. Známe sú aj prípady uhynutia dobytka, hydiny a iných zvierat po použití takejto vody (Štěpánek a spol., 1964). Podľa amerických údajov druh Microcystis aeruginosa produkuje látky, ktoré môžu zapríčiniť dyzentériu event. i epidemického charak- teru (Water Newsletter, 1974).
+</details>
+
+<BR><BR>V rámci valorizácie oblasti Bratislavy z biologického a hygienického hľadiska sme sledovali r. 1976-1977 9 vodných plôch:<span class="cj">  6 jazier vzniknutých po ťažbe štrku, ktoré v súčasnosti oficiálne aj neoficiálne slúžia ako miesta krátkodobej letnej rekreácie najmä obyvateľov hlavného mesta SSR</span>, a 3 umelé kúpaliská (bazény). Vyšetrovania sa robili z hľadiska fyzikálneho, chemického, mikrobiologického a biologického, pričom sme sa zamerali tak na všeobecné, ako aj na špecifické hygienické indikátory kvality vody. [Fyzikálne a chemické vyšetrovanie robili pracovníci Povodia Dunaja (dr. Kanala, CSc.), biologické analýzy pracovníci Krajskej hygienickej stanice v Bratislave (dr. Verešíková).] Pretože dosiaľ nie sú k dispozícii štandardné metódy na posudzovanie kvality vôd kúpalísk (bazénov), hodnotili sme výsledky predovšetkým podľa prítomnosti a počtu patogénnych a pod- mienene patogénnych, resp. iných hygienicky významných mikroorganizmov vo vzťahu k všeobecným mikrobiologickým a ďalším ukazovateľom. Prirodzene, že sme prihliadali na súčasné návrhy metód a kritérií na hodnotenie vôd tohto typu (Mucha, Daubner, 1973; Rolný, 1975; Amtsblatt, 1976 a i.). Kvôli porovnaniu vplyvu letného zaťaženia sa analýzy robili v jarných mesiacoch a v čase plnej letnej sezóny.
+<BR><BR>Ak si zoradíme získané výsledky podľa uvedených parametrov, zisťujeme, že relatívne najvyššie bakteriálne znečistenie javí voda jazera na Trávnikoch (tab. 1 a 2). Charakteristický je vysoký obsah heterotrofných saprofytických baktérií, ktoré svedčia o dostatku ľahko využiteľnej organickej hmoty. Tento záver podporujú aj chemické nálezy (najvyššia oxidovateľnosť zo všetkých skúmaných vodných plôch) a biologický obraz. Vysoký je obsah črevných baktérií z čeľade Enterobacteriaceae (tzv. koliformných zárodkov) a stafylokokov spôsobujúcich rôzne hnisavé a zápalové procesy.
+<BR><BR>V bakteriálnom obraze ďalších skúmaných lokalít (jazero vo Vajnoroch, na Štrkovci, na Zlatých pieskoch a v Senci) sme nezaznačili podstatnejšie rozdiely. Výkyvy v prítomnosti a počte jednotlivých ukazovateľov zrejme spôsobuje momentálna situácia v čase odberu vzoriek, resp. zvolené miesto (profil). 
+ <span class="cj"> Relatívne naj- čistejšiu vodu má <span class="cunovske"> jazero v Čuňove</span>, a to podľa všetkých ukazovateľov.</span> V zmysle citovaných kritérií vyhovujú v zásade požiadavkám na kvalitu vody určenej na rekreáciu všetky uvedené kúpaliská (podľa sovietskeho návrhu, ktorý predpokladá maximum 1000 kolónií črevných baktérií v 100 ml, je neprípustne vysoký obsah týchto mikroorganizmov v jazerách na Trávnikoch a vo Vajnoroch). Pravda, vzhľadom na to, že ani vodná plocha na Štrkovci nepodlieha pravidelnej hygienickej kontrole, nemožno zatiaľ ani jednu z týchto troch lokalít odporúčať na kúpanie.
+<BR><BR>Zaujímavé je porovnanie kvality vody sledovaných prírodných kúpalísk mimo sezónya v letných mesiacoch. Aj v tomto prípade je síce relatívne najviac znečistené jazero na Trávnikoch, ale poradie ostatných lokalít sa zmenilo. <span class="cj">Z hľadiska indikátorov fekálneho znečistenia</span> sa najlepšie výsledky získali z jazera na Zlatých pieskoch, <span class="cj">postupne horšie</span> na Štrkovci, <span class="cunovske">v Čuňove</span> a v Senci. Tieto rozdiely zrejme súvisia s objemom vodnej plochy a s odkrytosťou uvedených lokalít voči rozmanitým znečisťujúcim vplyvom, pri ktorých hrá dominujúcu úlohu človek a zvieratá. Podľa očakávania je však kvalita vody mimo hlavnej sezóny lepšia a pohybuje sa v hraniciach la-Ib triedy (pri päťstupňovej klasifikácii, ČSN 83-0602). Niektoré výnimky s najväčšou pravde- podobnosťou zapríčiňujú spomínané faktory (miesto a frekvencia odberu vzoriek a pod.).
+
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+<BR>Pokiaľ ide o vodu umelých kúpalísk, relatívne najvyššie znečistenie sa zaznačilo v lokalite Ružová dolina. Okrem značného počtu saprofytických baktérií a tzv. koliformných zárodkov sa zistila aj prítomnosť druhu Pseudomonas aeruginosa, ktorý je podmienene patogénny pre človeka (zápaly očných spojoviek, zvukovodu a i.). Pomerne najlepšie výsledky sa získali z kúpaliska na Tehelnom poli, kde sa v skúmanom objeme vody nezistila prítomnosť enterobakteriaceí. Treba však poznamenať, že voda je tu silne chlórovaná. Z mikrobiologického hľadiska voda všetkých 3 skúmaných kúpalísk vyhovuje hygienickým požiadavkám (v niektorých prípadoch sú mierne prekročené hodnoty chemických ukazovateľov - obsah chloridov v bazéne na Tehelnom poli je v priemere vyšší ako 100 mg/l). Uvedené aj ďalšie nedostatky však možno bez veľkých nákladov odstrániť pravidelným, dosta- točne častým vymieňaním vody, kontrolou jej kvality a potreb- ným počtom spŕch, ktoré by návštevníci mali použiť pred vstu- pom do bazénov.
+</details>
+
+<BR>Je potešiteľné, že v žiadnej zo sledovaných vzoriek vôd sa nezistili patogénne zárodky z čelade Enterobacteriaceae alebo enterovirusy. Viaceré ukazovatele však svedčia o znečistení, ktoré by bolo možné eliminovať. Vzhľadom na význam rekreácie pri vode a relativny nedostatok takýchto miest v oblasti Bratis- lavy je žiadúce sanovať a hygienicky zabezpečiť všetky existujúce vodné plochy, aby mohli bez zdravotného rizika poskytnúť potrebné osvieženie i relaxáciu.
+<BR><BR>V závere treba aspoň v krátkosti spomenúť aj rieku Dunaj, ktorú mnohí v letných mesiacoch vyhľadávajú na rekreačné účely. V tomto prípade treba jednoznačne konštatovať že voda Dunaja na celom čs. úseku nie je vhodná na kúpanie, najmä kvôli vysokému obsahu črevných baktérií (priemerne 60 000 kolónií v 100 ml), prítomnosti patogénnych zárodkov, vrátane virusov, ako aj olejovému znečisteniu. Očakávame, že kvalita vody sa pod- statne zlepší po vybudovaní čistiacich staníc pre mestá Viedeň a Bratislavu a po sanovaní najdôležitejšich prítokov Dunaja. Potom bude možno uvažovať o jej využití aj na kúpanie a iné rekreačné účely, potrebné pre zdravý rozvoj našej spoločnosti.
+
+<BR><BR>Tab. I. Mikrobiologická charakteristika vody skúmaných kúpalisk v letnej sezóne 1976-1977
+<BR>
+<TABLE >
+<tr id="cssTableCenter"> 
+<td rowspan="2">Lokalita<br> (jazero, bazén) </td><td colspan="2">Počet kolónii v 1 ml. <br>heterotrof. baktérie</td><td rowspan="2"> Entero-<br>bact.</td><td colspan="5">Počet kolónií v 100 ml</td><td colspan="2">Prítomnosť</td>
+</tr>
+<tr id="cssTableCenter"> 
+<td>20 °C</td><td>37 °C</td><td>Entero-<br>koky</td><td>Cl. per-<br>fringens</td><td>P. aeru-<br>ginosa</td><td>stafylokoky</td><td>Salmonella</td><td>leptospír</td><td>vírusov</td>
+</tr>
+<tr> 
+<td>Trávniky</td><td>2000</td><td>1350</td><td>1150</td><td>60</td><td>1</td><td>0</td><td>31 500</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr> 
+<td>Vajnory</td><td>300</td><td>350</td><td>1200</td><td>90</td><td>0</td><td>0</td><td>2 000</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr>
+<td>Štrkovec</td><td>370</td><td>280</td><td>700</td><td>25</td><td>0</td><td>0</td><td>10 000</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr>
+<td>Zlaté piesky</td><td>200</td><td>125</td><td>500</td><td>28</td><td>0</td><td>0</td><td>3 000</td><td>0</td><td>0</td><td>0</td>
+ </tr>
+<tr> 
+<td>Senec</td><td>400</td><td>300</td><td>100</td><td>17</td><td>0</td><td>0</td><td>3 500</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr class="cj"> 
+<td class="cunovske">Čunovo</td><td>100</td><td>90</td><td>80</td><td>3</td><td>0</td><td>0</td><td>500</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr> 
+<td>Ružová dolina</td><td>2600</td><td>2700</td><td>600</td><td>60</td><td>0</td><td>16</td><td>-</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr>
+<td>Rača</td><td>200</td><td>100</td><td>40</td><td>1</td><td>0</td><td>0</td><td>2 000</td><td>0</td><td>0</td><td>0</td>
+ </tr>
+<tr>
+<td>Tehelné pole</td><td>200</td><td>65</td><td>0</td><td>12</td><td>0</td><td>0</td><td>500</td><td>0</td><td>0</td><td>0</td>
+ </tr>
+</TABLE>
+
+<BR><BR>Tab. 2. Mikrobiologická charakteristika vody prírodných kúpalisk mimo sezóny (1976-1977)
+<BR>
+<TABLE>
+<tr id="cssTableCenter"> 
+<td rowspan="2">Lokalita (jazero, bazén) </td><td colspan="2">Počet kolónii v 1 ml. <br>heterotrof. baktérie</td><td rowspan="2"> Entero-<br>bact.</td><td colspan="5">Počet kolónií v 100 ml</td><td colspan="2">Prítomnosť</td>
+</tr>
+<tr id="cssTableCenter"> 
+<td>20 °C</td><td>37 °C</td><td>Entero-<br>koky</td><td>Cl. per-<br>fringens</td><td>P. aeru-<br>ginosa</td><td>stafylokoky</td><td>Salmonella</td><td>leptospír</td><td>vírusov</td>
+</tr>
+<tr> 
+<td>Trávniky</td><td>460</td><td>275</td><td>1100</td><td>87</td><td>2</td><td>0</td><td>6700</td><td>0</td><td>+</td><td>0</td>
+</tr>
+<tr> 
+<td>Senec</td><td>200</td><td>135</td><td>250</td><td>33</td><td>0</td><td>0</td><td>5900</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr class="cj"> 
+ <td class="cunovske">Čunovo</td><td>100</td><td>50</td><td>120</td><td>67</td><td>0</td><td>0</td><td>1500</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr> 
+<td>Štrkovec</td><td>300</td><td>100</td><td>70</td><td>25</td><td>0</td><td>0</td><td>2400</td><td>0</td><td>0</td><td>0</td>
+</tr>
+<tr> 
+<td>Zlaté piesky</td><td>110</td><td>45</td><td>40</td><td>10</td><td>0</td><td>0</td><td>350</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</TABLE>
+
+<BR><BR>Literatúra:
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+<BR><BR>Adámek, R., Daubner, I., Johnová, V., Tržilová, B., 1977: Vorversuche über den Einfluss von Abwässern aus Zuckerfabriken auf den Gehalt an Darmbakterien im Vorfluter. Zbl. Bakt. Hyg. I. Abt. Orig. B, 164, p. 340–351. 1976: Amstblatt der Europäischen Gemeinschaften. L 31, 5-7. Daubner, I., 1975: Infekčný potenciál vody a potreba jeho zisťovania. Čs. Hyg., 20, 9, p. 453-458.
+<BR><BR>Kadlecová, O., 1976: Sledovanie znečistenia Dunaja baktériami zo skupiny salmo- nel. Záv. správa, KHS Bratislava.
+<BR><BR>Karolček, J. a kol., 1974: Štúdium bakteriálneho osídlenia Dunaja so zreteľom na prítomnosť zárodkov z čeľade Vibrionaceae. Záv. správa, VÚEM Bratislava. Knorr, M., Selenka, F., Oppelt, O., 1965: Über Fundorte und Verdriftung von Salmonellen durch Plankton und Watten im Bodensee. Arch. Hyg. Bakteriol., 149, p. 288-293.
+<BR><BR>Mucha, V., 1974: Die Beziehung der Limnologie und Wasserhygiene. 16. Arbeits- tagung der IAD SIL, 17.-23. 9. 1973 in der ČSSR, II. Teil: Festrede und Haupt- referate, Bratislava.
+<BR><BR>Mucha, V., Daubner, I., 1973: Gewässerhygiene und Wasserversorgung. Arch. Hydrobiol. Suppl., 44, p. 162-176.
+<BR><BR>Rolný, D., 1975: Hygienické zabezpečenie vody pre rekreáciu. Záv. správa, VÚH Bratislava.
+<BR><BR>Seeliger, H. a kol., 1961: Jahresbericht über die Salmonellosen in der Bundes- republik Deutschland und West-Berlin 1958, Zbl. Bakt. I. Orig., 182, p. 357-403. Štěpánek, M. a kol., 1964: K problému vodních květů v hygieně vod. Čs. Hyg., 9, p. 209-212.
+<BR><BR>Thompson, R. E., 1943: The water works world. Water and Sewage Works 2. 1977: Water newsletter (Water Information Center Inc.), 16, 8.
+</details>
+<BR><BR>
+
+    </span>
+   </div>	
+  </details>
+
+
+
+
+
+
+
+
 	<details class="clanok"> 
 	<summary> 
 		<span class="rozbal">

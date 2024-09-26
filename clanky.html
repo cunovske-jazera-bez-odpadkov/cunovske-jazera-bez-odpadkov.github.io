@@ -27,100 +27,6 @@
   :root {  --viac: 'viac';}
 
 
-/* rozbalovanie zaciatok*/
-input {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-.row {
-  display: -webkit-box;
-  display: flex;
-}
-.row .col {
-  -webkit-box-flex: 1;
-          flex: 1;
-}
-.row .col:last-child {
-  margin-left: 1em;
-}
-.farba1{
-  color:tomato;
-}
-.farba2{
-  color:orange;
-}
-
-.tabs {
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-}
-
-.tab {
-  width: 100%;
-  color: var(--rozbalC);
-  overflow: hidden;
-}
-.tab-label {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: start;
-  justify-content: left;
-  padding: 0.1em;
-  background: #101010;
-  /*font-family:"Calibri",sans-serif;
-  font-weight: bold;*/
-  cursor: default;
-}
-.tab-label:hover {
-  background: #12171c;
-}
-.tab-label::after {
-  content: "\276F";
-  width: 1em;
-  height: 1em;
-  text-align: center;
-  -webkit-transition: all .35s;
-  transition: all .35s;
-}
-.tab-content {
-  max-height: 0;
-  padding: 0 1em;
-  font-family:"Calibri",sans-serif;
-  color: #cccccc;
-  background: #101010;
-  -webkit-transition: all .35s;
-  transition: all .35s;
-  overflow: scroll;
-}
-.tab-close {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
-  padding: 1em;
-  background: #000000;
-  cursor: pointer;
-}
-.tab-close:hover {
-  background: #1a252f;
-}
-
-input:checked + .tab-label {
-  background: #1a252f;
-}
-input:checked + .tab-label::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-input:checked ~ .tab-content {
-  max-height: 100vh;
-  padding: 1em;
-}
- /* rozbalovanie koniec*/
-
 
 #video_overlays {
   position: absolute;
@@ -151,6 +57,7 @@ td, th {
 summary{
      /*list-style: none;*/
 	list-style-type: "\25cf";/*list-style-type: "\229E";*/
+
 }
 summary::marker {
   	color: var(--markerC);  
@@ -250,7 +157,6 @@ details.description summary::before {
 
 	<BR><BR><BR>
 	
-
 
 
 
@@ -1202,7 +1108,7 @@ Ale ja viem, že to ani dnes nemajú ľahké a to som bola iba dva metre pod hl
     <details class="clanok"> 
 	<summary> 
 		<span class="rozbal">
-		  08.06.1882 - Horúčavy nevyparili vodu
+		  08.06.1982 - Horúčavy nevyparili vodu
 		</span>
  	</summary>
 	<div class="details-container">
@@ -1526,7 +1432,7 @@ V blízkosti <span class="cunovske">Čunovského jazera </span>sa nachádza vodn
 		zdroj: Večerník č.105
 	</span>
 	<span class="clanok">
-<BR><BR>Prečo treba rešpektovať ochranné pásmo studní na Ostrovných lúčkach
+<BR><BR><b>Prečo treba rešpektovať ochranné pásmo studní na Ostrovných lúčkach</b>
 <BR><BR>Vo vode život vznikol a bez nej nemôže jestvovať. Ona transportuje látky pre život nepostrádateľné. Tak isto však transportuje látky životu škodiace. Vode je to jedno. Navyše je veľmi neposedná. Musíme dobre poznať jej cestičky, aby sme si uchránili zdroje vody pitnej, ktorej je na svete čoraz menej. O ochrane veľkokapacitného vodného zdroja Rusovce - Ostrovné lúčky Mokraď, ktorý v podstatnej miere zásobuje obyvateľstvo mestskej časti Bratislavy-Petržalky pitnou vodou, hovorí vedúci odboru poľnohospodárstva, lesného a vodného hospodárstva NVB ing. Oto Krajčovič:
 <BR><BR>„Znečistenie, pred ktorým chceme vodný zdroj ochrániť, môže zapríčiniť rôzna činnosť človeka. Obrábanie poľnohospodárskych a lesných pozemkov, ale aj využívanie okolitého územia na šport a rekreáciu. Máme na mysli parkovanie motorových vozidiel, ktorými sa prídu ľudia okúpať, chytať ryby, poprechádzať sa. Nielen občania z priľahlých obci Jarovce, Rusovce a Čunovo, ale aj obyvatelia mesta z ľavej strany Dunaja, ktorí si zvykli túto lokalitu v hojnom počte navštevovať z nedostatku priestorov na kúpanie sa v prírode a preto, že dosiaľ bolo prakticky možné tunajšie obmedzenie nerešpektovať. Neuvedomujú si však, aký 
 <BR><BR>VÝZNAM PRE ŽIVOT PETRŽALKY 
@@ -1543,6 +1449,38 @@ V blízkosti <span class="cunovske">Čunovského jazera </span>sa nachádza vodn
     </span>
    </div>	
   </details>
+
+
+
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  28.06.1988 – Prečo sa nekúpať v Rusovciach
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: (rea) <BR> 
+		zdroj: Večerník č.125
+
+	</span>
+	<span class="clanok">
+<BR><BR><b>Okolo niekoľkých holých tiel sa naozaj svet nekrúti</b>
+<BR><BR>Na rozhovor s vedúcim odboru poľnohospodárstva, lesného a vodného hospodárstva NVB Ing. Otom Krajčovičom, ktorý sme priniesli v tejto rubrike 31. mája pod názvom „Voda nad soľ”, sme dostali aj takýto ohlas:
+<BR><BR>..Škoda, že si autor článku nedal tú námahu a nešiel sa pozrieť na rusovské jazero To, čo by tam našiel, nemá nič spoločné s ochranou vôd. Okolo jazera sa usilovne pracuje, celé je znečistené. Najhoršie však, že sa vyrubujú aj lesy okolo. Akáže je to teda ochrana vôd? Myslím si, že ide o útok na nudistov, ktorí tu nachádzali pekné prostredie. A vôbec naše úrady si s touto otázkou radšej nepália prsty. Je im jedno, že ide o formu oddychu, ktorá je dnes vo svete veľmi rozšírená a populárna a dokonca už aj v Čechách nadobudla oficiálne formy..."
+<BR><BR>Nemienime tu teraz rozoberať otázku nudizmu. Opatrenia, ktoré podráždili pisateľa listu a podľa predošlej pošty aj telefonátov i viacerých ďalších, nie sú namierené proti ľuďom, ktorí si radi opekajú telesné detaily, čo sú slnečnými lúčmi najzraniteľnejšie. Čomu teda slúži zákaz kúpania sa v rusovskom jazere? Ing. Krajčovič rozložil mapu:
+<BR><BR>„Lužné lesy sa vyrubujú preto, lebo v tejto lokalite sa buduje priesakový kanál ako súčasť vodných diel na Dunaji. Ráta sa s tým, že po naplnení zdrže v Hrušove dôjde k priesakom vody, ktorú má tento kanál zachytiť.
+<BR><BR>Jazero leží v ochrannom pásme vodného zdroja Rusovce-Ostrovné lúčky ide nám o hygienu spodnej vody. Pri jazere nie je vhodná hromadná rekreácia, nie sú tu vytvorené hygienické, zdravotnícke ani záchranárske služby. Len vlani sa tu utopilo šesť ľudí. V jazere aj na okolí zanechávajú rekreanti fekálie a odpadky. 
+<span class="cj"> Sem aj do <span class="cunovske">Čunova</span> sme inštalovali brány na zamykanie. Toto územie majú v správe Vodárne a kanalizácie Bratislava. Majú presnú evidenciu, ktorá organizácia má právo ta vstúpiť.
+</span>
+<BR><BR>Mimo územia ochranného pásma medzi Rusovcami a Petržalkou sa buduje rekreačný areál s prírodnou vodou na kúpanie. V budúcnosti aj v priesakovom kanáli bude spodná, čiže prirodzene prefiltrovaná voda. Mimo ochranného pásma bude ešte dosť dlhá časť kanála. Vodný zdroj Ostrovné lúčky treba chrániť o to viac, že po napustení hrušovskej zdrže po roku 1990 stúpne spodná voda a môže dôjsť k jej ďalšiemu znečisteniu cudzorodými látkami. To by mohlo vyvolať potrebu jej nákladnej úpravy."
+<BR><BR><BR><BR>
+    </span>
+   </div>	
+  </details>
+
+
 
 
 
@@ -2275,16 +2213,26 @@ Na otázku, či by do problémov spojených s jazerom, kde sa chodia rekreovať 
 	</p><p>
 	Začlenenie Čunovských jazier do pásma ochrany súviselo so spodnými prúdmi podzemných vôd, ktorých trasu a smer zmenila výstavba vodného diela Gabčíkovo. Pôvodné pásmo hygienickej ochrany bolo vytýčené pred vybudovaním vodného diela. Po jeho napustení sa zmenil tok prúdenia podzemnej vody v podloží, ohrozený tak bol podzemný zdroj Rusovce - Ostrovné lúčky - Mokraď, ktorý bol uvedený do prevádzky v roku 1982. Podľa BVS už v súčasnosti nie sú ohrozené podzemné zdroje pitnej vody, ktorou BVS zásobuje časť Bratislavy. 
 	</p>
-	   </div>
-      </div>
-      <div class="tab">
-        <input type="checkbox" id="chck12">
-        <label class="tab-label" for="chck12">&#9679;&nbsp;11.07.2007 - O Čunovských jazerách by mali rozhodnúť do 10 dní </label>
-        <div class="tab-content">
-		SITA &nbsp;&nbsp; zdroj:
-	<a href="https://bratislava.sme.sk/c/3390112/o-cunovskych-jazerach-by-mali-rozhodnut-do-10-dni.html" target="_blank" style=" text-decoration: none">
+
+    </span>
+   </div>	
+  </details>
+
+
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  11.07.2007 - O Čunovských jazerách by mali rozhodnúť do 10 dní
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		zdroj: SITA 	<a href="https://bratislava.sme.sk/c/3390112/o-cunovskych-jazerach-by-mali-rozhodnut-do-10-dni.html" target="_blank" style=" text-decoration: none">
 	https://bratislava.sme.sk/c/3390112/o-cunovskych-jazerach-by-mali-rozhodnut-do-10-dni.html
 	</a>
+	</span>
+	<span class="clanok">
 	<p>
 	BRATISLAVA 11. júla (SITA) - O vyňatí Čunovských jazier z ochranného pásma II. stupňa a o aktualizácii pásma ochrany tohto prostredia by mal Krajský úrad životného prostredia (KÚŽP) v Bratislave rozhodnúť do desiatich dní. Ako dnes pre agentúru SITA uviedla Eva Gogolová z odboru Štátnej vodnej správy KÚŽP, v prebiehajúcom rozhodovacom konaní neboli podané žiadne pripomienky či námietky, posledné potrebné podklady poskytla úradu Bratislavská vodárenská spoločnosť (BVS) začiatkom tohto týždňa. Súhlasné záväzné stanovisko už vydal Regionálny úrad verejného zdravotníctva Bratislava.
 	</p><p>
@@ -2296,6 +2244,8 @@ Na otázku, či by do problémov spojených s jazerom, kde sa chodia rekreovať 
 	</p><p>
 	Začlenenie Čunovských jazier do pásma ochrany súviselo so spodnými prúdmi podzemných vôd, ktorých trasu a smer zmenila výstavba vodného diela Gabčíkovo. Pôvodné pásmo hygienickej ochrany bolo vytýčené pred vybudovaním vodného diela. Po jeho napustení sa zmenil tok prúdenia podzemnej vody v podloží, ohrozený tak bol podzemný zdroj Rusovce - Ostrovné lúčky - Mokraď, ktorý bol uvedený do prevádzky v roku 1982. V súčasnosti už nie sú ohrozené podzemné zdroje pitnej vody, ktorou BVS zásobuje časť Bratislavy.
 	</p>
+
+		<BR><BR><BR><BR>
    </span>
    </div>	
   </details>
@@ -2663,6 +2613,36 @@ Ak by tam taky bol, hoc aj s reklamou firmy ktorá ho tam zabezpečila, určite 
 
 
 
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  16.10.2009 – Čistili Čunovské jazerá
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: Martin Valček  <BR> 
+		zdroj: Petržalské noviny č.19
+	</span>
+	<span class="clanok">
+
+
+<BR><BR>V sobotu 5. septembra sa za účasti dobrovoľníkov zo Slovenského plynárenského priemyslu a za účasti organizátorov z Bratislavského regionálneho ochranárskeho združenia konala environmentálna brigáda na <span class="cj">Čunovských jazerách </span>(prírodná rezervácia Ostrovné lúčky).
+<BR><BR>Prírodná rezervácia Ostrovné lúčky sa nachádza medzi mestskými časťami Bratislavy - Rusovcami a Čunovom. Vyskytujú sa tu spoločenstvá veľmi vzácnych teplomilných rastlín vrátanie niekoľkých druhov orchideí. Na časti územia sa z minulosti zachovala lesostep, na ktorej tieto rastliny rastú v spoločnosti zakrpatených stromov. Táto rezervácia je zároveň súčasťou Chránenej krajinnej oblasti Dunajské luhy. Práve v tesnom susedstve rezervácie, v priestore CHKO, sa konala spomínaná brigáda.
+<BR><BR>Toto chránené územie v súčasnosti intenzívne využívame na rekreáciu, čo má negatívny vplyv na jeho prírodné, estetické a rekreačné hodnoty znečisťovaním odpadmi, ale aj rôznymi chemickými látkami (olej, benzín z áut, saponáty atď.). Práve v dôsledku nesprávneho lesného hospodárenia sa na viacerých miestach darí takzvaným inváznym druhom rastlín. Sú to druhy, ktoré pochádzajú z iných kútov sveta a na Slovensku nemajú prirodzených nepriateľov. To spôsobuje ich nekontrolované šírenie a rozmnožovanie. Väčšina z najbežnejších inváznych rastlín je pre človeka jedovatá.
+<BR><BR>Dobrovoľnícka brigáda sa preto zamerala hlavne na lesné pozemky, na ktorých boli invázne rastliny premnožené. Dobrovoľníci odviedli vynikajúcu prácu vysekaním a odstránením týchto rastlín. Na uvoľnenej ploche ešte tento rok vysadia mladé stromy - tentoraz domáce druhy, z ktorých bude ekologický a časom aj hospodársky úžitok.
+		<BR><BR><BR><BR>
+
+
+    </span>
+   </div>	
+  </details>
+
+
+
+
+
      <details class="clanok"> 
 	<summary> 
 		<span class="rozbal">
@@ -2725,17 +2705,27 @@ Ak by tam taky bol, hoc aj s reklamou firmy ktorá ho tam zabezpečila, určite 
 	<br>
 	<img height=400 src="https://m.smedata.sk/api-media/media/image/sme/0/11/1176380/1176380_1200x.jpg?rev=1">
 	<br>Kúpanie v Čunove zakázali už pred rokmi, krajský úrad životného prostredia však v lete 2007 ochranu jazera zrušil (Zdroj: FOTO - ARCHÍV SME)
-	   </div>
-      </div>
+   
+	</span>
+   </div>	
+  </details>
 
-      <div class="tab">
-        <input type="checkbox" id="chck20">
-        <label class="tab-label" for="chck20">&#9679;&nbsp;04.06.2011 - Zákaz kúpania: Čuňovské jazerá definitívne zatvorili!</label>
-        <div class="tab-content">
-		zdroj:
-	<a href="https://www.cas.sk/clanok/358742/zakaz-kupania-cunovske-jazera-definitivne-zatvorili/" target="_blank" style=" text-decoration: none">
+
+
+   <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  04.06.2011 - Zákaz kúpania: Čuňovské jazerá definitívne zatvorili!
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		zdroj: 	<a href="https://www.cas.sk/clanok/358742/zakaz-kupania-cunovske-jazera-definitivne-zatvorili/" target="_blank" style=" text-decoration: none">
 	https://www.cas.sk/clanok/358742/zakaz-kupania-cunovske-jazera-definitivne-zatvorili/
 	</a>
+
+	</span>
+	<span class="clanok">
 	<p>
 	O kúpalisko menej! Úrady rozhodli, no málokto o tom vie. Kúpaním sa v Čunovských jazerách porušujete zákon a koledujete si o pokutu.
 	</p><p>
@@ -2752,6 +2742,8 @@ Ak by tam taky bol, hoc aj s reklamou firmy ktorá ho tam zabezpečila, určite 
 Veronika (16) a Ľubica (16) nevedeli o tom, že do čunovskej vody nesmú. Zdroj: Ivan Kováč
 </td></tr>
 </table>
+
+<BR><BR><BR><BR>
     </span>
    </div>	
   </details>
@@ -2794,6 +2786,46 @@ FOTO - Juraj Mladý<br>
     </span>
    </div>	
   </details>
+
+
+
+
+
+
+     <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  04.11.2011 – V Čunove stačí zabrániť vstupu automobilom - LIST ČITATEĽA
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: Ján Faltus, Petržalka  <BR> 
+		zdroj: Bratislavské noviny č.22
+	</span>
+	<span class="clanok">
+
+
+<BR><BR>Bývam v Petržalke už viac ako 30 rokov a celý čas navštevujem <span class="cunovske">čunovské jazerá</span> na bicykli. Rád si poležím na slniečku a zaplávam v krištáľovo čistej vode, ktorú by závidel hociktorý prevádzkovateľ kúpalísk. Keď vodárne zrušili ochranné pásmo vodných zdrojov v tejto lokalite, potešil som sa, že konečne zvíťazil zdravý rozum. Očakával som, že sa niekto ujme starostlivosti o jazerá a vybuduje krásne prostredie na kúpanie a relax v prospech všetkých obyvateľov širokého okolia Bratislavy. V normálnom štáte by sa tak stalo, lebo nedostatok možnosti kúpania v Bratislave a okolí vytvára podnikateľské možnosti v rekreačnej oblasti.
+<BR><BR>Stal sa opak, ktorý je krokom k boľševickým praktikám v minulosti. Dobre si pamätám, ako policajti na gumových člnoch naháňali kúpajúcich sa a vystavovali sa posmechu prizerajúcich sa ľudí. <span class="cunovske">Čunovské jazerá </span> sú obyčajné bagroviská, kde obnažené štrkové plochy a brehy v priebehu rokov zarástli náletmi porastov z okolia a miestami trávou a burinou.
+<BR><BR>Vzácne porasty tam nájde len ten, kto chce účelovo znemožniť prístup verejnosti a len z im známych dôvodov si vyárendovať toto krásne prostredie. Tento názor sa zakladá na skúsenostiach z minulosti, keď sa viackrát opakovali pokusy obmedziť prístup k jazerám z rôznych účelovo vymyslených dôvodov. Tentoraz sú to vzácne porasty na brehu jazier a nezmyselné tvrdenia o zakrmovaní rýb a opaľovacích olejoch. Ryby sa tam nachádzali po celú existenciu jazier a každý, kto ich pravidelne navštevuje, môže potvrdiť, že nedochádza k žiadnemu nadmernému rastu rastlín a rias. Samočistiaca schopnosť jazera je vynikajúca.
+<BR><BR>KÚŽP by urobil lepšie, keby sa postaral o účinné zamedzenie prístupu motorových vozidiel k jazerám a dozrel na kúpanie psov a koní. Ktovie, ktoré lobistické skupiny a za akým účelom stoja za rozhodnutím KÚŽP o zákaze prístupu k jazerám, či, mimochodom, nedošlo k trestnému činu korupcie pre vznik ďalšej lukratívnej oblasti pre vyvolených, podľa vzoru jazier pri Vojke...
+
+		<BR><BR><BR><BR>
+
+
+
+
+    </span>
+   </div>	
+  </details>
+
+
+
+
+
+
+
 
 
 

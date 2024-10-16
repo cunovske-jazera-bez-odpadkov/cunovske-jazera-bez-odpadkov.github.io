@@ -46,6 +46,7 @@
 }
 #video_box{position: relative;}
 table {
+  border-collapse: collapse;
   border:1px solid var(--slabsiC);
   color:var(--slabsiC);
 }
@@ -53,7 +54,7 @@ td, th {
   border: 1px solid var(--slabsiC);
   padding: 0.2em;
 }
-	
+
 summary{
      /*list-style: none;*/
 	list-style-type: "\25cf";/*list-style-type: "\229E";*/
@@ -79,6 +80,45 @@ details[open] > summary {
   font-size:1vw; 
   
 }
+/*tabulka chemicke prvky*/
+.bezCiary{
+  border-collapse: collapse;
+  border: none;
+  width:auto;
+  text-align: right;
+  margin: 0 0 0 0;
+  padding: 0;
+  color:var(--cjC);
+
+}	
+.bezCiaryHor{
+  border-collapse: collapse;
+  border: none;
+  margin: 0 0 0 0;
+  padding: 0;
+ font-size: 80%;
+
+}	
+.bezCiaryDol{
+  border-collapse: collapse;
+  border: none;
+  text-align: left;
+  margin: 0 0 0 0;
+  padding: 0;
+  font-size: 80%;
+
+}	
+
+.bunkaCiaraNad{
+     border-style: none solid solid solid;
+}
+.bunkaCiaraPod{
+     border-style: solid solid none solid;
+}
+.bunkaUnderline{
+     border-width: 1 1 2 1;
+}
+
 .rozbal{
   color: var(--rozbalC); 
   cursor:default; 
@@ -133,7 +173,7 @@ details.description:not([open]) summary::before {
 
 details.description summary::after,
 details.description summary::before {
-  display: inline-block;
+  /*display: inline-block;*/
   transition: all .4s ease-in-out;
   transform-origin: center bottom;
 }
@@ -196,6 +236,7 @@ details.description summary::before {
 		<BR><BR>
 		Iste nám nie je neznáma poloha spomínaných obcí, mnohí nimi prechádzajú, prípadne trávia v nich príjemný víkend. Keďže nás zaujíma, čo mesto dostane a čo bude musieť občanom dať, aby tieto zatiaľ menej exponované časti Bratislavy neboli z titulu svojej okrajovosti zanedbávané najmä v oblasti služieb, dopravy a ďalšieho vybavenia, zašli sme si do niektorých z nich, aby sme sa na tvári miesta mohli s tamojšími funkcionármi porozprávať a rozobrať, otázky, ktoré nie sú také jednoduché, ako to na prvý pohľad vyzerá. Pozrime sa preto trochu i do minulosti, obcí. Vzhľadom k svojej blízkosti k Bratislave majú tiež bohatú históriu, dajme preto slovo tým, ktorí si viac sľubujú od budúcnosti.
 		<BR>
+		
 		<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
  		RUSOVCE <BR><BR>
 		Hoci máme na zreteli bezprostrednú budúcnosť tejto prímestskej obce, nemožno na jej pôde nehovoriť o minulosti. 
@@ -1440,9 +1481,434 @@ Alebo je im úplne jedno, že sa voda v studniach znehodnotí a vodný zdroj bud
  Bola by to naozaj nesmierna škoda, a nielen preto, že práve vďaka tomuto vodnému zdroju aj cez najväčšie horúčavy tečie z našich vodovodov prúd osviežujúcej tekutiny. 
 		</span>
 
+    <BR><BR><BR><BR>
+
+
+	</span>
+   </div>	
+  </details>
+
+
+
+
+
+
+
+
+    <details class="clanok"> 
+	<summary> 
+		<span class="rozbal">
+		  01.10.1982 - POSÚDENIE VHODNOSTI VODY JAZIER V OBLASTI PETRŽALKY NA REKREAČNÉ ÚČELY 
+		</span>
+ 	</summary>
+	<div class="details-container">
+	<span class="autor">
+		autor: Vladimír Krčméry ml., Angelika Bajužíková <BR> 
+		zdroj: Bratislavské lekárske listy č.4 zväzok 78
+	</span>
+	<span class="clanok">
+
+<BR><BR><span class="cj">Na pravej strane Dunaja, v mestskej časti Petržalka, vyrastá veľký urbanizačný komplex pre 150 000 obyvateľov Bratislavy. Rozhodli sme sa vyšetriť niektoré hygienické ukazovatele povrchovej vody v jazerách tejto lokality: Draždiak, Zrkadlový háj, Chorvátske rameno, <span class="cunovske">Čuňovo.</span> Uvedené jazerá využívajú obyvatelia sídlisk na kúpanie, pričom sa voda v týchto jazerách doteraz z hygienickej stránky nevyšetrovala, okrem <span class="cunovske">lokality Čuňovo</span> roku 1976 a 1978 (Daubner, 1978), ktorá je súčasťou ochranného pásma vodného zdroja Rusovce a jej rekreačné využitie neprichádza do úvahy. Všetky jazerá vznikli ako bagroviská v rokoch 1950-1970 a sú naplnené infiltrovanou podzemnou vodou dunajského pôvodu. Jazerá sú lokalizované v Južnom lese ako súčasť poloprírodného ekosystému (Asoc. Salici-Populetum, A. Fraxino-Ulmeto-Quercum), ktorý negatívne antropogénne ovplyvňuje najmä výstavba a nedisciplinovanosť organizácií a jednotlivcov (Krčméry, 1980). </span>
+<BR><BR>Spomenuté zásahy do ekosystému nás viedli k vyšetreniu vody, k zhodnoteniu negatívnych zásahov, vplyvov znečistenia na posúdenie vhodnosti povrchových (lentických) vôd na rekreáciu z hygienického hľadiska. Problém je zvlášť aktuálny v čase schvaľovania projektu rekreačného areálu Draždiak. V poslednom čase bolo u nás i v zahraničí zaznamenaných mnoho ochorení v súvislosti s kontaktom s povrchovou vodou. Okrem tradičných bakteriálnych infekcií spôsobených Staphylococcus aureus - zápaly slizníc, pokožky, očných spojoviek, infekcie močových ciest, zápaly vonkajšieho zvukovodu - (Pseudomonas aeruginosa) boli zaznamenané salmonellózy (Metz, 1980) i shigellózy z kúpania (Rosenberg, 1976). Čoraz častejšie sa vyskytujú črevné infekcie zapríčinené baktériami zo skupiny tzv. podmienených patogénov, ktorým sa nepripisoval pre vznik infekcie pri rekreácii väčší význam (z čeľade Enterobacteriaceae: Escherichia coli, Enterobacter, Citrobacter, Klebsiella, Yersinia enterocolitica, Proteus (Štěpánek a kol., 1979; Knittel a spol., 1977 a i); gramnegativne nefermentujúce paličky (1); fekálne streptokoky. Do úvahy prichádzajú aj pôvodcovia niektorých antropozoonóz-leptospiröz, tularémie, prípadne aj iných; vírusy, Protozoa a helminty (Červa, 1973; Mayr, 1980), kvasinky z rodu Candida aj pôvodcovia niektorých mykotických a parazitárnych ochorení. 
+<BR><BR>Zdravotné nebezpečenstvo z povrchovej vody nemožno podceňovať. Ako príklad možno uviesť štatistický údaj z roku 1972 z USA, keď z celkového počtu tvorili ochorenia v súvislosti s kontaktom s povrchovou vodou (Merson a spol.. 1972) 8%.
+
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+<BR><BR>Materiál a metódy
+<BR><BR>Vzorky povrchovej vody sme vyšetrovali 1-krát mesačne v období september 1980 do apríla 1981, podľa ČSN 830 530-32. Každé vyšetrenie pozostávalo z makroskopickej obhliadky stavu brehov, hladiny a okolitého biotopu. Hodnotili sme organoleptické ukazovatele a fyzikálne ukazovatele: farbu, zákal, zápach, teplotu, pH, priehľadnosť. Z chemických ukazovateľov sme vyšetrovali oxidovateľnosť, kvantitatívne amoniak, dusitany, dusičnany ako indikátory fekálneho znečistenia, chloridy a fosforečnany. Pri biologickom vyšetrení vzoriek vody sme určovali počet konzumentov a producentov, stupeň saprobity a trofie. Pri mikrobiologickom vyšetrení sme kvantitatívne hodnotili Finterobacteriacese a fekálne streptokoky ako indikátory fekálneho znečistenia; heterotrofné baktérie, kultivované pri 20 °C a pri 37°C -ako indikátory všeobecného znečisťovania vôd. Kvalitatívne sme určovali druhové zastúpenie z čelade Enterobacteriaceae a iných klinicky významných gramnegatívnych baktérií rozmnožovaním v tekutých pôdach podľa ČSN 830 531; kultiváciou na Endovej a Mc Conkeyovej pôde a dalšou identifikáciou biochemickými metódami pomocou systémov Enterotube (Roche), Api-R 20 E a Minitek (BBL). Tieto systémy - u nás dosiaľ málo používané -umožňujú s veľkou časovou úsporou identifikovať bakteriálne kmene s presnosťou na 94-96% (Chester a Cleary, 1980), Použili sme tieto biochemické testy: tvorba ornitíndekarboxylázy a lyzíndekarbosylázy (ODC, LDC), ?-galaktozidázy (ONPG); arginíndehydrolázy (ADH); utilizácia citrátu (CTT); tvorbu sírovodíka (HS); ureázy (URE); tryptofándeaminázy, resp. fenylalanínu (TDA), (PA); indolu (IND); Voges Proskauerova reakcia (VP); tvorba sacharolytických enzýmov rôznych substrátov -glukózy (GLU) v aeróbnom i anaeróbnom prostredí, sacharózy (SUC), laktózy (RAC), inozitolu (INO), rhamnózy (RHA), xylózy (XYL), dulcitolu (DUL), arabinózy (ARA), škrobu (STARCH), manózy (MAN), sorbitolu (SOR), amygdalínu (AMY), melibiózy (MEL), malonátu (MAL), želatíny (GEL); schopnosť redukovať dusičnany na dusitany (N2, NIT); cytochrómoxidázový test.
+
+</details>
+
+ <BR><BR>Široká paleta testov umožnila identifikovať kmene, ktoré počas svojho pobytu vo vonkajšom prostredí značne pomenili svoje vlastnosti.
+
+<BR><BR><span class="cj">Po prvom vyšetrení sme zo sledovania vylúčili jazerá <span class="cunovske">Čuňovo (Č1 a Č2),</span> kde bol vyhlásený zákaz kúpať, pretože spadajú do ochrannej oblasti vodného zdroja; </span> aj Chorvátske rameno a jazerá D2, D3 pre sústavné znečisťovanie a nevhodný biotop, nevyhovujúce organoleptické vlastnosti vody, vypúšťanie odpadových vôd. Pre rekreačné využitie prichádzajú do úvahy jazerá Zrkadlový háj (Z) a Draždiak (D), ktoré sme raz mesačne vyšetrovali.
+<BR><BR>Výsledky a diskusia.
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+
+<BR><BR>Na určovanie kvality povrchovej vody pre rekreačné účely nie je doteraz prijatá jednotná norma. Preto sme sa pri formulovaní výsledkov orientovali návrhmi z ČSSR i zo zahraničia. Výsledky organoleptických a fyzikálnych vyšetrení vody v lokalite D1, a Z sa pohybovali okrem zisteného makroskopického znečistenia vody v mesiacoch XI-XII 1980 v medziach odporúčanej normy (Rolný, 1973). Povrchová voda na rekreačné účely má mať optimálnu teplotu 16-22 °C, priehľadnosť nad 0,5 m, má byť bez cudzorodého a odpudzujúceho zápachu, s pH od 5,5 do 9, oxidovateľnosť do 5 mg O?/l vody. Obsah amoniaku (NH4+, do 1 mg/l, dusičnanov do 30 mg/l, chloridy do 100 mg/l, má byť bez ropných produktov, počet heterotrofných zárodkov, ktoré rastú pri 37 °C, nemá presahovať hranicu 3000/ml; Enterobacteriaceae do 20 000/l; fekálnych streptokokov 1000/l, E. coli 5000/l. Vo vode nemajú byť patogénne baktérie a Protozoa.
+<BR><BR>Výsledky chemických rozborov sú uvedené v tabuľke 1. Ako je z tabuľky zrejmé, v D1 sme zistili v priemere 2,7 mg NH4+/l počas celého obdobia, pričom odporúčaná najvyššia prípustná hodnota u nás je 1 mg NH4+/l vody. Zvýšené hodnoty NH4+, svedčia o čerstvom fekálnom znečisťovaní vody v tejto lokalite v období zimných mesiacov. V decembri 1980 sa zistilo 5,16 mg NH4+/l a v januári 1981 až 6,76 mg NH4+/l. Zvýšené hodnoty boli aj v mesiacoch IX-X, čo je zrejme odrazom
+intenzívneho využívania vody v kúpacej sezóne. Z ostatných chemických ukazovateľov boli mierne zvýšené hodnoty chloridov v jarných mesiacoch v oboch sledovaných lokalitách (105, resp. 110 mg/l -- odporúčaná hodnota je 100 mg/l), ako aj organických látok, určených nepriamo (oxidovateľnosť) v mesiacoch IV a XII v Z. V novembri a začiatkom decembra boli skládky odpadov nasypané pod hladinou vody v D1, ako aj skládka smeti priamo na západnom brehu lokality.
+<BR><BR>O masívnom znečistení jazera stavebnou organizáciou svedčí aj mikrobiologický rozbor vody. Zvýšené hodnoty NH4+ korelovali so zvýšením počtu heterotrofných baktérií (tab. 2), ako aj ostatných mikrobiologických ukazovateľov.
+<BR><BR>Priemerný počet baktérií Enterobacteriaceae v 1 litri vody bol 40 000 (D1), resp. 60.000 (v Z). Maximálne hodnoty boli v zimných mesiacoch - 1 580 000 v D1. a 7 000 000 v Z v 1 litri vody. To svedčí o masívnej kontaminácii staveniskovým, smetištným a fekálnym odpadom nedisciplinovanými jednotlivcami stavebných organizácii. Po kúpacej sezóne 1980 boli tiež zvýšené počty baktérií z čeľade Enterobacteriaceae. Počty heterotrofných baktérií, ktoré vyrástli pri 20°C 37°C, ako aj fekálnych streptokokov boli uspokojivé. Odporúčaná hodnota 20 000 Enterobacteriaceae/l vody pre ČSSR (Rolný, 1973) bola prekročená v 66% vzoriek v D1 a v 37% vzoriek v lokalite Z.
+</details>
+
+<span class="cj">
+<BR><BR>Jednorazové chemické a mikrobiologické rozbory povrchovej vody z D1 a Z v októbri 1980 sme porovnali s rozbormi ostatných povrchových vôd v Bratislave po kúpacej sezóne,
+ ktoré majú podobný pôvod a charakter: 
+petržalské jazerá D2, D3, <span class="cunovske">Čuňovo,</span> Chorvátske rameno, Štrkovec, Trávniky, Kuchajda, Železná studnička, Vajnory, Zlaté piesky. Výsledky sú uvedené v tabuľke 3. 
+Zistili sme vyšší obsah indikátorov čerstvého fekálneho znečistenia v sledovaných lokalitách D1 a Z, ktoré sa považujú za prvoradé - ide o obsah NH4+ a počet Enterobacteriaceae. Ich úroveň 
+bola blízka hodnotám v dunajskej vode. K podobným záverom možno dospieť aj pri porovnaní hodnôt D1 a Z s existujúcimi údajmi z minulosti - z rozboru jazier <span class="cunovske">Čuňovo </span>(Daubner, 1978) na Podunajskej nížine 
+(Verešíková, 1973) a jazier charakteru štrkovísk v NSR (Wolff, 1980). Ak porovnávame výsledky rozborov s odporúčanou hodnotou u nás (Rolný, 1973), NSR WHO (Albrecht, 1976;
+Rosenberg, 1976), hodnota indexu coli 20 000, resp. 10 000 – je prekročená prakticky vo všetkých sledovaných povrchových vodách. 
+</span>
+
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+<BR><BR>Kvalitatívnym mikrobiologickým rozborom zastúpenia baktérií z čeľade Enterobacteriaceae vo vzorkách povrchovej vody D1 a Z sme zistili prevládanie podmienene patogénnych druhov. Nevykultivovali sme Salmonellae, na rozdiel od Shigellae, ktoré sa povrchových vodách zisťujú menej frekventovane. Hojne bol zastúpený rod Enterobacter, Escherichia a Klebsiella (tab. 4), z čeľade Vibrionaceae rod Aeromonas. Vykultivovali sme Pseudomonas aeruginosa, Cl. Perfringens. Stafylokoky a enterokoky sme bližšie neurčovali. Uskutočnili sme biotypovú validizáciu klinicky významnejších druhov baktérií, vykultivovaných z povrchovej vody D1, a Z (tab. 5). Prekvapujúci bol pomerne vysoký biotypový prierser 418 z odberov z jazera Z, ktorý súvisel s častým výskytom baktérií s odchylnými biochemickými vlastnosťami, t.j. s vysokou aberáciou, čo svedčí o dlhšom pobyte druhov v zmenenom prostredí oproti ich pôvodnému (tráviaci trakt). Tieto úvahy potvrdzuje zistenie nízkeho biotypového priemeru 20 v uvedenej lokalite v odberoch tesne po kontaminácii v decembri 1980. V jazere D1 bol pomerne široký interval biotypových hodnôt, z čoho možno usudzovať na sústavné znečisťovanie tejto lokality. Rozsah aberácie biochemických vlastností pri klinicky významných druhoch baktérií, vykultivovaných z povrchovej vody D1 a Z, je uvedený v tabuľke 6. Najčastejšími vlastnosťami, ktorých sa druhy odlišovali od typických klinických druhov, ako vyplýva z tabuľky 6, boli: tvorba ureázy, indolu, lyzindekarboxylázy a utilizácia citrátu. Aberácia jednotlivých biochemických vlastnosti, najmä jej hygienický a indikačný význam, sa stáva predmetom výskumu mnohých autorov (Sayler a spol., 1975; Sečkárová a spol., 1980 a iní). Napriek rozdielnym mienkam sa autori zhodujú v názoroch, že pozmenené biochemické vlastnosti kmeňov z vonkajšieho prostredia sú sprevádzané zmenenou rezistenciou na antibiotiká, zvýšenou, resp. zníženou virulenciou, čo sťažuje nielen identifikáciu, ale aj terapiu (Kelch a Lee, 1978; Sečkárová a spol., 1980). Zvýšené osídľovanie vonkajšieho prostredia pôvodne klinickými druhmi z rodu Klebsiella potvrdzujú aj Knittel a spol. (1977), inými menej typickými druhmi Sayler a spol. (1975). Spomínaní autori, ako aj Wolf a spol. (1980) konštatujú veľké sezónne rozdiely v počtoch baktérií fekálneho pôvodu. Naše údaje, získané vyšetrením jazier D1 a Z svedčia o zvýšenom znečisťovaní vody počas kúpacej sezóny. Ďalšie výkyvy boli zapríčinené znečisťovaním stavebným i smetiskovým odpadom. Menej obvyklý bol nález Shigellae (podobne uvádza Rosenberg, 1976), neizolovali sme napriek očakávaniu Salmonellae.
+<BR><BR>Súhrn
+<BR><BR>Na posúdenie možnosti využitia jazier na rekreačné účely v mestskej časti Bratislavy, kde vyrastá veľký urbanizačný komplex, autori hodnotili makroskopický stav brehov, hladiny a okolitého biotopu; organoleptické, fyzikálne a chemické ukazovatele kvality povrchovej vody. Mikrobiologické ukazovatele vyšetrovali systémami Minitek, API a Enterotube.
+<BR><BR>V rozboroch, v čase mimo kúpacej sezóny od septembra 1980 do apríla 1981, boli niekoľkonásobne prekročené odporúčané hodnoty indikátorov fekálneho znečistenia – z chemických ukazovateľov hlavne hodnoty NH4+ (Cl-, organické látky), z mikrobiologických ukazovateľov predovšetkým počet Enterobacteriaceae. Výsledky poukazujú na nevhodnosť jazier v sezóne 1981 na kúpanie. Autori navrhujú zaviesť opatrenia na zamedzenie znečisťovania lokality.
+
+</details>
+
+<BR><BR><BR>Tabuľka 1
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+<BR>Výsledky chemického vyšetrenia povrchovej vody jazier Draždiak (D1), Zrkadlový háj (Z) v období mimo sezóny (september 1980-april 1981)
+<BR><BR>
+
+	
+<table>
+<tr>
+<td></td><td></td><td colspan=8 style="text-align:center;">Mesiac</td><td></td><td colspan=3>Porovn. S	návrhmi	normy</td>
+</tr>
+<tr>
+<td>Ukazovatel</td><td>Lokalita</td><td>IX.</td><td>X.</td><td>XI.</td><td>XII.</td><td>I.</td><td>II.</td><td>III.</td><td>IV.</td><td>x&#772;</td><td>ČSSR</td><td>NSR</td><td>WHO</td>
+</tr>
+<tr>
+<td>NH4+ mg/l</td>	<td>D1</td>	<td>0,12</td>	<td>3,5</td>	<td>0,8</td>	<td>5,16</td>	<td>6,75</td>	<td>5,1</td>	<td>0</td> <td>0</td>	 <td>2,7</td>	<td>do 1</td>	<td>0 do</td>	<td>0,5</td>
+</tr>
+<tr>
+<td></td>		<td>Z</td>	<td>1,2</td>	<td>0</td>	<td>0,1</td>	<td>0,2</td>	<td>0,57</td>	<td>1,1</td>	<td>0	</td><td>0</td>	<td>0,4</td>	<td></td>	<td></td>	<td></td>	
+</tr>
+<tr>
+<td>NO2- mg/l</td>	<td>D1</td>	<td>0</td>	<td>0,5</td>	<td>0</td>	<td>0,01</td>	<td>0</td>	<td>0</td>	<td>0,02</td>	<td>0</td>	<td>0,01</td>	<td>-</td>	<td>0</td>	<td>0</td>
+</tr>
+<tr>
+<td></td>	<td>Z</td>	<td>0</td>	<td>0,5</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0,02</td>	<td>0</td>	<td>0,01</td>	<td></td>	<td></td>	<td></td>			
+</tr>
+<tr>
+<td>NO3- mg/l</td>	<td>D1</td>	<td>7,56</td>	<td>3,2</td>	<td>8,6</td>	<td>4,61</td>	<td>3,7</td>	<td>4,3</td>	<td>4,27</td>	<td>4,3</td>	<td>5,07</td>	<td>do 30</td>	<td>-</td> <td>do	40</td>
+</tr>
+<tr>
+<td></td>	<td>Z</td>	<td>3,1</td>	<td>2,0</td>	<td>6,2</td>	<td>5,53</td>	<td>4,64</td>	<td>6,76</td>	<td>8,9</td>	<td>4,4</td>	<td>5,19</td>	<td></td><td></td><td></td>
+</tr>
+<tr>
+<td>PO4- mg/l</td>	<td>D1</td>	<td>0	<td>0,01</td>	<td>0</td>	<td>0,01</td>	<td>0	</td> <td>0</td>	<td>0</td> 	<td>0</td> 	<td>0,002</td>	<td>-</td> 	<td>0</td> 	<td>-</td>
+</tr>
+<tr>
+<td></td>	<td>Z	</td> <td>0,5</td>	<td>0,01</td>	<td>0</td> 	<td>0</td> 	<td>0</td> 	<td>0,04</td>	<td>0</td>	<td>0</td> 	<td>0,070</td>	<td></td><td></td><td></td>		
+</tr>
+<tr>
+<td>Cl- mg/l</td>	<td>D1</td>	<td>26</td>	<td>80</td>	<td>86</td>	<td>80</td>	<td>71</td>	<td>75</td>	<td>100</td>	<td>105</td>	<td>78</td>	<td>do 100</td>	<td>-</td> <td>do 200</td>
+</tr>
+<tr>
+<td></td>	<td>Z</td>	<td>79</td>	<td>75</td>	<td>81</td>	<td>45</td>	<td>82</td>	<td>87</td>	<td>95</td>	<td>105</td>	<td>81</td>	<td></td><td></td><td></td>
+</tr>
+<tr>
+<td>oxidova-<br>
+ teľnosť	<td>D1</td>	<td>3,04</td>	<td>1,5</td>	<td>3,36</td>	<td>3,1</td>	<td>2,9</td>	<td>4,2</td>	<td>3,92</td>	<td>3,3</td>	<td>3,1</td>	<td>do 5</td>	<td>do 5</td>	<td>do 10</td>
+</tr>
+<tr>
+<td>mg O2/l</td>	<td>Z</td> 	<td>5,05</td>	<td>2,0</td>	<td>4,5</td>	<td>5,2</td>	<td>3,8</td>	<td>2,1</td>	<td>2,72</td>	<td>3,5</td>	<td>3,6</td>	<td></td><td></td><td></td>
+</tr>
+</table>
+<BR>Návrh normy ČSSR, NSR, WHO podľa Rolného, 1973; Rosenberga, 1976: Quentina, 1980, Havemeistra, 1980
+<BR><BR><BR>
+
+Tabuľka 2
+<BR>Výsledky mikrobiologického vyšetrenia povrchovej vody jazier D1, a Z v období september 1980-apríl 1981 (kvantitatívne ukazovatele)
+<BR><BR>
+
+<table>
+<tr>
+<td></td><td></td><td colspan=8 style="text-align:center;">Mesiac</td><td></td>
+</tr>
+<tr>
+<td>Ukazovatel</td><td>Lokalita</td><td>IX.</td><td>X.</td><td>XI.</td><td>XII.</td><td>I.</td><td>II.</td><td>III.</td><td>IV.</td><td>x&#772;</td>
+</tr>
+<tr>
+<td>heterotrofné bakt.</td>	<td>D1</td>	<td>23</td>	<td>720</td>	<td>327</td>	<td>124</td>	<td>80</td>	<td>40</td>	<td>52</td>	<td>32</td>	<td>181</td>
+</tr>
+<tr>
+<td>pri 37 °C/48 h/ml</td> 	<td>Z</td>	 <td>11</td>	<td>105</td>	<td>617</td>	<td>250</td>	<td>20</td>	<td>25</td>	<td>20</td>	<td>71</td>	<td>140</td>
+</tr>
+<tr>
+<td>heterotrofné bakt.</td> 	<td>D1</td>	 <td>42</td>	<td>740</td>	<td>594</td>	<td>560</td>	<td>550</td>	<td>100</td>	<td>34</td>	<td>98</td>	<td>317</td>
+</tr>
+<tr>
+<td>pri 20°C/48 h/ml</td>	<td>Z</td> 	<td>2</td>	 <td>340</td>	<td>352</td>	<td>25</td>	<td>750</td>	<td>900</td>	<td>15</td>	<td>45</td>	<td>303</td>
+</tr>
+<tr>
+<td>Enterobacteriaceae /100 ml</td>	<td>D1</td>	<td>23000</td>	 <td>2800</td>	 <td>158000</td>	<td>2800</td>	<td>200</td>	<td>7500</td>	<td>1200</td>	<td>0</td> 	<td>24440*</td>
+</tr>
+<tr>
+<td></td>	<td>Z</td>	 <td>17500</td>	<td>1400</td>	<td>9200</td>	<td>700000</td>	<td>200</td>	<td>0</td>	 <td>0</td>	<td>0</td>	 <td>91037*</td>
+</tr>
+<tr>
+<td colspan=11>(*ide o aritmetický priemer bez odpočtu najvyššej a najnižšej hodnoty)	</td>									
+</tr>
+<tr>
+<td>fekálne streptokoky/100 ml</td>	<td>D</td>	<td>0</td> 	<td>0</td>	 <td>0</td>	<td>0</td>	 <td>0</td>	<td>200</td>	<td>0</td>	 <td>0</td>	<td>25</td>
+</tr>
+<tr>
+<td></td> <td>Z</td>	 <td>0</td>	<td>0</td>	 <td>0</td>	<td>0</td>	 <td>0</td>	<td>0</td>	 <td>0</td>	<td>0</td>	 <td>0</td> 
+</tr>
+<tr>
+<td>Cl. perfringens</td>	<td>D</td>	 <td>0</td>	<td>0</td>	 <td>0</td>	<td>0</td> 	<td>0</td>	 <td>0</td>	<td>0</td>	 <td>0</td>	<td>-</td>
+</tr>
+<tr>
+<td></td> <td>Z</td> 	<td>0</td>	 <td>0</td>	<td>prítomné</td>	<td>0</td>	 <td>0</td>	<td>0</td>	 <td>0</td>	<td>0	</td> <td>-</td>
+</tr>
+<tr>
+<td>Ps. aeruginosa</td>	<td>D</td> 	<td>0</td> 	<td>0</td>	 <td>prítomné</td>	<td>0</td>	 <td>0</td>	<td>0</td>	 <td>0</td>	<td>0</td> 	<td>-</td>
+</tr>
+<tr>
+<td></td> <td>Z</td>	 <td>0</td>	<td>0</td>	 <td>prítomné</td>	<td>0</td>	 <td>0</td>	<td>0	</td> <td>0</td>	<td>0	</td> <td>-</td>
+</tr>
+</table>
+
+<BR>
+
+Najvyššie odporúčané hodnoty : heterotrofné bakt. (rastúce pri 37 °C) NSR do 1000/ml, ČSSR do 3000/ml; NSR aj ČSSR do 100/100 ml; Enterobacteriaceae ČSSR do 2000/100 ml, WHO do 1000/100 ml, NSR odporúčané do 500/100 ml, najvyššie prípustné hodnoty do 10 000/100 ml (Rolný, 1973; Rosenberg, 1976; Havemeister, 1980).
+
+</details>
+<BR><BR><BR>
+
+<span class="cj">
+Tabuľka 3
+<BR>Porovnanie výsledkov chemického a mikrobiologického vyšetrenia jazier D1 a Z s ostatnými bratislavskými jazerami (stav po kúpacej sezóne 1980)
+<BR><BR>
+</span>
+
+<table style="color:var(--cjC)">
+<tr>
+<td></td><td colspan=6 class="bunkaCiaraPod"></td><td></td><td colspan=2 class="bunkaCiaraPod">Počet za 48 h</td><td class="bunkaCiaraPod">Za 24 h</td><td></td>
+</tr>
+<tr>
+<td></td><td colspan=6 class="bunkaCiaraNad" style="text-align:center;">Ukazovatele v	mg/l</td><td></td><td colspan=2 class="bunkaCiaraNad">heterotrof./ml</td><td class="bunkaCiaraNad">Enterobac.</td><td></td>
+</tr>
+<tr>
+<td class="bunkaUnderline">Lokalita</td>	
+<td class="bunkaUnderline"><table class="bezCiary"><tr><td class="bezCiary" rowspan=2>NH</td><td class="bezCiaryHor">+</td></tr><tr><td class="bezCiaryDol">4</td></tr> </table></td>	
+<td class="bunkaUnderline"><table class="bezCiary"><tr><td class="bezCiary" rowspan=2>NO</td><td class="bezCiaryHor">– </td></tr><tr><td class="bezCiaryDol">2</td></tr> </table></td>	
+<td class="bunkaUnderline"><table class="bezCiary"><tr><td class="bezCiary" rowspan=2>NO</td><td class="bezCiaryHor">– </td></tr><tr><td class="bezCiaryDol">3</td></tr> </table></td>	
+<td class="bunkaUnderline"><table class="bezCiary"><tr><td class="bezCiary" rowspan=2>PO</td><td class="bezCiaryHor">3+</td></tr><tr><td class="bezCiaryDol">4</td></tr> </table></td>	
+<td class="bunkaUnderline"><table class="bezCiary"><tr><td class="bezCiary" rowspan=2>SO</td><td class="bezCiaryHor">2– </td></tr><tr><td class="bezCiaryDol">4</td></tr> </table></td>	
+<td class="bunkaUnderline"><table class="bezCiary"><tr><td class="bezCiary" rowspan=2>Cl</td><td class="bezCiaryHor">– </td></tr><tr><td class="bezCiaryDol"></td></tr> </table></td>	
+ <td class="bunkaUnderline">Oxidovat.</td>	<td class="bunkaUnderline">20°C</td>	<td class="bunkaUnderline">37°C</td>  <td class="bunkaUnderline">poč. v 100 ml</td>	<td class="bunkaUnderline">Enterokoky</td>
+</tr>
+
+<tr>
+<td>Draždiak (D1)</td>	<td>0,12</td>	<td>0</td>	 <td>7,6</td>	<td>0</td>	 <td>58</td>	<td>26</td>	<td>3,04</td>	<td>42</td>	<td>23</td>	<td>23000</td>	<td>0</td>
+</tr>
+<tr>
+<td>Zrkadl. háj (Z)</td>	<td>1,20</td>	<td>0</td>	<td>3,1</td>	<td>0,5</td>	<td>79</td>	<td>79</td>	<td>5,05</td>	<td>2</td>	 <td>11</td>	<td>17500</td>	<td>0</td>
+</tr>
+<tr style="color:var(--cunovskeC)">
+<td>Čuňovo</td>	 <td>1,20</td>	<td>0</td>	 <td>7,6</td>	<td>0</td>	 <td>68</td>	<td>31</td>	<td>2,56</td>	<td>245</td>	<td>280</td>	<td>8000</td>	<td>0</td>
+</tr>
+<tr>
+<td>Chorvátske rameno</td>	 <td>0</td>	<td>0,85</td>	<td>7,6</td>	<td>0</td>	 <td>58</td>	<td>115</td>	<td>3,90</td>	<td>10500</td>	<td>120</td>	<td>70000</td>	<td>0</td>
+</tr>
+<tr>
+<td>D2</td>	<td>0</td>	<td>0,12</td>	<td>7,6</td>	<td>0</td>	<td>58</td>	<td>133</td>	<td>3,55</td>	<td>26</td>	<td>16</td>	<td>2000</td>	<td>0</td>
+</tr>
+<tr>
+<td>D3</td>	<td>0,10</td>	<td>0</td>	 <td>7,5</td>	<td>0</td> <td>116</td>	<td>114</td>	<td>4,60</td>	<td>30</td>	<td>10</td>	<td>11500</td>	<td>0</td>
+</tr>
+<tr>
+<td>Štrkovec</td>	<td>0,7</td>	<td>0,01</td>	<td>26,6</td>	<td>0</td>	<td>66</td>	<td>87</td>	<td>2,00</td>	<td>30</td>	<td>38</td>	<td>7800</td>	<td>0</td>
+</tr>
+<tr>
+<td>Trávniky</td>	<td>0</td>	<td>0,01</td>	<td>7,9</td>	<td>0	</td><td>66</td>	<td>72</td>	<td>2,65</td>	<td>0</td>	<td>40</td>	<td>7000</td>	<td>0</td>
+</tr>
+<tr>
+<td>Pasienky</td>	<td>0</td> <td>0,01</td>	<td>11,8</td>	<td>0</td>	 <td>111</td>	<td>115</td>	<td>4,60</td>	<td>9</td>	 <td>14</td>	<td>0</td> 	<td>0</td>
+</tr>
+<tr>
+<td>Želez. studnička</td>	<td>0</td> 	<td>0</td>	 <td>12,3</td>	<td>0</td> 	<td>112</td>	<td>116</td>	<td>4,30</td>	<td>28</td>	<td>32</td>	<td>4500</td>	<td>0</td>
+</tr>
+<tr>
+<td>Vajnory</td>	<td>0</td> 	<td>0,01</td>	<td>39,1</td>	<td>0</td>	 <td>121</td>	<td>132</td>	<td>1,68</td>	<td>14</td>	<td>20</td>	<td>0	</td> <td>0</td>
+</tr>
+<tr>
+<td>Zlaté piesky</td> 	<td>0</td> 	<td>0</td>	 <td>19,5</td>	<td>0</td>	 <td>90</td>	<td>78</td>	<td>3,12</td>	<td>20</td>	<td>19</td>	<td>3000</td>	<td>0</td>
+</tr>
+
+</table>
+
+
+<br><br>Tabuľka 4
+
+<details class="description" style="cursor:default;"  close><summary style="background-color: #111122;" data-open="< menej" data-close="viac >"></summary>
+<br>Porovnanie percentuálneho zastúpenia rodov čeľade Enterobacteriaceae vykultivovaných z povrchových vôd lokalít v Petržalke (Draždiak, Zrkadlový háj) a z Dunaja (Tržilová, 1978)
+<br><br>
+
+<table>
+<tr>
+<td>Rod</td>  <td>Lokality v Petržalke<br> Draždiak, Zrkadlový háj<br> (%)</td>    <td> Dunaj<br> (%)</td> 
+</tr>
+<tr>
+<td>Escherichia</td> <td>31</td> <td>44</td>
+</tr>
+<tr>
+<td>Enterobacter</td> <td>32</td> <td>9</td>
+</tr>
+<tr>
+<td>Citrobacter</td> <td>10</td> <td>31</td>
+</tr>
+<tr>
+<td>Klebsiella</td> <td>16</td> <td> - </td>
+</tr>
+<tr>
+ <td>Iné</td>  <td>11</td>  <td>16</td>
+</tr>
+
+</table>
+
+<BR><BR><BR>
+
+Tabuľka 5
+
+<BR>Biotypová validizácia klinicky významnejších druhov baktérií vykultivovaných z povrchovej vody D1 a Z (IX. - IV. 1980-1)
+<BR><BR>
+
+
+<table style="border: none;">
+<tr>
+<td style="border: none;">
+
+<table>
+<tr><td colspan=2><b>I. Enterobacteriaceae <br> (druh, biotyp, počet kmeňov)</b></td></tr>
+<tr><td>Escherichia coli B1</td><td>8</td></tr>
+<tr><td>E. coli B5</td><td>4</td></tr>
+<tr><td>E. coli B62</td><td>4</td></tr>
+<tr><td>E. coli B2588</td><td>8</td></tr>
+<tr><td>E. coli B260</td><td>4</td></tr>
+<tr><td>E. coli B999</td><td>4</td></tr>
+<tr><td>Enterobacter cloacae B1</td><td>3</td></tr>
+<tr><td>Ent. cloacae B18</td><td>6</td></tr>
+<tr><td>Ent. cloacae B511</td><td>5</td></tr>
+<tr><td>Ent. cloacae B100 000</td><td>1</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Ent. agglomerans B4</td><td>3</td></tr>
+<tr><td>Ent. agglomerans B5</td><td>5</td></tr>
+<tr><td>Ent. agglomerans B36</td><td>3</td></tr>
+<tr><td>Ent. agglomerans B262</td><td>3</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Ent. aerogenes B2</td><td>1</td></tr>
+<tr><td>Ent. hafnise B8</td><td>4</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Proteus vulgaris B2</td><td>2</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Serratia liquefaciens B16</td><td>2</td></tr>
+</table>
+</td>
+
+<td style="vertical-align: top; border: none;">
+<table>
+<tr><td>S. liquefaciens B875</td><td>2</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Providencia stuarti B1055</td><td>1</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Shigella sonnei B1</td><td>1</td></tr>
+<tr><td>Sh. sonnei B12</td><td>2</td></tr>
+<tr><td>Sh. flexneri B1</td><td>1</td></tr>
+<tr><td>Citrobacter freundii B18</td><td>4</td></tr>
+<tr><td>C. freundii B188</td><td>5</td></tr>
+<tr><td>C. freundii B650</td><td>2</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Klebsiella ozaenae B6</td><td>1</td></tr>
+<tr><td>Kl. ozaenae B36</td><td>1</td></tr>
+<tr><td>Kl. Ozaenae B85</td><td>2</td></tr>
+<tr><td>Kl. ozaenae B92</td><td>2</td></tr>
+<tr><td>Kl. ozaenae B16363</td><td>5</td></tr>
+<tr><td>Kl. rhinoscleromatis B24</td><td>1</td></tr>
+<tr><td>Kl. pneumoniae B3</td><td>1</td></tr>
+<tr><td>Kl. pneumoniae B10</td><td>1</td></tr>
+<tr><td>Kl. pneumoniae B29</td><td>1</td></tr>
+<tr><td>KI. pneumoniae B164</td><td>1</td></tr>
+<tr><td>Kl. pneumoniae B1961</td><td>1</td></tr>
+</table>
+</td>
+
+<td style="vertical-align: top; border: none;">
+<table>
+<tr><td colspan=2><b>II. Iné G-mikróby</b> </td></tr>
+<tr><td>Pseudomonas aeruginosa B2 </td><td>2</td></tr>
+<tr><td>Ps. aeruginosa B8</td><td>4</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Ps. cepacia B50000</td><td>1</td></tr>
+<tr><td>Bacterium CDC II F B64</td><td>1</td></tr>
+<tr><td>Bact. CDC II F B514</td><td>1</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Vibrio alginolyticus B7 </td><td>2</td></tr>
+<tr><td>V. alginolyticus B1428</td><td>2</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td colspan=2>Acinetobacter calcoaceticus </td></tr>
+<tr><td>(var. Iwoffi) B1220 </td><td>1</td></tr>
+<tr><td>(var. anitratus) B3 </td><td>1</td></tr>
+<tr><td>Aeromonas hydrophila B8</td><td>5</td></tr>
+<tr><td>A. hydrophila B82</td><td>4</td></tr>
+<tr><td>A. hydrophila B111</td><td>16</td></tr>
+<tr><td>A. hydrophila B668</td><td>1</td></tr>
+<tr><td>A. hydrophila B1136</td><td>2</td></tr>
+<tr><td>A. hydrophila B2500</td><td>2</td></tr>
+<tr><td>A. hydrophila B625000</td><td>1</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<BR><BR><BR>
+
+
+Tabuľka 6
+<BR>Rozsah aberácie biochemických vlastností pri klinicky významných druhoch baktérií vykultivovaných zo vzoriek povrchových vôd z lokalít D1 a Z za obdobie IX/80 IV/81
+<BR><BR>
+<table>
+<tr><td> Počet vlastnosti odlišných <br>od typických</td>          <td> Počet kmeňov</td>      <td>  %(152 kmeňov=100%)</td></tr>
+<tr><td> 0 (typické kmene)</td>   <td> 22</td>   <td> 13.3</td></tr>
+<tr><td> 1 aberantná vlastnosť</td>   <td> 52</td>   <td>34,6</td></tr>
+<tr><td> 2 aberantné vlastnosti</td>  <td> 48</td>   <td>32.0</td></tr>
+<tr><td> 3 aberantné vlastnosti</td>  <td>20</td>  <td>13.3</td></tr>
+<tr><td> 4 aberantné vlastnosti</td>   <td>9</td>     <td> 6,0</td></tr>
+<tr><td> 5 aberantných vlastnosti</td>   <td>1</td>   <td> 0,7</td></tr>
+</table>
+<br>
+152 kmeňov vyšetrovaných<br>
+2200 vlastnosti vyšetrených<br>
+243 vlastností bolo pozmenených (11%)<br>
+<br><br>
+<table>
+<tr><td>Vlastnosť (pozmenená)</td>    <td>Počet kmeňov</td>     <td>% (243=100%)</td></tr>
+<tr><td>URE</td>    <td>39</td>   <td>16,04</td></tr>
+<tr><td>IND</td>    <td>39</td>   <td>16,04</td></tr>
+<tr><td>LDC</td>   <td>39</td>   <td>16,04</td></tr>
+<tr><td>CIT</td>  <td>25</td>   <td>10,20</td></tr>
+<tr><td>NIT</td> <td>24</td>    <td>9.87</td></tr>
+<tr><td>ODC</td> <td>18</td>    <td>7,40</td></tr>
+<tr><td>LAC</td> <td>14</td>   <td>5,76</td></tr>
+<tr><td>GLU</td>  <td>10</td>   <td>4,10</td></tr>
+<tr><td>INO</td>  <td>10</td>  <td>4,10</td></tr>
+<tr><td>RHA</td>   <td>5</td>   <td>2,05</td></tr>
+<tr><td>HS</td>  <td>4</td>  <td>1.65</td></tr>
+<tr><td>XYL</td>  <td>3</td>  <td>1,23</td></tr>
+<tr><td>PA</td>  <td>3</td>  <td>1,23</td></tr>
+<tr><td>ONPG</td>  <td>3</td>  <td>1,23</td></tr>
+<tr><td>DUL</td>  <td>2</td>  <td>0,82</td></tr>
+<tr><td>ADH</td> <td> 2</td>  <td>0,82</td></tr>
+<tr><td>ARA</td>  <td>2</td>  <td>0,82</td></tr>
+<tr><td>STARCH</td>  <td>2</td>  <td>0,82</td></tr>
+<tr><td>VP, MAN, SOR, SUC, GEL, AMY, MAL, N2, MEL.</td></tr>
+</table>
+
+</details>
+
+<BR><BR>
+<BR><BR>
+
     </span>
    </div>	
   </details>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

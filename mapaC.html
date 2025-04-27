@@ -36,10 +36,12 @@
 	        border: 0px solid #aaaaaa;
       }
     
-table, th, td {
+
+table, th, td {
   border: 1px solid blue;
   border-collapse: collapse;
- border-style: none;
+
+ border-style: none;
 }
 
 
@@ -141,28 +143,42 @@
         });
         window.layer16 = new KMLLayer({
           url: "https://cunovske-jazera-bez-odpadkov.github.io/chaolFill.kml" 
-        });*/
+        });
+*/
         
-       window.cyclosmLayer = new TileLayer({
-         //url: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-         //url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-         //url: "https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
-         //url: "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer"
-         //url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"
-         //url: "https://services.arcgisonline.com/arcgis/rest/services/World_Terrain_Base/MapServer" 
-         //url: "https://tile.openstreetmap.org/3/3/3.png"
-         //url: "https://a.tile.thunderforest.com/cycle/3/3/3.png?apiKey=246bbf04700848e7abafda5413372cae"
+
+       window.cyclosmLayer = new TileLayer({
+
+         //url: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
+
+         //url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+
+         //url: "https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
+
+         url: "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer"
+
+         //url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"
+
+         //url: "https://services.arcgisonline.com/arcgis/rest/services/World_Terrain_Base/MapServer" 
+
+         //url: "https://tile.openstreetmap.org/3/3/3.png"
+
+         //url: "https://a.tile.thunderforest.com/cycle/3/3/3.png?apiKey=246bbf04700848e7abafda5413372cae"
         });
         
         window.map = new Map({
           basemap: "topo-vector",    /*topo*/
-          layers: [window.cyclosmLayer]       /*layers: [layer,layer2]arcgis-imagery*/
+          layers: [window.cyclosmLayer]       /*layers: [layer,layer2]
+arcgis-imagery*/
         });
         window.view = new MapView({
           map: map,
-          center: [17.1752566, 48.044025], /* Longitude, latitude 17.175384, 48.038097*/
-          zoom: 14, /* Zoom level*/
-          container: "viewDiv" /*,popup: {autoOpenEnabled: false}*/
+          center: [17.1752566, 48.044025], /* Longitude, latitude 17.175384, 48.038097
+*/
+          zoom: 14, /* Zoom level
+*/
+          container: "viewDiv" /*,popup: {autoOpenEnabled: false}
+*/
         });
 
 	   const basemapToggle = new BasemapToggle({
@@ -177,10 +193,12 @@
 		     style:"ruler"
         });
         window.view.ui.add(scalebar, "bottom-left");
-      }
+
+      }
 
     require(["esri/config","esri/Map", "esri/views/MapView","esri/layers/KMLLayer","esri/layers/TileLayer","esri/widgets/ScaleBar","esri/widgets/BasemapToggle","esri/widgets/BasemapGallery"], esri);
-   
+
+   
     
 function ukazStavCheckboxov(){
   window.map.layers.add(window.cyclosmLayer);
@@ -270,7 +288,8 @@ function ukazStavCheckboxov(){
        window.map.layers.add(window.layer16);
   } else if (!document.getElementById("ostrovneV").checked){
        window.map.layers.remove(window.layer16);
-  }*/
+  }
+*/
     
  
 }
@@ -404,7 +423,8 @@ function checkboxKlik(element){
 	window.view.zoom = 13;  
   } else if ((element.id==="ostrovneV")&&(element.checked == false)){
        window.map.layers.remove(window.layer16);
-  }*/
+  }
+*/
 
 
 } 
@@ -548,7 +568,8 @@ function checkboxKlik(element){
 </span>&nbsp;&nbsp;
 <span class="zlta zlt"> 
 <input id="prolV" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
-</span>
+
+</span>
   </td>
   
   

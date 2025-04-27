@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet" href="cunovske.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <title>Čunovské jazerá</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      #viewDiv {
+        float: right;
+        padding: 0;
+        margin: 0;
+        height: 70%;
+        width: 100%;
+      }
+	 #feature-node {
+	        line-height: 1.5vh;
+	        font-size:calc(var(--velkostPisma)*1);
+        float: left;
+        width: 10%;
+        height: 100%;
+        padding: 0em;
+        overflow: noscroll;
+        max-height: 100%;
+        background:#000000;
+	        border: 0px solid #aaaaaa;
+      }
+    
+table, th, td {
+  border: 1px solid blue;
+  border-collapse: collapse;
+ border-style: none;
+}
+
+
+.zel {  accent-color: #00aa00; padding: 0.1rem;}
+.cer {  accent-color: #aa0000; padding: 0.1rem;}
+.mod {  accent-color: #0000aa; padding: 0.1rem;}
+.zlt {  accent-color: #aaaa00; padding: 0.1rem;}
+.cya {  accent-color: #00aaaa; padding: 0.1rem;}
+.mag {  accent-color: #aa00aa; padding: 0.1rem;}
+.ora {  accent-color: #ff7000; padding: 0.1rem;}
+.grn {  accent-color: #aaffbb; padding: 0.1rem;}
+.pnk {  accent-color: #ffc0cb; padding: 0.1rem;}
+
+
+.cervena{  color: #ffffff;background-color:#aa0000;border: 2px solid #ff0000;display: inline-block;}
+.modra{  color: #ffffff;background-color:#0000aa;border: 2px solid #0000ff;display: inline-block;}
+.zelena{  color: #ffffff;background-color:#00aa00;border: 2px solid #00ff00;display: inline-block;}
+.zlta{  color: #ffffff;background-color:#aaaa00;border: 2px solid #ffff00;display: inline-block;}
+.cyan{  color: #ffffff;background-color:#00aaaa;border: 2px solid #00ffff;display: inline-block;}
+.magenta{  color: #ffffff;background-color:#aa00aa;border: 2px solid #ff00ff;display: inline-block;}
+.oranzova{  color: #ffffff;background-color:#aa7000;border: 2px solid #ff7000;display: inline-block;}
+.green{  color: #ffffff;background-color:#70ff80;border: 2px solid #aaffbb;display: inline-block;}
+
+
+.cervenaH{  color: #ffffff;border: 2px solid #ff0000;display: inline-block;}
+.modraH{  color: #ffffff;border: 2px solid #0000ff;display: inline-block;}
+.zelenaH{  color: #ffffff;border: 2px solid #00ff00;display: inline-block;}
+.zltaH{  color: #ffffff;border: 2px solid #ffff00;display: inline-block;}
+.cyanH{  color: #ffffff;border: 2px solid #00ffff;display: inline-block;}
+.magentaH{  color: #ffffff;border: 2px solid #ff00ff;display: inline-block;}
+.oranzovaH{  color: #ffffff;border: 2px solid #ff7000;display: inline-block;}
+.greenH{  color: #ffffff;border: 2px solid #aaffbb;display: inline-block;}
+
+.chcbox {
+  width:2vh;
+  height:2vh;
+}
+    
+    
+    </style>
+
+    <script src="https://js.arcgis.com/4.24/"></script>
+    <script src="skript.js"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
+    <script>
+
+      //ARCGIS ESRI MAPA
+      function esri(esriConfig, Map, MapView, KMLLayer, TileLayer, ScaleBar, BasemapToggle, BasemapGallery) {
+
+        esriConfig.apiKey = "ACCESS_TOKEN";
+        /*window.layer1 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/prolLine.kml" 
+        });
+        window.layer2 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/prolFill.kml" 
+        });
+        window.layer3 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/zonaBline.kml" 
+        });
+        window.layer4 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/zonaBfill.kml" 
+        });
+        window.layer5 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/chvuLine.kml" 
+        });
+        window.layer6 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/chvuFill.kml" 
+        });
+        window.layer7 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/chkoLine.kml" 
+        });
+        window.layer8 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/chkoFill.kml" 
+        });
+
+        window.layer9 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/SKUEV0269line.kml" 
+        });
+        window.layer10 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/SKUEV0269fill.kml" 
+        });
+
+        window.layer11 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/SKUEV1269line.kml" 
+        });
+        window.layer12 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/SKUEV1269fill.kml" 
+        });
+
+        window.layer13 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/SKUEV2269line.kml" 
+        });
+        window.layer14 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/SKUEV2269fill.kml" 
+        });
+
+        window.layer15 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/chaolLine.kml" 
+        });
+        window.layer16 = new KMLLayer({
+          url: "https://cunovske-jazera-bez-odpadkov.github.io/chaolFill.kml" 
+        });*/
+        
+       window.cyclosmLayer = new TileLayer({
+         //url: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
+         //url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+         //url: "https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
+         //url: "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer"
+         //url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"
+         //url: "https://services.arcgisonline.com/arcgis/rest/services/World_Terrain_Base/MapServer" 
+         //url: "https://tile.openstreetmap.org/3/3/3.png"
+         //url: "https://a.tile.thunderforest.com/cycle/3/3/3.png?apiKey=246bbf04700848e7abafda5413372cae"
+        });
+        
+        window.map = new Map({
+          basemap: "topo-vector",    /*topo*/
+          layers: [window.cyclosmLayer]       /*layers: [layer,layer2]arcgis-imagery*/
+        });
+        window.view = new MapView({
+          map: map,
+          center: [17.1752566, 48.044025], /* Longitude, latitude 17.175384, 48.038097*/
+          zoom: 14, /* Zoom level*/
+          container: "viewDiv" /*,popup: {autoOpenEnabled: false}*/
+        });
+
+	   const basemapToggle = new BasemapToggle({
+          view: window.view,
+          nextBasemap:"arcgis-imagery" /*ine mapy: satellite imagery streets navigation dark-gray-vector light-gray-vector terrain oceans national-geographic osm*/
+        });
+	   window.view.ui.add(basemapToggle,"bottom-right");
+
+	   const scalebar = new ScaleBar({
+          view: window.view,
+	     unit:"metric",
+		     style:"ruler"
+        });
+        window.view.ui.add(scalebar, "bottom-left");
+      }
+
+    require(["esri/config","esri/Map", "esri/views/MapView","esri/layers/KMLLayer","esri/layers/TileLayer","esri/widgets/ScaleBar","esri/widgets/BasemapToggle","esri/widgets/BasemapGallery"], esri);
+   
+    
+function ukazStavCheckboxov(){
+  window.map.layers.add(window.cyclosmLayer);
+        
+  /*if (document.getElementById("prolH").checked){
+       window.map.layers.add(window.layer1);
+  } else if (!document.getElementById("prolH").checked){
+       window.map.layers.remove(window.layer1);
+  }
+  if (document.getElementById("prolV").checked){
+       window.map.layers.add(window.layer2);
+  } else if (!document.getElementById("prolV").checked){
+       window.map.layers.remove(window.layer2);
+  }
+  if (document.getElementById("chabH").checked){
+       window.map.layers.add(window.layer3);
+  } else if (!document.getElementById("chabH").checked){
+       window.map.layers.remove(window.layer3);
+  }
+  if (document.getElementById("chabV").checked){
+       window.map.layers.add(window.layer4);
+  } else if (!document.getElementById("chabV").checked){
+       window.map.layers.remove(window.layer4);
+  }
+
+  if (document.getElementById("chvuH").checked){
+       window.map.layers.add(window.layer5);
+  } else if (!document.getElementById("chvuH").checked){
+       window.map.layers.remove(window.layer5);
+  }
+  if (document.getElementById("chvuV").checked){
+       window.map.layers.add(window.layer6);
+  } else if (!document.getElementById("chvuV").checked){
+       window.map.layers.remove(window.layer6);
+  }
+
+  if (document.getElementById("chkoH").checked){
+       window.map.layers.add(window.layer7);
+  } else if (!document.getElementById("chkoH").checked){
+       window.map.layers.remove(window.layer7);
+  }
+  if (document.getElementById("chkoV").checked){
+       window.map.layers.add(window.layer8);
+  } else if (!document.getElementById("chkoV").checked){
+       window.map.layers.remove(window.layer8);
+  }
+
+  if (document.getElementById("SKUEV0269H").checked){
+       window.map.layers.add(window.layer9);
+  } else if (!document.getElementById("SKUEV0269H").checked){
+       window.map.layers.remove(window.layer9);
+  }
+  if (document.getElementById("SKUEV0269V").checked){
+       window.map.layers.add(window.layer10);
+  } else if (!document.getElementById("SKUEV0269V").checked){
+       window.map.layers.remove(window.layer10);
+  }
+
+  if (document.getElementById("SKUEV1269H").checked){
+       window.map.layers.add(window.layer11);
+  } else if (!document.getElementById("SKUEV1269H").checked){
+       window.map.layers.remove(window.layer11);
+  }
+  if (document.getElementById("SKUEV1269V").checked){
+       window.map.layers.add(window.layer12);
+  } else if (!document.getElementById("SKUEV1269V").checked){
+       window.map.layers.remove(window.layer12);
+  }
+
+  if (document.getElementById("SKUEV2269H").checked){
+       window.map.layers.add(window.layer13);
+  } else if (!document.getElementById("SKUEV2269H").checked){
+       window.map.layers.remove(window.layer13);
+  }
+  if (document.getElementById("SKUEV2269V").checked){
+       window.map.layers.add(window.layer14);
+  } else if (!document.getElementById("SKUEV2269V").checked){
+       window.map.layers.remove(window.layer14);
+  }
+
+  if (document.getElementById("ostrovneH").checked){
+       window.map.layers.add(window.layer15);
+  } else if (!document.getElementById("ostrovneH").checked){
+       window.map.layers.remove(window.layer15);
+  }
+  if (document.getElementById("ostrovneV").checked){
+       window.map.layers.add(window.layer16);
+  } else if (!document.getElementById("ostrovneV").checked){
+       window.map.layers.remove(window.layer16);
+  }*/
+    
+ 
+}
+window.addEventListener('load', function () {ukazStavCheckboxov();})
+
+function checkboxKlik(element){
+  /*if ((element.id==="prolH")&&(element.checked == true)){
+       window.map.layers.add(window.layer1);
+		window.view.center = [17.177370, 48.039381];  //17.1752566, 48.044025
+		window.view.zoom = 15;  
+  } else if ((element.id==="prolH")&&(element.checked == false)){
+       window.map.layers.remove(window.layer1);
+  }
+  if ((element.id==="prolV")&&(element.checked == true)){
+     window.map.layers.add(window.layer2);
+	window.view.center = [17.177370, 48.039381];
+  	window.view.zoom = 15;  
+  } else if ((element.id==="prolV")&&(element.checked == false)){
+       window.map.layers.remove(window.layer2);
+  }
+  if ((element.id==="chabH")&&(element.checked == true)){
+     window.map.layers.add(window.layer3);
+	window.view.center = [17.177370, 48.039381];
+  	window.view.zoom = 15;  
+  } else if ((element.id==="chabH")&&(element.checked == false)){
+       window.map.layers.remove(window.layer3);
+  }
+  if ((element.id==="chabV")&&(element.checked == true)){
+     window.map.layers.add(window.layer4);
+	window.view.center = [17.177370, 48.039381];
+	window.view.zoom = 15;  
+  } else if ((element.id==="chabV")&&(element.checked == false)){
+       window.map.layers.remove(window.layer4);
+  }
+
+  if ((element.id==="chvuH")&&(element.checked == true)){
+     window.map.layers.add(window.layer5);
+	window.view.center = [17.928891, 47.908936]; 
+	window.view.zoom = 10;  
+
+  } else if ((element.id==="chvuH")&&(element.checked == false)){
+       window.map.layers.remove(window.layer5);
+  }
+  if ((element.id==="chvuV")&&(element.checked == true)){
+     window.map.layers.add(window.layer6);
+	window.view.center = [17.928891, 47.908936];
+	window.view.zoom = 10;  
+
+
+  } else if ((element.id==="chvuV")&&(element.checked == false)){
+       window.map.layers.remove(window.layer6);
+  }
+
+  if ((element.id==="chkoH")&&(element.checked == true)){
+     window.map.layers.add(window.layer7); 
+	window.view.center = [17.578215, 47.910073];
+	window.view.zoom = 10;  
+
+  } else if ((element.id==="chkoH")&&(element.checked == false)){
+       window.map.layers.remove(window.layer7);
+  }
+  if ((element.id==="chkoV")&&(element.checked == true)){
+     window.map.layers.add(window.layer8);
+	window.view.center = [17.578215, 47.910073]; 
+	window.view.zoom = 10;  
+
+  } else if ((element.id==="chkoV")&&(element.checked == false)){
+       window.map.layers.remove(window.layer8);
+  }
+
+  if ((element.id==="SKUEV0269H")&&(element.checked == true)){
+     window.map.layers.add(window.layer9);
+	window.view.center = [17.173853, 48.046230];
+	window.view.zoom = 13;  
+   } else if ((element.id==="SKUEV0269H")&&(element.checked == false)){
+       window.map.layers.remove(window.layer9);
+       document.getElementById("ostrovne").checked=false;
+  }
+  if ((element.id==="SKUEV0269V")&&(element.checked == true)){
+       window.map.layers.add(window.layer10);
+	window.view.center = [17.173853, 48.046230];
+	window.view.zoom = 13;  
+  } else if ((element.id==="SKUEV0269V")&&(element.checked == false)){
+       window.map.layers.remove(window.layer10);
+       document.getElementById("ostrovne").checked=false;
+  }
+
+  if ((element.id==="SKUEV1269H")&&(element.checked == true)){
+       window.map.layers.add(window.layer11);
+	window.view.center = [17.173853, 48.046230];
+	window.view.zoom = 13;  
+  } else if ((element.id==="SKUEV1269H")&&(element.checked == false)){
+       window.map.layers.remove(window.layer11);
+       document.getElementById("ostrovne").checked=false;
+  }
+  if ((element.id==="SKUEV1269V")&&(element.checked == true)){
+       window.map.layers.add(window.layer12);
+	window.view.center = [17.173853, 48.046230];
+	window.view.zoom = 13;  
+  } else if ((element.id==="SKUEV1269V")&&(element.checked == false)){
+       window.map.layers.remove(window.layer12);
+       document.getElementById("ostrovne").checked=false;
+  }
+
+  if ((element.id==="SKUEV2269H")&&(element.checked == true)){
+       window.map.layers.add(window.layer13);
+	window.view.center = [17.173853, 48.046230];
+	window.view.zoom = 13;  
+  } else if ((element.id==="SKUEV2269H")&&(element.checked == false)){
+       window.map.layers.remove(window.layer13);
+  }
+  if ((element.id==="SKUEV2269V")&&(element.checked == true)){
+       window.map.layers.add(window.layer14);
+	window.view.center = [17.173853, 48.046230];
+	window.view.zoom = 13;  
+  } else if ((element.id==="SKUEV2269V")&&(element.checked == false)){
+       window.map.layers.remove(window.layer14);
+  }
+
+  if ((element.id==="ostrovneH")&&(element.checked == true)){
+     window.map.layers.add(window.layer15);
+	window.view.center = [17.173853, 48.046230];
+	window.view.zoom = 13;  
+  } else if ((element.id==="ostrovneH")&&(element.checked == false)){
+       window.map.layers.remove(window.layer15);
+
+  }
+  if ((element.id==="ostrovneV")&&(element.checked == true)){
+     window.map.layers.add(window.layer16);
+	window.view.center = [17.173853, 48.046230];
+	window.view.zoom = 13;  
+  } else if ((element.id==="ostrovneV")&&(element.checked == false)){
+       window.map.layers.remove(window.layer16);
+  }*/
+
+
+} 
+
+     
+    </script>
+
+  </head>
+
+
+
+<body onload="/*if(window.location.hash!='#NO'){testMenu('MC');}*/" lang=SK>
+ <div class="popiskaEsri">
+  <div id="feature-node" class="esri-widget" style="background:var(--pozadie)">
+ <span style="background-color:#111111; border: 1px solid #ffc0cb;padding: 0.3rem;margin: 0.3rem; display: inline-block;">
+
+   <table>
+     <tr>
+       <td colspan=10 style="background:black;text-align:left">
+   
+	  <label style="color:#ffc0cb;vertical-align:center;"><b> CHA OSTROVNÉ LÚČKY:</b></label>
+     
+       </td>
+     </tr>
+<tr>
+<td>
+  <label style="color:#aaffbb;vertical-align: 0%;"> CHA <br>Ostrovné <br>lúčky</label>
+</td>
+<td> 
+  <span class="greenH grn">
+    <input id="ostrovneH" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox"> 
+  </span>&nbsp;&nbsp;
+  <span class="green grn">
+    <input id="ostrovneV" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox"> 
+  </span>
+</td>
+<td>
+<label style="color:#ff00ff;vertical-align: 0%;">SKUEV 0269</label>
+</td>
+<td>
+<span class="magentaH mag"> 
+<input id="SKUEV0269H" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="magenta mag"> 
+<input id="SKUEV0269V" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</td>
+<td>
+	<label style="color:#00ff00;vertical-align: 0%;">SKUEV 1269</label>
+</td>
+<td>
+<span class="zelenaH zel"> 
+<input id="SKUEV1269H" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="zelena zel"> 
+<input id="SKUEV1269V" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</td>
+<td>
+	<label style="color:#ff7000;vertical-align: 0%;">SKUEV 2269</label>
+</td>
+<td>
+<span class="oranzovaH ora"> 
+<input id="SKUEV2269H" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="oranzova ora"> 
+<input id="SKUEV2269V" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</td>
+<td>
+	<label style="color:#ff0000;vertical-align: 0%;">Zóna <br> B</label>
+</td>
+<td>
+<span class="cervenaH cer"> 
+<input id="chabH" type="checkbox"  checked="checked" onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="cervena cer"> 
+<input id="chabV" type="checkbox" checked="checked"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+</td>
+</tr>
+</table>
+</span>
+
+<br>
+<table>
+<tr>
+ <td>
+    
+<span style="background-color:#001100; border: 1px solid #0000ff;padding: 0.3rem; margin: 0.3rem; display: inline-block;">
+<table>
+<tr>
+  <td>
+<label style="color:#0000ff;vertical-align: 50%;">CHVÚ DUNAJSKÉ LUHY</label>
+  </td>
+  <td>
+ <span class="modraH mod"> 
+<input id="chvuH" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="modra mod"> 
+<input id="chvuV" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</td>
+</span>
+</tr>
+</table>
+</span>
+   
+  </td>
+  <td>
+    
+<span style="background-color:#000011; border: 1px solid #00ffff;padding: 0.3rem;margin: 0.3rem; display: inline-block;">
+<table>
+<tr>
+ <td>
+<label style="color:#00ffff;vertical-align: 50%;">CHKO DUNAJSKÉ LUHY</label>
+</td>
+ <td>
+<span class="cyanH cya"> 
+<input id="chkoH" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="cyan cya"> 
+<input id="chkoV" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+ </td>
+ </tr>
+</table>
+</span>
+
+ </td>
+  <td>
+    
+<span style="background-color:#000000; border: 1px solid #ffff00;padding: 0.3rem;margin: 0.3rem; display: inline-block;">
+<table>
+<tr>
+ <td>
+ <label style="color:#ffff00;vertical-align: 50%;">PR OSTROVNÉ LÚČKY &nbsp;&nbsp;&nbsp;</label>
+ </td>
+  <td>
+<span class="zltaH zlt"> 
+<input id="prolH" type="checkbox" onclick="checkboxKlik(this)" class="chcbox">
+</span>&nbsp;&nbsp;
+<span class="zlta zlt"> 
+<input id="prolV" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+</span>
+  </td>
+  
+  
+ <td>
+<label style="color:#ffff00;vertical-align: top;">&nbsp;&nbsp;zaniknutá</label>
+ </td>
+ </tr>
+</table>
+</span>
+    
+ </td>
+ </tr>
+</table>
+    
+</span>
+</div>
+</div>
+<div id="viewDiv"></div>
+
+  </body>
+</html>
+ 
+
+

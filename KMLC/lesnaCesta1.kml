@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>lesnaCesta1.kml</name>
+	<StyleMap id="line-1267FF-5000-nodesc">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-1267FF-5000-nodesc-normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-1267FF-5000-nodesc-highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="line-1267FF-5000-nodesc-highlight">
+		<BalloonStyle>
+			<text><![CDATA[<h3>$[name]</h3>]]></text>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffff00ff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Style id="line-1267FF-5000-nodesc-normal">
+		<BalloonStyle>
+			<text><![CDATA[<h3>$[name]</h3>]]></text>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffff00ff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>lesnaCesta1</name>
+		<styleUrl>#line-1267FF-5000-nodesc</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				17.17078,48.03907,0 17.17071,48.03918,0 17.17066,48.03927,0 17.17059,48.03936,0 17.17021,48.03967999999999,0 17.17009,48.0398,0 17.16994,48.03995,0 17.16992,48.03997,0 17.16984,48.04008,0 17.16982,48.04011,0 17.16974,48.04020000000001,0 17.16966,48.04027,0 17.1695,48.04039999999999,0 17.16949,48.04041,0 17.16936,48.04055,0 17.16922,48.04071,0 17.1692,48.04074,0 17.16907,48.04105,0 17.169,48.04122,0 17.16899,48.04122,0 17.1688,48.04155,0 17.16857,48.04189000000001,0 17.16846,48.04205,0 17.1683,48.04227,0 17.16824,48.0425,0 17.16831,48.04274,0 17.16786,48.04339,0 17.16763,48.04372,0 17.16752,48.04388,0 17.167,48.04464,0 17.16684,48.04486,0 17.16637,48.04550999999999,0 17.16625,48.04567,0 17.16615,48.0458,0 17.16568,48.04648,0 17.16565,48.04652,0 17.16498,48.04692,0 17.1646,48.04728,0 17.16457,48.04732,0 17.16447,48.04742999999999,0 17.16421,48.04775,0 17.16412,48.04786,0 17.16363,48.04836,0 17.1629,48.0491,0 17.16216,48.04991,0 
+			</coordinates>
+		</LineString>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10201"></atom:link>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,106 @@
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JHRV5ETT2Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JHRV5ETT2Z');
+</script>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Čunovské jazerá</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="mediaScreen.css">
+<style type="text/css">
+
+  ul {list-style: none;padding: 0px;margin: 0px;}
+  ul li {display: block;position: relative;float: left;border:1px solid #000;}
+  li ul {display: none;}
+  ul li a {display: block;padding: 5px 10px 5px 10px;text-decoration: none;
+           white-space: nowrap;color: #fff;}
+  ul li a:hover {background: #f00;}
+  li:hover ul {display: block; position: absolute;}
+  li:hover li {float: none;}
+  li:hover a {background: #f00;}
+  li:hover li a:hover {background: #000;}
+  #drop-nav li ul li {border-top: 0px;}
+  .menu {
+    overflow: visible;
+    background-color: #0000a0;
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+  }
+</style>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  var sirka1 = document.getElementById('odpadky').getBoundingClientRect().width;
+  var sirka2 = document.getElementById('ochrana').getBoundingClientRect().width;
+  var sirka3 = document.getElementById('mapy').getBoundingClientRect().width;
+  var vyska = document.getElementById('menuX').getBoundingClientRect().height;
+  //alert(vyska);
+  var odst=3;
+  //document.getElementById('odpadky').offsetWidth
+       document.getElementById('roky').style.width=(sirka1-odst)+"px";
+       document.getElementById('voda').style.width=(sirka2-odst)+"px";
+       document.getElementById('MAPYcz').style.width=(sirka3-odst)+"px";
+});
+</script>
+</head>
+<body>
+<iframe src="uvod.html" name="iframe_a" id="okno" style="width:100%; height:95%; position:fixed; top:34; left:0; border:none; ">zvolte iný prehliadač</iframe>
+<div class="menu" id="menuX">
+<header class="main-header">
+<ul id="drop-nav">
+<li><a href="uvod.html" target="iframe_a">ÚVOD</a></li>
+<li><a href="vznik.html?interframe=true" target="iframe_a">HISTÓRIA</a>
+    <ul>
+	<li><a href="vznik.html?interframe=true" target="iframe_a">ÚVOD&nbsp;&nbsp;</a></li>
+	<li><a href="tazba.html?interframe=true" target="iframe_a">ŤAŽBA&nbsp;&nbsp;</a></li>
+	<li><a href="clankypopis.html?interframe=true" target="iframe_a">ČLÁNKY&nbsp;&nbsp;</a></li>
+    <li><a href="zdroje.html?interframe=true" target="iframe_a">ZDROJE&nbsp;&nbsp;</a></li>
+    </ul>
+</li>
+
+  <li id="odpadky"><a href="#">ODPADKY</a>
+    <ul>
+      <li id="roky"><a href="https://cunovske-jazera-bez-odpadkov.github.io/odpadky/2018.html" target="iframe_a">2018</a></li>
+      <li><a href="https://cunovske-jazera-bez-odpadkov.github.io/odpadky/2019.html"  target="iframe_a">2019</a></li>
+      <li><a href="https://cunovske-jazera-bez-odpadkov.github.io/odpadky/2020.html"  target="iframe_a">2020</a></li>
+      <li><a href="https://cunovske-jazera-bez-odpadkov.github.io/odpadky/2021.html"  target="iframe_a">2021</a></li>
+      <li><a href="https://cunovske-jazera-bez-odpadkov.github.io/cunovske/2022.html"  target="iframe_a">2022</a></li>
+    </ul>
+  </li>
+   <li id="ochrana"><a href="#">OCHRANA</a>
+    <ul>
+      <li id="voda"><a href="voda.html" target="iframe_a">VODA</a></li>
+      <li id="priroda"><a href="priroda.html"  target="iframe_a">PRÍRODA</a></li>
+    </ul>
+  </li>
+   <li id="mapy"><a href="#">MAPY&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <ul>
+      <li id="MAPYcz"><a href="mapyCZ.html" target="iframe_a">MAPYcz</a></li>
+      <li id="ArcGIS"><a href="mapaESRI.html"  target="iframe_a">ArcGIS</a></li>
+      <li id="ArcGIS"><a href="mapaPHO.html"  target="iframe_a">PHO</a></li>
+	 <li><a href="https://premeny.github.io/cunovskejazera/" target="_blank">VZNIK</a></li>
+    </ul>
+  </li>
+
+   <li id="ine"><a href="#">INÉ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <ul>
+      <li id="VIDEO"><a href="videa.html" target="iframe_a">VIDEÁ</a></li>
+      <li id="FOTO"><a href="fotky.html"  target="iframe_a">FOTKY</a></li>
+    </ul>
+  </li>
+
+
+
+</ul>  
+</header>
+</div>
+</body>
+</html>

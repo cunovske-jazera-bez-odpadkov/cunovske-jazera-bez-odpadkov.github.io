@@ -1,0 +1,104 @@
+var clanok01Predhistoria;
+
+clanok01Predhistoria='<historia><povojne><clanok01><![CDATA[\
+<details class="clanok">\
+<summary>\
+<span class="rozbal">\
+01.07.1974 - Z minulosti RUSOVIEC\
+</span>\
+</summary>\
+<div class="details-container">\
+<span class="autor">\
+autor:  Mária Stieberová<BR>\
+zdroj: Vlastivedný časopis č.3\
+</span>\
+<span class="clanok">\
+<BR><BR>\
+Zákon SNR č. 63 Zb. z 8. júla 1971 okrem iného upravil aj územnú rozlohuhu Bratislavy, hlavného mesta Slovenskej socialistickej republiky. Z okresu Bratislava-vidiek boli vyčlenené aj obce bratislavského predmostia - Jarovce, Rusovce a Čunovo - zemepisne patriace už do Zadunajska. Z týchto troch obcí hrali v minulosti najvýznamnejšiu úlohu Rusovce. Postavenie Rusoviec predurčila aj ich poloha na podunajskej obchodnej ceste, ktorá od nepamäti spájala Východ so Západom.\
+<br><br>\
+Osídlenie Rusoviec siaha hlboko do minulosti. Prvé stopy osídlenia nachádzame zo staršej doby bronzovej. Svoj vrchol v predhistorickej dobe však Rusovce dosiahli v prvých piatich storočiach nášho letopočtu, teda v posledných storočiach existencie rímskej ríše. Aby Rimania mohli úspešne čeliť náporom barbarských kmeňov, vybudovali na hraničnej čiare impéria systém pevností, tzv. Limes romanus. Aj na mieste dnešných Rusoviec vybudovali tábor, ktorý poznáme pod menom Gerulata. Časove najstaršie archeologické nálezy z Gerulaty sa zatiaľ dajú zaradiť do polovice 1. storočia n. l. Stálu posádku dostala Gerulata pravdepodobne za cisára Domiciána (81-96) alebo Trajána (98-117). V štyridsiatych rokoch 5. storočia Gerulatu dôkladne prestavali. Na mieste starších obytných budov postavili fórum so štvorcovým stĺporadím, uprostred so studňou. Fórum plnilo svoju úlohu do polovice 4. storočia. Jeho zánik je neznámy, ale už okolo roku 373 jeho časť slúžila ako sklad obilia. O niečo neskôr sa v Gerulate usadzujú žoldnierske jednotky Gótov. Po páde rímskeho panstva v Podunajsku a po zániku rímskej ríše vôbec zaniká aj Gerulata. Rímsku ríšu zmietlo sťahovanie národov, ktorého začiatok možno datovať na koniec 4. storočia.\
+<br><br>\
+Už pred 6. storočím začínajú prenikať zo zakarpatskej oblastí na naše územie slovanské kmene. Slovania sa usadili aj na troskách antickej Gerulaty. Kontinuitu slovanského osídlenia na území Rusoviec možno doložiť počnúc veľkomoravským obdobím. Prítomnosť slovanského etnika v Rusovciach z ďalších storočí potvrdzujú aj miestne slovanské názvy z 13. storočia. Slovania v Zadunajsku v priebehu 13. a 14. storočia ustupujú a asimilujú sa medzi Maďarmi a neskôr aj medzi Nemcami. S touto skutočnosťou bude súvisieť aj vývoj pomenovania Rusoviec v stredoveku. Najstaršie pomenovanie, ktoré nachádzame v 13. a 14. storočí, je Uruzwar (Vruzwar); v 15. storočí sa mení na Orozwar. Nemecký názov Karlburg je doložený od druhej polovice 14. storočia v rôznych variantoch (Kerselburch, Kerelburg, Karelburg, Kerchenburg, Kerglburg, Karlaburgk). Nemecký a maďarský názov sa súbežne používal temer až do súčasnosti.\
+<br><br>\
+Prvá písomná zmienka o Rusovciach je zo začiatku 13. storočia, z roku 1208. V listine kráľa Ondreja II., v ktorej potvrdzuje založenie benediktínskeho opátstva v Lébényi (MLR), sa spomínajú aj dnešné Rusovce ako ,,terra Uruzwar" v susedstve kláštorných majetkov.\
+<br><br>\
+Rusovce už v prvých storočiach existencie uhorského kráľovstva plnili úlohu významnej pevnosti v pohraničnej oblasti oproti susednému Rakúsku. V súvislosti s touto úlohou je aj prvá zmienka o hrade v Rusovciach z roku 1266. V tomto roku daroval Rusovce spolu aj s hradom kráľ Belo IV. Herrandovi, kráľovskému koniarovi a županovi Trenčianskej a Mošonskej župy. Pred ním vlastnil Rusovce Blažej a Baltazár Cheken, ktorí však umreli, a tak sa majetok dostal späť do rúk kráľa. Koncom 13. storočia (1297) potomok Herranda, Jakub, vrátil kráľovi späť Rusovce a Rajku (MLR) ako výmenu za Monyorókerék (Vašvárska župa, dnes Rakúsko). V 14 storočí patrili Rusovce pravdepodobne do panstva Magyaróvár alebo boli v rukách kráľa, ktorý ich podľa potreby dával do zálohu. Začiatkom 15. storočia (1410) mala Rusovce v zálohu šľachtická rodina Tompekovcov, po nich v rokoch 1439-1452 Štefan a Juraj Rozgoňovci. V druhej polovici 15. storočia a začiatkom 16. storočia Rusovce znovu vlastnili Tompekovci.\
+<br><br>\
+Hospodárska úloha Rusoviec v stredoveku tiež nebola bezvýznamná. Túto úlohu predurčila ich poloha na podunajskej obchodnej ceste. Niekedy na prelome 14. a 15. storočia zriadili v Rusovciach tridsiatkovú mýtnu stanicu. Zatiaľ prvá potvrdená zmienka o tejto stanici je z roku 1446, možno však predpokladať už jej skoršiu existenciu. Tridsiatkovú stanicu, ktorá bola kráľovským majetkom, dostalo roku 1450 do prenájmu mesto Bratislava. K rusovskej tridsiatkovej stanici patrili v druhej polovici 15. storočia aj filiálky v Jarendorffe a Zurndorffe. Vzhľadom na situovanie obchodných ciest, ktoré spájali Uhorsko s Rakúskom, predpokladáme, že filiálka v Jarendorffe bola v dnešnej obci Deutsches Jahrndorff (Rakúsko) na spojnici Magyaróvár-Prellenkirchen-Viedeň (neskoršie poštová cesta). Filiálka v Zurndorffe (dnes Zurndorf, Rakúsko) obhospodarovala politavskú cestu. Tridsiatková stanica v Rusovciach existovala aj v 16. storočí (posledná zmienka o nej je zatiaľ z roku 1571).\
+<br><br>\
+O spoločenskom postavení Rusoviec ako stredovekej osady predbežne nemáme veľa dokladov. V druhej polovici 14. storočia (1365) sa v Rusovciach spomína trh, na ktorom žiadali zaplatiť od Bratislavčanov mýto napriek ich výsadám. Ináč v písomných prameňoch z 13. a 14. storočia sa Rusovce spomínajú ako dedina, t. j. villa. V prvej polovici 15. storočia (roku 1439) objavuje sa po prvý raz označenie oppidum, t. j. mestečko. Pod pojmom mestečko rozumieme osadu, ktorá síce patrí zemepánovi, ale ako celok má určité výsady. Na čele jej samosprávy stojí richtár a hlavne môže vydržiavať trhy. V roku 1447 nachádzame zmienku o richtárovi a prísažných v Rusovciach a roku 1478 opätovne označenie oppidum. Na základe týchto neúplných údajov nemožno síce ešte jednoznačne tvrdiť, že Rusovce mali už výsady mestečka, ale predpokladáme, že ich mohli dostať v priebehu 15. storočia (ale nie je vylúčené ani 14. storočie)\
+<br><br>\
+Historický vývoj Rusoviec a võbec celej pohraničnej časti Zadunajska ovplyvňovala exponovaná poloha, lebo tade prechádzali cesty, spájajúce východ so západom. Toto územie bolo často svedkom ozbrojených konfliktov a neskôr aj postupu tureckých vojsk smerom na Viedeň. Tieto okolnosti veľmi nepriaznivo pôsobili na ich vývoj. V prvej polovici 16. storočia prichádzajú aj do Rusoviec Chorváti, ktorí sa usadzujú na opustenej pôde a doplňujú rady zdecimovaného domáceho obyvateľstva. Chorváti boli nútení opustiť svoju vlasť pred tureckým nebezpečenstvom, postupne sa posúvali do severnejších častí Uhorska, až sa napokon natrvalo usadili hlavne na rakúsko-uhorskom pohraničí.\
+<br><br>\
+Súpis Mošonskej župy z roku 1598 uvádza Rusovce medzi mestečkami. Medzi zemanmi, ktorí vlastnili niekoľko usadlostí, nachádzame aj Chorvátov (Zlatkovich, Horváth). Podľa kanonických vizitácií zo 17. storočia (1659, 1663 a 1683) sa Rusovce označujú ako chorvátska osada s malou maďarskou a nemeckou menšinou. Miestny farár a učiteľ boli takisto Chorváti.\
+<br><br>\
+Rusovce boli pôvodne poľnohospodárskou osadou, ale keď sa stali mestečkom, začína sem zákonite prenikať obchod a remeslá. Chorváti, ktorí sa tu v 16. storočí usadili a v 17. storočí boli temer ich výlučnými obyvateľmi, zaoberali sa roľníctvom. S rozširovaním obchodu a remesiel prenikajú do Rusoviec opäť iné národnosti, hlavne Nemci a čiastočne aj Židia. V súpise obcí Uhorska z roku 1773 sa Rusovce označovali ako prevažne chorvátska osada, ale už na konci toho istého storočia (1786) ako zmiešané nemecko-chorvátske mestečko.\
+<br><br>\
+Štefan Zichy, predseda Uhorskej komory, získava roku 1646 panstvo Rusovce. Zichyovci vlastnili však v Rusovciach majetky už aj v 16. storočí (napr. mošonský podžupan Juraj Zichy roku 1579) Spomínaný Štefan Zichy získal roku 1655 barónský a roku 1679 aj grófsky titul. Jeho vnuk tiež Štefan bol zakladateľom rusovskej línie rodu Zichyovcov. Na dve storočia sa Zichyovci stali takmer výlučnými zemepánmi Rusoviec. Popri nich tu mali menšie pozemkové vlastníctvo aj niekoľkí ďalší šľachtici.\
+<br><br>\
+Podľa súpisu poddaných mestečka Rusovce z roku 1769 boli tu zemepánmi gróf Štefan Zichy de Vasonkeő, barón Kullmer, Ján Csiba de Nagy Abony, František Zichy, Jozef Jaklin, Juraj Bernáth a Ján Harsáni. V ďalšom súpise (z roku 1773) mal gróf Zichy de Vasonkeő 92 poddaných, 2 želiarov s domom a 50 želiarov bez domu, vdova Jána Csibu (rod. Júlia Zichy) 8 poddaných a 8 želiarov bez domu František Zichy 26 poddaných a 16 želiarov bez domu, Jozef Jaklin 10 poddaných a 5 želiarov bez domu, Jozef Bernáth 11 poddaných a 9 želiarov bez domu.\
+<br><br>\
+Postavenie poddaných v období druhého nevolníctva bolo veľmi ťažké. O ich ťažkej situácii na rusovskom panstve svedčia sťažnosti a vzbury proti nesmiernemu zaťažovaniu poddanskými povinnosťami. Vzrastajú nepokoje najmä v druhej polovici 18. storočia. Táto situácia v celom Uhorsku prinútila panovníčku Máriu Teréziu vykonať poddanskú reformu, ktorej úlohou bolo zosúladiť pomer medzi feudálnou rentou a rozsahom užívanej pôdy. Výsledkom reformy bolo zavedenie tzv. tereziánskeho urbáru. Podľa neho poddaní v Rusovciach boli povinní za intravilán platiť poplatok 1 zl. ročne; robotné povinnosti sa od jednej celej usadlosti stanovili na 52 dní roboty so záprahom alebo na 104 dní ručnej roboty, želiari boli povinní ročne odpracovať 18 dní ručnej roboty a želiari bez domu 12 dní; v naturáliách od jednej usadlosti dávali 2 kapúnov, 2 sliepky, 12 vajec, 1/2 holby masti, 1 siahu dreva a 6 funtov priadze; deviatok bol stanovený v robotnom ekvivalente. Za cisára Jozefa II. vykonalo sa v Uhorsku v rokoch 1784-1787 prvé sčítanie ľudu. Podľa neho bolo v Rusovciach 223 domov, ktoré obývalo 442 rodín v celkovom počte 2003 obyvateľov. Z údajov sčítacej komisie dostávame prvý bezpečný pohľad na sociálnu štruktúru obyvateľstva. Z dospelých mužov (obyvateľov mužského pohlavia bolo 1014) boli 2 kňazi, 3 zemani, 1 úradník, 47 mešťanov, 98 roľníkov, 94 dedičov mešťanov a roľníkov, 236 želiarov a 41 v iných povolaniach.\
+<br><br>\
+Vychádzajúc z údajov sčítacej komisie môžeme usudzovať, že zemepán vlastnil veľké rozlohy alodiálnej pôdy, na ktorej hospodáril vo vlastnej réžii. Na tejto pôde pracovali želiari za odmenu. Pracovalo sa na nej aj v rámci robotných povinností. V mestečku žilo veľa remeselníkov a obchodníkov (kategória mešťanov a iné povolania). Možno teda predpokladať aj existenciu cechov. Zatiaľ máme o tom dva doklady: hrnčiari z Rusoviec od roku 1650 mali povolené vstupovať do bratislavského mestského cechu; druhý, časove mladší údaj svedčí o existencii spoločného cechu kolárov, kováčov a debnárov zo začiatku 19. storočia.\
+<br><br>\
+V prvej polovici 19. storočia (1836) žilo v mestečku Rusovce 2094 obyvateľov. Poddaní roľníci hospodárili na 142 celých usadlostiach, ku ktorým patrilo 2607 jutár oráčiny a 131 pokosov lúk. Na Dunaji pracovali 4 vodné mlyny, v mestečku bol pivovar a veľa remeselníckych dielní. V polovici toho istého storočia (1851) sa Rusovce označujú ako zmiešané nemecko-chorvátske mestečko, ktoré malo 1910 obyvateľov (z toho 1100 rím.kat., 350 ev. a. v. a 460 židovského náboženstva). V mestečku mali všetky tri konfesie svoje sakrálne objekty, ďalej bol tu aj pivovar, vodné mlyny na Dunaji a hostinec. Roľníci hospodárili na 752 jutrách druhotriednej oráčiny, na 1402 jutrách treťotriednej, na 453 jutrách štvrtotriednej oráčiny a na 16 jutrách lúk. Gazdovia, vlastniaci aj kone, zaoberali sa aj povozníctvom. Vzhľadom na to, že v tomto období bolo už poddanstvo zrušené, o bývalých alodiálnych pozemkoch môžeme hovoriť ako o veľkostatkoch a o bývalých zemepánoch ako o veľkostatkároch. V Rusovciach bolo až 49% pôdy v rukách statkárov (1895). Nepomerne k tomu bol veľký počet bezzemkov, bývalých hofierov a želiarov, ktorí pracovali za ťažkých podmienok na veľkostatkoch ako bíreši, teda námezdne pracujúci.\
+<br><br>\
+Rusovce od 17. storočia v priebehu 18. storočia a čiastočne ešte i v 19. storočí mali vo vývoji stúpajúcu tendenciu. Dôkazom toho je pozvoľný prírastok obyvateľstva (vrchol v prvej polovici 19. storočia, potom už pokles), zloženie obyvateľstva a napokon aj stavebná činnosť z tohto obdobia. Hrad v Rusovciach, spomínaný už roku 1266, existoval počas celý feudalizmus. Zmienky máme o ňom priebežne cez všetky storočia. Začiatkom 19. storočia sa spomína ako najkrajší v celej Mošonskej župe. Bol súčasťou a zároveň aj sídlom panstva Rusovce. V druhej polovici 19. storočia ho prestavali na kaštieľ v tzv. windsorskom slohu, a tak sa zachoval do dnešných čias. Kaštieľ v Rusovciach je dnes sídlom Slovenského ľudového umeleckého kolektívu. Z 18. storočia pochádza ešte niekoľko posledných sedliackych domov s barokovými štítmi. Sakrálne objekty v Rusovciach pochádzajú zo 17. storočia, a to kostol v parku kaštieľa z roku 1613 a farský kostol z roku 1662. Kostol v parku má staršie základy asi z 13. stor. Voľné plastiky s náboženskými motívmi sú z 18. storočia (morový stĺp z roku 1715 a barokové súsošie na hlavnej ceste tiež z toho obdobia). Ev. a. v. filiálny kostol postavili roku 1829. Do stavebnej činnosti môžeme zahrnúť aj výstavbu dunajskej hrádze, ktorá bola postavená v rokoch 1775-1777 podľa projektu inžiniera Kischa.\
+<br><br>\
+Na prelome 19. a 20. storočia obec Rusovce (po reforme verejnej správy v druhej polovici 19. storočia stratili výsadné postavenie mestečka) sa rozprestierala na celkovej pôdnej rozlohe 6097 katastrálnych jutár. Počet obyvateľstva mal kolísavú tendenciu: v roku 1890 obyvateľov, 1910 -1668 obyvateľov, 1900 1711 1802 obyvateľov. V roku 1910 -žilo na farchu obce 9 chudobných a 2 siroty. Rusovce boli sídlom obvodného notárskeho úradu, obvodného lekára, poštového úradu, mali telegraf, sporiteľňu a železničnú stanicu. V roku 1900 z celkového počtu obyvateľstva v poľnohospodárstve pracovalo 871 osôb, v remeslách 357, v obchode 42 a v iných povolaniach 441 osôb; roku 1910 v poľnohospodárstve 993 osôb, v remeslách 419, v obchode 35 a v iných povolaniach 355 osôb. Poľnohospodárstvom sa zaoberajúce obyvateľstvo roku 1895 chovalo 354 koní, 813 kusov hovädzieho dobytka a 373 ošípaných; roku 1911 321 koní, 901 kusov hovädzieho dobytka a 650 ošípaných.\
+<br><br>\
+Zichyovský veľkostatok koncom 19. storočia mení v Rusovciach svojho majiteľa. Najprv prechádza na krátke obdobie do rúk rodiny Henckel-Donnersmark a potom až do roku 1945 sú jeho vlastníkmi Štefánia a Elemír Lónyay. Lónyayovci obývali aj kaštieľ s rozsiahlym anglickým parkom, ktorý pomaly prechádza do lužného lesa.\
+<br><br>\
+Po prvej svetovej vojne, po štátoprávnom usporiadaní bývalej Rakúsko-uhorskej monarchie, Rusovce spolu s Jarovcami a Čunovom pripadli k Maďarsku. Rusovce - pod úradným maďarským názvom „Oroszvár" - patrili do Mošonskej župy, do okresu Rajka a boli sídlom obvodného notárskeho úradu. Obdobie medzi dvoma svetovými vojnami bolo veľmi ťažké pre nemajetné vrstvy obyvateľstva. Pracovných možností v Rusovciach bolo málo, priemyselné strediská v Maďarsku pomerne vzdialené a Bratislava so svojimi továrňami bola za hranicami. Z tohto dôvodu veľa Rusovčanov chodilo na sezónne práce do iných častí Maďarska i do susedného Rakúska.\
+<br><br>\
+Podľa sčítania ľudu roku 1930 v Rusovciach bývalo 1678 osôb a roku 1940 1708. V roku 1930 z tohto počtu bolo 1212 Nemcov, 435 Maďarov a 13 Chorvátov. Roľníci vlastnili 203 koní, 525 kusov hovädzieho dobytka a až 1083 kusov ošípaných. U majetnejších gazdov sa objavuje aj poľnohospodárska mechanizácia, ako mláťačky, motorové pluhy a rôzne hnacie stroje. Pôda v Rusovciach bola vhodná aj na pestovanie ovocných stromov. Ovocinárstvu sa začali venovať až od 19. storočia. V roku 1895 bolo v Rusovciach 8258 ovocných stromov, roku 1935 o niečo menej - 7736.\
+<br><br>\
+Druhá svetová vojna mala aj na Rusovce negatívny vplyv. Poľnohospodárstvo zaznamenalo veľký úpadok svojím extenzívnym charakterom, ktorý zapríčinili vojnové udalosti, obsadenie obce nemeckou armádou, kontribúcie a napokon i priame boje v posledných dňoch vojny v katastri obce. Vojna sa pre Rusovce skončila 4. apríla 1945, keď ich oslobodila Červená armáda.\
+<br><br>\
+Po druhej svetovej vojne sa určili štátne hranice podľa stavu k 31. XII. 1937, teda Rusovce naďalej zostali súčasťou Maďarska. Na oslobodenom území začali pracovať národné výbory ako spoločensko-politické kontrolné orgány. Miestna samospráva bola nariadením dočasnej národnej vlády vyčlenená z ich kompetencie, ale zároveň sa začali demokratizovať orgány miestnych samospráv. V Rusovciach, podobne ako v celom Maďarsku, zakladajú sa po oslobodení miestne organizácie komunistickej strany, sociálnodemokratickej strany a maloroľníckej strany. V roku 1945/1946 realizovala sa druhá maďarská pozemková reforma, ale ešte stále zostáva 21% pôdy v rukách statkárov. Po vojne dochádza aj k zmene v národnostnom zložení obyvateľstva. Vzhľadom na to, že Rusovce (podľa sčítania ľudu z roku 1930) boli na 75% nemecké, vysídlili Nemcov a obec čiastočne doosídlili Maďarmi. Židovské obyvateľstvo sa stalo ešte v priebehu druhej svetovej vojny obeťou rasového prenasledovania.\
+<br><br>\
+V zmysle uznesenia Parížskej mierovej konferencie boli tri obce na pravom brehu Dunaja - Jarovce, Rusovce a Čunovo pripojené k Československej republike. Československá republika ich prevzala 15. októbra 1947. Časť obyvateľstva maďarskej národnosti opustila Rusovce a presťahovala sa do Maďarska, takže v novembri 1947 v Rusovciach bolo len 907 obyvateľov. Chotár mal celkovú rozlohu 2603 ha, z toho na ornú pôdu pripadlo 1845 ha, na záhrady 62 ha, na lúky 72 ha, na pasienky 91 ha, na lesy 266 ha a na rákosie 16 ha. Hovädzieho dobytka v obci bolo len 175 kusov a koní 118 kusov. Na bývalej veľkostatkárskej pôde sa roku 1948 vytvorilo roľnícke družstvo, ktoré hospodárilo na 380 katastrálnych jutrách ornej pôdy a 60 jutrách meliorovaných lúk a pastvín. Hospodárstvo, ktoré družstvo prevzalo, bolo v dezolátnom stave. Neskôr sa z neho vytvoril štátny majetok.\
+<br><br>\
+Vzhľadom na to, že počet obyvateľov Rusoviec poklesol na polovicu predvojnového stavu, obec doosídlili reemigrantmi z Maďarska a Rumunska, ako aj organizovaným hromadným presunom obyvateľstva z iných častí Slovenska.\
+<br><br>\
+Po pripojení k Československej republike v Rusovciach začala pracovať miestna správna komisia a od roku 1950 miestny národný výbor. Jednotné roľnícke družstvo v obci založili roku 1952. V posledných rokoch sa Rusovce podstatne zveľadili. Vystavala sa celá nová ulica rodinných domov v rámci individuálnej bytovej výstavby, vznikla nová budova pre základnú deväťročnú školu, admin. budova, pohostinstvo, hospodárske budovy JRD atď.\
+<br><br>\
+V rokoch 1947-1971 patrili Rusovce po administratívnej stránke do okresu Bratislava-okolie, resp. Bratislava-vidiek. Od 1. januára 1972 sú súčasťou hlavného mesta SSR Bratislavy. K 1. 12. 1970 mali Rusovce 458 bytov s 1823 obyvateľmi. Kataster obce bol k 1.3. 1961 2574 ha.\
+<br><br>\
+<i>\
+Použitá literatúra a pramene:\
+<br><br>\
+Archív mesta Bratislavy - Zbierka stredovekých listín a listov, najstaršia daňová kniha Bratislavy (od roku 1438). Tom V.\
+<br><br>\
+Csánki, D.: Magyarország történelmi földrajza a Hunyadiak korában. III. Budapest 1897.\
+<br><br>\
+Dekan, J.: Kus Ríma neďaleko Bratislavy. In: Pamiatky príroda, 1970, č. 4, str. 9-10. -\
+<br><br>\
+Az első magyarországi népszámlálás 1784-1787. Központi Statisztikai Hivatal. Budapest 1960.\
+<br><br>\
+Fejér, G.: Codex diplomaticus Hungariae ecclesiasticus et civilis.\
+<br><br>\
+Fényes, E.: Magyarországnak s a hozzá kapcsolt tartományoknak mostani állapotja statisztikai és geographiai tekintetben. I.Pest 1836.\
+<br><br>\
+Fényes, E.: Magyarország geograhiai szótára. III. Pest 1851.\
+<br><br>\
+Korabinsky. J. M.: Geographisch historisches und Produkten Lexikon, Pressburg 1786.\
+<br><br>\
+Kraskovská, L.: Hrob z doby bronzovej v Rusovciach pri Bratislave. Archeologické rozhledy VI, 1954.\
+<br><br>\
+Kučerová, K.: Migrácia balkánskeho obyvateľstva do Strednej Európy v dôsledku tureckých vojen. Bratislava ÚDESK SAV, 1971, rukp.\
+<br><br>\
+Machník, O.: O troch pripojených obciach. In: Správy Statistického a plánovacieho úradu. 1948, str. 4-6.\
+<br><br>\
+Okresný archív Bratislava-vidiek Rusoviec. -Urbárske písomnosti\
+<br><br>\
+Stanislav, J.: Slovenský juh v stredoveku. I.-II. Martin 1943.\
+</i>\
+Súpis pamiatok na Slovensku. III. Bratislava 1969.\
+Szádeczky, L.: Iparfejlődés és a czéhek története Magyarországon. Budapest 1913.\
+<BR><BR>\
+</span>\
+</div>\
+</details>\
+]]></clanok01></povojne></historia>';

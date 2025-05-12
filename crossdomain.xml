@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<!-- http://brano3d.byethost8.com/crossdomain.xml -->
-<cross-domain-policy>
-  <allow-access-from domain="*" />
-</cross-domain-policy>
-

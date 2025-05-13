@@ -1,200 +1,0 @@
-<HTML>
-<HEAD>
- <script src="setTextSize.js" type="text/javascript"></script>
-
-<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
-
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JHRV5ETT2Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JHRV5ETT2Z');
-</script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<link rel="stylesheet" href="cunovske.css">
-		<link rel="stylesheet" href="velkostObrazovky.css">
-
-<script src="CLANKY/HistoriaClanok06.js"></script>
-	<script src="CLANKY/HistoriaClanok09.js"></script>
-<script src="CLANKY/HistoriaClanok11.js"></script>
-	<script src="CLANKY/HistoriaClanok12.js"></script>
-	<script src="CLANKY/HistoriaClanok49.js"></script>
-<script src="skript.js"></script>
-		            
-<title>Čunovské jazerá bez odpadkov</title>
-
-		<style>
-    #zdrojeID,#popisID{
-        width:2rem;
-        height:2rem;
-        filter: hue-rotate(290deg);
-       /*accent-color: var(--farbaMenu);*/
-        
-    }
-        
-		</style>              
-		               
-<script>
-		function RadiobuttonZdroje() {
-		   // window.location.href = location.href.replace(location.hash,"")+"#CZ";
-		    window.location.href="clanky2.html#CZ";
-		    location.reload();
-  }
- function RadiobuttonPopis() {
-	    //window.location.href = location.href.replace(location.hash,"")+"#CP";
-     window.location.href="clanky2.html#CP";
-				   location.reload();
- } 
-async function loadXML() {
-   
-    // nič bez menu
-    // #M  menu popis
-    //#CZ  iba zdroje
-    //#CP s popisom
-    if(window.location.hash=='#M' || window.location.hash=='#CP' || window.location.hash=='#CZ'){
- 
-		    try {
-        const response = await fetch('clanky.xml');
-        const xmlString = await response.text();
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
-       //console.log(xmlDoc.firstChild);
-       //console.log(xmlDoc.firstChild.nodeValue);
-       const xmlClankyPole = xmlDoc.getElementsByTagName('clanok');
-       const datumPole = xmlDoc.getElementsByTagName('datum');
-	        const titulPole = xmlDoc.getElementsByTagName('titul');
-        	const autorPole = xmlDoc.getElementsByTagName('autor');
-	        const zdrojPole = xmlDoc.getElementsByTagName('zdroj');
-	        const textPole = xmlDoc.getElementsByTagName('text');
-	        const predslovPole = xmlDoc.getElementsByTagName('predslov');
-	       //prvy clanok 
-        		var predslovStr = predslovPole[0].textContent;
-		        var datumStr = datumPole[0].textContent;
-		        var titulStr = titulPole[0].textContent;
-		        var autorStr = autorPole[0].textContent;
-		        var zdrojStr = zdrojPole[0].textContent;
-		        var textStr = textPole[0].textContent;
-	        //zaciatok
-		      	var para = document.createElement("div");
-	         para.innerHTML = textStr;
-	        document.body.appendChild(para);
-	       	var para2=document.createElement("div");
-	       	var pomlckaStr=' - ';		
-    		             
-        for (let i = 1; i < textPole.length; i++) {
-        		      
-		            predslovStr = predslovPole[i].textContent;
-           if(window.location.hash=='#CZ')predslovStr="";
-		            datumStr = datumPole[i].textContent;
-		            titulStr = titulPole[i].textContent;
-		            autorStr = autorPole[i].textContent;
-		            zdrojStr = zdrojPole[i].textContent;
-		            textStr = textPole[i].textContent;
-		            pomlckaStr=' - ';
-	            if (titulPole[i].hasAttribute("farba")){
-		  		          if(titulPole[i].getAttribute("farba")=="zlta"){
-		               titulStr = "<span class='zlta'>"+titulStr.substr(0,1)+"</span>"+titulStr.substr(1,titulStr.length-1);
-			               pomlckaStr="<span class='zlta'> - </span>"
-		              }else if(titulPole[i].getAttribute("farba")=="cervena"){
-		               titulStr = "<span class='cervena'>"+titulStr.substr(0,1)+"</span>"+titulStr.substr(1,titulStr.length-1);
-			               pomlckaStr="<span class='cervena'> - </span>"
-		              }
-          		  }
-            para2 = document.createElement("div");
-		         	  var HTML1='<details class="clanok"> <summary> <span class="rozbal">' +datumStr+ pomlckaStr +titulStr+ '</span></summary>'
-	             var HTML2='<div class="details-container"><span class="autor"><autor> autor: '+ autorStr +'</autor><BR/><zdroj>zdroj: '+zdrojStr+'</zdroj></span>';
-				         var closeHTML = '</div></details>';		
-		           var medzeraHtml='<hr style="height:0px; margin:0.5em; visibility:hidden;"\>';
-	           if(window.location.hash=='#CZ')medzeraHtml="";
-		           
-            var pruhHtml="<h3 class='atrubutyPruhu pozadiePruhu1'>";
-	           	if(i==7 || i==40 || i==41)medzeraHtml="";      
-        		  if(i==8 || i==41 || i==42)pruhHtml="<h3 class='atrubutyPruhu pozadiePruhu2'>"; 
-           if(i==97)medzeraHtml='<hr style="height:0px; margin:10vh; visibility:hidden;"\>';
-        		  para2.innerHTML =pruhHtml+i+"</h3>"+predslovStr+HTML1+HTML2+textStr+closeHTML+medzeraHtml;
-        		   
-        		   	document.body.appendChild(para2);
-		          /*const name = xmlDoc.querySelector('name').textContent;
-            console.log(name);*/
-          }
-        		            try {
-		            var parser2, xmlDoc2;
-            parser2 = new DOMParser();
-   		            		               
-        		            		               
-        		  xmlDoc2 = parser2.parseFromString(HistoriaClanokW06,"text/xml");
-        		  document.getElementById("HistoriaClanokW06ID").innerHTML =
-           xmlDoc2.getElementsByTagName("HistoriaClanokW06")[0].childNodes[0].nodeValue;
-		      		     
-            	xmlDoc2 = parser2.parseFromString(HistoriaClanok06,"text/xml");
-           document.getElementById("HistoriaClanok06ID").innerHTML =
-            xmlDoc2.getElementsByTagName("HistoriaClanok06")[0].childNodes[0].nodeValue;
-        		     		               
-        		            		               
-		           xmlDoc2 = parser2.parseFromString(HistoriaClanokW09,"text/xml");
-        		  document.getElementById("HistoriaClanokW09ID").innerHTML =
-           xmlDoc2.getElementsByTagName("HistoriaClanokW09")[0].childNodes[0].nodeValue;
-		      		     
-            	xmlDoc2 = parser2.parseFromString(HistoriaClanok09,"text/xml");
-           document.getElementById("HistoriaClanok09ID").innerHTML =
-            xmlDoc2.getElementsByTagName("HistoriaClanok09")[0].childNodes[0].nodeValue;
-        		            		               
-        		   xmlDoc2 = parser2.parseFromString(HistoriaClanokW11,"text/xml");
-        		  document.getElementById("HistoriaClanokW11ID").innerHTML =
-            xmlDoc2.getElementsByTagName("HistoriaClanokW11")[0].childNodes[0].nodeValue;
-		      		        		               
-        		            		               
-        		    xmlDoc2 = parser2.parseFromString(HistoriaClanokW12,"text/xml");
-              document.getElementById("HistoriaClanokW12ID").innerHTML =
-              xmlDoc2.getElementsByTagName("HistoriaClanokW12")[0].childNodes[0].nodeValue;
-	
-              	xmlDoc2 = parser2.parseFromString(HistoriaClanok12,"text/xml");
-              document.getElementById("HistoriaClanok12ID").innerHTML =
-              xmlDoc2.getElementsByTagName("HistoriaClanok12")[0].childNodes[0].nodeValue;
-	        		             		              	               
-        		            		               
-        		    xmlDoc2 = parser2.parseFromString(HistoriaClanokW49,"text/xml");
-              document.getElementById("HistoriaClanokW49ID").innerHTML =
-              xmlDoc2.getElementsByTagName("HistoriaClanokW49")[0].childNodes[0].nodeValue;
-	
-              	xmlDoc2 = parser2.parseFromString(HistoriaClanok49,"text/xml");
-              document.getElementById("HistoriaClanok49ID").innerHTML =
-              xmlDoc2.getElementsByTagName("HistoriaClanok49")[0].childNodes[0].nodeValue;
-	        		               
-		      		               
-         } catch (error) {
-            console.log('chyba pri zapise dokumentu:', error);
-         }   
-        		               
-        		                		       
-        } catch (error) {
-            console.log('chyba pri nacitani dokumentu:', error);
-         }
-      }
-    }
-    
-   loadXML();
-	</script>
-</HEAD>
-<BODY onload="testMenu('C2');" lang=SK>
-   &nbsp;<br\><br\>
-			<center>
-		<span class="atributyPodNadpisu" style="text-decoration:underline overline;">
-  <input type="radio" id="zdrojeID" name="zdroje" value="BEZ" onchange="RadiobuttonZdroje()">
-  <label for="bezID">zdroje</label>
-		</span>     
-	&nbsp;&nbsp;
-		<span class="atributyPodNadpisu" style="text-decoration:underline overline;">
-  <input type="radio" id="popisID" name="zdroje" value="ZO" checked onchange="RadiobuttonPopis()">
-  <label for="soID">+ popis</label><br>
-		</span>
-		</center>
-		            
-<br>    
-		            
-</BODY>
-</HTML>

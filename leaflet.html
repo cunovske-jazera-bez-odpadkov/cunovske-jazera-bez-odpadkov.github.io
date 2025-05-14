@@ -82,7 +82,8 @@
  }
     
  .grn {  accent-color: var(--asfaltkaC);}
-.zel {  accent-color: #00ee00;}
+
+.zel {  accent-color: #00ee00;}
  .mod {  accent-color: var(--hradzaC);}
  .slv {  accent-color: var(--hradzaCestaC);}
  .cie {  accent-color: var(--hlavnaCestaC);}
@@ -149,7 +150,8 @@ td, th {
    padding:0; 
    margin:0;
   box-shadow: 3px 3px 3px #111111;
-} 
+}
+ 
    
 .tien{
    box-shadow: 3px 3px 3px #111111; 
@@ -176,7 +178,8 @@ td, th {
 .popiska {
         font-size:1rem;
         float: left;
-        width: 98.5vw;        
+        width: 98.5vw;
+        
         padding: 0em;
         overflow: noscroll;
         max-height: 100%;
@@ -186,7 +189,7 @@ td, th {
   }
    #map { 
      width:98.5vw;
-     height:75vh; 
+     height:85vh; 
      background:black;
    }
   </style>
@@ -203,70 +206,101 @@ function checkboxKlik(element){
   }
  else if ((element.id==="pho1ID")&&(element.checked == true)){
      window.map.addLayer(window.PHO1LayerGroup);
-    window.PHO1LayerGroup.bringToFront();
+ 
+   window.PHO1LayerGroup.bringToFront();
   } else if ((element.id==="pho1ID")&&(element.checked == false)){
        window.map.removeLayer(window.PHO1LayerGroup);
   }
   else if ((element.id==="hradzaID")&&(element.checked == true)){
-     window.map.addLayer(window.hradzaL); 
+     window.map.addLayer(window.hradzaL);
+ 
      window.hradzaL.bringToFront();
   } else if ((element.id==="hradzaID")&&(element.checked == false)){
        window.map.removeLayer(window.hradzaL);
   }
   	else if ((element.id==="cestaHradzaID")&&(element.checked == true)){
-     window.map.addLayer(window.hradzaCestaL); 
+     window.map.addLayer(window.hradzaCestaL);
+ 
   	   window.hradzaCestaL.bringToFront();
   } else if ((element.id==="cestaHradzaID")&&(element.checked == false)){
        window.map.removeLayer(window.hradzaCestaL);
-  }
+  }
+
   else if ((element.id==="hlavnaCestaID")&&(element.checked == true)){
-     window.map.addLayer(window.cestaPetrzalkaCunovoL); 
+     window.map.addLayer(window.cestaPetrzalkaCunovoL);
+ 
      window.cestaPetrzalkaCunovoL.bringToFront();
   } else if ((element.id==="hlavnaCestaID")&&(element.checked == false)){
        window.map.removeLayer(window.cestaPetrzalkaCunovoL);
-  }
-else if ((element.id==="zeleznicaID")&&(element.checked == true)){
-     window.map.addLayer(window.zeleznicaLayerGroup); 
-    window.zeleznicaLayerGroup.bringToFront();
+  }
+
+
+else if ((element.id==="zeleznicaID")&&(element.checked == true)){
+     window.map.addLayer(window.zeleznicaLayerGroup);
+ 
+
+    window.zeleznicaLayerGroup.bringToFront();
   } else if ((element.id==="zeleznicaID")&&(element.checked == false)){
        window.map.removeLayer(window.zeleznicaLayerGroup);
-  }
- else if ((element.id==="ZSTCJID")&&(element.checked == true)){
-     window.map.addLayer(window.trasaZSTCJlayerGroup); 
-    window.trasaZSTCJlayerGroup.bringToFront();
+  }
+
+ 
+else if ((element.id==="ZSTCJID")&&(element.checked == true)){
+     window.map.addLayer(window.trasaZSTCJlayerGroup);
+ 
+ 
+   window.trasaZSTCJlayerGroup.bringToFront();
   } else if ((element.id==="ZSTCJID")&&(element.checked == false)){
        window.map.removeLayer(window.trasaZSTCJlayerGroup);
-  }  
-  else if ((element.id==="MHDCJID")&&(element.checked == true)){
-     window.map.addLayer(window.trasaZastavkaCJL); 
-     window.trasaZastavkaCJL.bringToFront();
+  }
+
+  
+  
+else if ((element.id==="MHDCJID")&&(element.checked == true)){
+     window.map.addLayer(window.trasaZastavkaCJL);
+ 
+  
+   window.trasaZastavkaCJL.bringToFront();
   } else if ((element.id==="MHDCJID")&&(element.checked == false)){
        window.map.removeLayer(window.trasaZastavkaCJL);
-  }   
+  }
+
+   
   else if ((element.id==="CunovoCJID")&&(element.checked == true)){
-     window.map.addLayer(window.trasaZastavkyCunovoCJlayerGroup); 
+     window.map.addLayer(window.trasaZastavkyCunovoCJlayerGroup);
+ 
      window.trasaZastavkyCunovoCJlayerGroup.bringToFront();
   } else if ((element.id==="CunovoCJID")&&(element.checked == false)){
        window.map.removeLayer(window.trasaZastavkyCunovoCJlayerGroup);
-  }  
+  }
+
+  
   else if ((element.id==="cykloRusovceID")&&(element.checked == true)){
-     window.map.addLayer(window.geojsonCyklocestaRJL); 
+     window.map.addLayer(window.geojsonCyklocestaRJL);
+ 
      window.geojsonCyklocestaRJL.bringToFront();
   } else if ((element.id==="cykloRusovceID")&&(element.checked == false)){
        window.map.removeLayer(window.geojsonCyklocestaRJL);
-  }   
+  }
+
+   
   else if ((element.id==="cestickyID")&&(element.checked == true)){
-     window.map.addLayer(window.lesneCestylayerGroup); 
+     window.map.addLayer(window.lesneCestylayerGroup);
+ 
      window.lesneCestylayerGroup.bringToFront();
   } else if ((element.id==="cestickyID")&&(element.checked == false)){
        window.map.removeLayer(window.lesneCestylayerGroup);
-  }
+  }
+
   else if ((element.id==="zastavkyID")&&(element.checked == true)){
-     window.map.addLayer(window.zastavkyCJgroup); 
+     window.map.addLayer(window.zastavkyCJgroup);
+ 
      window.zastavkyCJgroup.bringToFront();
   } else if ((element.id==="zastavkyID")&&(element.checked == false)){
        window.map.removeLayer(window.zastavkyCJgroup);
-  } 
+  }
+
+ 
 } 
 
 window.addEventListener('load', function () {stavCheckboxov();})
@@ -296,37 +330,43 @@ function stavCheckboxov(){
        window.hradzaCestaL.bringToFront(); 
   } else if (!document.getElementById("cestaHradzaID").checked){
        window.map.removeLayer(window.hradzaCestaL);
-  }    
+  }
+    
   if (document.getElementById("hlavnaCestaID").checked){
        window.map.addLayer(window.cestaPetrzalkaCunovoL);
        window.cestaPetrzalkaCunovoL.bringToFront(); 
   } else if (!document.getElementById("hlavnaCestaID").checked){
        window.map.removeLayer(window.cestaPetrzalkaCunovoL);
-  }    
+  }
+    
   if (document.getElementById("zeleznicaID").checked){
        window.map.addLayer(window.zeleznicaLayerGroup);
        window.zeleznicaLayerGroup.bringToFront(); 
   } else if (!document.getElementById("zeleznicaID").checked){
        window.map.removeLayer(window.zeleznicaLayerGroup);
-  }    
+  }
+    
   if (document.getElementById("ZSTCJID").checked){
        window.map.addLayer(window.trasaZSTCJlayerGroup);
        window.trasaZSTCJlayerGroup.bringToFront(); 
   } else if (!document.getElementById("ZSTCJID").checked){
        window.map.removeLayer(window.trasaZSTCJlayerGroup);
-  }  
+  }
+  
  if (document.getElementById("MHDCJID").checked){
        window.map.addLayer(window.trasaZastavkaCJL);
        window.trasaZastavkaCJL.bringToFront(); 
   } else if (!document.getElementById("MHDCJID").checked){
        window.map.removeLayer(window.trasaZastavkaCJL);
-  }   
+  }
+   
    if (document.getElementById("CunovoCJID").checked){
        window.map.addLayer(window.trasaZastavkyCunovoCJlayerGroup);
        window.trasaZastavkyCunovoCJlayerGroup.bringToFront(); 
   } else if (!document.getElementById("CunovoCJID").checked){
        window.map.removeLayer(window.trasaZastavkyCunovoCJlayerGroup);
-  } 
+  }
+ 
   if (document.getElementById("cykloRusovceID").checked){
        window.map.addLayer(window.geojsonCyklocestaRJL);
        window.geojsonCyklocestaRJL.bringToFront(); 
@@ -352,7 +392,8 @@ if ((element.id==="LasfaltkaID")){
     window.asfaltkaL.bringToFront();     
   } 
  else if ((element.id==="Lpho1ID")){
-    window.PHO1LayerGroup.bringToFront();
+ 
+   window.PHO1LayerGroup.bringToFront();
   } 
   else if ((element.id==="LhradzaID")){
       window.hradzaL.bringToFront();
@@ -363,14 +404,18 @@ if ((element.id==="LasfaltkaID")){
   else if ((element.id==="LhlavnaCestaID")){
           window.cestaPetrzalkaCunovoL.bringToFront();
   } 
-else if ((element.id==="LzeleznicaID")){
+
+else if ((element.id==="LzeleznicaID")){
         window.zeleznicaLayerGroup.bringToFront();
   } 
- else if ((element.id==="LZSTCJID")){
+ 
+else if ((element.id==="LZSTCJID")){
         window.trasaZSTCJlayerGroup.bringToFront();
   }  
-  else if ((element.id==="LMHDCJID")){
-        window.trasaZastavkaCJL.bringToFront();
+  
+else if ((element.id==="LMHDCJID")){
+     
+   window.trasaZastavkaCJL.bringToFront();
   }  
   else if ((element.id==="LCunovoCJID")){
         window.trasaZastavkyCunovoCJlayerGroup.bringToFront();
@@ -401,7 +446,8 @@ if ((element.id==="LasfaltkaID")){
           <td>
        <span class="green grn tien" id="LasfaltkaID" onclick="dajDopredu(this)">
           <table><tr><td>
-             <input id="asfaltkaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">      
+             <input id="asfaltkaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox"> 
+     
               </td><td>
                   <label>--- asfaltka Čunovské j.</label>
                 </td>
@@ -412,9 +458,11 @@ if ((element.id==="LasfaltkaID")){
           <td>
         <span class="zelena zel tien" id="LcestickyID" onclick="dajDopredu(this)"> 
            <table><tr><td>
-              <input id="cestickyID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">            
+              <input id="cestickyID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+            
           </td><td>
-             <label>--- prírodné cestičky</label>           
+             <label>--- prírodné cestičky</label>
+           
           </td>
            </tr>
           </table>
@@ -423,9 +471,11 @@ if ((element.id==="LasfaltkaID")){
           <td>
        <span class="modra mod tien" id="LhradzaID" onclick="dajDopredu(this)"> 
            <table><tr><td>
-             <input id="hradzaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>         
+             <input id="hradzaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>
+         
           </td><td>
-             <label>--- hradza</label>          
+             <label>--- hradza</label>
+          
            </td>
            </tr>
           </table>
@@ -437,9 +487,11 @@ if ((element.id==="LasfaltkaID")){
       <td>
        <span class="slivkova slv tien" id="LcestaHradzaID" onclick="dajDopredu(this)"> 
           <table><tr><td>
-            <input id="cestaHradzaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">          
+            <input id="cestaHradzaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+          
            </td><td>
-              <label>--- cesta pri hrádzi</label>        
+              <label>--- cesta pri hrádzi</label>
+        
           </td>
            </tr>
           </table>
@@ -448,9 +500,11 @@ if ((element.id==="LasfaltkaID")){
        <td>
          <span class="cierna cie tien" id="LhlavnaCestaID" onclick="dajDopredu(this)"> 
             <table><tr><td>
-               <input id="hlavnaCestaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">           
+               <input id="hlavnaCestaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+           
             </td><td>
-               <label>--- hlavná cesta</label>          
+               <label>--- hlavná cesta</label>
+          
           </td>
            </tr>
           </table>
@@ -459,9 +513,11 @@ if ((element.id==="LasfaltkaID")){
        <td>        
         <span class="hneda hne tien" id="LcykloRusovceID" onclick="dajDopredu(this)"> 
            <table><tr><td>
-              <input id="cykloRusovceID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">           
+              <input id="cykloRusovceID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+           
           </td><td>
-             <label>--- cyklocesta</label>          
+             <label>--- cyklocesta</label>
+          
           </td>
            </tr>
           </table>
@@ -473,9 +529,11 @@ if ((element.id==="LasfaltkaID")){
         <td>    
          <span class="zlta zlt tien" id="LCunovoCJID" onclick="dajDopredu(this)"> 
             <table><tr><td>
-               <input id="CunovoCJID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>           
+               <input id="CunovoCJID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>
+           
           </td><td>
-             <label>--- trasa Čunovo</label>            
+             <label>--- trasa Čunovo</label>
+            
           </td>
            </tr>
           </table>
@@ -486,7 +544,8 @@ if ((element.id==="LasfaltkaID")){
           <table><tr><td>
              <input id="ZSTCJID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>
                    </td><td>
-             <label>--- ŽST - Čunovské j.</label>          
+             <label>--- ŽST - Čunovské j.</label>
+          
            </td>
            </tr>
           </table>
@@ -495,9 +554,11 @@ if ((element.id==="LasfaltkaID")){
        <td>
         <span class="cervena cer tien" id="LMHDCJID" onclick="dajDopredu(this)"> 
            <table><tr><td>
-              <input id="MHDCJID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>           
+              <input id="MHDCJID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>
+           
           </td><td>
-             <label>--- MHD na Čunovské j.</label>           
+             <label>--- MHD na Čunovské j.</label>
+           
           </td>
            </tr>
           </table>
@@ -509,8 +570,10 @@ if ((element.id==="LasfaltkaID")){
          <td>       
        <span class="zastavky zas tien" id="LzastavkyID" onclick="dajDopredu(this)"> 
           <table><tr><td>
-             <input id="zastavkyID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>          
-          </td><td><label>&nbsp;&#11093;	Zastávky</label>         
+             <input id="zastavkyID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>
+          
+          </td><td><label>&nbsp;&#11093;	Zastávky</label>
+         
           </td>
            </tr>
           </table>
@@ -519,22 +582,27 @@ if ((element.id==="LasfaltkaID")){
        <td>
         <span class="cierna cie tien2 doprava" id="LzeleznicaID" onclick="dajDopredu(this)"> 
            <table><tr><td>
-               <input id="zeleznicaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>           
+               <input id="zeleznicaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>
+           
          </td><td class="bunka">              
             <span class="zeleznica"></span>
            </td><td>
-               <label style="color:#ffffff">želaznica</label>          
+               <label style="color:#ffffff">želaznica</label>
+          
            </td></tr></table>
         </span> 
        </td>
        <td>         
-        <span class="cierna cie tien2 doprava" id="Lpho1ID" onclick="dajDopredu(this)">        
+        <span class="cierna cie tien2 doprava" id="Lpho1ID" onclick="dajDopredu(this)"> 
+       
            <table><tr><td>
-              <input id="pho1ID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">                         
+              <input id="pho1ID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">
+                         
              </td><td class="bunka">
                 <span class="PHO1"></span>
                </td><td >
-                 <label style="color:#ffff00">vodný zdroj:</label>              
+                 <label style="color:#ffff00">vodný zdroj:</label>
+              
           </td></tr></table>
            
          </span>    

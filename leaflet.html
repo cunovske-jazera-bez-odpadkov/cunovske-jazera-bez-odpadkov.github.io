@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="setTextSize.js" type="text/javascript"></script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+<link rel="stylesheet" href="cunovske.css">
+<link rel="stylesheet" href="velkostObrazovky.css">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+   <script src="skript.js"></script>
+		      
+   
+  <script src="GJSON/geojsonAsfaltka.js" type="text/javascript"></script>
+  <script src="GJSON/geojsonPHO1.js" type="text/javascript"></script>
+  <script src="GJSON/geojsonHradza.js" type="text/javascript"></script>
+  <script src="GJSON/geojsonCestaPetrzalkaCunovo.js" type="text/javascript"></script>
+  <script src="GJSON/geojsonZeleznicaPetrzalkaRusovce.js" type="text/javascript"></script>
+   <script src="GJSON/geojsonCestaZSTkrizovatka.js" type="text/javascript"></script>
+  <script src="GJSON/geojsonHradzaCesta.js" type="text/javascript"></script>
+  <script src="GJSON/geojsonCyklocestaRJ.js" type="text/javascript"></script>
+   <script src="GJSON/geojsonLesnaCestaCunovoCJ.js" type="text/javascript"></script>
+   <script src="GJSON/geojsonLesnaCestaCunovoStrkovisko.js" type="text/javascript"></script>
+  <script src="GJSON/geojsonLesnaCestaHradzaKrizovatka.js" type="text/javascript"></script>
+  <script src="GJSON/geojsonLesnaCestaKastielKrizovatka.js" type="text/javascript"></script>
+  <script src="GJSON/geojsonLesnaCestaKrizovatkaCJ.js" type="text/javascript"></script>
+   <script src="GJSON/geojsonLesnaCestaNadCJ.js" type="text/javascript"></script>
+   <script src="GJSON/geojsonOkoloVelkehoCJ.js" type="text/javascript"></script>
+   <script src="GJSON/geojsonCestaOkoloMaleho.js" type="text/javascript"></script>
+     <script src="GJSON/geojsonLesnaCestaBorovicovaLuka.js" type="text/javascript"></script>
+     <script src="GJSON/geojsonLesnaCestaCezHugov.js" type="text/javascript"></script>  
+    <script src="GJSON/geojsonLesnaCestaOkoloRusovskeho.js" type="text/javascript"></script>
+    <script src="GJSON/geojsonLesnaCestaPriHugov.js" type="text/javascript"></script>
+    <script src="GJSON/geojsonLesnaCestaRusovskeMaleRusovske.js" type="text/javascript"></script>
+     <script src="GJSON/geojsonLesnaCestaVedlaFarskej.js" type="text/javascript"></script>
+     <script src="GJSON/geojsonTrasaZastavkaCJ.js" type="text/javascript"></script>
+     <script src="GJSON/geojsonTuristicka.js" type="text/javascript"></script>
+    <script src="GJSON/geojsonTrasaZastavkyCunovo1.js" type="text/javascript"></script>
+    <script src="GJSON/geojsonTrasaZastavkyCunovo2.js" type="text/javascript"></script>
+  <style>
+   :root {  --asfaltkaC:#35735f;}
+   :root {  --cestickyC:#00ff00;}
+   :root {  --hradzaC:#0000ff;}
+   :root {  --hradzaCestaC:#8e34fd;}
+   :root {  --hlavnaCestaC:#000000;}
+   :root {  --cykloRusovce:#947425;}
+    :root {  --trasaZST:#fd9234;}
+    :root {  --trasaCunovo:#ffff00;}
+    :root {  --trasaNajkratsia:#ff0000;}
+   :root {  --zastavkyC:#f0b7a1;}
+   
+   
+  body{
+    background:var(--pozadie);
+  }
+.leaflet-layer {
+  filter: brightness(100%) contrast(100%);
+ }
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  background:#00000;
+  filter: invert(100%) brightness(100%) contrast(100%) drop-shadow(6px 6px 6px black);
+ /* filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);*/
+}
+/*.leaflet-control-layers-toggle{  
+  filter: invert(100%) brightness(100%) contrast(100%) drop-shadow(6px 6px 6px black);
+ }*/
+.leaflet-control-layers{ 
+  accent-color: black;
+   background:#000000;
+   filter: brightness(100%) contrast(100%) drop-shadow(6px 6px 6px black);
+ }
+    
+ .grn {  accent-color: var(--asfaltkaC);}
+.zel {  accent-color: #00ee00;}
+ .mod {  accent-color: var(--hradzaC);}
+ .slv {  accent-color: var(--hradzaCestaC);}
+ .cie {  accent-color: var(--hlavnaCestaC);}
+ .hne {  accent-color: var(--cykloRusovce);}
+ .ora {  accent-color: var(--trasaZST);}
+ .cer {  accent-color: var(--trasaNajkratsia);}
+ .zlt {  accent-color: #dddd00;}
+
+
+.green{  color: #ffffff;background-color:var(--asfaltkaC);border: 2px solid #000000;}
+.zelena{  color: #000000;background-color:var(--cestickyC);border: 2px solid #000000;}
+.modra{  color: #ffffff;background-color:var(--hradzaC);border: 2px solid #000000;}
+.slivkova{  color: #ffffff;background-color:var(--hradzaCestaC);border: 2px solid #000000;}
+.cierna{  color: #ffffff;background-color:var(--hlavnaCestaC);border: 2px solid #000000;}
+.hneda{  color: #ffffff;background-color:var(--cykloRusovce);border: 2px solid #000000;}
+.oranzova{  color: #ffffff;background-color:var(--trasaZST);border: 2px solid #000000;}
+.cervena{  color: #ffffff;background-color:var(--trasaNajkratsia);border: 2px solid #000000;}
+.zlta{  color: #000000;background-color:var(--trasaCunovo);border: 2px solid #000000;}
+
+ .zas{  accent-color: var(--zastavkyC);}
+ .zastavky{color: #000000;background-color:var(--zastavkyC);border: 2px solid #000000;}
+ 
+   
+.zeleznica { 
+   position:absolute;
+   width:20px;
+   height:5px;
+   border: 0px solid #000000;
+   transform:translate(-50%,-50%);
+   font-weight: bold;
+   /*margin:1px;*/
+    background: repeating-linear-gradient( 90deg, #fff, #fff 30%, #000 30%, #000 60%); 
+}
+.PHO1 { 
+   position:absolute;
+   width:20px;
+   height:5px;
+   border: 0px solid #000000;
+   transform:translate(-50%,-50%);
+   font-weight: bold;
+  /* margin:1px;*/
+    background: repeating-linear-gradient( 90deg, #ffff00, #ffff00 30%, #000 30%, #000 60%); 
+}
+   
+table {
+  border-collapse: collapse;
+    table-layout:auto;
+   border:0px solid var(--slabsiC);
+}
+td, th {
+  border: 0px solid var(--slabsiC);
+}
+
+.bunka{
+   width:35px;
+   height:6px
+}
+.doprava{
+   text-align:center;
+}
+.chcbox {
+  width:2vh;
+  height:2vh;
+   padding:0; 
+   margin:0;
+  box-shadow: 3px 3px 3px #111111;
+} 
+   
+.tien{
+   box-shadow: 3px 3px 3px #111111; 
+   margin:0px; 
+   display: block; 
+   display: -moz-inline-box;
+}
+.tien2{
+   box-shadow: 3px 3px 3px #111111; 
+   margin:0px; 
+   display: block; 
+   display: -moz-inline-box;
+}
+#Lpho1ID{
+   border: 1px solid #ffff00;
+}
+#LzeleznicaID{
+   border: 1px solid #ffffff;
+}
+.zobrazPopisku{
+   display:flex;
+}
+   
+.popiska {
+        font-size:1rem;
+        float: left;
+        width: 98.5vw;        
+        padding: 0em;
+        overflow: noscroll;
+        max-height: 100%;
+        background:#99c7a5;
+        color:#000000;
+	       border: 1px solid #aaaaaa;
+  }
+   #map { 
+     width:98.5vw;
+     height:85vh; 
+     background:black;
+   }
+  </style>
+   <script>
+
+
+function checkboxKlik(element){
+  if ((element.id==="asfaltkaID")&&(element.checked == true)){
+       window.map.addLayer(window.asfaltkaL);
+       window.asfaltkaL.bringToFront(); 
+	     
+  } else if ((element.id==="asfaltkaID")&&(element.checked == false)){
+       window.map.removeLayer(window.asfaltkaL);
+  }
+ else if ((element.id==="pho1ID")&&(element.checked == true)){
+     window.map.addLayer(window.PHO1LayerGroup);
+    window.PHO1LayerGroup.bringToFront();
+  } else if ((element.id==="pho1ID")&&(element.checked == false)){
+       window.map.removeLayer(window.PHO1LayerGroup);
+  }
+  else if ((element.id==="hradzaID")&&(element.checked == true)){
+     window.map.addLayer(window.hradzaL); 
+     window.hradzaL.bringToFront();
+  } else if ((element.id==="hradzaID")&&(element.checked == false)){
+       window.map.removeLayer(window.hradzaL);
+  }
+  	else if ((element.id==="cestaHradzaID")&&(element.checked == true)){
+     window.map.addLayer(window.hradzaCestaL); 
+  	   window.hradzaCestaL.bringToFront();
+  } else if ((element.id==="cestaHradzaID")&&(element.checked == false)){
+       window.map.removeLayer(window.hradzaCestaL);
+  }
+  else if ((element.id==="hlavnaCestaID")&&(element.checked == true)){
+     window.map.addLayer(window.cestaPetrzalkaCunovoL); 
+     window.cestaPetrzalkaCunovoL.bringToFront();
+  } else if ((element.id==="hlavnaCestaID")&&(element.checked == false)){
+       window.map.removeLayer(window.cestaPetrzalkaCunovoL);
+  }
+else if ((element.id==="zeleznicaID")&&(element.checked == true)){
+     window.map.addLayer(window.zeleznicaLayerGroup); 
+    window.zeleznicaLayerGroup.bringToFront();
+  } else if ((element.id==="zeleznicaID")&&(element.checked == false)){
+       window.map.removeLayer(window.zeleznicaLayerGroup);
+  }
+ else if ((element.id==="ZSTCJID")&&(element.checked == true)){
+     window.map.addLayer(window.trasaZSTCJlayerGroup); 
+    window.trasaZSTCJlayerGroup.bringToFront();
+  } else if ((element.id==="ZSTCJID")&&(element.checked == false)){
+       window.map.removeLayer(window.trasaZSTCJlayerGroup);
+  }  
+  else if ((element.id==="MHDCJID")&&(element.checked == true)){
+     window.map.addLayer(window.trasaZastavkaCJL); 
+     window.trasaZastavkaCJL.bringToFront();
+  } else if ((element.id==="MHDCJID")&&(element.checked == false)){
+       window.map.removeLayer(window.trasaZastavkaCJL);
+  }   
+  else if ((element.id==="CunovoCJID")&&(element.checked == true)){
+     window.map.addLayer(window.trasaZastavkyCunovoCJlayerGroup); 
+     window.trasaZastavkyCunovoCJlayerGroup.bringToFront();
+  } else if ((element.id==="CunovoCJID")&&(element.checked == false)){
+       window.map.removeLayer(window.trasaZastavkyCunovoCJlayerGroup);
+  }  
+  else if ((element.id==="cykloRusovceID")&&(element.checked == true)){
+     window.map.addLayer(window.geojsonCyklocestaRJL); 
+     window.geojsonCyklocestaRJL.bringToFront();
+  } else if ((element.id==="cykloRusovceID")&&(element.checked == false)){
+       window.map.removeLayer(window.geojsonCyklocestaRJL);
+  }   
+  else if ((element.id==="cestickyID")&&(element.checked == true)){
+     window.map.addLayer(window.lesneCestylayerGroup); 
+     window.lesneCestylayerGroup.bringToFront();
+  } else if ((element.id==="cestickyID")&&(element.checked == false)){
+       window.map.removeLayer(window.lesneCestylayerGroup);
+  }
+  else if ((element.id==="zastavkyID")&&(element.checked == true)){
+     window.map.addLayer(window.zastavkyCJgroup); 
+     window.zastavkyCJgroup.bringToFront();
+  } else if ((element.id==="zastavkyID")&&(element.checked == false)){
+       window.map.removeLayer(window.zastavkyCJgroup);
+  } 
+} 
+
+window.addEventListener('load', function () {stavCheckboxov();})
+
+   
+function stavCheckboxov(){
+  if (document.getElementById("asfaltkaID").checked){
+       window.map.addLayer(window.asfaltkaL);
+       window.asfaltkaL.bringToFront(); 
+  } else if (!document.getElementById("asfaltkaID").checked){
+       window.map.removeLayer(window.asfaltkaL);
+  }
+  if (document.getElementById("pho1ID").checked){
+       window.map.addLayer(window.PHO1LayerGroup);
+       window.PHO1LayerGroup.bringToFront(); 
+  } else if (!document.getElementById("pho1ID").checked){
+       window.map.removeLayer(window.PHO1LayerGroup);
+  }
+  if (document.getElementById("hradzaID").checked){
+       window.map.addLayer(window.hradzaL);
+       window.hradzaL.bringToFront(); 
+  } else if (!document.getElementById("hradzaID").checked){
+       window.map.removeLayer(window.hradzaL);
+  }
+  if (document.getElementById("cestaHradzaID").checked){
+       window.map.addLayer(window.hradzaCestaL);
+       window.hradzaCestaL.bringToFront(); 
+  } else if (!document.getElementById("cestaHradzaID").checked){
+       window.map.removeLayer(window.hradzaCestaL);
+  }    
+  if (document.getElementById("hlavnaCestaID").checked){
+       window.map.addLayer(window.cestaPetrzalkaCunovoL);
+       window.cestaPetrzalkaCunovoL.bringToFront(); 
+  } else if (!document.getElementById("hlavnaCestaID").checked){
+       window.map.removeLayer(window.cestaPetrzalkaCunovoL);
+  }    
+  if (document.getElementById("zeleznicaID").checked){
+       window.map.addLayer(window.zeleznicaLayerGroup);
+       window.zeleznicaLayerGroup.bringToFront(); 
+  } else if (!document.getElementById("zeleznicaID").checked){
+       window.map.removeLayer(window.zeleznicaLayerGroup);
+  }    
+  if (document.getElementById("ZSTCJID").checked){
+       window.map.addLayer(window.trasaZSTCJlayerGroup);
+       window.trasaZSTCJlayerGroup.bringToFront(); 
+  } else if (!document.getElementById("ZSTCJID").checked){
+       window.map.removeLayer(window.trasaZSTCJlayerGroup);
+  }  
+ if (document.getElementById("MHDCJID").checked){
+       window.map.addLayer(window.trasaZastavkaCJL);
+       window.trasaZastavkaCJL.bringToFront(); 
+  } else if (!document.getElementById("MHDCJID").checked){
+       window.map.removeLayer(window.trasaZastavkaCJL);
+  }   
+   if (document.getElementById("CunovoCJID").checked){
+       window.map.addLayer(window.trasaZastavkyCunovoCJlayerGroup);
+       window.trasaZastavkyCunovoCJlayerGroup.bringToFront(); 
+  } else if (!document.getElementById("CunovoCJID").checked){
+       window.map.removeLayer(window.trasaZastavkyCunovoCJlayerGroup);
+  } 
+  if (document.getElementById("cykloRusovceID").checked){
+       window.map.addLayer(window.geojsonCyklocestaRJL);
+       window.geojsonCyklocestaRJL.bringToFront(); 
+  } else if (!document.getElementById("cykloRusovceID").checked){
+       window.map.removeLayer(window.geojsonCyklocestaRJL);
+  } 
+   if (document.getElementById("cestickyID").checked){
+       window.map.addLayer(window.lesneCestylayerGroup);
+       window.lesneCestylayerGroup.bringToFront(); 
+  } else if (!document.getElementById("cestickyID").checked){
+       window.map.removeLayer(window.lesneCestylayerGroup);
+  }
+  if (document.getElementById("zastavkyID").checked){
+       window.map.addLayer(window.zastavkyCJgroup);
+       window.zastavkyCJgroup.bringToFront(); 
+  } else if (!document.getElementById("zastavkyID").checked){
+       window.map.removeLayer(window.zastavkyCJgroup);
+  }
+}
+   
+function dajDopredu(element){
+if ((element.id==="LasfaltkaID")){
+    window.asfaltkaL.bringToFront();     
+  } 
+ else if ((element.id==="Lpho1ID")){
+    window.PHO1LayerGroup.bringToFront();
+  } 
+  else if ((element.id==="LhradzaID")){
+      window.hradzaL.bringToFront();
+  } 
+  	else if ((element.id==="LcestaHradzaID")){
+      	   window.hradzaCestaL.bringToFront();
+  } 
+  else if ((element.id==="LhlavnaCestaID")){
+          window.cestaPetrzalkaCunovoL.bringToFront();
+  } 
+else if ((element.id==="LzeleznicaID")){
+        window.zeleznicaLayerGroup.bringToFront();
+  } 
+ else if ((element.id==="LZSTCJID")){
+        window.trasaZSTCJlayerGroup.bringToFront();
+  }  
+  else if ((element.id==="LMHDCJID")){
+        window.trasaZastavkaCJL.bringToFront();
+  }  
+  else if ((element.id==="LCunovoCJID")){
+        window.trasaZastavkyCunovoCJlayerGroup.bringToFront();
+  } 
+  else if ((element.id==="LcykloRusovceID")){
+        window.geojsonCyklocestaRJL.bringToFront();
+  } 
+  else if ((element.id==="LcestickyID")){
+          window.lesneCestylayerGroup.bringToFront();
+  } 
+  else if ((element.id==="LzastavkyID")){
+         window.zastavkyCJgroup.bringToFront();
+  } 
+   
+}
+   
+   
+   </script>
+</head>
+
+<body onload="if(window.location.hash!='#NO'){testMenu('MC');}" lang=SK>
+    
+ <div class="popiska zobrazPopisku" id="popiskaID">
+      <hr style="height:0; margin:0.1vh; visibility:hidden;" />    
+      <center>             
+  	    <table>
+       <tr class="zmenaTR">         
+          <td>
+       <span class="green grn tien" id="LasfaltkaID" onclick="dajDopredu(this)">
+          <table><tr><td>
+             <input id="asfaltkaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">      
+              </td><td>
+                  <label>--- asfaltka Čunovské j.</label>
+                </td>
+           </tr>
+          </table>
+       </span>    
+          </td>
+          <td>
+        <span class="zelena zel tien" id="LcestickyID" onclick="dajDopredu(this)"> 
+           <table><tr><td>
+              <input id="cestickyID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">            
+          </td><td>
+             <label>--- prírodné cestičky</label>           
+          </td>
+           </tr>
+          </table>
+        </span>
+          </td>
+          <td>
+       <span class="modra mod tien" id="LhradzaID" onclick="dajDopredu(this)"> 
+           <table><tr><td>
+             <input id="hradzaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>         
+          </td><td>
+             <label>--- hradza</label>          
+           </td>
+           </tr>
+          </table>
+        </span>
+      </td> 
+      </tr>       
+  	       
+     <tr class="zmenaTR">
+      <td>
+       <span class="slivkova slv tien" id="LcestaHradzaID" onclick="dajDopredu(this)"> 
+          <table><tr><td>
+            <input id="cestaHradzaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">          
+           </td><td>
+              <label>--- cesta pri hrádzi</label>        
+          </td>
+           </tr>
+          </table>
+        </span>      
+      </td>
+       <td>
+         <span class="cierna cie tien" id="LhlavnaCestaID" onclick="dajDopredu(this)"> 
+            <table><tr><td>
+               <input id="hlavnaCestaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">           
+            </td><td>
+               <label>--- hlavná cesta</label>          
+          </td>
+           </tr>
+          </table>
+        </span>    
+       </td>
+       <td>        
+        <span class="hneda hne tien" id="LcykloRusovceID" onclick="dajDopredu(this)"> 
+           <table><tr><td>
+              <input id="cykloRusovceID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">           
+          </td><td>
+             <label>--- cyklocesta</label>          
+          </td>
+           </tr>
+          </table>
+        </span>    
+       </td>        
+       </tr>  	     
+  	       
+       <tr class="zmenaTR">        
+        <td>    
+         <span class="zlta zlt tien" id="LCunovoCJID" onclick="dajDopredu(this)"> 
+            <table><tr><td>
+               <input id="CunovoCJID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>           
+          </td><td>
+             <label>--- trasa Čunovo</label>            
+          </td>
+           </tr>
+          </table>
+        </span> 
+       </td>
+       <td>
+       <span class="oranzova ora tien" id="LZSTCJID" onclick="dajDopredu(this)"> 
+          <table><tr><td>
+             <input id="ZSTCJID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>
+                   </td><td>
+             <label>--- ŽST - Čunovské j.</label>          
+           </td>
+           </tr>
+          </table>
+        </span> 
+      </td>
+       <td>
+        <span class="cervena cer tien" id="LMHDCJID" onclick="dajDopredu(this)"> 
+           <table><tr><td>
+              <input id="MHDCJID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>           
+          </td><td>
+             <label>--- MHD na Čunovské j.</label>           
+          </td>
+           </tr>
+          </table>
+        </span> 
+  	     </td>
+       </tr>
+  	       
+       <tr class="zmenaTR">        
+         <td>       
+       <span class="zastavky zas tien" id="LzastavkyID" onclick="dajDopredu(this)"> 
+          <table><tr><td>
+             <input id="zastavkyID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>          
+          </td><td><label>&nbsp;&#11093;	Zastávky</label>         
+          </td>
+           </tr>
+          </table>
+        </span> 
+       </td>
+       <td>
+        <span class="cierna cie tien2 doprava" id="LzeleznicaID" onclick="dajDopredu(this)"> 
+           <table><tr><td>
+               <input id="zeleznicaID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox" checked>           
+         </td><td class="bunka">              
+            <span class="zeleznica"></span>
+           </td><td>
+               <label style="color:#ffffff">želaznica</label>          
+           </td></tr></table>
+        </span> 
+       </td>
+       <td>         
+        <span class="cierna cie tien2 doprava" id="Lpho1ID" onclick="dajDopredu(this)">        
+           <table><tr><td>
+              <input id="pho1ID" type="checkbox"  onclick="checkboxKlik(this)" class="chcbox">                         
+             </td><td class="bunka">
+                <span class="PHO1"></span>
+               </td><td >
+                 <label style="color:#ffff00">vodný zdroj:</label>              
+          </td></tr></table>
+           
+         </span>    
+       </td>
+       </tr>
+      </table>
+  	   </center>
+    <hr style="height:0; margin:0.4vh; visibility:hidden;" />    
+
+   </div>
+   
+   <div id="map"></div>
+   
+   
+   <script>
+  
+  var markerMCJ = L.marker([48.040329, 17.171245]).bindPopup('MALÉ ČUNOVSKÉ JAZERO'),
+      markerVCJ = L.marker([48.038491, 17.174720]).bindPopup('VEĽKÉ ČUNOVSKÉ JAZERO'),
+      markerLuka = L.marker([48.04069, 17.17530]).bindPopup('VZÁCNE LÚKY S ORCHIDEAMI'),
+      markerBrod = L.marker([48.0397845, 17.1851475]).bindPopup('brod'),   
+      markerZavora = L.marker([48.0364184, 17.1674258]).bindPopup('Závora s mini parkoviskom - iba parkovanie s povolením'),      
+      markerVZ = L.marker([48.047868, 17.179256]).bindPopup('VODNÝ ZDROJ OSTROVNÉ LÚČKY');
+      
+   
+   
+  var markerZastavkaCJtamL = L.circleMarker ([48.0327253, 17.1655744]).bindPopup('zastávka MHD Čunovské jazerá - smer Čunovo');
+  var markerZastavkaCJspatL= L.circleMarker ([48.0330578, 17.1655178]).bindPopup('zastávka MHD Čunovské jazerá - smer Bratislava');
+   
+   styleZastavkaTam={
+      fillColor: 'red', 
+      fillOpacity: 0.60,
+      radius: 10,
+      weight: 3,
+      color:'green',
+      opacity: 1.00
+   };
+   styleZastavkaSpat={
+      fillColor: 'orange',
+      fillOpacity: 0.60,
+      radius: 10,
+      weight: 3,
+      color:'green',
+      opacity: 1.00
+   };
+   
+   styleZST={
+      fillColor: 'yellow',
+      fillOpacity: 0.60,
+      radius: 12,
+      weight: 3,
+      color:'green',
+      opacity: 1.00
+   };
+   markerZastavkaCJspatL.setStyle(styleZastavkaSpat);
+   markerZastavkaCJtamL.setStyle(styleZastavkaTam);
+   
+  var markerZastavkaRusovcetamL = L.circleMarker ([48.0466598, 17.1523652]).bindPopup('prestup z vlaku - zastávka MHD ŽST Rusovce - smer Čunovo');
+  var markerZastavkaRusovcespatL= L.circleMarker ([48.0493705, 17.1514526]).bindPopup('prestup na vlak - MHD Kaštieľ Rusovce - smer Bratislava');
+   markerZastavkaRusovcetamL.setStyle(styleZastavkaTam);
+   markerZastavkaRusovcespatL.setStyle(styleZastavkaSpat);
+   
+   var markerZastavkaČunovoKostolTamL = L.circleMarker ([48.0312868, 17.1998655]).bindPopup('zastávka MHD Čunovo, kostol - smer Čunovo konečná');
+  var markerZastavkaČunovoKostolSpatL= L.circleMarker ([48.0311615, 17.1996060]).bindPopup('zastávka MHD Čunovo, kostol - smer Bratislava');
+   markerZastavkaČunovoKostolTamL.setStyle(styleZastavkaTam);
+   markerZastavkaČunovoKostolSpatL.setStyle(styleZastavkaSpat);
+   
+   
+   var markerZastavkaČunovoTamL = L.circleMarker ([48.0338355, 17.1958438]).bindPopup('zastávka MHD Čunovo, konečná');
+  var markerZastavkaČunovoSpatL= L.circleMarker ([48.0340974, 17.1959447]).bindPopup('zastávka MHD Čunovo, smer Bratislava');
+   markerZastavkaČunovoTamL.setStyle(styleZastavkaTam);
+   markerZastavkaČunovoSpatL.setStyle(styleZastavkaSpat);
+   
+   var markerZSTL = L.circleMarker ([48.0466746, 17.1510174]).bindPopup('Železničná stanica Rusovce');
+     markerZSTL.setStyle(styleZST);
+   
+   window.zastavkyCJgroup = L.featureGroup();
+   zastavkyCJgroup.addLayer(markerZastavkaCJtamL);
+   zastavkyCJgroup.addLayer(markerZastavkaCJspatL);
+   zastavkyCJgroup.addLayer(markerZastavkaRusovcetamL);
+   zastavkyCJgroup.addLayer(markerZastavkaRusovcespatL);
+   
+   zastavkyCJgroup.addLayer(markerZastavkaČunovoKostolSpatL);
+   zastavkyCJgroup.addLayer(markerZastavkaČunovoKostolTamL);
+   zastavkyCJgroup.addLayer(markerZastavkaČunovoTamL);
+   zastavkyCJgroup.addLayer(markerZastavkaČunovoSpatL);
+   
+   zastavkyCJgroup.addLayer(markerZSTL);
+   
+   
+   
+   
+  var markers = L.layerGroup([markerMCJ, markerVCJ, markerVZ, markerLuka, markerBrod, markerZavora]);
+  
+  var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  });
+  
+  var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data: © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
+  });
+  
+  var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+    attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by <a href="http://www.openstreetmap.fr/">OpenStreetMap France</a>'
+  });
+  
+  var osmCycloSM = L.tileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=246bbf04700848e7abafda5413372cae',{
+    attribution: 'Maps © <a href="https://www.thunderforest.com">Thunderforest</a> Data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  });
+  
+  var osmOutdoorMap = L.tileLayer('https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=246bbf04700848e7abafda5413372cae', {
+    attribution: 'Maps © <a href="https://www.thunderforest.com">Thunderforest</a> Data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  });
+  
+  var osmTransport = L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=246bbf04700848e7abafda5413372cae', {
+    attribution: 'Maps © <a href="https://www.thunderforest.com">Thunderforest</a> Data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  });
+  
+  var gpsTraced = L.tileLayer("http://gps-{s}.tile.openstreetmap.org/lines/{z}/{x}/{y}.png");
+  
+  
+  var openLandscape = L.tileLayer('https://tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=246bbf04700848e7abafda5413372cae', {
+    attribution: 'Maps © <a href="https://www.thunderforest.com">Thunderforest</a> Data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  });
+  
+  var satelite = L.tileLayer('http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '© Powered by <a href="https://www.esri.com/"> ESRI </a> | Esri, USGS, FAO, NOAA, Earthstar Geographics, Maxar, GKU, NLC, Microsoft, HERE, Garmin, iPC'
+  });
+  
+  var darkGray = L.tileLayer('http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '© Powered by <a href="https://www.esri.com/"> ESRI </a>, dark gray vector-' 
+  });
+  window.map = L.map('map', {
+    center:[48.037875, 17.175568],
+    zoom:12,
+    layers:[osm, markers, gpsTraced]
+  });
+  //<span style='background: black'>
+  var baseMaps = { 
+    "<span style='color: red; font-size:1.5rem'>základná</span>": osm,
+    "<span style='color: green; font-size:1.5rem'>satelitná</span>": satelite,  
+    "<span style='color: yellow; font-size:1.5rem'>cyklistická</span>": osmCycloSM,
+    "<span style='color: cyan; font-size:1.5rem'>turistická</span>": osmOutdoorMap,
+    "<span style='color: pink; font-size:1.5rem'>MHD</span>": osmTransport,
+    "<span style='color: orange; font-size:1.5rem'>topografická</span>": openTopoMap,
+    "<span style='color: plum; font-size:1.5rem'>krajinná</span>": openLandscape,  
+    "<span style='color: lightgray; font-size:1.5rem'>humanitárna</span>": osmHOT,
+    "<span style='color: gray; font-size:1.5rem'>tmavá</span>": darkGray
+   };
+  var overlayMaps = {
+    "<span style='color: gray; font-size:1.5rem'>Miesta</span>": markers,
+    "<span style='color: gray; font-size:1.5rem'>Pohyb ľudí</span>": gpsTraced
+  };
+  
+    
+  var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+ 
+  map.removeLayer(gpsTraced);
+           
+ window.asfaltkaL = L.geoJSON(geojsonAsfaltka,{
+     style:{
+        "color" : "#35735f",
+	       "weight" : 5,
+        "dashArray" : '10,10',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+     }
+  });//geojsonAsfaltkaStyle
+   
+   window.PHO1LayerGroup = L.featureGroup();
+
+  L.geoJSON(geojsonPHO1,{
+     style: {
+        "color" : "#000000",
+	       "weight" : 5,
+        "dashArray" : '20,10',
+        "dashOffset": '15',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+     }
+  }).addTo(PHO1LayerGroup); //geojsonStylePHO1
+   L.geoJSON(geojsonPHO1,{
+     style: {
+        "color" : "#ffff00",
+	       "weight" : 5,
+        "dashArray" : '10,20',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+     }
+  }).addTo(PHO1LayerGroup); //geojsonStylePHO1
+   
+   
+   
+  window.hradzaL = L.geoJSON(geojsonHradza,{
+     style:{
+        "color" : "#0000ff",
+	       "weight" : 5,
+        "dashArray" : '20,10',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+     }
+  });//geojsonStyleHradza
+   
+  window.hradzaCestaL = L.geoJSON(geojsonHradzaCesta,{
+     style: {
+        "color" : "#8e34fd",
+	       "weight" : 5,
+        "dashArray" : '20,10',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+     }
+  });//geojsonStyleHradzaCesta
+  
+   
+   
+  window.cestaPetrzalkaCunovoL = L.geoJSON(geojsonCestaPetrzalkaCunovo,{
+     style: {
+        "color" : "#000000",
+	       "weight" : 5,
+        "dashArray" : '10,10',
+        "dashOffset": '15',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+     }
+  });//geojsonStyleCestaPetrzalkaCunovo
+   
+   window.zeleznicaLayerGroup = L.featureGroup();
+   
+  L.geoJSON(geojsonZeleznica,{
+     style:{
+        "color" : "#ffffff",
+	       "weight" : 5,
+        "dashArray" : '20,10',
+        "dashOffset": '15',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+     }
+  }).addTo(zeleznicaLayerGroup); //geojsonStyleZeleznica
+   
+   L.geoJSON(geojsonZeleznica,{
+     style:{
+        "color" : "#000000",
+	       "weight" : 5,
+        "dashArray" : '10,20',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+     }
+  }).addTo(zeleznicaLayerGroup);
+   
+   
+   
+   /* trasy */
+   
+   var TrasaZSTStyling = {
+      "color" : "#fd9234",
+	       "weight" : 5,
+        "dashArray" : '10,2,10',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+   };
+  window.trasaZSTCJlayerGroup = L.featureGroup();
+  L.geoJSON(geojsonCestaZSTkrizovatka,{style: TrasaZSTStyling}).addTo(trasaZSTCJlayerGroup);//geojsonStyleCestaZSTkrizovatka
+  L.geoJSON(geojsonLesnaCestaKrizovatkaCJ,{style: TrasaZSTStyling}).addTo(trasaZSTCJlayerGroup);//geojsonStyleLesnaCestaKrizovatkaCJ
+   
+   
+   var TrasaMHDkratkaStyling = {
+      "color" : "#ff0000",
+	       "weight" : 5,
+        "dashArray" : '10,2,10',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+  };
+  window.trasaZastavkaCJL = L.geoJSON(geojsonTrasaZastavkaCJ,{style: TrasaMHDkratkaStyling}); //geojsonStyleTrasaZastavkaCJ
+   
+  var TrasaMHDdlhaStyling = {
+      "color" : "#ffff00",
+	       "weight" : 5,
+        "dashArray" : '10,2,10',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+  };
+  window.trasaZastavkyCunovoCJlayerGroup = L.featureGroup();
+  L.geoJSON(geojsonTrasaZastavkyCunovo1,{style: TrasaMHDdlhaStyling}).addTo(trasaZastavkyCunovoCJlayerGroup);
+  L.geoJSON(geojsonTrasaZastavkyCunovo2,{style: TrasaMHDdlhaStyling}).addTo(trasaZastavkyCunovoCJlayerGroup);
+  L.geoJSON(geojsonLesnaCestaCunovoCJ,{style: TrasaMHDdlhaStyling}).addTo(trasaZastavkyCunovoCJlayerGroup);//geojsonStyleLesnaCestaCunovoCJ
+
+   
+ window.geojsonCyklocestaRJL = L.geoJSON(geojsonCyklocestaRJ,{
+     style: {
+        "color" : '#947425',
+	       "weight" : 5,
+        "dashArray" : '10,2,10',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+     } 
+  });//geojsonStyleCyklocestaRJ
+   
+   
+   var LesneCestyStyling = {
+      "color" : "#00ff00",
+	       "weight" : 5,
+        "dashArray" : '10,2,10',
+        "dashOffset": '0',
+        "lineJoin" : 'square',
+        "lineCap": 'square',
+	       "opacity" : 1.00
+  };
+  window.lesneCestylayerGroup = L.featureGroup();
+  L.geoJSON(geojsonLesnaCestaCunovoStrkovisko,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaCunovoStrkovisko
+  L.geoJSON(geojsonLesnaCestaHradzaKrizovatka,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaHradzaKrizovatka
+  L.geoJSON(geojsonLesnaCestaKastielKrizovatka,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaKastielKrizovatka
+  L.geoJSON(geojsonLesnaCestaKrizovatkaCJ,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaKrizovatkaCJ
+ L.geoJSON(geojsonLesnaCestaNadCJ,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaNadCJ
+ L.geoJSON(geojsonOkoloVelkehoCJ,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleOkoloVelkehoCJ
+  L.geoJSON(geojsonLesnaCestaCunovoCJ,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaCunovoCJ 
+  L.geoJSON(geojsonCestaOkoloMaleho,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleCestaOkoloMaleho
+ L.geoJSON(geojsonLesnaCestaBorovicovaLuka,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaBorovicovaLuka
+ L.geoJSON(geojsonLesnaCestaCezHugov,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaCezHugov
+  L.geoJSON(geojsonLesnaCestaOkoloRusovskeho,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaOkoloRusovskeho
+ L.geoJSON(geojsonLesnaCestaPriHugov,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaPriHugov
+  L.geoJSON(geojsonLesnaCestaRusovskeMaleRusovske,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaRusovskeMaleRusovske
+  L.geoJSON(geojsonLesnaCestaVedlaFarskej,{style: LesneCestyStyling}).addTo(lesneCestylayerGroup);//geojsonStyleLesnaCestaVedlaFarskej
+  
+   var turL = L.geoJSON(geojsonTuristicka,{style: LesneCestyStyling});//geojsonStyleLesnaCestaVedlaFarskej
+  turL.bindPopup('asfaltová cesta');
+   turL.addTo(lesneCestylayerGroup);
+      
+      map.addLayer(zastavkyCJgroup);
+    map.addLayer(zeleznicaLayerGroup);   
+  map.addLayer(cestaPetrzalkaCunovoL);  
+   map.addLayer(hradzaCestaL);   
+   map.addLayer(hradzaL);  
+   map.addLayer(PHO1LayerGroup);   
+   map.addLayer(asfaltkaL);   
+  map.addLayer(geojsonCyklocestaRJL);
+  map.addLayer(lesneCestylayerGroup);
+  map.addLayer(trasaZastavkyCunovoCJlayerGroup);
+  map.addLayer(trasaZastavkaCJL);
+  map.addLayer(trasaZSTCJlayerGroup);
+  /* var qsr = document.querySelector(':root');
+      var rs = window.getComputedStyle(qsr);
+      var velkostPismaCSS = rs.getPropertyValue('--velkostPisma');
+      */
+   /* +++++++++ */
+   /*var htmltag=document.getElementsByTagName("html");
+   var stylHtml=window.getComputedStyle(htmltag[0]);
+   var velk =  stylHtml.getPropertyValue('font-size');
+   
+   var popiskaEl=document.getElementById("popiskaID");
+      var stylPopisky=window.getComputedStyle(popiskaEl);
+      var velkostPismaCSS=stylPopisky.getPropertyValue('font-size');
+       alert(velk+"   "+velkostPismaCSS);*/
+   
+   if(window.location.hash=="#NO"){
+      var popiskaEl=document.getElementById("popiskaID");
+      var stylPopisky=window.getComputedStyle(popiskaEl);
+      var velkostPismaCSS=stylPopisky.getPropertyValue('font-size');
+      var velkostFloat=parseFloat(velkostPismaCSS);
+      
+      //alert("aaaa "+velkostFloat);
+      var novaVelkostPisma = velkostFloat*1.2
+      var znakyPattern = /[a-zA-Z]/g;
+      var jednotkyArr = velkostPismaCSS.match(znakyPattern);
+      var jednotkyStr = "";
+      if(jednotkyArr != null){
+        var jednotkyStrComma=jednotkyArr.join();      
+        jednotkyStr=jednotkyStrComma.replace(/,/g, "");
+      }
+      
+      var popiskaE=document.getElementById("popiskaID").style.fontSize=novaVelkostPisma+jednotkyStr;
+      var checkboxi=document.getElementsByClassName("chcbox");
+      for(var i=0; i<checkboxi.length;i++){
+         checkboxi[i].style.width=(velkostFloat*2.5)+jednotkyStr;//3vh
+         checkboxi[i].style.height=(velkostFloat*2.5)+jednotkyStr;//3vh
+      }
+    }else{
+       
+      var popiskaEl=document.getElementById("popiskaID");
+      var stylPopisky=window.getComputedStyle(popiskaEl);
+       
+      var velkostPismaCSS=stylPopisky.getPropertyValue('font-size');
+       //alert(velkostPismaCSS);
+      var velkostFloat=parseFloat(velkostPismaCSS);
+      
+      var novaVelkostPisma = velkostFloat*1.2
+      var znakyPattern = /[a-zA-Z]/g;
+      var jednotkyArr = velkostPismaCSS.match(znakyPattern);
+      var jednotkyStr = "";
+      if(jednotkyArr != null){
+        var jednotkyStrComma=jednotkyArr.join();      
+        jednotkyStr=jednotkyStrComma.replace(/,/g, "");
+      }
+      var popiskaE=document.getElementById("popiskaID").style.fontSize=novaVelkostPisma+jednotkyStr;
+      var checkboxi=document.getElementsByClassName("chcbox");
+      for(var i=0; i<checkboxi.length;i++){
+         checkboxi[i].style.width=(velkostFloat*2.5)+jednotkyStr;//2vh
+         checkboxi[i].style.height=(velkostFloat*2.5)+jednotkyStr;//2vh
+      }
+         
+       
+    }
+
+   
+  
+  </script>
+</body>
+
+</html>

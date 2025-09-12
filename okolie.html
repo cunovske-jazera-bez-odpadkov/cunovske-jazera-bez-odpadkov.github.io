@@ -1,0 +1,178 @@
+<html>
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JHRV5ETT2Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ gtag('config', 'G-JHRV5ETT2Z');
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Čunovské jazerá</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<link rel="stylesheet" href="cunovske.css">
+<link rel="stylesheet" href="velkostObrazovky.css">
+  
+	<script src="skript.js"></script>
+
+</head>
+
+
+
+
+<body onload="testMenu('O');" lang=SK>
+<canvas id="okolieCanvas" style="background:black;">
+</canvas>
+<script>  
+class Miesto{
+  constructor(platno,nazov,link,farba,x,y,velkost)
+  {
+    this.platno=platno;
+    this.nazov=nazov;
+    this.link=link;
+    this.farba=farba;
+    this.velkost=velkost;
+    this.paddX=5;
+    this.paddY=5;
+    this.x=x;
+    this.y=y;
+    this.kresli(10);
+    
+  }
+  center(){
+    this.platno.clearRect(this.rectX-20,this.rectY-20, this.rectW+40, this.rectH+40);
+    this.x=window.innerWidth/2;
+    this.y=window.innerHeight/2;
+    this.kresli(10);
+  }
+  prekresli(x,y,farba,velkost){
+    this.x=x;
+    this.y=y;
+    this.farba=farba;
+    this.velkost=velkost;
+    this.kresli(10);
+  }
+  kresli(tien){
+    ctx.globalAlpha = 0.0;
+    this.platno.fillStyle = "#000000";
+    this.platno.font = this.velkost+"px serif";
+    this.platno.fillText(this.nazov, this.x, this.y);
+    
+    var measure=this.platno.measureText(this.nazov);
+    var measure2=this.platno.measureText("Č");
+    this.sirka=measure.width;
+    this.vyska = measure2.actualBoundingBoxAscent+measure.actualBoundingBoxDescent;
+    ctx.globalAlpha = 1;
+    
+    var centerX=this.x-this.sirka/2;
+    var centerY=this.y+this.vyska/2;
+    this.rectX=centerX-this.paddX;
+    this.rectY=centerY-this.vyska-this.paddY+1;
+    this.rectW=this.sirka+2*this.paddX;
+    this.rectH=this.vyska+2*this.paddY;
+        
+    this.platno.shadowColor = this.farba;
+    this.platno.shadowBlur = tien;
+    this.platno.fillStyle = "black";
+    this.platno.fillRect(this.rectX, this.rectY, this.rectW, this.rectH);
+        
+    this.platno.fillStyle = this.farba;
+    this.platno.font = this.velkost+"px serif";
+    this.platno.fillText(this.nazov, centerX, centerY);
+  }
+  
+  klik(mX,mY){
+    if((mX>=this.rectX && mX<=(this.rectX+this.rectW))&&(mY>=this.rectY && mY<=(this.rectY+this.rectH))){
+     return true;
+    }
+     return false;
+  }
+  down(mX,mY){
+    if((mX>=this.rectX && mX<=(this.rectX+this.rectW))&&(mY>=this.rectY && mY<=(this.rectY+this.rectH))){
+     return true;
+    }
+     return false;
+  }
+  
+  loadPage(){
+    if(this.link!="O"){
+       this.kresli(40);
+       loadOkolie(this.link);
+    }
+  }
+    
+}
+  
+var sirkaOkna=(990/1000)*window.innerWidth;
+var vyskaOkna=(975/1000)*window.innerHeight;
+
+const canvas = document.getElementById("okolieCanvas");
+canvas.width = sirkaOkna;
+canvas.height = vyskaOkna;
+  
+  
+canvas.addEventListener('click',mouseKlik);
+//canvas.addEventListener('mousedown',mouseDown);
+//canvas.addEventListener('touchstart',touchS);
+
+  
+var ctx = canvas.getContext("2d");
+ctx.shadowColor ="blue";
+ctx.shadowBlur = 20;
+ctx.fillStyle = "#000033";
+//ctx.strokeStyle = "plum";
+ctx.beginPath();
+ctx.arc(sirkaOkna/2,vyskaOkna/2,20,0, 2*Math.PI);
+ctx.stroke();  
+ctx.fill();
+  
+  
+var miestaArr=[
+  new Miesto(ctx,"HUGOV ŽREBČÍN","HU","#ffff00",(2/8)*sirkaOkna,(1/4)*vyskaOkna,12), 
+  new Miesto(ctx,"ZDRŽ HRUŠOV","HR","#00ff00",(6/8)*sirkaOkna,(1/4)*vyskaOkna,12), 
+  new Miesto(ctx,"VODNÝ ZDROJ","VZ","#00ffff",(2/8)*sirkaOkna,(3/4)*vyskaOkna,12), 
+  new Miesto(ctx,"OVČIAREŇ","ST","#ff00ff",(6/8)*sirkaOkna,(3/4)*vyskaOkna,12), 
+  //new Miesto(ctx,"ČUNOVSKÉ JAZERÁ","O","#aaaaaa",50,50,12), 
+];
+  
+//miestaArr[4].center();
+  
+ function mouseKlik(e){
+    //e.preventDefault();
+    var mx=e.clientX;
+    var my=e.clientY;
+   for(i=0;i<miestaArr.length;i++){
+     if(miestaArr[i].klik(mx,my)){
+        miestaArr[i].loadPage();
+     }
+   }
+ }
+  function mouseDown(e){   
+    //e.preventDefault();
+    var mx=e.clientX;
+    var my=e.clientY;
+   for(i=0;i<miestaArr.length;i++){
+     if(miestaArr[i].down(mx,my))miestaArr[i].kresli(40);
+   }
+     
+ }
+  function touchS(e){    
+    //e.preventDefault();
+    var mx=e.clientX;
+    var my=e.clientY;
+    for(i=0;i<miestaArr.length;i++){
+     if(miestaArr[i].down(mx,my))miestaArr[i].kresli(40);
+    }
+    
+  }
+</script>
+</body>
+
+</html>  
+  

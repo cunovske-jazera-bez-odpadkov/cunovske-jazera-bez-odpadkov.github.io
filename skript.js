@@ -10,7 +10,7 @@ function testMenu(s){
 }
 function loadOkolie(s){
   if(s=='HU'){
-    window.location.href="Xhugo.html#NO";
+    window.location.href="https://historia-rusoviec.github.io/hugov-zrebcin/index.html#NO";
   }else if(s=='HR'){
     window.location.href="Xzdrz.html#NO";
   }else if(s=='VZ'){
